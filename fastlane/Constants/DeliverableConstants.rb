@@ -56,7 +56,7 @@ class DeliverableConstants
 
   # App Store Connect API Key ID
   def self.APP_STORE_KEY_ID
-    'MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgt4anH2TRpfzANXi1ZZKhs61Q5lbLeD4qvYz+nbL33aWgCgYIKoZIzj0DAQehRANCAATeS3nWfdW+i4qH+oB7l6da6S4YPiIiyXqaskCRnKU6lkw2zhmY+UhZae3iWorfR6QkLLfqOZpfvd2thOgYp7Xj'
+    '3Q76PWRQN6'
   end
 
   # App Store Connect API Issuer ID
