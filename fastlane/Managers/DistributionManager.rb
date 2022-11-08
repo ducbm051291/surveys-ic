@@ -8,7 +8,7 @@ class DistributionManager
   end
 
   def upload_to_firebase(product_name:, firebase_app_id:, notes:, tester_groups:)
-    ipa_path = "#{@build_path}/#{product_name}.ipa"
+    ipa_path = "#{@build_path}/#{product_name} Staging.ipa"
     @fastlane.firebase_app_distribution(
       app: firebase_app_id,
       ipa_path: ipa_path,
