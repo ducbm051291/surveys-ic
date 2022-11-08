@@ -27,7 +27,6 @@ target 'Surveys' do
 
   # Development
   pod 'SwiftLint'
-  pod 'Wormholy', :configurations => ['Debug Staging', 'Debug Production']
 
   target 'SurveysTests' do
     inherit! :search_paths
