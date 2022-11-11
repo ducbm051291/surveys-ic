@@ -11,6 +11,7 @@
 		0C205FD636A87848DD90D15E /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A128F64769F891407434E /* AutoMockable.generated.swift */; };
 		37E881FD755DC943536F8432 /* Pods_Surveys_SurveysUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD88A54DF736114DC277D8 /* Pods_Surveys_SurveysUITests.framework */; };
 		58233885291C95C300412E50 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58233884291C95C300412E50 /* AppRouter.swift */; };
+		5853EDBC291E50D700282908 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5853EDBB291E50D700282908 /* Route.swift */; };
 		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
 		586ED15F2914EC6700181E14 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15E2914EC6700181E14 /* SplashView.swift */; };
 		5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880AE07291E3B8B00A212E7 /* ImageResource+Image.swift */; };
@@ -87,6 +88,7 @@
 		4432AD8ECCAF6D13ACA8A64A /* Pods_Surveys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surveys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		446379DEC5760FE3C00F3AA3 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		58233884291C95C300412E50 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		5853EDBB291E50D700282908 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		586ED15B2914EC3600181E14 /* SurveysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveysApp.swift; sourceTree = "<group>"; };
 		586ED15E2914EC6700181E14 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		586ED1622914ED5200181E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				58233884291C95C300412E50 /* AppRouter.swift */,
+				5853EDBB291E50D700282908 /* Route.swift */,
 				586ED15B2914EC3600181E14 /* SurveysApp.swift */,
 			);
 			path = Application;
@@ -1033,6 +1036,7 @@
 				8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */,
 				9034CDC8640BB10EC23F3D2C /* Constants.swift in Sources */,
 				B2A543A91D8FFE90C3C4B1AE /* UseCaseFactoryProtocol.swift in Sources */,
+				5853EDBC291E50D700282908 /* Route.swift in Sources */,
 				E523B137B86D7E0119304CC1 /* Optional+Unwrap.swift in Sources */,
 				586ED15F2914EC6700181E14 /* SplashView.swift in Sources */,
 				ECD3276C62498EE90151BC6F /* Color+Application.swift in Sources */,
