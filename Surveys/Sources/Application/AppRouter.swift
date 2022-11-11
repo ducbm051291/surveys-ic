@@ -8,11 +8,6 @@
 
 import Combine
 
-enum Route: Hashable {
-
-    case splash
-}
-
 final class AppRouter: ObservableObject {
 
     @Published var state: Route = .splash
