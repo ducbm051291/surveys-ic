@@ -6,3 +6,4 @@
 import UIKit
 
 typealias AlertCompletion = (UIAlertAction) -> Void
+typealias Asset = R.image
