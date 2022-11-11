@@ -10,16 +10,30 @@ import SwiftUI
 
 struct SplashView: View {
 
+    @State private var fadeInOut = false
+
     var body: some View {
-        Text("Hello Nimble")
+        ZStack {
+            Asset.splashScreenBackgroundImage.image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea()
+            Asset.logoWhiteIcon.image
+                .resizable()
+                .frame(width: 200.0, height: 48.0, alignment: .center)
+                .onAppear(perform: {
+                    withAnimation(Animation.easeInOut(duration: 1.0)) {
+                        fadeInOut.toggle()
+                    }
+                })
+                .opacity(fadeInOut ? 1.0 : 0.0)
+        }
     }
 }
 
-#if DEBUG
-struct SplashScreen_Previews: PreviewProvider {
+struct SplashViewPreviews: PreviewProvider {
 
     static var previews: some View {
         SplashView()
     }
 }
-#endif
