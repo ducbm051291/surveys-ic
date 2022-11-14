@@ -19,6 +19,12 @@
 		58C6C5952921F7FA0083AF17 /* NetworkAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5942921F7FA0083AF17 /* NetworkAPIError.swift */; };
 		58C6C5972921F88E0083AF17 /* NetworkAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5962921F88E0083AF17 /* NetworkAPIProtocol.swift */; };
 		58C6C5A12921F9900083AF17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C6C5A02921F9900083AF17 /* Localizable.strings */; };
+		58C6C5A329221CC90083AF17 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5A229221CC90083AF17 /* APIRequest.swift */; };
+		58C6C5A529221D630083AF17 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5A429221D630083AF17 /* Environment.swift */; };
+		58C6C5A829222B210083AF17 /* Parameterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5A729222B210083AF17 /* Parameterable.swift */; };
+		58C6C5AB29222B530083AF17 /* LoginParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5AA29222B520083AF17 /* LoginParameter.swift */; };
+		58C6C5AE29222E050083AF17 /* JSONAPIDecoder+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5AD29222E050083AF17 /* JSONAPIDecoder+Default.swift */; };
+		58C6C5B029223E210083AF17 /* DateFormatter+Formats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5AF29223E210083AF17 /* DateFormatter+Formats.swift */; };
 		79AD9AC60C2326D2C37DA822 /* ApplicationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D07C7B75034BCA157403F8 /* ApplicationSpec.swift */; };
 		8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A71C5D204545F33C7FD6B4 /* Constants+API.swift */; };
 		8DD77EC05F93CCD453A6FD92 /* Pods_SurveysTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39DD03C776304E67782F43 /* Pods_SurveysTests.framework */; };
@@ -101,6 +107,12 @@
 		58C6C5942921F7FA0083AF17 /* NetworkAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIError.swift; sourceTree = "<group>"; };
 		58C6C5962921F88E0083AF17 /* NetworkAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocol.swift; sourceTree = "<group>"; };
 		58C6C5A02921F9900083AF17 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		58C6C5A229221CC90083AF17 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		58C6C5A429221D630083AF17 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		58C6C5A729222B210083AF17 /* Parameterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameterable.swift; sourceTree = "<group>"; };
+		58C6C5AA29222B520083AF17 /* LoginParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginParameter.swift; sourceTree = "<group>"; };
+		58C6C5AD29222E050083AF17 /* JSONAPIDecoder+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONAPIDecoder+Default.swift"; sourceTree = "<group>"; };
+		58C6C5AF29223E210083AF17 /* DateFormatter+Formats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Formats.swift"; sourceTree = "<group>"; };
 		603C585A72B6AFE5ACB8C8D7 /* Pods-Surveys.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug production.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.debug production.xcconfig"; sourceTree = "<group>"; };
 		638FF9A7DE2D62E0226EFDA0 /* Pods-Surveys-SurveysUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys-SurveysUITests.release staging.xcconfig"; path = "Target Support Files/Pods-Surveys-SurveysUITests/Pods-Surveys-SurveysUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		6494B7196E1A11AEEEFDE174 /* Pods-SurveysTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveysTests.release staging.xcconfig"; path = "Target Support Files/Pods-SurveysTests/Pods-SurveysTests.release staging.xcconfig"; sourceTree = "<group>"; };
@@ -247,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				58233884291C95C300412E50 /* AppRouter.swift */,
+				58C6C5A429221D630083AF17 /* Environment.swift */,
 				5853EDBB291E50D700282908 /* Route.swift */,
 				586ED15B2914EC3600181E14 /* SurveysApp.swift */,
 			);
@@ -325,6 +338,7 @@
 			children = (
 				58C6C5942921F7FA0083AF17 /* NetworkAPIError.swift */,
 				58C6C5962921F88E0083AF17 /* NetworkAPIProtocol.swift */,
+				58C6C5A229221CC90083AF17 /* APIRequest.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -335,6 +349,30 @@
 				58C6C5A02921F9900083AF17 /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		58C6C5A629222B120083AF17 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				58C6C5A729222B210083AF17 /* Parameterable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		58C6C5A929222B410083AF17 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				58C6C5AA29222B520083AF17 /* LoginParameter.swift */,
+			);
+			path = Parameters;
+			sourceTree = "<group>";
+		};
+		58C6C5AC29222DF80083AF17 /* JSONMapper */ = {
+			isa = PBXGroup;
+			children = (
+				58C6C5AD29222E050083AF17 /* JSONAPIDecoder+Default.swift */,
+			);
+			path = JSONMapper;
 			sourceTree = "<group>";
 		};
 		622B0DBBBA14110ABF39412C /* Sourcery */ = {
@@ -378,6 +416,7 @@
 			children = (
 				A942348CBB0976E6205E76DF /* Entities */,
 				4C181C57DAAF379BAAD0CFB8 /* Interfaces */,
+				58C6C5A929222B410083AF17 /* Parameters */,
 				C2B126DE75BB6917D04E3D96 /* UseCases */,
 			);
 			path = Domain;
@@ -422,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				74E30052ACBE13146066B25B /* Optional+Unwrap.swift */,
+				58C6C5AF29223E210083AF17 /* DateFormatter+Formats.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -622,6 +662,7 @@
 		F66AC7F52C700CE948E72128 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				58C6C5AC29222DF80083AF17 /* JSONMapper */,
 				A009914CA2F7CE9E534DF439 /* Foundation */,
 				5880AE06291E3B6A00A212E7 /* SwiftUI */,
 				AD2AC2DD9A88BB62230DD3F6 /* UIKit */,
@@ -660,6 +701,7 @@
 			children = (
 				F66AC7F52C700CE948E72128 /* Extensions */,
 				0454E6E8B519CA80E09DE84C /* Helpers */,
+				58C6C5A629222B120083AF17 /* Protocols */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -1050,9 +1092,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */,
+				58C6C5AB29222B530083AF17 /* LoginParameter.swift in Sources */,
 				8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */,
 				9034CDC8640BB10EC23F3D2C /* Constants.swift in Sources */,
 				58C6C5922921F79E0083AF17 /* NetworkAPI.swift in Sources */,
+				58C6C5B029223E210083AF17 /* DateFormatter+Formats.swift in Sources */,
+				58C6C5AE29222E050083AF17 /* JSONAPIDecoder+Default.swift in Sources */,
 				B2A543A91D8FFE90C3C4B1AE /* UseCaseFactoryProtocol.swift in Sources */,
 				5853EDBC291E50D700282908 /* Route.swift in Sources */,
 				E523B137B86D7E0119304CC1 /* Optional+Unwrap.swift in Sources */,
@@ -1062,7 +1107,10 @@
 				58233885291C95C300412E50 /* AppRouter.swift in Sources */,
 				D159394D010391AC5356ACC1 /* UIView+Subviews.swift in Sources */,
 				58C6C5952921F7FA0083AF17 /* NetworkAPIError.swift in Sources */,
+				58C6C5A829222B210083AF17 /* Parameterable.swift in Sources */,
+				58C6C5A529221D630083AF17 /* Environment.swift in Sources */,
 				5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */,
+				58C6C5A329221CC90083AF17 /* APIRequest.swift in Sources */,
 				A0562C2F673B4C4DCABFBDB8 /* R.generated.swift in Sources */,
 				FC1CE3FCD6AE97534C3BC5ED /* Typealiases.swift in Sources */,
 			);
