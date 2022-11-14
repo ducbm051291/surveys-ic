@@ -20,6 +20,7 @@ target 'Surveys' do
   # Tools
   pod 'Firebase/Crashlytics'
   pod 'IQKeyboardManagerSwift'
+  pod 'JSONAPIMapper'
   pod 'NimbleExtension', :git => 'https://github.com/nimblehq/NimbleExtension', :branch => 'master'
   pod 'R.swift'
   pod 'Resolver'
