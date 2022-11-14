@@ -11,3 +11,5 @@ PRODUCT_NAME = $(TARGET_NAME)
 PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.david.ic-survey
 SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG PRODUCTION
 OTHER_SWIFT_FLAGS = $(inherited) -Xfrontend -warn-long-expression-type-checking=300 -Xfrontend -warn-long-function-bodies=300
+
+API_BASE_URL = survey-api.nimblehq.co/api/v1
