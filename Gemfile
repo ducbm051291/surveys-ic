@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "cocoapods"
+gem "cocoapods-keys"
 gem "fastlane"
 gem "xcov"
 gem "danger"
