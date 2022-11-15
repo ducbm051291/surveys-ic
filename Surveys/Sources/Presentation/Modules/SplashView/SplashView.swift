@@ -21,11 +21,11 @@ struct SplashView: View {
             Asset.logoWhiteIcon.image
                 .resizable()
                 .frame(width: 200.0, height: 48.0, alignment: .center)
-                .onAppear(perform: {
+                .onAppear {
                     withAnimation(Animation.easeInOut(duration: 1.0)) {
                         fadeInOut.toggle()
                     }
-                })
+                }
                 .opacity(fadeInOut ? 1.0 : 0.0)
         }
     }
