@@ -39,6 +39,8 @@ jobs:
           ${{ runner.os }}-pods-
 
     - name: Install Pods Dependencies
+      run: exec pod keys set ClientId "-" David
+      run: exec pod keys set ClientSecret "-" David
       run: bundle exec pod install
 
     - name: Build and Test
