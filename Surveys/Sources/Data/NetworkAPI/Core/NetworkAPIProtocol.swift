@@ -13,17 +13,17 @@ import Moya
 
 protocol NetworkAPIProtocol {
 
-    func performRequest<T: Decodable>(_ request: APIRequest) -> Observable<T>
+    func performRequest<T: Decodable>(_ configuration: RequestConfiguration, for type: T.Type) -> Observable<T>
 }
 
 extension NetworkAPIProtocol {
 
     func request<T: Decodable>(
-        _ request: APIRequest,
-        provider: MoyaProvider<APIRequest>,
+        _ configuration: RequestConfiguration,
+        provider: MoyaProvider<RequestConfiguration>,
         decoder: JSONDecoder
     ) -> Observable<T> {
-        return provider.requestPublisher(request)
+        return provider.requestPublisher(configuration)
             .map { $0.data }
             .decode(type: T.self, decoder: decoder)
             .eraseToAnyPublisher()
