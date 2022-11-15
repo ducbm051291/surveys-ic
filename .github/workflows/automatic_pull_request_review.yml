@@ -37,15 +37,15 @@ jobs:
         key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-pods-
-
-    - name: Set Fake ClientId Cocoapods-Keys
-      run: exec pod keys set "ClientId" "David"
-
-    - name: Set Fake ClientSecret Cocoapods-Keys
-      run: exec pod keys set "ClientSecret" "David"
       
     - name: Install Pods Dependencies
       run: bundle exec pod install
+
+    - name: Set Fake ClientId Cocoapods-Keys
+      run: exec pod keys set ClientId David
+
+    - name: Set Fake ClientSecret Cocoapods-Keys
+      run: exec pod keys set ClientSecret David
 
     - name: Build and Test
       run: bundle exec fastlane build_and_test
