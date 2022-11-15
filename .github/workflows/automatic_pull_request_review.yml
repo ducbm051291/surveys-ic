@@ -39,10 +39,10 @@ jobs:
           ${{ runner.os }}-pods-
 
     - name: Set Fake ClientId Cocoapods-Keys
-      run: exec pod keys set ClientId "-" David
+      run: exec pod keys set "ClientId" "David"
 
     - name: Set Fake ClientSecret Cocoapods-Keys
-      run: exec pod keys set ClientSecret "-" David
+      run: exec pod keys set "ClientSecret" "David"
       
     - name: Install Pods Dependencies
       run: bundle exec pod install
