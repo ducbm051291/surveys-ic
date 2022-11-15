@@ -13,14 +13,17 @@ import Moya
 
 final class NetworkAPI: NetworkAPIProtocol {
 
-    private let provider = MoyaProvider<APIRequest>()
+    private let provider = MoyaProvider<RequestConfiguration>()
     private let decoder: JSONAPIDecoder
 
     init(decoder: JSONAPIDecoder = JSONAPIDecoder.default) {
         self.decoder = decoder
     }
 
-    func performRequest<T>(_ apiRequest: APIRequest) -> Observable<T> where T: Decodable {
-        request(apiRequest, provider: provider, decoder: JSONAPIDecoder.default)
+    func performRequest<T>(
+        _ configuration: RequestConfiguration,
+        for type: T.Type
+    ) -> Observable<T> where T: Decodable {
+        request(configuration, provider: provider, decoder: JSONAPIDecoder.default)
     }
 }

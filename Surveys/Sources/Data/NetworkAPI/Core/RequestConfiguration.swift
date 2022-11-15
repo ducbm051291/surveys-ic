@@ -1,4 +1,4 @@
-//
+//  swiftlint:disable: force_unwrapping
 //  APIRequest.swift
 //  Surveys
 //
@@ -9,12 +9,12 @@
 import Foundation
 import Moya
 
-enum APIRequest {
+enum RequestConfiguration {
 
     case login(LoginParameter)
 }
 
-extension APIRequest: TargetType {
+extension RequestConfiguration: TargetType {
 
     var baseURL: URL { URL(string: Constants.API.baseURL)! }
 
@@ -37,5 +37,7 @@ extension APIRequest: TargetType {
         }
     }
 
-    var headers: [String: String]? { nil }
+    var headers: [String: String]? {
+        ["Accept": "application/json"]
+    }
 }
