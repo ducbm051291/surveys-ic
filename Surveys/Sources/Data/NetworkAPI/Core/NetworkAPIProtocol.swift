@@ -26,6 +26,10 @@ extension NetworkAPIProtocol {
         return provider.requestPublisher(configuration)
             .map { $0.data }
             .decode(type: T.self, decoder: decoder)
+            .mapError { error -> Error in
+                guard let errors = error as? [JSONAPIError] else { return NetworkAPIError.generic }
+                return NetworkAPIError.responseErrors(errors: errors)
+            }
             .eraseToAnyPublisher()
     }
 }
