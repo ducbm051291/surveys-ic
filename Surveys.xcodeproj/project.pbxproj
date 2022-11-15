@@ -15,11 +15,12 @@
 		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
 		586ED15F2914EC6700181E14 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15E2914EC6700181E14 /* SplashView.swift */; };
 		5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880AE07291E3B8B00A212E7 /* ImageResource+Image.swift */; };
+		588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */; };
 		58C6C5922921F79E0083AF17 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5912921F79E0083AF17 /* NetworkAPI.swift */; };
 		58C6C5952921F7FA0083AF17 /* NetworkAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5942921F7FA0083AF17 /* NetworkAPIError.swift */; };
 		58C6C5972921F88E0083AF17 /* NetworkAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5962921F88E0083AF17 /* NetworkAPIProtocol.swift */; };
 		58C6C5A12921F9900083AF17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C6C5A02921F9900083AF17 /* Localizable.strings */; };
-		58C6C5A329221CC90083AF17 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5A229221CC90083AF17 /* APIRequest.swift */; };
+		58C6C5A329221CC90083AF17 /* RequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5A229221CC90083AF17 /* RequestConfiguration.swift */; };
 		58C6C5A529221D630083AF17 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5A429221D630083AF17 /* Environment.swift */; };
 		58C6C5A829222B210083AF17 /* Parameterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5A729222B210083AF17 /* Parameterable.swift */; };
 		58C6C5AB29222B530083AF17 /* LoginParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5AA29222B520083AF17 /* LoginParameter.swift */; };
@@ -103,11 +104,12 @@
 		586ED1622914ED5200181E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		586ED1642914ED5200181E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5880AE07291E3B8B00A212E7 /* ImageResource+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageResource+Image.swift"; sourceTree = "<group>"; };
+		588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocolMock.swift; sourceTree = "<group>"; };
 		58C6C5912921F79E0083AF17 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		58C6C5942921F7FA0083AF17 /* NetworkAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIError.swift; sourceTree = "<group>"; };
 		58C6C5962921F88E0083AF17 /* NetworkAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocol.swift; sourceTree = "<group>"; };
 		58C6C5A02921F9900083AF17 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		58C6C5A229221CC90083AF17 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		58C6C5A229221CC90083AF17 /* RequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfiguration.swift; sourceTree = "<group>"; };
 		58C6C5A429221D630083AF17 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		58C6C5A729222B210083AF17 /* Parameterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameterable.swift; sourceTree = "<group>"; };
 		58C6C5AA29222B520083AF17 /* LoginParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginParameter.swift; sourceTree = "<group>"; };
@@ -338,7 +340,7 @@
 			children = (
 				58C6C5942921F7FA0083AF17 /* NetworkAPIError.swift */,
 				58C6C5962921F88E0083AF17 /* NetworkAPIProtocol.swift */,
-				58C6C5A229221CC90083AF17 /* APIRequest.swift */,
+				58C6C5A229221CC90083AF17 /* RequestConfiguration.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -581,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				622B0DBBBA14110ABF39412C /* Sourcery */,
+				588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1083,6 +1086,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C205FD636A87848DD90D15E /* AutoMockable.generated.swift in Sources */,
+				588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */,
 				CC151CF2A41DE206FA2EDCF0 /* OptionalUnwrapSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1110,7 +1114,7 @@
 				58C6C5A829222B210083AF17 /* Parameterable.swift in Sources */,
 				58C6C5A529221D630083AF17 /* Environment.swift in Sources */,
 				5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */,
-				58C6C5A329221CC90083AF17 /* APIRequest.swift in Sources */,
+				58C6C5A329221CC90083AF17 /* RequestConfiguration.swift in Sources */,
 				A0562C2F673B4C4DCABFBDB8 /* R.generated.swift in Sources */,
 				FC1CE3FCD6AE97534C3BC5ED /* Typealiases.swift in Sources */,
 			);
