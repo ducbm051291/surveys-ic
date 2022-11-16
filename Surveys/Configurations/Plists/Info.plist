@@ -24,6 +24,11 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen.storyboard</string>
+    <key>UIAppFonts</key>
+    <array>
+        <string>NeuzeitBook.otf</string>
+        <string>NeuzeitHeavy.otf</string>
+    </array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
