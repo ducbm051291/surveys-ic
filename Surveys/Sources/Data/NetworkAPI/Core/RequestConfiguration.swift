@@ -37,7 +37,7 @@ extension RequestConfiguration: TargetType {
         }
     }
 
-    var headers: [String: String]? {
+    var headers: HTTPHeaders? {
         ["Accept": "application/json"]
     }
 }
