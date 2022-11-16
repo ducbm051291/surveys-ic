@@ -22,7 +22,7 @@ struct SplashView: View {
                 .resizable()
                 .frame(width: 200.0, height: 48.0, alignment: .center)
                 .onAppear {
-                    withAnimation(Animation.easeInOut(duration: 1.0)) {
+                    withAnimation(.easeInOut(duration: 1.0)) {
                         fadeInOut.toggle()
                     }
                 }
