@@ -11,6 +11,7 @@
 		0C205FD636A87848DD90D15E /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A128F64769F891407434E /* AutoMockable.generated.swift */; };
 		37E881FD755DC943536F8432 /* Pods_Surveys_SurveysUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD88A54DF736114DC277D8 /* Pods_Surveys_SurveysUITests.framework */; };
 		58233885291C95C300412E50 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58233884291C95C300412E50 /* AppRouter.swift */; };
+		5827FA0D29248DC900CF2327 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827FA0C29248DC900CF2327 /* LoginView.swift */; };
 		5853EDBC291E50D700282908 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5853EDBB291E50D700282908 /* Route.swift */; };
 		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
 		586ED15F2914EC6700181E14 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15E2914EC6700181E14 /* SplashView.swift */; };
@@ -33,7 +34,6 @@
 		8DD77EC05F93CCD453A6FD92 /* Pods_SurveysTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39DD03C776304E67782F43 /* Pods_SurveysTests.framework */; };
 		9034CDC8640BB10EC23F3D2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2A4D7F6EBA03C8C781818 /* Constants.swift */; };
 		A0562C2F673B4C4DCABFBDB8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446379DEC5760FE3C00F3AA3 /* R.generated.swift */; };
-		B2A543A91D8FFE90C3C4B1AE /* UseCaseFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835865F7B76A8891E5CC7BCA /* UseCaseFactoryProtocol.swift */; };
 		CC151CF2A41DE206FA2EDCF0 /* OptionalUnwrapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28B64D0889C7EDF9D30A6C /* OptionalUnwrapSpec.swift */; };
 		D159394D010391AC5356ACC1 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8B49AEAA06CB0300537B3E /* UIView+Subviews.swift */; };
 		D3C2549798839C1D3AF54559 /* Pods_Surveys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4432AD8ECCAF6D13ACA8A64A /* Pods_Surveys.framework */; };
@@ -100,6 +100,7 @@
 		4432AD8ECCAF6D13ACA8A64A /* Pods_Surveys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surveys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		446379DEC5760FE3C00F3AA3 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		58233884291C95C300412E50 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		5827FA0C29248DC900CF2327 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5853EDBB291E50D700282908 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		586ED15B2914EC3600181E14 /* SurveysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveysApp.swift; sourceTree = "<group>"; };
 		586ED15E2914EC6700181E14 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 		77E18CA2076B52EB4AF9DCCB /* Pods-Surveys-SurveysUITests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys-SurveysUITests.debug staging.xcconfig"; path = "Target Support Files/Pods-Surveys-SurveysUITests/Pods-Surveys-SurveysUITests.debug staging.xcconfig"; sourceTree = "<group>"; };
 		7F72E6A675B4E003A13F0D96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		80B9AF1D2A667516430A8280 /* Pods-SurveysTests.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveysTests.release production.xcconfig"; path = "Target Support Files/Pods-SurveysTests/Pods-SurveysTests.release production.xcconfig"; sourceTree = "<group>"; };
-		835865F7B76A8891E5CC7BCA /* UseCaseFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactoryProtocol.swift; sourceTree = "<group>"; };
 		84FB411111453E4FDA5B5862 /* SurveysUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveysUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D6FC966B36B49AE9261525 /* Pods-Surveys-SurveysUITests.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys-SurveysUITests.release production.xcconfig"; path = "Target Support Files/Pods-Surveys-SurveysUITests/Pods-Surveys-SurveysUITests.release production.xcconfig"; sourceTree = "<group>"; };
 		89BBA592F1F989A09A84263F /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
@@ -296,6 +296,14 @@
 				6494B7196E1A11AEEEFDE174 /* Pods-SurveysTests.release staging.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5827FA0B29248DBB00CF2327 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				5827FA0C29248DC900CF2327 /* LoginView.swift */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 		586ED15D2914EC6700181E14 /* SplashView */ = {
@@ -566,7 +574,6 @@
 		C2B126DE75BB6917D04E3D96 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				835865F7B76A8891E5CC7BCA /* UseCaseFactoryProtocol.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -671,6 +678,7 @@
 		F44188B859BAD82896E07B4A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5827FA0B29248DBB00CF2327 /* LoginView */,
 				586ED15D2914EC6700181E14 /* SplashView */,
 			);
 			path = Modules;
@@ -1117,8 +1125,8 @@
 				58C6C5922921F79E0083AF17 /* NetworkAPI.swift in Sources */,
 				58C6C5B029223E210083AF17 /* DateFormatter+Formats.swift in Sources */,
 				58C6C5AE29222E050083AF17 /* JSONAPIDecoder+Default.swift in Sources */,
-				B2A543A91D8FFE90C3C4B1AE /* UseCaseFactoryProtocol.swift in Sources */,
 				5853EDBC291E50D700282908 /* Route.swift in Sources */,
+				5827FA0D29248DC900CF2327 /* LoginView.swift in Sources */,
 				E523B137B86D7E0119304CC1 /* Optional+Unwrap.swift in Sources */,
 				586ED15F2914EC6700181E14 /* SplashView.swift in Sources */,
 				ECD3276C62498EE90151BC6F /* Color+Application.swift in Sources */,
