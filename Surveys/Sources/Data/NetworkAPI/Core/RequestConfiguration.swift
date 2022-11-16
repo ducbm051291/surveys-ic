@@ -1,4 +1,4 @@
-//  swiftlint:disable: force_unwrapping
+//
 //  APIRequest.swift
 //  Surveys
 //
@@ -16,7 +16,7 @@ enum RequestConfiguration {
 
 extension RequestConfiguration: TargetType {
 
-    var baseURL: URL { URL(string: Constants.API.baseURL)! }
+    var baseURL: URL { URL(string: Constants.API.baseURL) ?? URL.applicationDirectory }
 
     var path: String {
         switch self {
