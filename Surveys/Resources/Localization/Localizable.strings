@@ -7,3 +7,8 @@
 */
 
 "common.cancel.text" = "Cancel";
+
+"login.emailTextField.placeholder" = "Email";
+"login.forgotButton.title" = "Forgot?";
+"login.loginButton.title" = "Login";
+"login.passwordTextField.placeholder" = "Password";
