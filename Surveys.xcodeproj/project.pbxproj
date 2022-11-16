@@ -10,8 +10,11 @@
 		0342B6AF8EE6556DBF2D48A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E62819C8C91AB83B8169394C /* Assets.xcassets */; };
 		0C205FD636A87848DD90D15E /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40A128F64769F891407434E /* AutoMockable.generated.swift */; };
 		37E881FD755DC943536F8432 /* Pods_Surveys_SurveysUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD88A54DF736114DC277D8 /* Pods_Surveys_SurveysUITests.framework */; };
-		586ED15C2914EC3600181E14 /* NimbleSurveyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* NimbleSurveyApp.swift */; };
-		586ED15F2914EC6700181E14 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15E2914EC6700181E14 /* SplashScreen.swift */; };
+		58233885291C95C300412E50 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58233884291C95C300412E50 /* AppRouter.swift */; };
+		5853EDBC291E50D700282908 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5853EDBB291E50D700282908 /* Route.swift */; };
+		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
+		586ED15F2914EC6700181E14 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15E2914EC6700181E14 /* SplashView.swift */; };
+		5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880AE07291E3B8B00A212E7 /* ImageResource+Image.swift */; };
 		79AD9AC60C2326D2C37DA822 /* ApplicationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D07C7B75034BCA157403F8 /* ApplicationSpec.swift */; };
 		8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A71C5D204545F33C7FD6B4 /* Constants+API.swift */; };
 		8DD77EC05F93CCD453A6FD92 /* Pods_SurveysTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39DD03C776304E67782F43 /* Pods_SurveysTests.framework */; };
@@ -84,10 +87,13 @@
 		2E4F8CB80A926AA983BBEBA0 /* Pods-SurveysTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveysTests.debug staging.xcconfig"; path = "Target Support Files/Pods-SurveysTests/Pods-SurveysTests.debug staging.xcconfig"; sourceTree = "<group>"; };
 		4432AD8ECCAF6D13ACA8A64A /* Pods_Surveys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surveys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		446379DEC5760FE3C00F3AA3 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		586ED15B2914EC3600181E14 /* NimbleSurveyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleSurveyApp.swift; sourceTree = "<group>"; };
-		586ED15E2914EC6700181E14 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		58233884291C95C300412E50 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		5853EDBB291E50D700282908 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		586ED15B2914EC3600181E14 /* SurveysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveysApp.swift; sourceTree = "<group>"; };
+		586ED15E2914EC6700181E14 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		586ED1622914ED5200181E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		586ED1642914ED5200181E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5880AE07291E3B8B00A212E7 /* ImageResource+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageResource+Image.swift"; sourceTree = "<group>"; };
 		603C585A72B6AFE5ACB8C8D7 /* Pods-Surveys.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug production.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.debug production.xcconfig"; sourceTree = "<group>"; };
 		638FF9A7DE2D62E0226EFDA0 /* Pods-Surveys-SurveysUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys-SurveysUITests.release staging.xcconfig"; path = "Target Support Files/Pods-Surveys-SurveysUITests/Pods-Surveys-SurveysUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		6494B7196E1A11AEEEFDE174 /* Pods-SurveysTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveysTests.release staging.xcconfig"; path = "Target Support Files/Pods-SurveysTests/Pods-SurveysTests.release staging.xcconfig"; sourceTree = "<group>"; };
@@ -234,7 +240,9 @@
 		493B2F81B0BB5F7BD1021217 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				586ED15B2914EC3600181E14 /* NimbleSurveyApp.swift */,
+				58233884291C95C300412E50 /* AppRouter.swift */,
+				5853EDBB291E50D700282908 /* Route.swift */,
+				586ED15B2914EC3600181E14 /* SurveysApp.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -265,12 +273,12 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		586ED15D2914EC6700181E14 /* SplashScreen */ = {
+		586ED15D2914EC6700181E14 /* SplashView */ = {
 			isa = PBXGroup;
 			children = (
-				586ED15E2914EC6700181E14 /* SplashScreen.swift */,
+				586ED15E2914EC6700181E14 /* SplashView.swift */,
 			);
-			path = SplashScreen;
+			path = SplashView;
 			sourceTree = "<group>";
 		};
 		586ED1602914ED5200181E14 /* GoogleService */ = {
@@ -296,6 +304,14 @@
 				586ED1642914ED5200181E14 /* GoogleService-Info.plist */,
 			);
 			path = Production;
+			sourceTree = "<group>";
+		};
+		5880AE06291E3B6A00A212E7 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				5880AE07291E3B8B00A212E7 /* ImageResource+Image.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		622B0DBBBA14110ABF39412C /* Sourcery */ = {
@@ -581,7 +597,7 @@
 		F44188B859BAD82896E07B4A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				586ED15D2914EC6700181E14 /* SplashScreen */,
+				586ED15D2914EC6700181E14 /* SplashView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -590,6 +606,7 @@
 			isa = PBXGroup;
 			children = (
 				A009914CA2F7CE9E534DF439 /* Foundation */,
+				5880AE06291E3B6A00A212E7 /* SwiftUI */,
 				AD2AC2DD9A88BB62230DD3F6 /* UIKit */,
 			);
 			path = Extensions;
@@ -1015,14 +1032,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				586ED15C2914EC3600181E14 /* NimbleSurveyApp.swift in Sources */,
+				586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */,
 				8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */,
 				9034CDC8640BB10EC23F3D2C /* Constants.swift in Sources */,
 				B2A543A91D8FFE90C3C4B1AE /* UseCaseFactoryProtocol.swift in Sources */,
+				5853EDBC291E50D700282908 /* Route.swift in Sources */,
 				E523B137B86D7E0119304CC1 /* Optional+Unwrap.swift in Sources */,
-				586ED15F2914EC6700181E14 /* SplashScreen.swift in Sources */,
+				586ED15F2914EC6700181E14 /* SplashView.swift in Sources */,
 				ECD3276C62498EE90151BC6F /* Color+Application.swift in Sources */,
+				58233885291C95C300412E50 /* AppRouter.swift in Sources */,
 				D159394D010391AC5356ACC1 /* UIView+Subviews.swift in Sources */,
+				5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */,
 				A0562C2F673B4C4DCABFBDB8 /* R.generated.swift in Sources */,
 				FC1CE3FCD6AE97534C3BC5ED /* Typealiases.swift in Sources */,
 			);
