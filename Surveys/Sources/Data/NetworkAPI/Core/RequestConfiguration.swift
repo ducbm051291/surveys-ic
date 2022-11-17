@@ -16,7 +16,7 @@ enum RequestConfiguration {
 
 extension RequestConfiguration: TargetType {
 
-    var baseURL: URL { URL(string: Constants.API.baseURL) ?? URL.applicationDirectory }
+    var baseURL: URL { Constants.API.baseURL.toURL() }
 
     var path: String {
         switch self {
