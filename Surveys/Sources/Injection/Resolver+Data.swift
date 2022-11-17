@@ -16,6 +16,7 @@ extension Resolver {
 
     private static func registerRepositories() {
         register(AuthenticationRepositoryProtocol.self) { AuthenticationRepository() }
+        register(SessionRepositoryProtocol.self) { SessionRepository() }
     }
 
     private static func registerServices() {
