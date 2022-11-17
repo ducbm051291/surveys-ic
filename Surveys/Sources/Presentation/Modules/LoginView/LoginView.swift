@@ -29,24 +29,15 @@ struct LoginView: View {
     )
 
     var body: some View {
-        setUpView()
-    }
-
-    init() {}
-
-    private func setUpView() -> some View {
-        GeometryReader { geometry in
-            ZStack {
-                setupBackground()
-                VStack(spacing: 0.0) {
-                    setUpLogo()
-                        .frame(height: geometry.size.height * (1.0 / 3.0))
-                        .offset(y: 20.0)
-                    setupComponents()
-                        .frame(height: geometry.size.height * (1.0 / 3.0))
-                    Spacer()
-                        .frame(height: geometry.size.height * (1.0 / 3.0))
-                }
+        ZStack {
+            setupBackground()
+            VStack(spacing: 0.0) {
+                setUpLogo()
+                    .frame(maxHeight: .infinity)
+                setupComponents()
+                    .frame(maxHeight: .infinity)
+                Spacer()
+                    .frame(maxHeight: .infinity)
             }
         }
     }
@@ -56,7 +47,7 @@ struct LoginView: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .overlay(
-                ZStack(alignment: .bottom) {
+                ZStack {
                     Asset.splashScreenBackgroundImage.image
                         .resizable()
                         .blur(radius: 15.0, opaque: true)
@@ -76,7 +67,7 @@ struct LoginView: View {
     }
 
     private func setupComponents() -> some View {
-        return VStack(alignment: .leading, spacing: 20.0) {
+        VStack(alignment: .leading, spacing: 20.0) {
             setUpEmail()
             setUpPassword()
             PrimaryButton(
@@ -95,6 +86,9 @@ struct LoginView: View {
                     isVisible: true,
                     text: Localize.loginEmailTextFieldPlaceholder()
                 ))
+            Text(Localize.loginInvalidEmailText())
+                .modifier(ErrorModifier())
+                .padding(.top, 4.0)
         }
     }
 
@@ -105,6 +99,9 @@ struct LoginView: View {
                     isVisible: true,
                     text: Localize.loginPasswordTextFieldPlaceholder()
                 ))
+            Text(Localize.loginInvalidPasswordText())
+                .modifier(ErrorModifier())
+                .padding(.top, 4.0)
         }
     }
 }
