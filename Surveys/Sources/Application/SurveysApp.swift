@@ -22,11 +22,9 @@ struct SurveysApp: App {
 extension SurveysApp {
 
     @ViewBuilder var rootView: some View {
-        NavigationStack {
-            switch appRouter.state {
-            case .splash: SplashView()
-            case .login: LoginView()
-            }
+        switch appRouter.state {
+        case .splash: SplashView()
+        case .login: LoginView()
         }
     }
 
