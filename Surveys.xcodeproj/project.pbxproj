@@ -18,6 +18,16 @@
 		5827FA172924C87400CF2327 /* NeuzeitHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5827FA152924C87400CF2327 /* NeuzeitHeavy.otf */; };
 		5827FA1D2924CF4600CF2327 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827FA1C2924CF4600CF2327 /* PrimaryButton.swift */; };
 		5827FA1F2924D0F200CF2327 /* String+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827FA1E2924D0F200CF2327 /* String+Empty.swift */; };
+		5828F82629260E120074FE82 /* AuthenticationRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F82529260E120074FE82 /* AuthenticationRepositoryProtocol.swift */; };
+		5828F82929260E770074FE82 /* APIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F82829260E770074FE82 /* APIToken.swift */; };
+		5828F82B29260E800074FE82 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F82A29260E800074FE82 /* Token.swift */; };
+		5828F82E29260F0B0074FE82 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F82D29260F0B0074FE82 /* LoginUseCase.swift */; };
+		5828F83129260F680074FE82 /* Resolver+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F83029260F680074FE82 /* Resolver+Data.swift */; };
+		5828F83429260FDF0074FE82 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F83329260FDF0074FE82 /* UserDefaultsManager.swift */; };
+		5828F8372926101C0074FE82 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F8362926101C0074FE82 /* UserDefaultsKey.swift */; };
+		5828F83A2926105F0074FE82 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F8392926105F0074FE82 /* KeyChain.swift */; };
+		5828F83C292610650074FE82 /* KeyChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F83B292610650074FE82 /* KeyChainKey.swift */; };
+		5828F83E292610970074FE82 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F83D292610970074FE82 /* AuthenticationRepository.swift */; };
 		5853EDBC291E50D700282908 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5853EDBB291E50D700282908 /* Route.swift */; };
 		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
 		586ED15F2914EC6700181E14 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15E2914EC6700181E14 /* SplashView.swift */; };
@@ -115,6 +125,16 @@
 		5827FA152924C87400CF2327 /* NeuzeitHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeuzeitHeavy.otf; sourceTree = "<group>"; };
 		5827FA1C2924CF4600CF2327 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		5827FA1E2924D0F200CF2327 /* String+Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Empty.swift"; sourceTree = "<group>"; };
+		5828F82529260E120074FE82 /* AuthenticationRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositoryProtocol.swift; sourceTree = "<group>"; };
+		5828F82829260E770074FE82 /* APIToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIToken.swift; sourceTree = "<group>"; };
+		5828F82A29260E800074FE82 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		5828F82D29260F0B0074FE82 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		5828F83029260F680074FE82 /* Resolver+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Data.swift"; sourceTree = "<group>"; };
+		5828F83329260FDF0074FE82 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		5828F8362926101C0074FE82 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		5828F8392926105F0074FE82 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		5828F83B292610650074FE82 /* KeyChainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKey.swift; sourceTree = "<group>"; };
+		5828F83D292610970074FE82 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		5853EDBB291E50D700282908 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		586ED15B2914EC3600181E14 /* SurveysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveysApp.swift; sourceTree = "<group>"; };
 		586ED15E2914EC6700181E14 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -221,6 +241,7 @@
 				64BD30DE8FDCBE2646F49B28 /* Constants */,
 				212311A59EE0C9D1077518EC /* Data */,
 				78CCB75E5A61B0AAEB5B96B8 /* Domain */,
+				5828F82F29260F550074FE82 /* Injection */,
 				00DE0309F3B7BA8778053DF3 /* Presentation */,
 				FC91B57810B2CC9AA86A6029 /* Supports */,
 			);
@@ -237,6 +258,7 @@
 		212311A59EE0C9D1077518EC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5828F83229260FD10074FE82 /* Storages */,
 				7876BF93DE7D588E05E3947A /* NetworkAPI */,
 				C34126AAC73B2CDA3C3C1C5A /* Repositories */,
 			);
@@ -292,6 +314,7 @@
 		4C181C57DAAF379BAAD0CFB8 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				5828F82529260E120074FE82 /* AuthenticationRepositoryProtocol.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -356,6 +379,57 @@
 				5827FA1C2924CF4600CF2327 /* PrimaryButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		5828F82729260E5B0074FE82 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5828F82829260E770074FE82 /* APIToken.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5828F82C29260EFF0074FE82 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				5828F82D29260F0B0074FE82 /* LoginUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		5828F82F29260F550074FE82 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				5828F83029260F680074FE82 /* Resolver+Data.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
+		5828F83229260FD10074FE82 /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				5828F838292610540074FE82 /* KeyChain */,
+				5828F835292610070074FE82 /* UserDefaults */,
+			);
+			path = Storages;
+			sourceTree = "<group>";
+		};
+		5828F835292610070074FE82 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				5828F83329260FDF0074FE82 /* UserDefaultsManager.swift */,
+				5828F8362926101C0074FE82 /* UserDefaultsKey.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		5828F838292610540074FE82 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				5828F8392926105F0074FE82 /* KeyChain.swift */,
+				5828F83B292610650074FE82 /* KeyChainKey.swift */,
+			);
+			path = KeyChain;
 			sourceTree = "<group>";
 		};
 		586ED15D2914EC6700181E14 /* SplashView */ = {
@@ -482,6 +556,7 @@
 		7876BF93DE7D588E05E3947A /* NetworkAPI */ = {
 			isa = PBXGroup;
 			children = (
+				5828F82729260E5B0074FE82 /* Models */,
 				58C6C5932921F7DC0083AF17 /* Core */,
 				58C6C5912921F79E0083AF17 /* NetworkAPI.swift */,
 			);
@@ -494,6 +569,7 @@
 				A942348CBB0976E6205E76DF /* Entities */,
 				4C181C57DAAF379BAAD0CFB8 /* Interfaces */,
 				58C6C5A929222B410083AF17 /* Parameters */,
+				5828F82C29260EFF0074FE82 /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -547,6 +623,7 @@
 		A942348CBB0976E6205E76DF /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				5828F82A29260E800074FE82 /* Token.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -629,6 +706,7 @@
 		C34126AAC73B2CDA3C3C1C5A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				5828F83D292610970074FE82 /* AuthenticationRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1170,8 +1248,11 @@
 			files = (
 				586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */,
 				58C6C5AB29222B530083AF17 /* LoginParameter.swift in Sources */,
+				5828F83429260FDF0074FE82 /* UserDefaultsManager.swift in Sources */,
 				8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */,
+				5828F83C292610650074FE82 /* KeyChainKey.swift in Sources */,
 				9034CDC8640BB10EC23F3D2C /* Constants.swift in Sources */,
+				5828F82929260E770074FE82 /* APIToken.swift in Sources */,
 				5827FA102924C7E200CF2327 /* PlaceholderModifier.swift in Sources */,
 				58C6C5922921F79E0083AF17 /* NetworkAPI.swift in Sources */,
 				5827FA122924C83400CF2327 /* Font+Neuzei.swift in Sources */,
@@ -1184,16 +1265,23 @@
 				58B570C3292B2052007831B8 /* ColorResource+Color.swift in Sources */,
 				5827FA1D2924CF4600CF2327 /* PrimaryButton.swift in Sources */,
 				58B570C1292B1E78007831B8 /* Constants+Gradient.swift in Sources */,
+				5828F82E29260F0B0074FE82 /* LoginUseCase.swift in Sources */,
 				586ED15F2914EC6700181E14 /* SplashView.swift in Sources */,
 				58C6C5972921F88E0083AF17 /* NetworkAPIProtocol.swift in Sources */,
 				58233885291C95C300412E50 /* AppRouter.swift in Sources */,
+				5828F82629260E120074FE82 /* AuthenticationRepositoryProtocol.swift in Sources */,
 				D159394D010391AC5356ACC1 /* UIView+Subviews.swift in Sources */,
+				5828F83E292610970074FE82 /* AuthenticationRepository.swift in Sources */,
+				5828F8372926101C0074FE82 /* UserDefaultsKey.swift in Sources */,
 				58C6C5952921F7FA0083AF17 /* NetworkAPIError.swift in Sources */,
 				58C6C5A829222B210083AF17 /* Parameterable.swift in Sources */,
+				5828F83A2926105F0074FE82 /* KeyChain.swift in Sources */,
 				58C6C5A529221D630083AF17 /* Environment.swift in Sources */,
 				58BE09432925EA6700662F6C /* String+URL.swift in Sources */,
 				58BE093F2925E1C600662F6C /* ErrorModifier.swift in Sources */,
+				5828F82B29260E800074FE82 /* Token.swift in Sources */,
 				5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */,
+				5828F83129260F680074FE82 /* Resolver+Data.swift in Sources */,
 				58C6C5A329221CC90083AF17 /* RequestConfiguration.swift in Sources */,
 				A0562C2F673B4C4DCABFBDB8 /* R.generated.swift in Sources */,
 				FC1CE3FCD6AE97534C3BC5ED /* Typealiases.swift in Sources */,
