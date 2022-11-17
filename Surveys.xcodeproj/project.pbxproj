@@ -36,6 +36,11 @@
 		5828F84F292620520074FE82 /* StoreTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F84E292620520074FE82 /* StoreTokenUseCase.swift */; };
 		5828F851292621150074FE82 /* Resolver+ResolverRegistering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F850292621150074FE82 /* Resolver+ResolverRegistering.swift */; };
 		5828F8532926213A0074FE82 /* Resolver+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F8522926213A0074FE82 /* Resolver+Domain.swift */; };
+		5828F85729262F600074FE82 /* Resolver+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85529262F4A0074FE82 /* Resolver+Data.swift */; };
+		5828F859292630B40074FE82 /* Resolver+aResolver+MockRegistering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F858292630B40074FE82 /* Resolver+aResolver+MockRegistering.swift */; };
+		5828F85B292631840074FE82 /* Resolver+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85A292631840074FE82 /* Resolver+Domain.swift */; };
+		5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */; };
+		5828F86C292637D60074FE82 /* APIToken+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F86B292637D60074FE82 /* APIToken+Dummy.swift */; };
 		5853EDBC291E50D700282908 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5853EDBB291E50D700282908 /* Route.swift */; };
 		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
 		586ED15F2914EC6700181E14 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15E2914EC6700181E14 /* SplashView.swift */; };
@@ -151,6 +156,11 @@
 		5828F84E292620520074FE82 /* StoreTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTokenUseCase.swift; sourceTree = "<group>"; };
 		5828F850292621150074FE82 /* Resolver+ResolverRegistering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+ResolverRegistering.swift"; sourceTree = "<group>"; };
 		5828F8522926213A0074FE82 /* Resolver+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Domain.swift"; sourceTree = "<group>"; };
+		5828F85529262F4A0074FE82 /* Resolver+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Data.swift"; sourceTree = "<group>"; };
+		5828F858292630B40074FE82 /* Resolver+aResolver+MockRegistering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+aResolver+MockRegistering.swift"; sourceTree = "<group>"; };
+		5828F85A292631840074FE82 /* Resolver+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Domain.swift"; sourceTree = "<group>"; };
+		5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainProtocolMock.swift; sourceTree = "<group>"; };
+		5828F86B292637D60074FE82 /* APIToken+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIToken+Dummy.swift"; sourceTree = "<group>"; };
 		5853EDBB291E50D700282908 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		586ED15B2914EC3600181E14 /* SurveysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveysApp.swift; sourceTree = "<group>"; };
 		586ED15E2914EC6700181E14 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -462,6 +472,70 @@
 			path = Combine;
 			sourceTree = "<group>";
 		};
+		5828F85429262E540074FE82 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				5828F85529262F4A0074FE82 /* Resolver+Data.swift */,
+				5828F858292630B40074FE82 /* Resolver+aResolver+MockRegistering.swift */,
+				5828F85A292631840074FE82 /* Resolver+Domain.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
+		5828F85C292634A10074FE82 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5828F85F292636E30074FE82 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5828F863292636FD0074FE82 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5828F860292636E80074FE82 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5828F864292637080074FE82 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5828F863292636FD0074FE82 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		5828F864292637080074FE82 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5828F869292637CA0074FE82 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5828F86A292637CD0074FE82 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5828F86A292637CD0074FE82 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5828F86B292637D60074FE82 /* APIToken+Dummy.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		586ED15D2914EC6700181E14 /* SplashView */ = {
 			isa = PBXGroup;
 			children = (
@@ -714,7 +788,9 @@
 		B7316C0B6958AC6DFBA92BF9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5828F85C292634A10074FE82 /* Data */,
 				D8044C47CCCC63AB872F389C /* Dummy */,
+				5828F85429262E540074FE82 /* Injection */,
 				CCAC608C76EF118CA7C29FE9 /* Mocks */,
 				CD4379DE9A26E79155B07EE5 /* Specs */,
 				B4F4C602B1CFC31415155C8D /* Utilities */,
@@ -769,6 +845,8 @@
 		CD4379DE9A26E79155B07EE5 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				5828F860292636E80074FE82 /* Data */,
+				5828F85F292636E30074FE82 /* Domain */,
 				891B074B14503EDD71A3025F /* Supports */,
 			);
 			path = Specs;
@@ -795,6 +873,7 @@
 		D8044C47CCCC63AB872F389C /* Dummy */ = {
 			isa = PBXGroup;
 			children = (
+				5828F869292637CA0074FE82 /* Data */,
 			);
 			path = Dummy;
 			sourceTree = "<group>";
@@ -1268,9 +1347,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5828F86C292637D60074FE82 /* APIToken+Dummy.swift in Sources */,
 				0C205FD636A87848DD90D15E /* AutoMockable.generated.swift in Sources */,
+				5828F85729262F600074FE82 /* Resolver+Data.swift in Sources */,
 				588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */,
+				5828F859292630B40074FE82 /* Resolver+aResolver+MockRegistering.swift in Sources */,
 				CC151CF2A41DE206FA2EDCF0 /* OptionalUnwrapSpec.swift in Sources */,
+				5828F85B292631840074FE82 /* Resolver+Domain.swift in Sources */,
+				5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
