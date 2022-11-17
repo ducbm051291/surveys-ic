@@ -13,3 +13,4 @@ typealias CancelBag = Set<AnyCancellable>
 typealias HTTPHeaders = [String: String]
 typealias Localize = R.string.localizable
 typealias Observable<T> = AnyPublisher<T, Error>
+typealias Driver<T> = AnyPublisher<T, Never>
