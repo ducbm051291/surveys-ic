@@ -34,7 +34,7 @@ final class StoreUserTokenUseCaseSpec: QuickSpec {
                 let tokenToTest = APIToken.dummy
 
                 sessionRepository.saveTokenReturnValue = Just(true).asObservable()
-                useCase.store(token: tokenToTest)
+                useCase.execute(token: tokenToTest)
                     .asObservable()
                     .sink { _ in
                     } receiveValue: { success in
