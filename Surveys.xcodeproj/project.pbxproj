@@ -41,6 +41,7 @@
 		5828F85B292631840074FE82 /* Resolver+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85A292631840074FE82 /* Resolver+Domain.swift */; };
 		5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */; };
 		5828F86C292637D60074FE82 /* APIToken+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F86B292637D60074FE82 /* APIToken+Dummy.swift */; };
+		5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */; };
 		5853EDBC291E50D700282908 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5853EDBB291E50D700282908 /* Route.swift */; };
 		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
 		586ED15F2914EC6700181E14 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15E2914EC6700181E14 /* SplashView.swift */; };
@@ -161,6 +162,7 @@
 		5828F85A292631840074FE82 /* Resolver+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Domain.swift"; sourceTree = "<group>"; };
 		5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainProtocolMock.swift; sourceTree = "<group>"; };
 		5828F86B292637D60074FE82 /* APIToken+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIToken+Dummy.swift"; sourceTree = "<group>"; };
+		5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositorySpec.swift; sourceTree = "<group>"; };
 		5853EDBB291E50D700282908 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		586ED15B2914EC3600181E14 /* SurveysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveysApp.swift; sourceTree = "<group>"; };
 		586ED15E2914EC6700181E14 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 		5828F864292637080074FE82 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1355,6 +1358,7 @@
 				CC151CF2A41DE206FA2EDCF0 /* OptionalUnwrapSpec.swift in Sources */,
 				5828F85B292631840074FE82 /* Resolver+Domain.swift in Sources */,
 				5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */,
+				5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
