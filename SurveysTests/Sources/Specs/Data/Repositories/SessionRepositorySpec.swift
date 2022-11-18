@@ -20,10 +20,9 @@ final class SessionRepositorySpec: QuickSpec {
     override func spec() {
 
         var sessionRepository: SessionRepositoryProtocol!
-        var cancelBag: CancelBag!
+        var cancelBag = CancelBag()
 
         Resolver.registerAllMockServices()
-        cancelBag = CancelBag()
         sessionRepository = SessionRepository()
 
         describe("A SessionRepository") {
