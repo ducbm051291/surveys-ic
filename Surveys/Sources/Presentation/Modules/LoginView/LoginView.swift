@@ -30,11 +30,11 @@ struct LoginView: View {
 
     var body: some View {
         ZStack {
-            setupBackground()
+            setUpBackground()
             VStack(spacing: 0.0) {
                 setUpLogo()
                     .frame(maxHeight: .infinity)
-                setupComponents()
+                setUpComponents()
                     .frame(maxHeight: .infinity)
                 Spacer()
                     .frame(maxHeight: .infinity)
@@ -42,7 +42,7 @@ struct LoginView: View {
         }
     }
 
-    private func setupBackground() -> some View {
+    private func setUpBackground() -> some View {
         Asset.splashScreenBackgroundImage.image
             .resizable()
             .aspectRatio(contentMode: .fill)
@@ -66,7 +66,7 @@ struct LoginView: View {
         }
     }
 
-    private func setupComponents() -> some View {
+    private func setUpComponents() -> some View {
         VStack(alignment: .leading, spacing: 20.0) {
             setUpEmail()
             setUpPassword()
