@@ -27,6 +27,58 @@ final class SessionRepositorySpec: QuickSpec {
 
         describe("A SessionRepository") {
 
+            describe("its getToken() call") {
+
+                let expectation = XCTestExpectation(description: "Save token successfully")
+                let token = APIToken.dummy
+
+                context("when keychain did saved a token") {
+                    try? self.keychain.set(KeychainToken(token), for: .userToken)
+
+                    sessionRepository.getToken()
+                        .asObservable()
+                        .sink { _ in
+                        } receiveValue: { savedToken in
+                            it("get correct access token") {
+                                expect(savedToken?.accessToken) == token.accessToken
+                            }
+
+                            it("get correct refresh token") {
+                                expect(savedToken?.refreshToken) == token.refreshToken
+                            }
+
+                            it("get correct token type") {
+                                expect(savedToken?.tokenType) == token.tokenType
+                            }
+
+                            it("get correct expires in") {
+                                expect(savedToken?.expiresIn) == token.expiresIn
+                            }
+                            expectation.fulfill()
+                        }
+                        .store(in: &cancelBag)
+
+                    wait(for: [expectation], timeout: 1)
+                }
+
+                context("when keychain didn't save any token") {
+                    try? self.keychain.set(KeychainToken(token), for: .userToken)
+
+                    sessionRepository.getToken()
+                        .asObservable()
+                        .sink { _ in
+                        } receiveValue: { savedToken in
+                            it("token is nil") {
+                                expect(savedToken) == nil
+                            }
+                            expectation.fulfill()
+                        }
+                        .store(in: &cancelBag)
+
+                    wait(for: [expectation], timeout: 1)
+                }
+            }
+
             describe("its saveToken() call") {
 
                 let expectation = XCTestExpectation(description: "Save token successfully")
