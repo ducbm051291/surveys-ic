@@ -41,8 +41,8 @@ final class LoginUseCaseSpec: QuickSpec {
                     useCase.execute(email: email, password: password)
                         .asObservable()
                         .compactMap { $0 as? APIToken }
-                        .sink(receiveCompletion: { _ in
-                        }, receiveValue: { token in
+                        .sink { _ in
+                        } receiveValue: { token in
                             it("triggers userRepository to login") {
                                 expect(self.repository.loginEmailPasswordCalled) == true
                             }
@@ -60,7 +60,7 @@ final class LoginUseCaseSpec: QuickSpec {
                                 expect(token) == tokenToTest
                             }
                             expectation.fulfill()
-                        })
+                        }
                         .store(in: &cancelBag)
 
                     wait(for: [expectation], timeout: 1)
@@ -78,7 +78,7 @@ final class LoginUseCaseSpec: QuickSpec {
                     useCase.execute(email: email, password: password)
                         .asObservable()
                         .compactMap { $0 as? APIToken }
-                        .sink(receiveCompletion: { completion in
+                        .sink { completion in
                             it("triggers userRepository to login") {
                                 expect(self.repository.loginEmailPasswordCalled) == true
                             }
@@ -100,8 +100,8 @@ final class LoginUseCaseSpec: QuickSpec {
                                     break
                                 }
                             }
-                        }, receiveValue: { _ in
-                        })
+                        } receiveValue: { _ in
+                        }
                         .store(in: &cancelBag)
 
                     wait(for: [expectation], timeout: 1)

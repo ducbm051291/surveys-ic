@@ -52,8 +52,8 @@ final class AuthenticationRepositorySpec: QuickSpec {
                     networkAPI.setPerformRequestForReturnValue(Just(tokenToTest).asObservable())
                     repository.login(email: email, password: password)
                         .compactMap { $0 as? APIToken }
-                        .sink(receiveCompletion: { _ in
-                        }, receiveValue: { token in
+                        .sink { _ in
+                        } receiveValue: { token in
                             it("triggers networkAPI to performRequest") {
                                 expect(networkAPI.performRequestCalled) == true
                             }
@@ -69,7 +69,7 @@ final class AuthenticationRepositorySpec: QuickSpec {
                                 expect(token) == tokenToTest
                             }
                             expectation.fulfill()
-                        })
+                        }
                         .store(in: &cancelBag)
 
                     wait(for: [expectation], timeout: 1)
@@ -87,7 +87,7 @@ final class AuthenticationRepositorySpec: QuickSpec {
                     )
                     repository.login(email: email, password: password)
                         .compactMap { $0 as? APIToken }
-                        .sink(receiveCompletion: { completion in
+                        .sink { completion in
                             it("triggers networkAPI to performRequest") {
                                 expect(networkAPI.performRequestCalled) == true
                             }
@@ -107,8 +107,8 @@ final class AuthenticationRepositorySpec: QuickSpec {
                                     break
                                 }
                             }
-                        }, receiveValue: { _ in
-                        })
+                        } receiveValue: { _ in
+                        }
                         .store(in: &cancelBag)
 
                     wait(for: [expectation], timeout: 1)
