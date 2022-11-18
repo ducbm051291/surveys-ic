@@ -35,7 +35,9 @@ PODS:
   - GoogleUtilities/UserDefaults (7.8.0):
     - GoogleUtilities/Logger
   - IQKeyboardManagerSwift (6.5.10)
+  - JSONAPIMapper (1.1.1)
   - KeychainAccess (4.2.2)
+  - Keys (1.0.1)
   - Kingfisher (7.4.1)
   - Moya/Combine (15.0.0):
     - Moya/Core
@@ -65,7 +67,9 @@ PODS:
 DEPENDENCIES:
   - Firebase/Crashlytics
   - IQKeyboardManagerSwift
+  - JSONAPIMapper
   - KeychainAccess
+  - Keys (from `Pods/CocoaPodsKeys`)
   - Kingfisher
   - Moya/Combine (~> 15.0)
   - Nimble
@@ -90,6 +94,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - IQKeyboardManagerSwift
+    - JSONAPIMapper
     - KeychainAccess
     - Kingfisher
     - Moya
@@ -107,6 +112,8 @@ SPEC REPOS:
     - Wormholy
 
 EXTERNAL SOURCES:
+  Keys:
+    :path: Pods/CocoaPodsKeys
   NimbleExtension:
     :branch: master
     :git: https://github.com/nimblehq/NimbleExtension
@@ -126,7 +133,9 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
   GoogleUtilities: 1d20a6ad97ef46f67bbdec158ce00563a671ebb7
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  JSONAPIMapper: 0d832d3b7d74281b150622a004f84171ded28a04
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
@@ -143,6 +152,6 @@ SPEC CHECKSUMS:
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: d711bf4184271f48163759b47e88270767e534b1
+PODFILE CHECKSUM: 076fe17f095ce8a1c7af15de3b5dca6a6b55f2df
 
 COCOAPODS: 1.11.3

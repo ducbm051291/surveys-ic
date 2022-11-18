@@ -20,6 +20,7 @@ target 'Surveys' do
   # Tools
   pod 'Firebase/Crashlytics'
   pod 'IQKeyboardManagerSwift'
+  pod 'JSONAPIMapper'
   pod 'NimbleExtension', :git => 'https://github.com/nimblehq/NimbleExtension', :branch => 'master'
   pod 'R.swift'
   pod 'Resolver'
@@ -38,6 +39,14 @@ target 'Surveys' do
     testing_pods
   end
 end
+
+plugin 'cocoapods-keys', {
+  :project => "Surveys",
+  :keys => [
+    "ClientId",
+    "ClientSecret"
+  ]
+}
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
