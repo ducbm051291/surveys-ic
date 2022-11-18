@@ -1,6 +1,6 @@
 //
 //  AuthenticationRepositorySpec.swift
-//  Surveys
+//  SurveysTests
 //
 //  Created by David Bui on 18/11/2022.
 //  Copyright © 2022 Nimble. All rights reserved.
@@ -36,6 +36,14 @@ final class AuthenticationRepositorySpec: QuickSpec {
                 let email = "email@email.com"
                 let password = "password"
                 let tokenToTest = APIToken.dummy
+                let errorToTest = TestError.mock
+                let parameter = LoginParameter(
+                    grantType: Constants.GrantType.password.rawValue,
+                    email: email,
+                    password: password,
+                    clientId: Constants.API.clientId,
+                    clientSecret: Constants.API.clientSecret
+                )
 
                 context("when networkAPI.performRequest emits success") {
 
@@ -50,6 +58,13 @@ final class AuthenticationRepositorySpec: QuickSpec {
                                 expect(networkAPI.performRequestCalled) == true
                             }
 
+                            it("triggers networkAPI to performRequest with correct configuration") {
+                                let configuration = networkAPI
+                                    .performRequestForReceivedArguments?
+                                    .configuration
+                                expect(configuration) == RequestConfiguration.login(parameter)
+                            }
+
                             it("emits corresponding value") {
                                 expect(token) == tokenToTest
                             }
@@ -62,38 +77,41 @@ final class AuthenticationRepositorySpec: QuickSpec {
 
                 context("when networkAPI.performRequest emits failure") {
 
-//                    var output: TestableObserver<Error>!
-//
-//                    beforeEach {
-//                        output = scheduler.createObserver(Error.self)
-//                        networkAPI
-//                            .setPerformRequestForReturnValue(
-//                                Single<(APIToken, LoginMeta)>.error(TestError.mock),
-//                                for: LoginResponse.self
-//                            )
-//                        repository.login(email: email, password: password)
-//                            .asObservable()
-//                            .materialize()
-//                            .compactMap { $0.error }
-//                            .bind(to: output)
-//                            .disposed(by: disposeBag)
-//                    }
-//
-//                    it("triggers networkAPI to performRequest") {
-//                        expect(networkAPI.performRequestForCalled).to(beTrue())
-//                    }
-//
-//                    it("triggers networkAPI to performRequest with correct configuration") {
-//                        let configuration = networkAPI
-//                            .performRequestForReceivedArguments?
-//                            .configuration as? AuthRequestConfiguration
-//                        expect(configuration).to(equal(.login("email@email.com", "password")))
-//                    }
-//
-//                    it("emits corresponding error") {
-//                        let error = output.events.first?.value.element as? TestError
-//                        expect(error) == TestError.mock
-//                    }
+                    let expectation = XCTestExpectation(description: "Emit error")
+
+                    networkAPI.setPerformRequestForReturnValue(
+                        Fail(
+                            outputType: APIToken.self,
+                            failure: errorToTest
+                        ).asObservable()
+                    )
+                    repository.login(email: email, password: password)
+                        .compactMap { $0 as? APIToken }
+                        .sink(receiveCompletion: { completion in
+                            it("triggers networkAPI to performRequest") {
+                                expect(networkAPI.performRequestCalled) == true
+                            }
+
+                            it("triggers networkAPI to performRequest with correct configuration") {
+                                let configuration = networkAPI
+                                    .performRequestForReceivedArguments?
+                                    .configuration
+                                expect(configuration) == RequestConfiguration.login(parameter)
+                            }
+
+                            it("emits error") {
+                                switch completion {
+                                case .failure:
+                                    expectation.fulfill()
+                                default:
+                                    break
+                                }
+                            }
+                        }, receiveValue: { _ in
+                        })
+                        .store(in: &cancelBag)
+
+                    wait(for: [expectation], timeout: 1)
                 }
             }
         }

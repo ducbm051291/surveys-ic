@@ -38,10 +38,13 @@
 		5828F8532926213A0074FE82 /* Resolver+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F8522926213A0074FE82 /* Resolver+Domain.swift */; };
 		5828F85729262F600074FE82 /* Resolver+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85529262F4A0074FE82 /* Resolver+Data.swift */; };
 		5828F859292630B40074FE82 /* Resolver+MockRegistering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F858292630B40074FE82 /* Resolver+MockRegistering.swift */; };
+		5828F85B292631840074FE82 /* Resolver+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85A292631840074FE82 /* Resolver+Domain.swift */; };
 		5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */; };
 		5828F86C292637D60074FE82 /* APIToken+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F86B292637D60074FE82 /* APIToken+Dummy.swift */; };
 		5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */; };
+		5835AA002927270C00686B8C /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A9FF2927270C00686B8C /* TestError.swift */; };
 		5853EDBC291E50D700282908 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5853EDBB291E50D700282908 /* Route.swift */; };
+		5861161B292732B300EF52A4 /* LoginUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586116192927329400EF52A4 /* LoginUseCaseSpec.swift */; };
 		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
 		586ED15F2914EC6700181E14 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15E2914EC6700181E14 /* SplashView.swift */; };
 		586F204129270ED300E72C77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586F204029270ED300E72C77 /* LaunchScreen.storyboard */; };
@@ -158,10 +161,13 @@
 		5828F8522926213A0074FE82 /* Resolver+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Domain.swift"; sourceTree = "<group>"; };
 		5828F85529262F4A0074FE82 /* Resolver+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Data.swift"; sourceTree = "<group>"; };
 		5828F858292630B40074FE82 /* Resolver+MockRegistering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+MockRegistering.swift"; sourceTree = "<group>"; };
+		5828F85A292631840074FE82 /* Resolver+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Domain.swift"; sourceTree = "<group>"; };
 		5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainProtocolMock.swift; sourceTree = "<group>"; };
 		5828F86B292637D60074FE82 /* APIToken+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIToken+Dummy.swift"; sourceTree = "<group>"; };
 		5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositorySpec.swift; sourceTree = "<group>"; };
+		5835A9FF2927270C00686B8C /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		5853EDBB291E50D700282908 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		586116192927329400EF52A4 /* LoginUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseSpec.swift; sourceTree = "<group>"; };
 		586ED15B2914EC3600181E14 /* SurveysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveysApp.swift; sourceTree = "<group>"; };
 		586ED15E2914EC6700181E14 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		586ED1622914ED5200181E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -477,6 +483,7 @@
 			children = (
 				5828F85529262F4A0074FE82 /* Resolver+Data.swift */,
 				5828F858292630B40074FE82 /* Resolver+MockRegistering.swift */,
+				5828F85A292631840074FE82 /* Resolver+Domain.swift */,
 			);
 			path = Injection;
 			sourceTree = "<group>";
@@ -508,6 +515,7 @@
 		5828F863292636FD0074FE82 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				586116192927329400EF52A4 /* LoginUseCaseSpec.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -771,6 +779,7 @@
 		B4F4C602B1CFC31415155C8D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5835A9FF2927270C00686B8C /* TestError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1121,7 +1130,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -z \"$CI\" ]; then\n    \"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\" --lint --lenient\nfi";
+			shellScript = "if [ -z \"$CI\" ]; then\n    \"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\" --lint --lenient\nfi\n";
 		};
 		4C52BC0DF2C858D33EE7D2CE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1277,7 +1286,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -z \"$CI\" ]; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nfi";
+			shellScript = "if [ -z \"$CI\" ]; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nfi\n";
 		};
 		B29278FC40B5C81FD227FDAD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1330,7 +1339,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -z \"$CI\" ]; then\n    \"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\nfi";
+			shellScript = "if [ -z \"$CI\" ]; then\n    \"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1347,12 +1356,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5861161B292732B300EF52A4 /* LoginUseCaseSpec.swift in Sources */,
 				5828F86C292637D60074FE82 /* APIToken+Dummy.swift in Sources */,
 				0C205FD636A87848DD90D15E /* AutoMockable.generated.swift in Sources */,
 				5828F85729262F600074FE82 /* Resolver+Data.swift in Sources */,
 				588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */,
 				5828F859292630B40074FE82 /* Resolver+MockRegistering.swift in Sources */,
 				CC151CF2A41DE206FA2EDCF0 /* OptionalUnwrapSpec.swift in Sources */,
+				5835AA002927270C00686B8C /* TestError.swift in Sources */,
+				5828F85B292631840074FE82 /* Resolver+Domain.swift in Sources */,
 				5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */,
 				5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */,
 			);
