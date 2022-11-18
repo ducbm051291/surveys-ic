@@ -23,9 +23,9 @@ extension Font {
         var name: String {
             switch self {
             case .regular:
-                return "NeuzeitSLTStd-Book"
+                return "NeuzeitBook"
             case .bold:
-                return "NeuzeitSLTStd-BookHeavy"
+                return "NeuzeitHeavy"
             }
         }
     }
@@ -35,10 +35,10 @@ extension Font {
         /// 10px
         case xxSmall = 10.0
 
-        /// 14px
+        /// 15px
         case small = 15.0
 
-        /// 16px
+        /// 17px
         case regular = 17.0
     }
 
@@ -50,7 +50,7 @@ extension Font {
         neuzei(style: .bold, size: size.rawValue)
     }
 
-    private static func neuzei(style: NeuzeiStyle = .regular, size: CGFloat = 17.0) -> Font {
+    private static func neuzei(style: NeuzeiStyle, size: CGFloat) -> Font {
         Font.custom(style.name, size: size)
     }
 }
