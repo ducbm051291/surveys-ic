@@ -21,8 +21,8 @@ final class LoginUseCaseSpec: QuickSpec {
 
         describe("A LoginUseCase") {
 
-            var useCase: LoginUseCase = .init()
-            var cancelBag: CancelBag = .init()
+            let useCase = LoginUseCase()
+            var cancelBag = CancelBag()
 
             Resolver.registerAllMockServices()
 
