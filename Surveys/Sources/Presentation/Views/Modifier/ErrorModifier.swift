@@ -13,8 +13,6 @@ struct ErrorModifier: ViewModifier {
     func body(content: Content) -> some View {
         ZStack(alignment: .leading) {
             content
-                .disableAutocorrection(true)
-                .textInputAutocapitalization(.never)
                 .font(.regular(ofSize: .xxSmall))
                 .foregroundColor(.red)
                 .padding()
