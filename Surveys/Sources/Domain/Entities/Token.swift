@@ -14,5 +14,5 @@ protocol Token: Decodable {
     var tokenType: String { get }
     var expiresIn: Int { get }
     var refreshToken: String { get }
-    var createAt: Int { get }
+    var createdAt: Int { get }
 }

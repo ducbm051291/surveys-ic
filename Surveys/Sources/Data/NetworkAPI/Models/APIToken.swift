@@ -14,5 +14,5 @@ struct APIToken: Token, Decodable, Equatable {
     let tokenType: String
     let expiresIn: Int
     let refreshToken: String
-    let createAt: Int
+    let createdAt: Int
 }
