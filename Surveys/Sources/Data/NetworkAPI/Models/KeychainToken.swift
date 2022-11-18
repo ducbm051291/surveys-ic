@@ -14,13 +14,13 @@ struct KeychainToken: Token, Codable {
     let tokenType: String
     let expiresIn: Int
     let refreshToken: String
-    let createAt: Int
+    let createdAt: Int
 
     init(_ token: Token) {
         accessToken = token.accessToken
         tokenType = token.tokenType
         expiresIn = token.expiresIn
         refreshToken = token.refreshToken
-        createAt = token.createAt
+        createdAt = token.createdAt
     }
 }
