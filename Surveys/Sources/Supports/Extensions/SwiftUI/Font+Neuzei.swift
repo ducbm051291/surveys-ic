@@ -23,9 +23,9 @@ extension Font {
         var name: String {
             switch self {
             case .regular:
-                return "NeuzeitBook"
+                return "NeuzeitSLTStd-Book"
             case .bold:
-                return "NeuzeitHeavy"
+                return "NeuzeitSLTStd-BookHeavy"
             }
         }
     }
