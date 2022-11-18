@@ -1,5 +1,5 @@
 //
-//  Resolver+aResolver+MockRegistering.swift
+//  Resolver+MockRegistering.swift
 //  SurveysTests
 //
 //  Created by David Bui on 17/11/2022.

@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-enum RequestConfiguration {
+enum RequestConfiguration: Equatable {
 
     case login(LoginParameter)
 }
