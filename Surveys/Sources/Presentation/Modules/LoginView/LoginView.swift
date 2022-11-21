@@ -34,12 +34,12 @@ struct LoginView: View {
     }
 
     private func setUpBackground() -> some View {
-        Asset.splashScreenBackgroundImage.image
+        Assets.backgroundImage.image
             .resizable()
             .aspectRatio(contentMode: .fill)
             .overlay(
                 ZStack {
-                    Asset.splashScreenBackgroundImage.image
+                    Assets.backgroundImage.image
                         .resizable()
                         .blur(radius: 15.0, opaque: true)
                         .clipped()
@@ -51,7 +51,7 @@ struct LoginView: View {
 
     private func setUpLogo() -> some View {
         VStack {
-            Asset.logoWhiteIcon.image
+            Assets.logoWhiteIcon.image
                 .resizable()
                 .frame(width: 168.0, height: 40.0)
         }

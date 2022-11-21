@@ -18,11 +18,11 @@ struct SplashView: View {
 
     var body: some View {
         ZStack {
-            Asset.splashScreenBackgroundImage.image
+            Assets.backgroundImage.image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
-            Asset.logoWhiteIcon.image
+            Assets.logoWhiteIcon.image
                 .resizable()
                 .frame(width: 200.0, height: 48.0, alignment: .center)
                 .onAppear {
