@@ -19,15 +19,6 @@ struct LoginView: View {
     @State var password = ""
     @State var isLoginEnabled = true
 
-    private let gradient = LinearGradient(
-        gradient: Gradient(stops: [
-            .init(color: .black.opacity(0.2), location: 0.0),
-            .init(color: .black, location: 1.0)
-        ]),
-        startPoint: .top,
-        endPoint: .bottom
-    )
-
     var body: some View {
         ZStack {
             setUpBackground()
@@ -52,7 +43,7 @@ struct LoginView: View {
                         .resizable()
                         .blur(radius: 15.0, opaque: true)
                         .clipped()
-                    gradient
+                    Constants.Gradient.background
                 }
             )
             .edgesIgnoringSafeArea(.all)
