@@ -29,4 +29,3 @@ extension Resolver.Name {
 
     static let defaultNetworkAPI = Resolver.Name("networkAPI")
 }
-

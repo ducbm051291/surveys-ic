@@ -1,4 +1,4 @@
-//
+//  swiftlint:disable:this file_name
 //  KeychainKey.swift
 //  Surveys
 //
