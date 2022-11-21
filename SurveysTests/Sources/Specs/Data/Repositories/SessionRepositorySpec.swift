@@ -29,10 +29,11 @@ final class SessionRepositorySpec: QuickSpec {
 
             describe("its getToken() call") {
 
-                let expectation = XCTestExpectation(description: "Save token successfully")
                 let token = APIToken.dummy
 
                 context("when keychain did saved a token") {
+                    let expectation = XCTestExpectation(description: "Get token successfully")
+
                     try? self.keychain.set(KeychainToken(token), for: .userToken)
 
                     sessionRepository.getToken()
@@ -62,6 +63,8 @@ final class SessionRepositorySpec: QuickSpec {
                 }
 
                 context("when keychain didn't save any token") {
+                    let expectation = XCTestExpectation(description: "Can not get token")
+
                     try? self.keychain.set(KeychainToken(token), for: .userToken)
 
                     sessionRepository.getToken()
@@ -81,10 +84,11 @@ final class SessionRepositorySpec: QuickSpec {
 
             describe("its saveToken() call") {
 
-                let expectation = XCTestExpectation(description: "Save token successfully")
                 let token = APIToken.dummy
 
                 context("when keychain save token successfully") {
+                    let expectation = XCTestExpectation(description: "Save token successfully")
+
                     sessionRepository.saveToken(token)
                         .asObservable()
                         .sink { _ in
@@ -119,8 +123,8 @@ final class SessionRepositorySpec: QuickSpec {
             describe("its hasToken() call") {
 
                 context("when keychain save token successfully") {
+                    let expectation = XCTestExpectation(description: "HasToken emit true value")
 
-                    let expectation = XCTestExpectation(description: "hasToken emit true value")
                     let token = APIToken.dummy
 
                     try? self.keychain.set(KeychainToken(token), for: .userToken)
@@ -140,8 +144,7 @@ final class SessionRepositorySpec: QuickSpec {
                 }
 
                 context("when keychain doesn't save token") {
-
-                    let expectation = XCTestExpectation(description: "hasToken emit false value")
+                    let expectation = XCTestExpectation(description: "HasToken emit false value")
                     try? self.keychain.remove(.userToken)
 
                     sessionRepository.hasToken()
@@ -162,7 +165,6 @@ final class SessionRepositorySpec: QuickSpec {
             describe("its removeToken() call") {
 
                 context("when keychain contains the token") {
-
                     let expectation = XCTestExpectation(description: "Remove token successully")
                     let token = APIToken.dummy
                     var savedToken: APIToken?
