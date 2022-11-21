@@ -12,5 +12,5 @@
 "login.forgotButton.title" = "Forgot?";
 "login.invalidEmail.text" = "Invalid email format";
 "login.invalidPassword.text" = "The password must contain at least eight characters";
-"login.loginButton.title" = "Login";
+"login.loginButton.title" = "Log in";
 "login.passwordTextField.placeholder" = "Password";
