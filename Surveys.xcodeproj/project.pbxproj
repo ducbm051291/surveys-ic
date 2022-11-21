@@ -38,7 +38,6 @@
 		5828F8532926213A0074FE82 /* Resolver+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F8522926213A0074FE82 /* Resolver+Domain.swift */; };
 		5828F85729262F600074FE82 /* Resolver+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85529262F4A0074FE82 /* Resolver+Data.swift */; };
 		5828F859292630B40074FE82 /* Resolver+MockRegistering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F858292630B40074FE82 /* Resolver+MockRegistering.swift */; };
-		5828F85B292631840074FE82 /* Resolver+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85A292631840074FE82 /* Resolver+Domain.swift */; };
 		5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */; };
 		5828F86C292637D60074FE82 /* APIToken+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F86B292637D60074FE82 /* APIToken+Dummy.swift */; };
 		5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */; };
@@ -163,7 +162,6 @@
 		5828F8522926213A0074FE82 /* Resolver+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Domain.swift"; sourceTree = "<group>"; };
 		5828F85529262F4A0074FE82 /* Resolver+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Data.swift"; sourceTree = "<group>"; };
 		5828F858292630B40074FE82 /* Resolver+MockRegistering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+MockRegistering.swift"; sourceTree = "<group>"; };
-		5828F85A292631840074FE82 /* Resolver+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Domain.swift"; sourceTree = "<group>"; };
 		5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainProtocolMock.swift; sourceTree = "<group>"; };
 		5828F86B292637D60074FE82 /* APIToken+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIToken+Dummy.swift"; sourceTree = "<group>"; };
 		5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositorySpec.swift; sourceTree = "<group>"; };
@@ -487,7 +485,6 @@
 			children = (
 				5828F85529262F4A0074FE82 /* Resolver+Data.swift */,
 				5828F858292630B40074FE82 /* Resolver+MockRegistering.swift */,
-				5828F85A292631840074FE82 /* Resolver+Domain.swift */,
 			);
 			path = Injection;
 			sourceTree = "<group>";
@@ -1371,7 +1368,6 @@
 				5861162029273AB200EF52A4 /* StoreTokenUseCaseSpec.swift in Sources */,
 				CC151CF2A41DE206FA2EDCF0 /* OptionalUnwrapSpec.swift in Sources */,
 				5835AA002927270C00686B8C /* TestError.swift in Sources */,
-				5828F85B292631840074FE82 /* Resolver+Domain.swift in Sources */,
 				5861161E292736D800EF52A4 /* SessionRepositorySpec.swift in Sources */,
 				5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */,
 				5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */,
