@@ -7,7 +7,8 @@ import Combine
 import UIKit
 
 typealias AlertCompletion = (UIAlertAction) -> Void
-typealias Asset = R.image
+typealias Assets = R.image
+typealias Colors = R.color
 typealias CancelBag = Set<AnyCancellable>
 typealias HTTPHeaders = [String: String]
 typealias Localize = R.string.localizable
