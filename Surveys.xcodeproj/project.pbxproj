@@ -25,8 +25,8 @@
 		5828F83129260F680074FE82 /* Resolver+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F83029260F680074FE82 /* Resolver+Data.swift */; };
 		5828F83429260FDF0074FE82 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F83329260FDF0074FE82 /* UserDefaultsManager.swift */; };
 		5828F8372926101C0074FE82 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F8362926101C0074FE82 /* UserDefaultsKey.swift */; };
-		5828F83A2926105F0074FE82 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F8392926105F0074FE82 /* KeyChain.swift */; };
-		5828F83C292610650074FE82 /* KeyChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F83B292610650074FE82 /* KeyChainKey.swift */; };
+		5828F83A2926105F0074FE82 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F8392926105F0074FE82 /* Keychain.swift */; };
+		5828F83C292610650074FE82 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F83B292610650074FE82 /* KeychainKey.swift */; };
 		5828F83E292610970074FE82 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F83D292610970074FE82 /* AuthenticationRepository.swift */; };
 		5853EDBC291E50D700282908 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5853EDBB291E50D700282908 /* Route.swift */; };
 		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
@@ -132,8 +132,8 @@
 		5828F83029260F680074FE82 /* Resolver+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Data.swift"; sourceTree = "<group>"; };
 		5828F83329260FDF0074FE82 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		5828F8362926101C0074FE82 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
-		5828F8392926105F0074FE82 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
-		5828F83B292610650074FE82 /* KeyChainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKey.swift; sourceTree = "<group>"; };
+		5828F8392926105F0074FE82 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		5828F83B292610650074FE82 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
 		5828F83D292610970074FE82 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		5853EDBB291E50D700282908 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		586ED15B2914EC3600181E14 /* SurveysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveysApp.swift; sourceTree = "<group>"; };
@@ -408,7 +408,7 @@
 		5828F83229260FD10074FE82 /* Storages */ = {
 			isa = PBXGroup;
 			children = (
-				5828F838292610540074FE82 /* KeyChain */,
+				5828F838292610540074FE82 /* Keychain */,
 				5828F835292610070074FE82 /* UserDefaults */,
 			);
 			path = Storages;
@@ -423,13 +423,13 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
-		5828F838292610540074FE82 /* KeyChain */ = {
+		5828F838292610540074FE82 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
-				5828F8392926105F0074FE82 /* KeyChain.swift */,
-				5828F83B292610650074FE82 /* KeyChainKey.swift */,
+				5828F8392926105F0074FE82 /* Keychain.swift */,
+				5828F83B292610650074FE82 /* KeychainKey.swift */,
 			);
-			path = KeyChain;
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 		586ED15D2914EC6700181E14 /* SplashView */ = {
@@ -1250,7 +1250,7 @@
 				58C6C5AB29222B530083AF17 /* LoginParameter.swift in Sources */,
 				5828F83429260FDF0074FE82 /* UserDefaultsManager.swift in Sources */,
 				8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */,
-				5828F83C292610650074FE82 /* KeyChainKey.swift in Sources */,
+				5828F83C292610650074FE82 /* KeychainKey.swift in Sources */,
 				9034CDC8640BB10EC23F3D2C /* Constants.swift in Sources */,
 				5828F82929260E770074FE82 /* APIToken.swift in Sources */,
 				5827FA102924C7E200CF2327 /* PlaceholderModifier.swift in Sources */,
@@ -1275,7 +1275,7 @@
 				5828F8372926101C0074FE82 /* UserDefaultsKey.swift in Sources */,
 				58C6C5952921F7FA0083AF17 /* NetworkAPIError.swift in Sources */,
 				58C6C5A829222B210083AF17 /* Parameterable.swift in Sources */,
-				5828F83A2926105F0074FE82 /* KeyChain.swift in Sources */,
+				5828F83A2926105F0074FE82 /* Keychain.swift in Sources */,
 				58C6C5A529221D630083AF17 /* Environment.swift in Sources */,
 				58BE09432925EA6700662F6C /* String+URL.swift in Sources */,
 				58BE093F2925E1C600662F6C /* ErrorModifier.swift in Sources */,
