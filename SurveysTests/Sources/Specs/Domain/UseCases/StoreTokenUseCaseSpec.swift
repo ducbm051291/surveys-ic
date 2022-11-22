@@ -13,7 +13,7 @@ import Resolver
 
 @testable import Surveys
 
-final class StoreUserTokenUseCaseSpec: QuickSpec {
+final class StoreTokenUseCaseSpec: QuickSpec {
 
     @LazyInjected private var sessionRepository: SessionRepositoryProtocolMock
 
@@ -22,30 +22,16 @@ final class StoreUserTokenUseCaseSpec: QuickSpec {
         describe("A StoreUserTokenUseCase") {
 
             let useCase = StoreTokenUseCase()
-            var cancelBag = CancelBag()
-
-            Resolver.registerAllMockServices()
-
-            sessionRepository.saveTokenCallsCount = 0
 
             describe("its execute() call") {
-
-                let expectation = XCTestExpectation(description: "Save token successfully")
                 let tokenToTest = APIToken.dummy
 
                 sessionRepository.saveTokenReturnValue = Just(true).asObservable()
-                useCase.execute(token: tokenToTest)
-                    .asObservable()
-                    .sink { _ in
-                    } receiveValue: { success in
-                        it("emits correct value") {
-                            expect(success) == true
-                        }
-                        expectation.fulfill()
-                    }
-                    .store(in: &cancelBag)
 
-                wait(for: [expectation], timeout: 1)
+                it("emits correct value") {
+                    let result = try self.awaitPublisher(useCase.execute(token: tokenToTest))
+                    expect(result) == true
+                }
             }
         }
     }

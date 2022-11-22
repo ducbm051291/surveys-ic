@@ -45,37 +45,31 @@ final class AuthenticationRepositorySpec: QuickSpec {
 
                 context("when networkAPI.performRequest emits success") {
 
-                    let expectation = XCTestExpectation(description: "Emit correct token")
-
                     networkAPI.setPerformRequestForReturnValue(Just(tokenToTest).asObservable())
-                    repository.login(email: email, password: password)
+
+                    let login = repository.login(email: email, password: password)
                         .compactMap { $0 as? APIToken }
-                        .sink { _ in
-                        } receiveValue: { token in
-                            it("triggers networkAPI to performRequest") {
-                                expect(networkAPI.performRequestCalled) == true
-                            }
 
-                            it("triggers networkAPI to performRequest with correct configuration") {
-                                let configuration = networkAPI
-                                    .performRequestForReceivedArguments?
-                                    .configuration
-                                expect(configuration) == RequestConfiguration.login(parameter)
-                            }
+                    it("triggers networkAPI to performRequest") {
+                        _ = try self.awaitPublisher(login)
+                        expect(networkAPI.performRequestCalled) == true
+                    }
 
-                            it("emits corresponding value") {
-                                expect(token) == tokenToTest
-                            }
-                            expectation.fulfill()
-                        }
-                        .store(in: &cancelBag)
+                    it("triggers networkAPI to performRequest with correct configuration") {
+                        _ = try self.awaitPublisher(login)
+                        let configuration = networkAPI
+                            .performRequestForReceivedArguments?
+                            .configuration
+                        expect(configuration) == RequestConfiguration.login(parameter)
+                    }
 
-                    wait(for: [expectation], timeout: 1)
+                    it("emits corresponding value") {
+                        let token = try self.awaitPublisher(login)
+                        expect(token) == tokenToTest
+                    }
                 }
 
                 context("when networkAPI.performRequest emits failure") {
-
-                    let expectation = XCTestExpectation(description: "Emit error")
 
                     networkAPI.setPerformRequestForReturnValue(
                         Fail(
@@ -83,33 +77,25 @@ final class AuthenticationRepositorySpec: QuickSpec {
                             failure: errorToTest
                         ).asObservable()
                     )
-                    repository.login(email: email, password: password)
+
+                    let login = repository.login(email: email, password: password)
                         .compactMap { $0 as? APIToken }
-                        .sink { completion in
-                            it("triggers networkAPI to performRequest") {
-                                expect(networkAPI.performRequestCalled) == true
-                            }
 
-                            it("triggers networkAPI to performRequest with correct configuration") {
-                                let configuration = networkAPI
-                                    .performRequestForReceivedArguments?
-                                    .configuration
-                                expect(configuration) == RequestConfiguration.login(parameter)
-                            }
+                    it("triggers networkAPI to performRequest") {
+                        expect(networkAPI.performRequestCalled) == true
+                    }
 
-                            it("emits error") {
-                                switch completion {
-                                case .failure:
-                                    expectation.fulfill()
-                                default:
-                                    break
-                                }
-                            }
-                        } receiveValue: { _ in
-                        }
-                        .store(in: &cancelBag)
+                    it("triggers networkAPI to performRequest with correct configuration") {
+                        let configuration = networkAPI
+                            .performRequestForReceivedArguments?
+                            .configuration
+                        expect(configuration) == RequestConfiguration.login(parameter)
+                    }
 
-                    wait(for: [expectation], timeout: 1)
+                    it("emits dummy due to error") {
+                        let token = try self.awaitPublisher(login.replaceError(with: APIToken.dummy))
+                        expect(token) == APIToken.dummy
+                    }
                 }
             }
         }
