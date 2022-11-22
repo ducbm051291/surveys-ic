@@ -12,7 +12,7 @@ import Resolver
 
 final class AuthenticationRepository: AuthenticationRepositoryProtocol {
 
-    @Injected(name: .defaultNetworkAPI) private var networkAPI: NetworkAPIProtocol
+    @Injected private var networkAPI: NetworkAPIProtocol
 
     func login(email: String, password: String) -> Observable<Token> {
         let parameter = LoginParameter(

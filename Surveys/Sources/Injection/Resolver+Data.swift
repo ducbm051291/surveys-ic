@@ -22,11 +22,6 @@ extension Resolver {
     private static func registerServices() {
         register(KeychainProtocol.self) { Keychain.default }
         register(UserDefaultsManagerProtocol.self) { UserDefaultsManager.default }
-        register(NetworkAPIProtocol.self, name: .defaultNetworkAPI) { NetworkAPI.default }
+        register(NetworkAPIProtocol.self) { NetworkAPI() }
     }
-}
-
-extension Resolver.Name {
-
-    static let defaultNetworkAPI = Resolver.Name("networkAPI")
 }

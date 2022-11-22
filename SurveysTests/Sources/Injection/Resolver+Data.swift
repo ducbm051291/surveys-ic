@@ -23,7 +23,7 @@ extension Resolver {
         mock.register { KeychainProtocolMock() }
             .implements(KeychainProtocol.self)
         mock.register { NetworkAPIProtocolMock() }
-            .implements(NetworkAPIProtocol.self, name: .defaultNetworkAPI)
+            .implements(NetworkAPIProtocol.self)
     }
 
     private static func registerRepositories() {

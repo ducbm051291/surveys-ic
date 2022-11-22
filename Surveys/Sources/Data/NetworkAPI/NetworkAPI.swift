@@ -27,8 +27,3 @@ final class NetworkAPI: NetworkAPIProtocol {
         request(configuration, provider: provider, decoder: JSONAPIDecoder.default)
     }
 }
-
-extension NetworkAPI {
-
-    static let `default`: NetworkAPIProtocol = NetworkAPI()
-}
