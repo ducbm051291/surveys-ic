@@ -22,10 +22,7 @@ final class AuthenticationRepositorySpec: QuickSpec {
 
         Resolver.registerAllMockServices()
         repository = AuthenticationRepository()
-        networkAPI = Resolver.resolve(
-            NetworkAPIProtocol.self,
-            name: .defaultNetworkAPI
-        ) as? NetworkAPIProtocolMock
+        networkAPI = Resolver.resolve(NetworkAPIProtocol.self) as? NetworkAPIProtocolMock
 
         describe("An AuthenticationRepository") {
 
