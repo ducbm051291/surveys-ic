@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum UserDefaultsKey: String, CaseIterable {
+enum UserDefaultsKey: String {
 
     case hasOpenedApp
 }

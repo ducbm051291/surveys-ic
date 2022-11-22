@@ -20,7 +20,6 @@ protocol KeychainProtocol: AnyObject {
 
     // Remove
     func remove(_ key: Keychain.Key) throws
-    func removeAll() throws
 }
 
 final class Keychain: KeychainProtocol {
@@ -61,9 +60,5 @@ final class Keychain: KeychainProtocol {
 
     func remove(_ key: Key) throws {
         try keychain.remove(key.rawValue)
-    }
-
-    func removeAll() throws {
-        try keychain.removeAll()
     }
 }

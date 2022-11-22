@@ -15,7 +15,6 @@ protocol UserDefaultsManagerProtocol {
     func value(for key: UserDefaultsKey) -> Any?
     func bool(for key: UserDefaultsKey) -> Bool
     func remove(for key: UserDefaultsKey)
-    func removeAll()
 }
 
 final class UserDefaultsManager: UserDefaultsManagerProtocol {
@@ -46,11 +45,5 @@ final class UserDefaultsManager: UserDefaultsManagerProtocol {
 
     func remove(for key: UserDefaultsKey) {
         userDefaults.removeObject(forKey: key.rawValue)
-    }
-
-    func removeAll() {
-        for key in UserDefaultsKey.allCases {
-            remove(for: key)
-        }
     }
 }

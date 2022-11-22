@@ -10,10 +10,6 @@ extension Keychain {
 
     enum Key: String {
 
-        case clientToken
-        case deviceId
-        case loginToken
         case userToken
-        case user
     }
 }
