@@ -80,6 +80,7 @@ final class AuthenticationRepositorySpec: QuickSpec {
 
                     let login = repository.login(email: email, password: password)
                         .compactMap { $0 as? APIToken }
+                        .replaceError(with: .dummy)
 
                     it("triggers networkAPI to performRequest") {
                         expect(networkAPI.performRequestCalled) == true
@@ -93,8 +94,8 @@ final class AuthenticationRepositorySpec: QuickSpec {
                     }
 
                     it("emits dummy due to error") {
-                        let token = try self.awaitPublisher(login.replaceError(with: APIToken.dummy))
-                        expect(token) == APIToken.dummy
+                        let token = try self.awaitPublisher(login)
+                        expect(token) == .dummy
                     }
                 }
             }

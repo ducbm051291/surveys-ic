@@ -22,7 +22,6 @@ final class LoginUseCaseSpec: QuickSpec {
         describe("A LoginUseCase") {
 
             let useCase = LoginUseCase()
-            var cancelBag = CancelBag()
 
             Resolver.registerAllMockServices()
 
@@ -35,76 +34,66 @@ final class LoginUseCaseSpec: QuickSpec {
 
                 context("when userRepository emits success") {
 
-                    let expectation = XCTestExpectation(description: "Emit correct token")
-
                     repository.loginEmailPasswordReturnValue = Just(tokenToTest).asObservable()
-                    useCase.execute(email: email, password: password)
+
+                    let executingLogin = useCase.execute(email: email, password: password)
                         .asObservable()
                         .compactMap { $0 as? APIToken }
-                        .sink { _ in
-                        } receiveValue: { token in
-                            it("triggers userRepository to login") {
-                                expect(self.repository.loginEmailPasswordCalled) == true
-                            }
 
-                            it("triggers userRepository to login with correct email") {
-                                expect(self.repository.loginEmailPasswordReceivedArguments?.email) == email
-                            }
+                    it("triggers userRepository to login") {
+                        _ = try self.awaitPublisher(executingLogin)
+                        expect(self.repository.loginEmailPasswordCalled) == true
+                    }
 
-                            it("triggers userRepository to login with correct password") {
-                                expect(self.repository.loginEmailPasswordReceivedArguments?.password)
-                                    .to(equal(password))
-                            }
+                    it("triggers userRepository to login with correct email") {
+                        _ = try self.awaitPublisher(executingLogin)
+                        expect(self.repository.loginEmailPasswordReceivedArguments?.email) == email
+                    }
 
-                            it("emits correct content value") {
-                                expect(token) == tokenToTest
-                            }
-                            expectation.fulfill()
-                        }
-                        .store(in: &cancelBag)
+                    it("triggers userRepository to login with correct password") {
+                        _ = try self.awaitPublisher(executingLogin)
+                        expect(self.repository.loginEmailPasswordReceivedArguments?.password)
+                            .to(equal(password))
+                    }
 
-                    wait(for: [expectation], timeout: 1)
+                    it("emits correct content value") {
+                        let token = try self.awaitPublisher(executingLogin)
+                        expect(token) == tokenToTest
+                    }
                 }
 
                 context("when userRepository emits failure") {
-
-                    let expectation = XCTestExpectation(description: "Emit error")
 
                     repository.loginEmailPasswordReturnValue = Fail(
                         outputType: Token.self,
                         failure: errorToTest
                     )
                     .asObservable()
-                    useCase.execute(email: email, password: password)
+                    let executingLogin = useCase.execute(email: email, password: password)
                         .asObservable()
                         .compactMap { $0 as? APIToken }
-                        .sink { completion in
-                            it("triggers userRepository to login") {
-                                expect(self.repository.loginEmailPasswordCalled) == true
-                            }
+                        .replaceError(with: .dummy)
 
-                            it("triggers userRepository to login with correct email") {
-                                expect(self.repository.loginEmailPasswordReceivedArguments?.email) == email
-                            }
+                    it("triggers userRepository to login") {
+                        _ = try self.awaitPublisher(executingLogin)
+                        expect(self.repository.loginEmailPasswordCalled) == true
+                    }
 
-                            it("triggers userRepository to login with correct password") {
-                                expect(self.repository.loginEmailPasswordReceivedArguments?.password)
-                                    .to(equal(password))
-                            }
+                    it("triggers userRepository to login with correct email") {
+                        _ = try self.awaitPublisher(executingLogin)
+                        expect(self.repository.loginEmailPasswordReceivedArguments?.email) == email
+                    }
 
-                            it("emits error") {
-                                switch completion {
-                                case .failure:
-                                    expectation.fulfill()
-                                default:
-                                    break
-                                }
-                            }
-                        } receiveValue: { _ in
-                        }
-                        .store(in: &cancelBag)
+                    it("triggers userRepository to login with correct password") {
+                        _ = try self.awaitPublisher(executingLogin)
+                        expect(self.repository.loginEmailPasswordReceivedArguments?.password)
+                            .to(equal(password))
+                    }
 
-                    wait(for: [expectation], timeout: 1)
+                    it("emits dummy due to error") {
+                        let token = try self.awaitPublisher(executingLogin)
+                        expect(token) == .dummy
+                    }
                 }
             }
         }
