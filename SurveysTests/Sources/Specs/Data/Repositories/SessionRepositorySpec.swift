@@ -20,7 +20,6 @@ final class SessionRepositorySpec: QuickSpec {
     override func spec() {
 
         var sessionRepository: SessionRepositoryProtocol!
-        var cancelBag = CancelBag()
 
         Resolver.registerAllMockServices()
         sessionRepository = SessionRepository()
@@ -29,166 +28,85 @@ final class SessionRepositorySpec: QuickSpec {
 
             describe("its getToken() call") {
 
-                let token = APIToken.dummy
+                let tokenToTest = APIToken.dummy
 
                 context("when keychain did saved a token") {
-                    let expectation = XCTestExpectation(description: "Get token successfully")
+                    try? self.keychain.set(KeychainToken(tokenToTest), for: .userToken)
 
-                    try? self.keychain.set(KeychainToken(token), for: .userToken)
+                    let getToken = sessionRepository.getToken()
 
-                    sessionRepository.getToken()
-                        .asObservable()
-                        .sink { _ in
-                        } receiveValue: { savedToken in
-                            it("get correct access token") {
-                                expect(savedToken?.accessToken) == token.accessToken
-                            }
-
-                            it("get correct refresh token") {
-                                expect(savedToken?.refreshToken) == token.refreshToken
-                            }
-
-                            it("get correct token type") {
-                                expect(savedToken?.tokenType) == token.tokenType
-                            }
-
-                            it("get correct expires in") {
-                                expect(savedToken?.expiresIn) == token.expiresIn
-                            }
-                            expectation.fulfill()
-                        }
-                        .store(in: &cancelBag)
-
-                    wait(for: [expectation], timeout: 1)
+                    it("get correct access token") {
+                        let token = try self.awaitPublisher(getToken)
+                        expect(token?.accessToken) == tokenToTest.accessToken
+                    }
                 }
 
                 context("when keychain didn't save any token") {
-                    let expectation = XCTestExpectation(description: "Can not get token")
+                    try? self.keychain.remove(.userToken)
 
-                    try? self.keychain.set(KeychainToken(token), for: .userToken)
+                    let getToken = sessionRepository.getToken()
 
-                    sessionRepository.getToken()
-                        .asObservable()
-                        .sink { _ in
-                        } receiveValue: { savedToken in
-                            it("token is nil") {
-                                expect(savedToken) == nil
-                            }
-                            expectation.fulfill()
-                        }
-                        .store(in: &cancelBag)
-
-                    wait(for: [expectation], timeout: 1)
+                    it("get nil token") {
+                        let token = try self.awaitPublisher(getToken)
+                        expect(token?.accessToken) == nil
+                    }
                 }
             }
 
             describe("its saveToken() call") {
 
-                let token = APIToken.dummy
+                let tokenToTest = APIToken.dummy
 
                 context("when keychain save token successfully") {
-                    let expectation = XCTestExpectation(description: "Save token successfully")
+                    let saveToken = sessionRepository.saveToken(tokenToTest)
 
-                    sessionRepository.saveToken(token)
-                        .asObservable()
-                        .sink { _ in
-                        } receiveValue: { _ in
-                            var savedToken: KeychainToken?
-
-                            savedToken = try? self.keychain.get(.userToken)
-
-                            it("saves correct access token") {
-                                expect(savedToken?.accessToken) == token.accessToken
-                            }
-
-                            it("saves correct refresh token") {
-                                expect(savedToken?.refreshToken) == token.refreshToken
-                            }
-
-                            it("saves correct token type") {
-                                expect(savedToken?.tokenType) == token.tokenType
-                            }
-
-                            it("saves correct expires in") {
-                                expect(savedToken?.expiresIn) == token.expiresIn
-                            }
-                            expectation.fulfill()
-                        }
-                        .store(in: &cancelBag)
-
-                    wait(for: [expectation], timeout: 1)
+                    it("emit true value") {
+                        let success = try self.awaitPublisher(saveToken)
+                        expect(success) == true
+                    }
                 }
             }
 
             describe("its hasToken() call") {
 
                 context("when keychain save token successfully") {
-                    let expectation = XCTestExpectation(description: "HasToken emit true value")
+                    let tokenToTest = APIToken.dummy
 
-                    let token = APIToken.dummy
+                    try? self.keychain.set(KeychainToken(tokenToTest), for: .userToken)
 
-                    try? self.keychain.set(KeychainToken(token), for: .userToken)
+                    let hasToken = sessionRepository.hasToken()
 
-                    sessionRepository.hasToken()
-                        .asObservable()
-                        .sink { _ in
-                        } receiveValue: { hasToken in
-                            it("hasToken emit correct value") {
-                                expect(hasToken) == true
-                            }
-                            expectation.fulfill()
-                        }
-                        .store(in: &cancelBag)
-
-                    wait(for: [expectation], timeout: 1)
+                    it("hasToken emit true value") {
+                        let result = try self.awaitPublisher(hasToken)
+                        expect(result) == true
+                    }
                 }
 
                 context("when keychain doesn't save token") {
-                    let expectation = XCTestExpectation(description: "HasToken emit false value")
                     try? self.keychain.remove(.userToken)
 
-                    sessionRepository.hasToken()
-                        .asObservable()
-                        .sink { _ in
-                        } receiveValue: { hasToken in
-                            it("hasToken emit correct value") {
-                                expect(hasToken) == false
-                            }
-                            expectation.fulfill()
-                        }
-                        .store(in: &cancelBag)
+                    let hasToken = sessionRepository.hasToken()
 
-                    wait(for: [expectation], timeout: 1)
+                    it("hasToken emit false value") {
+                        let result = try self.awaitPublisher(hasToken)
+                        expect(result) == false
+                    }
                 }
             }
 
             describe("its removeToken() call") {
 
                 context("when keychain contains the token") {
-                    let expectation = XCTestExpectation(description: "Remove token successully")
-                    let token = APIToken.dummy
-                    var savedToken: APIToken?
+                    let tokenToTest = APIToken.dummy
 
-                    try? self.keychain.set(KeychainToken(token), for: .userToken)
+                    try? self.keychain.set(KeychainToken(tokenToTest), for: .userToken)
 
-                    sessionRepository.removeToken()
-                        .asObservable()
-                        .sink { _ in
-                        } receiveValue: { success in
-                            it("removeToken emit correct value") {
-                                expect(success) == true
-                            }
+                    let removeToken = sessionRepository.removeToken()
 
-                            savedToken = try? self.keychain.get(.userToken)
-
-                            it("Retrive token gets nil value") {
-                                expect(savedToken) == nil
-                            }
-                            expectation.fulfill()
-                        }
-                        .store(in: &cancelBag)
-
-                    wait(for: [expectation], timeout: 1)
+                    it("removeToken emit true value") {
+                        let result = try self.awaitPublisher(removeToken)
+                        expect(result) == true
+                    }
                 }
             }
         }

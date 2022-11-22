@@ -19,7 +19,6 @@ final class AuthenticationRepositorySpec: QuickSpec {
 
         var networkAPI: NetworkAPIProtocolMock!
         var repository: AuthenticationRepositoryProtocol!
-        var cancelBag = CancelBag()
 
         Resolver.registerAllMockServices()
         repository = AuthenticationRepository()
