@@ -19,15 +19,16 @@ final class LoginUseCaseSpec: QuickSpec {
 
     override func spec() {
 
+        var useCase: LoginUseCase!
+
         describe("A LoginUseCase") {
 
-            let useCase = LoginUseCase()
+            beforeEach {
+                Resolver.registerAllMockServices()
+                useCase = LoginUseCase()
+            }
 
             describe("its execute() call") {
-
-                beforeEach {
-                    Resolver.registerAllMockServices()
-                }
 
                 let email = "email@email.com"
                 let password = "password"

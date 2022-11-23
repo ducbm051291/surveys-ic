@@ -19,27 +19,31 @@ final class StoreTokenUseCaseSpec: QuickSpec {
 
     override func spec() {
 
-        describe("A StoreUserTokenUseCase") {
+        var useCase: StoreTokenUseCase!
 
-            let useCase = StoreTokenUseCase()
+        describe("A StoreUserTokenUseCase") {
 
             beforeEach {
                 Resolver.registerAllMockServices()
+                useCase = StoreTokenUseCase()
             }
 
             describe("its execute() call") {
+
                 let tokenToTest = APIToken.dummy
 
-                var executingStoreToken: Observable<Bool>!
+                context("when sessionRepository save token successful") {
+                    var executingStoreToken: Observable<Bool>!
 
-                beforeEach {
-                    self.sessionRepository.saveTokenReturnValue = Just(true).asObservable()
-                    executingStoreToken = useCase.execute(token: tokenToTest).asObservable()
-                }
+                    beforeEach {
+                        self.sessionRepository.saveTokenReturnValue = Just(true).asObservable()
+                        executingStoreToken = useCase.execute(token: tokenToTest).asObservable()
+                    }
 
-                it("emits correct value") {
-                    let success = try self.awaitPublisher(executingStoreToken)
-                    expect(success) == true
+                    it("emits correct value") {
+                        let success = try self.awaitPublisher(executingStoreToken)
+                        expect(success) == true
+                    }
                 }
             }
         }
