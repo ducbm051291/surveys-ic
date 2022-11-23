@@ -21,32 +21,44 @@ final class SessionRepositorySpec: QuickSpec {
 
         var sessionRepository: SessionRepositoryProtocol!
 
-        Resolver.registerAllMockServices()
-        sessionRepository = SessionRepository()
-
         describe("A SessionRepository") {
+
+            beforeEach {
+                Resolver.registerAllMockServices()
+                sessionRepository = SessionRepository()
+            }
 
             describe("its getToken() call") {
 
                 let tokenToTest = APIToken.dummy
 
-                context("when keychain did saved a token") {
-                    try? self.keychain.set(KeychainToken(tokenToTest), for: .userToken)
+                context("when keychain did save a token") {
 
-                    let getToken = sessionRepository.getToken()
+                    var getToken: Observable<Token?>!
 
-                    it("get correct access token") {
+                    beforeEach {
+                        try? self.keychain.set(KeychainToken(tokenToTest), for: .userToken)
+
+                        getToken = sessionRepository.getToken().asObservable()
+                    }
+
+                    it("gets correct access token") {
                         let token = try self.awaitPublisher(getToken)
                         expect(token?.accessToken) == tokenToTest.accessToken
                     }
                 }
 
                 context("when keychain didn't save any token") {
-                    try? self.keychain.remove(.userToken)
 
-                    let getToken = sessionRepository.getToken()
+                    var getToken: Observable<Token?>!
 
-                    it("get nil token") {
+                    beforeEach {
+                        try? self.keychain.remove(.userToken)
+
+                        getToken = sessionRepository.getToken().asObservable()
+                    }
+
+                    it("gets nil token") {
                         let token = try self.awaitPublisher(getToken)
                         expect(token?.accessToken) == nil
                     }
@@ -58,9 +70,13 @@ final class SessionRepositorySpec: QuickSpec {
                 let tokenToTest = APIToken.dummy
 
                 context("when keychain save token successfully") {
-                    let saveToken = sessionRepository.saveToken(tokenToTest)
+                    var saveToken: Observable<Bool>!
 
-                    it("emit true value") {
+                    beforeEach {
+                        saveToken = sessionRepository.saveToken(tokenToTest).asObservable()
+                    }
+
+                    it("emits true value") {
                         let success = try self.awaitPublisher(saveToken)
                         expect(success) == true
                     }
@@ -72,22 +88,28 @@ final class SessionRepositorySpec: QuickSpec {
                 context("when keychain save token successfully") {
                     let tokenToTest = APIToken.dummy
 
-                    try? self.keychain.set(KeychainToken(tokenToTest), for: .userToken)
+                    var hasToken: Observable<Bool>!
 
-                    let hasToken = sessionRepository.hasToken()
+                    beforeEach {
+                        try? self.keychain.set(KeychainToken(tokenToTest), for: .userToken)
+                        hasToken = sessionRepository.hasToken().asObservable()
+                    }
 
-                    it("hasToken emit true value") {
+                    it("hasToken emits true value") {
                         let result = try self.awaitPublisher(hasToken)
                         expect(result) == true
                     }
                 }
 
                 context("when keychain doesn't save token") {
-                    try? self.keychain.remove(.userToken)
+                    var hasToken: Observable<Bool>!
 
-                    let hasToken = sessionRepository.hasToken()
+                    beforeEach {
+                        try? self.keychain.remove(.userToken)
+                        hasToken = sessionRepository.hasToken().asObservable()
+                    }
 
-                    it("hasToken emit false value") {
+                    it("hasToken emits false value") {
                         let result = try self.awaitPublisher(hasToken)
                         expect(result) == false
                     }
@@ -98,12 +120,14 @@ final class SessionRepositorySpec: QuickSpec {
 
                 context("when keychain contains the token") {
                     let tokenToTest = APIToken.dummy
+                    var removeToken: Observable<Bool>!
 
-                    try? self.keychain.set(KeychainToken(tokenToTest), for: .userToken)
+                    beforeEach {
+                        try? self.keychain.set(KeychainToken(tokenToTest), for: .userToken)
+                        removeToken = sessionRepository.removeToken().asObservable()
+                    }
 
-                    let removeToken = sessionRepository.removeToken()
-
-                    it("removeToken emit true value") {
+                    it("removeToken emits true value") {
                         let result = try self.awaitPublisher(removeToken)
                         expect(result) == true
                     }

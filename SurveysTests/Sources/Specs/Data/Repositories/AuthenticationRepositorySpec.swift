@@ -20,11 +20,13 @@ final class AuthenticationRepositorySpec: QuickSpec {
         var networkAPI: NetworkAPIProtocolMock!
         var repository: AuthenticationRepositoryProtocol!
 
-        Resolver.registerAllMockServices()
-        repository = AuthenticationRepository()
-        networkAPI = Resolver.resolve(NetworkAPIProtocol.self) as? NetworkAPIProtocolMock
-
         describe("An AuthenticationRepository") {
+
+            beforeEach {
+                Resolver.registerAllMockServices()
+                repository = AuthenticationRepository()
+                networkAPI = Resolver.resolve(NetworkAPIProtocol.self) as? NetworkAPIProtocolMock
+            }
 
             describe("its login() call") {
 
@@ -42,10 +44,14 @@ final class AuthenticationRepositorySpec: QuickSpec {
 
                 context("when networkAPI.performRequest emits success") {
 
-                    networkAPI.setPerformRequestForReturnValue(Just(tokenToTest).asObservable())
+                    var login: Observable<APIToken>!
 
-                    let login = repository.login(email: email, password: password)
-                        .compactMap { $0 as? APIToken }
+                    beforeEach {
+                        networkAPI.setPerformRequestForReturnValue(Just(tokenToTest).asObservable())
+                        login = repository.login(email: email, password: password)
+                            .compactMap { $0 as? APIToken }
+                            .asObservable()
+                    }
 
                     it("triggers networkAPI to performRequest") {
                         _ = try self.awaitPublisher(login)
@@ -68,16 +74,20 @@ final class AuthenticationRepositorySpec: QuickSpec {
 
                 context("when networkAPI.performRequest emits failure") {
 
-                    networkAPI.setPerformRequestForReturnValue(
-                        Fail(
-                            outputType: APIToken.self,
-                            failure: errorToTest
-                        ).asObservable()
-                    )
+                    var login: Observable<APIToken>!
 
-                    let login = repository.login(email: email, password: password)
-                        .compactMap { $0 as? APIToken }
-                        .replaceError(with: .dummy)
+                    beforeEach {
+                        networkAPI.setPerformRequestForReturnValue(
+                            Fail(
+                                outputType: APIToken.self,
+                                failure: errorToTest
+                            ).asObservable()
+                        )
+                        login = repository.login(email: email, password: password)
+                            .compactMap { $0 as? APIToken }
+                            .replaceError(with: .dummy)
+                            .asObservable()
+                    }
 
                     it("triggers networkAPI to performRequest") {
                         expect(networkAPI.performRequestCalled) == true

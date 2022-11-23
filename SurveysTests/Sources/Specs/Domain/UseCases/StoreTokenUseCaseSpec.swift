@@ -23,14 +23,23 @@ final class StoreTokenUseCaseSpec: QuickSpec {
 
             let useCase = StoreTokenUseCase()
 
+            beforeEach {
+                Resolver.registerAllMockServices()
+            }
+
             describe("its execute() call") {
                 let tokenToTest = APIToken.dummy
 
-                sessionRepository.saveTokenReturnValue = Just(true).asObservable()
+                var executingStoreToken: Observable<Bool>!
+
+                beforeEach {
+                    self.sessionRepository.saveTokenReturnValue = Just(true).asObservable()
+                    executingStoreToken = useCase.execute(token: tokenToTest).asObservable()
+                }
 
                 it("emits correct value") {
-                    let result = try self.awaitPublisher(useCase.execute(token: tokenToTest))
-                    expect(result) == true
+                    let success = try self.awaitPublisher(executingStoreToken)
+                    expect(success) == true
                 }
             }
         }

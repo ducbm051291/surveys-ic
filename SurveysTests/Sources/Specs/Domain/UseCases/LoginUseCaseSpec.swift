@@ -23,9 +23,11 @@ final class LoginUseCaseSpec: QuickSpec {
 
             let useCase = LoginUseCase()
 
-            Resolver.registerAllMockServices()
-
             describe("its execute() call") {
+
+                beforeEach {
+                    Resolver.registerAllMockServices()
+                }
 
                 let email = "email@email.com"
                 let password = "password"
@@ -34,11 +36,14 @@ final class LoginUseCaseSpec: QuickSpec {
 
                 context("when userRepository emits success") {
 
-                    repository.loginEmailPasswordReturnValue = Just(tokenToTest).asObservable()
+                    var executingLogin: Observable<APIToken>!
 
-                    let executingLogin = useCase.execute(email: email, password: password)
-                        .asObservable()
-                        .compactMap { $0 as? APIToken }
+                    beforeEach {
+                        self.repository.loginEmailPasswordReturnValue = Just(tokenToTest).asObservable()
+                        executingLogin = useCase.execute(email: email, password: password)
+                            .compactMap { $0 as? APIToken }
+                            .eraseToAnyPublisher()
+                    }
 
                     it("triggers userRepository to login") {
                         _ = try self.awaitPublisher(executingLogin)
@@ -64,15 +69,20 @@ final class LoginUseCaseSpec: QuickSpec {
 
                 context("when userRepository emits failure") {
 
-                    repository.loginEmailPasswordReturnValue = Fail(
-                        outputType: Token.self,
-                        failure: errorToTest
-                    )
-                    .asObservable()
-                    let executingLogin = useCase.execute(email: email, password: password)
+                    var executingLogin: Observable<APIToken>!
+
+                    beforeEach {
+                        self.repository.loginEmailPasswordReturnValue = Fail(
+                            outputType: Token.self,
+                            failure: errorToTest
+                        )
                         .asObservable()
-                        .compactMap { $0 as? APIToken }
-                        .replaceError(with: .dummy)
+                        executingLogin = useCase.execute(email: email, password: password)
+                            .asObservable()
+                            .compactMap { $0 as? APIToken }
+                            .replaceError(with: .dummy)
+                            .asObservable()
+                    }
 
                     it("triggers userRepository to login") {
                         _ = try self.awaitPublisher(executingLogin)
