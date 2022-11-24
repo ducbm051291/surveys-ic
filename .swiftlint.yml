@@ -4,7 +4,6 @@ included:
   - SurveysUITests
 
 excluded:
-  - SurveysTests
   - Surveys/Sources/Supports/Helpers/Rswift/R.generated.swift
   - Pods
   - Derived
