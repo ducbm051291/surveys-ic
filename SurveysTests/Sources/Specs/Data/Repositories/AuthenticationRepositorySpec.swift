@@ -42,7 +42,7 @@ final class AuthenticationRepositorySpec: QuickSpec {
                     clientSecret: Constants.API.clientSecret
                 )
 
-                context("when networkAPI.performRequest emits success") {
+                context("when networkAPI emits success from performRequest") {
 
                     var login: Observable<APIToken>!
 
@@ -72,7 +72,7 @@ final class AuthenticationRepositorySpec: QuickSpec {
                     }
                 }
 
-                context("when networkAPI.performRequest emits failure") {
+                context("when networkAPI emits failure from performRequest") {
 
                     var login: Observable<APIToken>!
 
