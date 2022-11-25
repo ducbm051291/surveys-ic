@@ -15,6 +15,6 @@ extension APIToken {
         tokenType: "Bearer",
         expiresIn: 720,
         refreshToken: "ZwFDi9G364xc3r7C977xyLdvECiJ-yCpLbv7xim7894",
-        createAt: 1_668_667_070
+        createdAt: 1_668_667_070
     )
 }

@@ -3,7 +3,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 def testing_pods
-  pod 'Quick'
+  pod 'Quick', '5.0.1'
   pod 'Nimble'
   pod 'Sourcery'
   pod 'SwiftFormat/CLI'

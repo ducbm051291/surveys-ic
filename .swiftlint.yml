@@ -1,11 +1,10 @@
 included:
   - Surveys
-  - SurveysTests
-  - SurveysUITests
 
 excluded:
-  - SurveysTests/Sources/Mocks/Sourcery/AutoMockable.generated.swift
   - Surveys/Sources/Supports/Helpers/Rswift/R.generated.swift
+  - SurveysTests
+  - SurveysUITests
   - Pods
   - Derived
   - DerivedData

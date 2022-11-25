@@ -51,7 +51,7 @@ PODS:
   - Nimble (11.1.0)
   - NimbleExtension (0.1.0)
   - PromisesObjC (2.1.1)
-  - Quick (6.0.0)
+  - Quick (5.0.1)
   - R.swift (6.1.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
@@ -74,7 +74,7 @@ DEPENDENCIES:
   - Moya/Combine (~> 15.0)
   - Nimble
   - NimbleExtension (from `https://github.com/nimblehq/NimbleExtension`, branch `master`)
-  - Quick
+  - Quick (= 5.0.1)
   - R.swift
   - Resolver
   - SnapKit
@@ -142,7 +142,7 @@ SPEC CHECKSUMS:
   Nimble: 81a6ab1afd3d84a75b18b910825f247ce5d3686a
   NimbleExtension: acad4290f27afd4241b1ea20f8597889085e2ce7
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
-  Quick: 4d5ab9e81f0a632cbf9bc4f3069b55e5eeb175df
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
@@ -152,6 +152,6 @@ SPEC CHECKSUMS:
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: 076fe17f095ce8a1c7af15de3b5dca6a6b55f2df
+PODFILE CHECKSUM: 23e17dc75b38aee34962c6ac163c7d2e613c79a5
 
 COCOAPODS: 1.11.3

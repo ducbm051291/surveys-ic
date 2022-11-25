@@ -12,14 +12,14 @@ import Resolver
 
 protocol StoreTokenUseCaseProtocol {
 
-    func store(token: Token) -> Observable<Bool>
+    func execute(token: Token) -> Observable<Bool>
 }
 
 struct StoreTokenUseCase: StoreTokenUseCaseProtocol {
 
     @Injected private var sessionRepository: SessionRepositoryProtocol
 
-    func store(token: Token) -> Observable<Bool> {
+    func execute(token: Token) -> Observable<Bool> {
         sessionRepository.saveToken(token)
     }
 }
