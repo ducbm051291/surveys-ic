@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Surveys
+
+  Created by David Bui on 14/11/2022.
+  Copyright © 2022 Nimble. All rights reserved.
+*/
+
+"common.cancel.text" = "Cancel";
+
+"login.emailTextField.placeholder" = "Email";
+"login.forgotButton.title" = "Forgot?";
+"login.invalidEmail.text" = "Invalid email format";
+"login.invalidPassword.text" = "The password must contain at least eight characters";
+"login.loginButton.title" = "Log in";
+"login.passwordTextField.placeholder" = "Password";

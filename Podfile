@@ -1,9 +1,9 @@
-platform :ios, '14.0'
+platform :ios, '16.0'
 use_frameworks!
 inhibit_all_warnings!
 
 def testing_pods
-  pod 'Quick'
+  pod 'Quick', '5.0.1'
   pod 'Nimble'
   pod 'Sourcery'
   pod 'SwiftFormat/CLI'
@@ -20,6 +20,7 @@ target 'Surveys' do
   # Tools
   pod 'Firebase/Crashlytics'
   pod 'IQKeyboardManagerSwift'
+  pod 'JSONAPIMapper'
   pod 'NimbleExtension', :git => 'https://github.com/nimblehq/NimbleExtension', :branch => 'master'
   pod 'R.swift'
   pod 'Resolver'
@@ -39,11 +40,25 @@ target 'Surveys' do
   end
 end
 
+plugin 'cocoapods-keys', {
+  :project => "Surveys",
+  :keys => [
+    "ClientId",
+    "ClientSecret"
+  ]
+}
+
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
       config.build_settings['ENABLE_BITCODE'] = 'NO'
+      # Fixing resources signing for xcode 14 sdk
+      if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+        target.build_configurations.each do |config|
+          config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        end
+      end
     end
   end
 end

@@ -35,7 +35,9 @@ PODS:
   - GoogleUtilities/UserDefaults (7.8.0):
     - GoogleUtilities/Logger
   - IQKeyboardManagerSwift (6.5.10)
+  - JSONAPIMapper (1.1.1)
   - KeychainAccess (4.2.2)
+  - Keys (1.0.1)
   - Kingfisher (7.4.1)
   - Moya/Combine (15.0.0):
     - Moya/Core
@@ -49,7 +51,7 @@ PODS:
   - Nimble (11.1.0)
   - NimbleExtension (0.1.0)
   - PromisesObjC (2.1.1)
-  - Quick (6.0.0)
+  - Quick (5.0.1)
   - R.swift (6.1.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
@@ -65,12 +67,14 @@ PODS:
 DEPENDENCIES:
   - Firebase/Crashlytics
   - IQKeyboardManagerSwift
+  - JSONAPIMapper
   - KeychainAccess
+  - Keys (from `Pods/CocoaPodsKeys`)
   - Kingfisher
   - Moya/Combine (~> 15.0)
   - Nimble
   - NimbleExtension (from `https://github.com/nimblehq/NimbleExtension`, branch `master`)
-  - Quick
+  - Quick (= 5.0.1)
   - R.swift
   - Resolver
   - SnapKit
@@ -90,6 +94,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - IQKeyboardManagerSwift
+    - JSONAPIMapper
     - KeychainAccess
     - Kingfisher
     - Moya
@@ -107,6 +112,8 @@ SPEC REPOS:
     - Wormholy
 
 EXTERNAL SOURCES:
+  Keys:
+    :path: Pods/CocoaPodsKeys
   NimbleExtension:
     :branch: master
     :git: https://github.com/nimblehq/NimbleExtension
@@ -126,14 +133,16 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
   GoogleUtilities: 1d20a6ad97ef46f67bbdec158ce00563a671ebb7
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  JSONAPIMapper: 0d832d3b7d74281b150622a004f84171ded28a04
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   Nimble: 81a6ab1afd3d84a75b18b910825f247ce5d3686a
   NimbleExtension: acad4290f27afd4241b1ea20f8597889085e2ce7
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
-  Quick: 4d5ab9e81f0a632cbf9bc4f3069b55e5eeb175df
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
@@ -143,6 +152,6 @@ SPEC CHECKSUMS:
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: f0b571bb1a46aa2d9dfa1962a3e6d5f7cd7a178e
+PODFILE CHECKSUM: 23e17dc75b38aee34962c6ac163c7d2e613c79a5
 
 COCOAPODS: 1.11.3
