@@ -3,11 +3,11 @@
 //  Constants+API.swift
 //
 
-import Keys
+import SurveysKeys
 
 extension Constants.API {
 
     static let baseURL: String = "https://\((try? Environment.value(for: .apiBaseURL)) ?? "")/"
-    static let clientId: String = SurveysKeys().clientId
-    static let clientSecret: String = SurveysKeys().clientSecret
+    static let clientId: String = SurveysKeys.Keys.Release().clientId
+    static let clientSecret: String = SurveysKeys.Keys.Release().clientSecret
 }

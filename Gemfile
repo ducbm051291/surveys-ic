@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "cocoapods"
-gem "cocoapods-keys"
+gem "arkana"
 gem "fastlane"
 gem "xcov"
 gem "danger"
