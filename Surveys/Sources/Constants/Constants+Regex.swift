@@ -1,11 +1,10 @@
-//
+//  swiftlint:disable:this file_name
 //  Constants+Regex.swift
 //  Surveys
 //
 //  Created by David Bui on 28/11/2022.
 //  Copyright © 2022 Nimble. All rights reserved.
 //
-
 
 import Foundation
 
@@ -19,5 +18,5 @@ extension Constants.Regex {
         "9][0-9]?|[\\p{L}0-9-]*[\\p{L}0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21" +
         "-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
 
-    static let password = "^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+    static let password = "^.{8,}$"
 }
