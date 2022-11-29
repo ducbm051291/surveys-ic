@@ -13,6 +13,7 @@ import UIKit
 struct LoginView: View {
 
     @EnvironmentObject private var appRouter: AppRouter
+    @StateObject private var viewModel = LoginViewModel()
 
     // TODO: Replace state variables
     @State var email = ""
@@ -20,12 +21,35 @@ struct LoginView: View {
     @State var isLoginEnabled = true
 
     var body: some View {
+        switch viewModel.state {
+        case .idle:
+            setUpView()
+        case .loading:
+            setUpView(isLoading: true)
+        case .loggedIn:
+            setUpView()
+                .onAppear {
+                    // Navigate to home
+                }
+        case let .error(message):
+            setUpView()
+                .alert(isPresented: .constant(true)) {
+                    Alert(
+                        title: Text(Localize.commonApplicationNameText()),
+                        message: Text(message),
+                        dismissButton: Alert.Button.default(Text(Localize.commonOkText()))
+                    )
+                }
+        }
+    }
+
+    private func setUpView(isLoading: Bool = false) -> some View {
         ZStack {
             setUpBackground()
             VStack(spacing: 0.0) {
                 setUpLogo()
                     .frame(maxHeight: .infinity)
-                setUpComponents()
+                setUpComponents(isLoading: isLoading)
                     .frame(maxHeight: .infinity)
                 Spacer()
                     .frame(maxHeight: .infinity)
@@ -57,12 +81,13 @@ struct LoginView: View {
         }
     }
 
-    private func setUpComponents() -> some View {
+    private func setUpComponents(isLoading: Bool = false) -> some View {
         VStack(alignment: .leading, spacing: 20.0) {
             setUpEmail()
             setUpPassword()
             PrimaryButton(
                 isEnabled: $isLoginEnabled,
+                isLoading: isLoading,
                 action: {},
                 title: Localize.loginLoginButtonTitle()
             )

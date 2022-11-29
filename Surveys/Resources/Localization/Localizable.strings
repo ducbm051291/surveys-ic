@@ -6,7 +6,9 @@
   Copyright © 2022 Nimble. All rights reserved.
 */
 
+"common.applicationName.text" = "Surveys";
 "common.cancel.text" = "Cancel";
+"common.ok.text" = "OK";
 
 "login.emailTextField.placeholder" = "Email";
 "login.forgotButton.title" = "Forgot?";
