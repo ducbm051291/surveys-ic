@@ -8,6 +8,7 @@
 
 "common.applicationName.text" = "Surveys";
 "common.cancel.text" = "Cancel";
+"common.error.text" = "An error has occurred. Please try again later!";
 "common.ok.text" = "OK";
 
 "login.emailTextField.placeholder" = "Email";

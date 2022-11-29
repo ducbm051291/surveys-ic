@@ -22,6 +22,8 @@ final class LoginViewModel: ObservableObject {
     @Published var isPasswordValid = true
 
     private var cancelBag = CancelBag()
+    private let errorTracker = ErrorTracker()
+    private let activityTracker = ActivityTracker(false)
 
     init() {
         let emailValidation = $email
@@ -43,6 +45,57 @@ final class LoginViewModel: ObservableObject {
         Publishers.CombineLatest(emailValidation, passwordValidation)
             .map { $0.0 && $0.1 }
             .assign(to: \.isLoginEnabled, on: self)
+            .store(in: &cancelBag)
+
+        errorTracker
+            .receive(on: RunLoop.main)
+            .map { error -> LoginViewModel.State in
+                guard let error = error as? NetworkAPIError else {
+                    return .error(Localize.commonErrorText())
+                }
+                switch error {
+                case let .responseErrors(errors):
+                    return .error(errors.first?.detail ?? .empty)
+                default:
+                    return .error(Localize.commonErrorText())
+                }
+            }
+            .assign(to: \.state, on: self)
+            .store(in: &cancelBag)
+
+        activityTracker
+            .receive(on: RunLoop.main)
+            .map { _ in LoginViewModel.State.loading }
+            .assign(to: \.state, on: self)
+            .store(in: &cancelBag)
+    }
+
+    func logIn() {
+        loginUseCase.execute(email: email, password: password)
+            .trackError(errorTracker)
+            .trackActivity(activityTracker)
+            .receive(on: RunLoop.main)
+            .sink { [weak self] completion in
+                guard let self = self else { return }
+                switch completion {
+                case let .failure(error):
+                    guard let error = error as? NetworkAPIError else {
+                        self.state = .error(Localize.commonOkText())
+                        return
+                    }
+                    switch error {
+                    case let .responseErrors(errors):
+                        self.state = .error(errors.first?.detail ?? .empty)
+                    default:
+                        self.state = .error(Localize.commonOkText())
+                    }
+                case .finished:
+                    break
+                }
+            } receiveValue: { [weak self] token in
+                guard let self = self else { return }
+                self.state = .loggedIn(token)
+            }
             .store(in: &cancelBag)
     }
 }
