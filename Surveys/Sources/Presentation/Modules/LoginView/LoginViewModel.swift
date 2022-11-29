@@ -20,7 +20,6 @@ final class LoginViewModel: ObservableObject {
     @Published var isLoginEnabled = false
     @Published var isEmailValid = true
     @Published var isPasswordValid = true
-    @Published var didTapLogInButton = false
 
     private var cancelBag = CancelBag()
 
@@ -44,35 +43,6 @@ final class LoginViewModel: ObservableObject {
         Publishers.CombineLatest(emailValidation, passwordValidation)
             .map { $0.0 && $0.1 }
             .assign(to: \.isLoginEnabled, on: self)
-            .store(in: &cancelBag)
-    }
-
-    func logIn() {
-        state = .loading
-
-        loginUseCase.execute(email: email, password: password)
-            .receive(on: RunLoop.main)
-            .sink { [weak self] completion in
-                guard let self = self else { return }
-                switch completion {
-                case let .failure(error):
-                    guard let error = error as? NetworkAPIError else {
-                        self.state = .error(Localize.commonOkText())
-                        return
-                    }
-                    switch error {
-                    case let .responseErrors(errors):
-                        self.state = .error(errors.first?.detail ?? .empty)
-                    default:
-                        self.state = .error(Localize.commonOkText())
-                    }
-                case .finished:
-                    break
-                }
-            } receiveValue: { [weak self] token in
-                guard let self = self else { return }
-                self.state = .loggedIn(token)
-            }
             .store(in: &cancelBag)
     }
 }
