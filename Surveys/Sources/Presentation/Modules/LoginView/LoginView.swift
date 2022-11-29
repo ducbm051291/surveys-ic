@@ -83,7 +83,7 @@ struct LoginView: View {
             PrimaryButton(
                 isEnabled: $viewModel.isLoginEnabled,
                 isLoading: isLoading,
-                action: {},
+                action: { viewModel.logIn() },
                 title: Localize.loginLoginButtonTitle()
             )
         }
