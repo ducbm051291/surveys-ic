@@ -14,6 +14,7 @@ struct PrimaryButton: View {
 
     let titleColor: Color = .white
     let backgroundColor: Color = .black
+    let isLoading: Bool
 
     var action: () -> Void
     var title: String
