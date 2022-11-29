@@ -10,6 +10,5 @@ enum Constants {
 
         case password
     }
-
     enum Regex {}
 }
