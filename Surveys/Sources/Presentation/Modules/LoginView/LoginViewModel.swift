@@ -13,6 +13,7 @@ import Resolver
 final class LoginViewModel: ObservableObject {
 
     @Injected private var loginUseCase: LoginUseCaseProtocol
+    @Injected private var storeTokenUseCase: StoreTokenUseCaseProtocol
 
     @Published var state: State = .idle
     @Published var email: String = ""
@@ -65,37 +66,23 @@ final class LoginViewModel: ObservableObject {
 
         activityTracker
             .receive(on: RunLoop.main)
-            .map { _ in LoginViewModel.State.loading }
+            .filter { $0 }
+            .map { _ in .loading }
             .assign(to: \.state, on: self)
             .store(in: &cancelBag)
     }
 
     func logIn() {
         loginUseCase.execute(email: email, password: password)
+            .receive(on: RunLoop.main)
+            .flatMap { token in
+                self.storeTokenUseCase.execute(token: token)
+            }
             .trackError(errorTracker)
             .trackActivity(activityTracker)
-            .receive(on: RunLoop.main)
-            .sink { [weak self] completion in
-                guard let self = self else { return }
-                switch completion {
-                case let .failure(error):
-                    guard let error = error as? NetworkAPIError else {
-                        self.state = .error(Localize.commonOkText())
-                        return
-                    }
-                    switch error {
-                    case let .responseErrors(errors):
-                        self.state = .error(errors.first?.detail ?? .empty)
-                    default:
-                        self.state = .error(Localize.commonOkText())
-                    }
-                case .finished:
-                    break
-                }
-            } receiveValue: { [weak self] token in
-                guard let self = self else { return }
-                self.state = .loggedIn(token)
-            }
+            .asDriver()
+            .map { _ in .loggedIn }
+            .assign(to: \.state, on: self)
             .store(in: &cancelBag)
     }
 }
@@ -104,7 +91,7 @@ extension LoginViewModel {
 
     enum State {
         case idle, loading
-        case loggedIn(Token)
+        case loggedIn
         case error(String)
     }
 }

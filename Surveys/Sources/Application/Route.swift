@@ -10,5 +10,5 @@ import Foundation
 
 enum Route: Hashable {
 
-    case splash, login
+    case splash, login, home
 }

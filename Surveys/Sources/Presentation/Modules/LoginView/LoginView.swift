@@ -24,7 +24,7 @@ struct LoginView: View {
         case .loggedIn:
             setUpView()
                 .onAppear {
-                    // Navigate to home
+                    appRouter.state = .home
                 }
         case let .error(message):
             setUpView()
