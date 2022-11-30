@@ -29,6 +29,9 @@ jobs:
     - name: Bundle install
       run: bundle install --path vendor/bundle
 
+    - name: Run Arkana
+      run: bundle exec arkana
+
     - name: Cache Pods
       uses: actions/cache@v2
       id: cocoapodCache
