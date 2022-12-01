@@ -78,3 +78,6 @@ DerivedData
 
 .idea
 Build
+
+# Arkana
+dependencies/
