@@ -112,6 +112,12 @@ struct LoginView: View {
                     isVisible: viewModel.password.isEmpty,
                     text: Localize.loginPasswordTextFieldPlaceholder()
                 ))
+                .modifier(RightButtonModifier(
+                    action: {
+                        appRouter.state = .forgotPassword
+                    },
+                    title: Localize.loginForgotButtonTitle()
+                ))
             Text(Localize.loginInvalidPasswordText())
                 .modifier(ErrorModifier())
                 .padding(.top, 4.0)

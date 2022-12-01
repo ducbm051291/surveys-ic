@@ -26,6 +26,7 @@ extension SurveysApp {
         case .splash: SplashView()
         case .login: LoginView()
         case .home: HomeView()
+        case .forgotPassword: ForgotPasswordView()
         }
     }
 
