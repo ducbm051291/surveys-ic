@@ -16,6 +16,7 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
+            TabView {}
         }
     }
 }
@@ -26,4 +27,3 @@ struct HomeViewPreView: PreviewProvider {
         HomeView()
     }
 }
-

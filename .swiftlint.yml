@@ -2,6 +2,7 @@ included:
   - Surveys
 
 excluded:
+  - dependencies
   - Surveys/Sources/Supports/Helpers/Rswift/R.generated.swift
   - SurveysTests
   - SurveysUITests
