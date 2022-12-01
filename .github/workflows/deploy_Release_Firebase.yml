@@ -43,6 +43,13 @@ jobs:
       uses: webfactory/ssh-agent@v0.5.4
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Setup ENV file
+        env:
+          SURVEYS_ENV: ${{ secrets.SURVEYS_ENV }}
+        run: |
+          touch .env
+          echo $SURVEYS_ENV | base64 --decode > .env
             
     - name: Bundle install
       run: bundle install
