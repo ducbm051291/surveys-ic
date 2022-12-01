@@ -26,6 +26,13 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gems-
 
+    - name: Setup ENV file
+        env:
+          SURVEYS_ENV: ${{ secrets.SURVEYS_ENV }}
+        run: |
+          touch .env
+          echo $SURVEYS_ENV | base64 --decode > .env
+
     - name: Bundle install
       run: bundle install --path vendor/bundle
 
