@@ -659,6 +659,14 @@
 			isa = PBXGroup;
 			children = (
 				58683B2A29389DBB005FD141 /* ForgotPasswordView.swift */,
+			);
+			path = ForgotPasswordView;
+			sourceTree = "<group>";
+		};
+		586ED15D2914EC6700181E14 /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				58683B2A29389DBB005FD141 /* ForgotPasswordView.swift */,
 				58285B1B2939A9D200AC6E73 /* ForgotPasswordViewModel.swift */,
 			);
 			path = ForgotPasswordView;
