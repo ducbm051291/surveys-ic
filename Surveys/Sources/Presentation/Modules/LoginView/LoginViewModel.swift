@@ -89,7 +89,8 @@ final class LoginViewModel: ObservableObject {
 
 extension LoginViewModel {
 
-    enum State {
+    enum State: Equatable {
+
         case idle, loading
         case loggedIn
         case error(String)

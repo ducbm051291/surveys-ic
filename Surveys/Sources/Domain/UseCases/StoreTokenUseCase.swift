@@ -10,6 +10,7 @@ import Combine
 import Foundation
 import Resolver
 
+// sourcery: AutoMockable
 protocol StoreTokenUseCaseProtocol {
 
     func execute(token: Token) -> Observable<Bool>

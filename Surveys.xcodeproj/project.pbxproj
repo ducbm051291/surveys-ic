@@ -47,6 +47,9 @@
 		5861161E292736D800EF52A4 /* SessionRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861161C292736C800EF52A4 /* SessionRepositorySpec.swift */; };
 		5861162029273AB200EF52A4 /* StoreTokenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861161F29273AB200EF52A4 /* StoreTokenUseCaseSpec.swift */; };
 		5866FE042934545100908E86 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866FE032934545100908E86 /* LoginViewModel.swift */; };
+		58683B1D29387D54005FD141 /* LoginViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58683B1A29387CCC005FD141 /* LoginViewModelSpec.swift */; };
+		58683B2029387EDC005FD141 /* Resolver+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58683B1E29387ED7005FD141 /* Resolver+Domain.swift */; };
+		58683B2629388165005FD141 /* Combine+Collect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58683B2529388165005FD141 /* Combine+Collect.swift */; };
 		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
 		586ED15F2914EC6700181E14 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15E2914EC6700181E14 /* SplashView.swift */; };
 		586F204129270ED300E72C77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586F204029270ED300E72C77 /* LaunchScreen.storyboard */; };
@@ -74,7 +77,6 @@
 		58F6E6162935E33C00D0547A /* Publisher+ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6152935E33C00D0547A /* Publisher+ErrorTracker.swift */; };
 		58F6E6182935E3F200D0547A /* Publisher+ActivityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6172935E3F200D0547A /* Publisher+ActivityTracker.swift */; };
 		58F6E61A2935E4E400D0547A /* View+Hidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6192935E4E400D0547A /* View+Hidden.swift */; };
-		5907F7159A29BF09FAF59F48 /* Pods_Surveys_SurveysUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A76FB3D46B94C6B012F88F37 /* Pods_Surveys_SurveysUITests.framework */; };
 		79AD9AC60C2326D2C37DA822 /* ApplicationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D07C7B75034BCA157403F8 /* ApplicationSpec.swift */; };
 		8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A71C5D204545F33C7FD6B4 /* Constants+API.swift */; };
 		9034CDC8640BB10EC23F3D2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2A4D7F6EBA03C8C781818 /* Constants.swift */; };
@@ -182,6 +184,9 @@
 		5861161C292736C800EF52A4 /* SessionRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepositorySpec.swift; sourceTree = "<group>"; };
 		5861161F29273AB200EF52A4 /* StoreTokenUseCaseSpec.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = StoreTokenUseCaseSpec.swift; sourceTree = "<group>"; };
 		5866FE032934545100908E86 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		58683B1A29387CCC005FD141 /* LoginViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelSpec.swift; sourceTree = "<group>"; };
+		58683B1E29387ED7005FD141 /* Resolver+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Domain.swift"; sourceTree = "<group>"; };
+		58683B2529388165005FD141 /* Combine+Collect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Collect.swift"; sourceTree = "<group>"; };
 		586ED15B2914EC3600181E14 /* SurveysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveysApp.swift; sourceTree = "<group>"; };
 		586ED15E2914EC6700181E14 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		586ED1622914ED5200181E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -211,7 +216,6 @@
 		58F6E6152935E33C00D0547A /* Publisher+ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ErrorTracker.swift"; sourceTree = "<group>"; };
 		58F6E6172935E3F200D0547A /* Publisher+ActivityTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ActivityTracker.swift"; sourceTree = "<group>"; };
 		58F6E6192935E4E400D0547A /* View+Hidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Hidden.swift"; sourceTree = "<group>"; };
-		6690A800980BF2880E12EE38 /* Pods-Surveys-SurveysUITests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys-SurveysUITests.debug staging.xcconfig"; path = "Target Support Files/Pods-Surveys-SurveysUITests/Pods-Surveys-SurveysUITests.debug staging.xcconfig"; sourceTree = "<group>"; };
 		6C28B64D0889C7EDF9D30A6C /* OptionalUnwrapSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalUnwrapSpec.swift; sourceTree = "<group>"; };
 		6DEDBCA537C105F916C257C5 /* Pods-Surveys.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug production.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.debug production.xcconfig"; sourceTree = "<group>"; };
 		74E30052ACBE13146066B25B /* Optional+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
@@ -505,6 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				5828F85529262F4A0074FE82 /* Resolver+Data.swift */,
+				58683B1E29387ED7005FD141 /* Resolver+Domain.swift */,
 				5828F858292630B40074FE82 /* Resolver+MockRegistering.swift */,
 			);
 			path = Injection;
@@ -566,6 +571,46 @@
 				5828F86B292637D60074FE82 /* APIToken+Dummy.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		58683B1829387CBE005FD141 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				58683B1929387CC6005FD141 /* Modules */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		58683B1929387CC6005FD141 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				58683B1C29387CD0005FD141 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		58683B1C29387CD0005FD141 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				58683B1A29387CCC005FD141 /* LoginViewModelSpec.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		58683B2329388148005FD141 /* XCTest */ = {
+			isa = PBXGroup;
+			children = (
+				58812DFD292B80CD0078E5C5 /* XCTestCase+Publisher.swift */,
+			);
+			path = XCTest;
+			sourceTree = "<group>";
+		};
+		58683B2429388153005FD141 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				58683B2529388165005FD141 /* Combine+Collect.swift */,
+			);
+			path = Combine;
 			sourceTree = "<group>";
 		};
 		586ED15D2914EC6700181E14 /* SplashView */ = {
@@ -631,7 +676,8 @@
 		58812DFC292B80C00078E5C5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				58812DFD292B80CD0078E5C5 /* XCTestCase+Publisher.swift */,
+				58683B2429388153005FD141 /* Combine */,
+				58683B2329388148005FD141 /* XCTest */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -916,6 +962,7 @@
 			children = (
 				5828F860292636E80074FE82 /* Data */,
 				5828F85F292636E30074FE82 /* Domain */,
+				58683B1829387CBE005FD141 /* Presentation */,
 				891B074B14503EDD71A3025F /* Supports */,
 			);
 			path = Specs;
@@ -1424,8 +1471,10 @@
 				CC151CF2A41DE206FA2EDCF0 /* OptionalUnwrapSpec.swift in Sources */,
 				5835AA002927270C00686B8C /* TestError.swift in Sources */,
 				5861161E292736D800EF52A4 /* SessionRepositorySpec.swift in Sources */,
+				58683B1D29387D54005FD141 /* LoginViewModelSpec.swift in Sources */,
 				5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */,
 				5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */,
+				58683B2029387EDC005FD141 /* Resolver+Domain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1468,6 +1517,7 @@
 				58C6C5972921F88E0083AF17 /* NetworkAPIProtocol.swift in Sources */,
 				588FC05D293602FB00D1A38D /* R.generated.swift in Sources */,
 				5828F8532926213A0074FE82 /* Resolver+Domain.swift in Sources */,
+				58683B2629388165005FD141 /* Combine+Collect.swift in Sources */,
 				58233885291C95C300412E50 /* AppRouter.swift in Sources */,
 				5828F82629260E120074FE82 /* AuthenticationRepositoryProtocol.swift in Sources */,
 				D159394D010391AC5356ACC1 /* UIView+Subviews.swift in Sources */,

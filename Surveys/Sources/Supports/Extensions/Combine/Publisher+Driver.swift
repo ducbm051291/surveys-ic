@@ -11,14 +11,6 @@ import Foundation
 
 extension Publisher {
 
-    func just(_ output: Output) -> Driver<Output> {
-        Just(output).eraseToAnyPublisher()
-    }
-
-    func empty() -> Driver<Output> {
-        Empty().eraseToAnyPublisher()
-    }
-
     func asDriver() -> Driver<Output> {
         self.catch { _ in Empty() }
             .receive(on: RunLoop.main)
