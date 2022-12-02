@@ -20,4 +20,6 @@
 
 "forgotPassword.description.text" = "Enter your email to receive instructions for resetting your password.";
 "forgotPassword.emailTextField.placeholder" = "Email";
+"forgotPassword.resetBannerDescription.text" = "We’ve email you instructions to reset your password.";
+"forgotPassword.resetBannerTitle.text" = "Check your email.";
 "forgotPassword.resetButton.title" = "Reset";

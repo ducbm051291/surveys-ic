@@ -13,9 +13,9 @@ import Resolver
 final class ForgotPasswordViewModel: ObservableObject {
 
     @Published var state: State = .idle
-    @Published var email: String = ""
+    @Published var email: String = "dev@nimblehq.co"
     @Published var isEmailValid = true
-    @Published var isResetEnabled = false
+    @Published var isResetEnabled = true
 }
 
 extension ForgotPasswordViewModel {
@@ -27,4 +27,3 @@ extension ForgotPasswordViewModel {
         case error(String)
     }
 }
-

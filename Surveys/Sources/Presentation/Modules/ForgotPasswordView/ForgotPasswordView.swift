@@ -15,6 +15,13 @@ struct ForgotPasswordView: View {
     @EnvironmentObject private var navigator: Navigator
     @StateObject private var viewModel = ForgotPasswordViewModel()
 
+    // TODO: Remove dummy data
+    @State var isBannerVisible: Bool = true
+    @State var bannerData = BannerData(
+        title: Localize.forgotPasswordResetBannerTitleText(),
+        detail: Localize.forgotPasswordResetBannerDescriptionText()
+    )
+
     var body: some View {
         switch viewModel.state {
         case .idle:
@@ -23,9 +30,7 @@ struct ForgotPasswordView: View {
             setUpView(isLoading: true)
         case .didReset:
             setUpView()
-                .onAppear {
-                    navigator.show(screen: .home, by: .root)
-                }
+                .banner(data: $bannerData, isVisible: $isBannerVisible)
         case let .error(message):
             setUpView()
                 .alert(isPresented: .constant(true)) {
@@ -89,7 +94,7 @@ struct ForgotPasswordView: View {
             PrimaryButton(
                 isEnabled: $viewModel.isResetEnabled,
                 isLoading: isLoading,
-                action: {},
+                action: { viewModel.state = .didReset },
                 title: Localize.forgotPasswordResetButtonTitle()
             )
         }
