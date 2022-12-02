@@ -14,15 +14,13 @@ struct AppNavigator: View {
     @StateObject var navigator = Navigator()
 
     var body: some View {
-        NavigationStack {
-            Router($navigator.routes) { screen, _ in
-                switch screen {
-                case .forgotPassword: ForgotPasswordView()
-                case .login: LoginView()
-                case .home: HomeView()
-                case .splash: SplashView()
-                }
+        Router($navigator.routes) { screen, _ in
+            switch screen {
+            case .forgotPassword: ForgotPasswordView()
+            case .login: LoginView()
+            case .home: HomeView()
             }
-        }.environmentObject(navigator)
+        }
+        .environmentObject(navigator)
     }
 }

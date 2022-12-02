@@ -24,6 +24,7 @@
 		58285B1F2939AECB00AC6E73 /* BannerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58285B1E2939AECB00AC6E73 /* BannerData.swift */; };
 		58285B212939AEEA00AC6E73 /* BannerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58285B202939AEEA00AC6E73 /* BannerModifier.swift */; };
 		58285B232939CCFF00AC6E73 /* View+Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58285B222939CCFF00AC6E73 /* View+Banner.swift */; };
+		58285B272939F18400AC6E73 /* NavigationBackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58285B262939F18400AC6E73 /* NavigationBackButtonModifier.swift */; };
 		5828F82629260E120074FE82 /* AuthenticationRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F82529260E120074FE82 /* AuthenticationRepositoryProtocol.swift */; };
 		5828F82929260E770074FE82 /* APIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F82829260E770074FE82 /* APIToken.swift */; };
 		5828F82B29260E800074FE82 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F82A29260E800074FE82 /* Token.swift */; };
@@ -60,7 +61,6 @@
 		58683B2829389C81005FD141 /* RightButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58683B2729389C81005FD141 /* RightButtonModifier.swift */; };
 		58683B2B29389DBB005FD141 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58683B2A29389DBB005FD141 /* ForgotPasswordView.swift */; };
 		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
-		586ED15F2914EC6700181E14 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15E2914EC6700181E14 /* SplashView.swift */; };
 		586F204129270ED300E72C77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586F204029270ED300E72C77 /* LaunchScreen.storyboard */; };
 		5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880AE07291E3B8B00A212E7 /* ImageResource+Image.swift */; };
 		58812DFF292B80E90078E5C5 /* XCTestCase+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58812DFD292B80CD0078E5C5 /* XCTestCase+Publisher.swift */; };
@@ -171,6 +171,7 @@
 		58285B1E2939AECB00AC6E73 /* BannerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerData.swift; sourceTree = "<group>"; };
 		58285B202939AEEA00AC6E73 /* BannerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModifier.swift; sourceTree = "<group>"; };
 		58285B222939CCFF00AC6E73 /* View+Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Banner.swift"; sourceTree = "<group>"; };
+		58285B262939F18400AC6E73 /* NavigationBackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButtonModifier.swift; sourceTree = "<group>"; };
 		5828F82529260E120074FE82 /* AuthenticationRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositoryProtocol.swift; sourceTree = "<group>"; };
 		5828F82829260E770074FE82 /* APIToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIToken.swift; sourceTree = "<group>"; };
 		5828F82A29260E800074FE82 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -207,7 +208,6 @@
 		58683B2729389C81005FD141 /* RightButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightButtonModifier.swift; sourceTree = "<group>"; };
 		58683B2A29389DBB005FD141 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		586ED15B2914EC3600181E14 /* SurveysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveysApp.swift; sourceTree = "<group>"; };
-		586ED15E2914EC6700181E14 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		586ED1622914ED5200181E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		586ED1642914ED5200181E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		586F204029270ED300E72C77 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -448,6 +448,7 @@
 				58BE093E2925E1C600662F6C /* ErrorModifier.swift */,
 				5827FA0F2924C7E200CF2327 /* PlaceholderModifier.swift */,
 				58683B2729389C81005FD141 /* RightButtonModifier.swift */,
+				58285B262939F18400AC6E73 /* NavigationBackButtonModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -661,14 +662,6 @@
 				58285B1B2939A9D200AC6E73 /* ForgotPasswordViewModel.swift */,
 			);
 			path = ForgotPasswordView;
-			sourceTree = "<group>";
-		};
-		586ED15D2914EC6700181E14 /* SplashView */ = {
-			isa = PBXGroup;
-			children = (
-				586ED15E2914EC6700181E14 /* SplashView.swift */,
-			);
-			path = SplashView;
 			sourceTree = "<group>";
 		};
 		586ED1602914ED5200181E14 /* GoogleService */ = {
@@ -1077,7 +1070,6 @@
 				58683B2929389DA6005FD141 /* ForgotPasswordView */,
 				58B5277F293741AF00D2E0BB /* HomeView */,
 				5827FA0B29248DBB00CF2327 /* LoginView */,
-				586ED15D2914EC6700181E14 /* SplashView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1570,12 +1562,12 @@
 				58B570C1292B1E78007831B8 /* Constants+Gradient.swift in Sources */,
 				58BF66EE293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift in Sources */,
 				5828F82E29260F0B0074FE82 /* LoginUseCase.swift in Sources */,
-				586ED15F2914EC6700181E14 /* SplashView.swift in Sources */,
 				58C6C5972921F88E0083AF17 /* NetworkAPIProtocol.swift in Sources */,
 				588FC05D293602FB00D1A38D /* R.generated.swift in Sources */,
 				5828F8532926213A0074FE82 /* Resolver+Domain.swift in Sources */,
 				58683B2629388165005FD141 /* Combine+Collect.swift in Sources */,
 				58233885291C95C300412E50 /* AppNavigator.swift in Sources */,
+				58285B272939F18400AC6E73 /* NavigationBackButtonModifier.swift in Sources */,
 				5828F82629260E120074FE82 /* AuthenticationRepositoryProtocol.swift in Sources */,
 				D159394D010391AC5356ACC1 /* UIView+Subviews.swift in Sources */,
 				58285B1A29399F6E00AC6E73 /* Navigator+Screen.swift in Sources */,

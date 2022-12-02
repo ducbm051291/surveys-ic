@@ -55,7 +55,9 @@ struct ForgotPasswordView: View {
                     .frame(maxHeight: .infinity)
             }
         }
-        .navigationBarBackButtonHidden(true)
+        .modifier(NavigationBackButtonModifier(action: {
+            navigator.goBack()
+        }))
     }
 
     private func setUpBackground() -> some View {

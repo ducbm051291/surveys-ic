@@ -11,7 +11,7 @@ import SwiftUI
 
 final class Navigator: ObservableObject {
 
-    @Published var routes: Routes<Screen> = [.root(.splash, embedInNavigationView: true)]
+    @Published var routes: Routes<Screen> = [.root(.login, embedInNavigationView: true)]
 
     func show(screen: Screen, by transition: Transition) {
         switch transition {
