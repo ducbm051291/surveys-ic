@@ -105,7 +105,7 @@ final class LoginViewModelSpec: QuickSpec {
                                 expect(state) == .loading
                             }
 
-                            it("state changes to loggedIn") {
+                            it("state changes to error with common error text") {
                                 let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
                                 expect(state) == .error(Localize.commonErrorText())
                             }
@@ -142,7 +142,7 @@ final class LoginViewModelSpec: QuickSpec {
                             expect(state) == .loading
                         }
 
-                        it("state changes to loggedIn") {
+                        it("state changes to error with common error text") {
                             let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
                             expect(state) == .error(Localize.commonErrorText())
                         }
