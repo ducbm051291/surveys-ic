@@ -12,7 +12,7 @@ import UIKit
 
 struct LoginView: View {
 
-    @EnvironmentObject private var appRouter: AppRouter
+    @EnvironmentObject private var navigator: Navigator
     @StateObject private var viewModel = LoginViewModel()
 
     var body: some View {
@@ -24,8 +24,7 @@ struct LoginView: View {
         case .loggedIn:
             setUpView()
                 .onAppear {
-                    // TODO: Replace navigation mechanism with FlowStacks
-                    appRouter.state = .home
+                    navigator.show(screen: .home, by: .root)
                 }
         case let .error(message):
             setUpView()
@@ -78,7 +77,7 @@ struct LoginView: View {
     }
 
     private func setUpComponents(isLoading: Bool = false) -> some View {
-        VStack(alignment: .leading, spacing: 20.0) {
+        VStack(alignment: .leading, spacing: 4.0) {
             setUpEmail()
             setUpPassword()
             PrimaryButton(
@@ -114,7 +113,7 @@ struct LoginView: View {
                 ))
                 .modifier(RightButtonModifier(
                     action: {
-                        appRouter.state = .forgotPassword
+                        navigator.show(screen: .forgotPassword, by: .push)
                     },
                     title: Localize.loginForgotButtonTitle()
                 ))

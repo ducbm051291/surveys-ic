@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SplashView: View {
 
-    @EnvironmentObject private var appRouter: AppRouter
+    @EnvironmentObject private var navigator: Navigator
     @State private var fadeInOut = false
 
     // TODO: Remove timer after finishing login flow
@@ -33,7 +33,7 @@ struct SplashView: View {
                 .opacity(fadeInOut ? 1.0 : 0.0)
         }
         .onReceive(timer) { _ in
-            appRouter.state = .login
+            navigator.show(screen: .login, by: .root)
             timer.upstream.connect().cancel()
         }
     }

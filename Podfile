@@ -12,7 +12,7 @@ end
 target 'Surveys' do
   # UI
   pod 'Kingfisher'
-  pod 'SnapKit'
+  pod 'FlowStacks'
 
   # Storage
   pod 'KeychainAccess'

@@ -7,32 +7,23 @@
 //
 
 import Firebase
+import IQKeyboardManagerSwift
 import SwiftUI
 
 @main
 struct SurveysApp: App {
 
-    @StateObject var appRouter = AppRouter()
-
     init() {
         FirebaseApp.configure()
+        IQKeyboardManager.shared.enable = true
     }
 }
 
 extension SurveysApp {
 
-    @ViewBuilder var rootView: some View {
-        switch appRouter.state {
-        case .splash: SplashView()
-        case .login: LoginView()
-        case .home: HomeView()
-        case .forgotPassword: ForgotPasswordView()
-        }
-    }
-
     var body: some Scene {
         WindowGroup {
-            rootView.environmentObject(appRouter)
+            AppNavigator()
         }
     }
 }

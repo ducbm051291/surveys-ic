@@ -17,3 +17,7 @@
 "login.invalidPassword.text" = "The password must contain at least eight characters";
 "login.loginButton.title" = "Log in";
 "login.passwordTextField.placeholder" = "Password";
+
+"forgotPassword.description.text" = "Enter your email to receive instructions for resetting your password.";
+"forgotPassword.emailTextField.placeholder" = "Email";
+"forgotPassword.resetButton.title" = "Reset";
