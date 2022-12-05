@@ -13,7 +13,7 @@ extension Publisher {
 
     func asDriver() -> Driver<Output> {
         self.catch { _ in Empty() }
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 }

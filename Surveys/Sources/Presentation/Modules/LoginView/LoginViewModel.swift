@@ -49,23 +49,13 @@ final class LoginViewModel: ObservableObject {
             .store(in: &cancelBag)
 
         errorTracker
-            .receive(on: RunLoop.main)
-            .map { error -> LoginViewModel.State in
-                guard let error = error as? NetworkAPIError else {
-                    return .error(Localize.commonErrorText())
-                }
-                switch error {
-                case let .responseErrors(errors):
-                    return .error(errors.first?.detail ?? .empty)
-                default:
-                    return .error(Localize.commonErrorText())
-                }
-            }
+            .catchError()
+            .map { State.error($0) }
             .assign(to: \.state, on: self)
             .store(in: &cancelBag)
 
         activityTracker
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .filter { $0 }
             .map { _ in .loading }
             .assign(to: \.state, on: self)
@@ -73,8 +63,9 @@ final class LoginViewModel: ObservableObject {
     }
 
     func logIn() {
+        guard isLoginEnabled else { return }
         loginUseCase.execute(email: email, password: password)
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .flatMap { token in
                 self.storeTokenUseCase.execute(token: token)
             }

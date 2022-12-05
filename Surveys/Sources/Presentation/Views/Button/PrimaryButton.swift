@@ -32,7 +32,7 @@ struct PrimaryButton: View {
         .frame(maxWidth: .infinity, maxHeight: 56.0)
         .background(isEnabled ? .white : Colors.stoneGray.color)
         .foregroundColor(isEnabled ? Colors.smokeGray.color : .white)
-        .disabled(!isEnabled)
+        .disabled(isLoading || !isEnabled)
         .cornerRadius(10.0)
     }
 }
