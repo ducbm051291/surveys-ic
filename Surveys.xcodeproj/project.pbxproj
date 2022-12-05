@@ -819,6 +819,14 @@
 			path = JSONMapper;
 			sourceTree = "<group>";
 		};
+		58C6EB09293DF23C002A9B76 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				58C6EB0A293DF266002A9B76 /* MetaDecodable.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		622B0DBBBA14110ABF39412C /* Sourcery */ = {
 			isa = PBXGroup;
 			children = (
@@ -921,6 +929,7 @@
 		A942348CBB0976E6205E76DF /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				58C6EB09293DF23C002A9B76 /* Base */,
 				5828F82A29260E800074FE82 /* Token.swift */,
 				585E8691293F17CA008C7563 /* Message.swift */,
 			);
@@ -1567,6 +1576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C6EB0D293DF2E2002A9B76 /* MessageMeta.swift in Sources */,
 				586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */,
 				58C6C5AB29222B530083AF17 /* LoginParameter.swift in Sources */,
 				5828F83429260FDF0074FE82 /* UserDefaultsManager.swift in Sources */,
@@ -1591,6 +1601,7 @@
 				58C6C5AE29222E050083AF17 /* JSONAPIDecoder+Default.swift in Sources */,
 				5827FA1F2924D0F200CF2327 /* String+Empty.swift in Sources */,
 				5827FA0D29248DC900CF2327 /* LoginView.swift in Sources */,
+				58C6EB0B293DF266002A9B76 /* MetaDecodable.swift in Sources */,
 				58285B1F2939AECB00AC6E73 /* BannerData.swift in Sources */,
 				5866FE042934545100908E86 /* LoginViewModel.swift in Sources */,
 				E523B137B86D7E0119304CC1 /* Optional+Unwrap.swift in Sources */,
