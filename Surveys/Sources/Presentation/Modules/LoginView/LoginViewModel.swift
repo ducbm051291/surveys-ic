@@ -53,11 +53,11 @@ final class LoginViewModel: ObservableObject {
             .map { State.error($0) }
 
         let loadingState = activityTracker
-            .receive(on: DispatchQueue.main)
             .filter { $0 }
             .map { _ in State.loading }
 
         Publishers.Merge(errorState, loadingState)
+            .receive(on: DispatchQueue.main)
             .assign(to: \.state, on: self)
             .store(in: &cancelBag)
     }
