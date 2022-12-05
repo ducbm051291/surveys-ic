@@ -48,16 +48,16 @@ final class LoginViewModel: ObservableObject {
             .assign(to: \.isLoginEnabled, on: self)
             .store(in: &cancelBag)
 
-        errorTracker
+        let errorState = errorTracker
             .catchError()
             .map { State.error($0) }
-            .assign(to: \.state, on: self)
-            .store(in: &cancelBag)
 
-        activityTracker
+        let loadingState = activityTracker
             .receive(on: DispatchQueue.main)
             .filter { $0 }
-            .map { _ in .loading }
+            .map { _ in State.loading }
+
+        Publishers.Merge(errorState, loadingState)
             .assign(to: \.state, on: self)
             .store(in: &cancelBag)
     }
@@ -72,7 +72,7 @@ final class LoginViewModel: ObservableObject {
             .trackError(errorTracker)
             .trackActivity(activityTracker)
             .asDriver()
-            .map { _ in .loggedIn }
+            .map { _ in State.loggedIn }
             .assign(to: \.state, on: self)
             .store(in: &cancelBag)
     }
@@ -82,8 +82,7 @@ extension LoginViewModel {
 
     enum State: Equatable {
 
-        case idle, loading
-        case loggedIn
+        case idle, loading, loggedIn
         case error(String)
     }
 }
