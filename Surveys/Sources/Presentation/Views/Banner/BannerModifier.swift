@@ -59,6 +59,7 @@ struct BannerModifier: ViewModifier {
             }
             .padding(20.0)
             .background(Colors.mineShaft.color.opacity(0.6))
+            .background(.thinMaterial)
             Spacer()
         }
     }
