@@ -24,6 +24,7 @@ struct LoginView: View {
         case .loggedIn:
             setUpView()
                 .onAppear {
+                    // TODO: Replace navigation mechanism with FlowStacks
                     appRouter.state = .home
                 }
         case let .error(message):
