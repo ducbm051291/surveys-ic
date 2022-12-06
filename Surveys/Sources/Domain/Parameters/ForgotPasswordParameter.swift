@@ -10,12 +10,7 @@ import Foundation
 
 struct ForgotPasswordParameter: Parameterable, Codable, Equatable {
 
-    let user: ForgotPasswordUserParameter
+    let user: UserParameter
     let clientId: String
     let clientSecret: String
-}
-
-struct ForgotPasswordUserParameter: Parameterable, Codable, Equatable {
-
-    let email: String
 }
