@@ -25,6 +25,7 @@ extension SurveysApp {
         switch appRouter.state {
         case .splash: SplashView()
         case .login: LoginView()
+        case .home: HomeView()
         }
     }
 

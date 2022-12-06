@@ -13,19 +13,39 @@ import UIKit
 struct LoginView: View {
 
     @EnvironmentObject private var appRouter: AppRouter
-
-    // TODO: Replace state variables
-    @State var email = ""
-    @State var password = ""
-    @State var isLoginEnabled = true
+    @StateObject private var viewModel = LoginViewModel()
 
     var body: some View {
+        switch viewModel.state {
+        case .idle:
+            setUpView()
+        case .loading:
+            setUpView(isLoading: true)
+        case .loggedIn:
+            setUpView()
+                .onAppear {
+                    // TODO: Replace navigation mechanism with FlowStacks
+                    appRouter.state = .home
+                }
+        case let .error(message):
+            setUpView()
+                .alert(isPresented: .constant(true)) {
+                    Alert(
+                        title: Text(Localize.commonApplicationNameText()),
+                        message: Text(message),
+                        dismissButton: Alert.Button.default(Text(Localize.commonOkText()))
+                    )
+                }
+        }
+    }
+
+    private func setUpView(isLoading: Bool = false) -> some View {
         ZStack {
             setUpBackground()
             VStack(spacing: 0.0) {
                 setUpLogo()
                     .frame(maxHeight: .infinity)
-                setUpComponents()
+                setUpComponents(isLoading: isLoading)
                     .frame(maxHeight: .infinity)
                 Spacer()
                     .frame(maxHeight: .infinity)
@@ -57,13 +77,14 @@ struct LoginView: View {
         }
     }
 
-    private func setUpComponents() -> some View {
+    private func setUpComponents(isLoading: Bool = false) -> some View {
         VStack(alignment: .leading, spacing: 20.0) {
             setUpEmail()
             setUpPassword()
             PrimaryButton(
-                isEnabled: $isLoginEnabled,
-                action: {},
+                isEnabled: $viewModel.isLoginEnabled,
+                isLoading: isLoading,
+                action: { viewModel.logIn() },
                 title: Localize.loginLoginButtonTitle()
             )
         }
@@ -72,27 +93,29 @@ struct LoginView: View {
 
     private func setUpEmail() -> some View {
         VStack(alignment: .leading, spacing: 0.0) {
-            TextField(String.empty, text: $email)
+            TextField(String.empty, text: $viewModel.email)
                 .modifier(PlaceholderModifier(
-                    isVisible: true,
+                    isVisible: viewModel.email.isEmpty,
                     text: Localize.loginEmailTextFieldPlaceholder()
                 ))
             Text(Localize.loginInvalidEmailText())
                 .modifier(ErrorModifier())
                 .padding(.top, 4.0)
+                .hidden(viewModel.isEmailValid)
         }
     }
 
     private func setUpPassword() -> some View {
         VStack(alignment: .leading, spacing: 0.0) {
-            SecureField(String.empty, text: $email)
+            SecureField(String.empty, text: $viewModel.password)
                 .modifier(PlaceholderModifier(
-                    isVisible: true,
+                    isVisible: viewModel.password.isEmpty,
                     text: Localize.loginPasswordTextFieldPlaceholder()
                 ))
             Text(Localize.loginInvalidPasswordText())
                 .modifier(ErrorModifier())
                 .padding(.top, 4.0)
+                .hidden(viewModel.isPasswordValid)
         }
     }
 }

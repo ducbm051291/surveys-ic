@@ -14,20 +14,25 @@ struct PrimaryButton: View {
 
     let titleColor: Color = .white
     let backgroundColor: Color = .black
+    let isLoading: Bool
 
     var action: () -> Void
     var title: String
     var body: some View {
-        Button {
-            action()
-        } label: {
-            Text(title)
-                .font(.bold())
+        Button(action: action) {
+            if isLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                    .frame(maxHeight: .infinity, alignment: .center)
+            } else {
+                Text(title)
+                    .font(.bold())
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: 56.0)
         .background(isEnabled ? .white : Colors.stoneGray.color)
         .foregroundColor(isEnabled ? Colors.smokeGray.color : .white)
-        .disabled(!isEnabled)
+        .disabled(isLoading || !isEnabled)
         .cornerRadius(10.0)
     }
 }
