@@ -90,7 +90,7 @@
 		58C6EB06293DF050002A9B76 /* APIMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB05293DF050002A9B76 /* APIMessage.swift */; };
 		58C6EB0F293DF3B9002A9B76 /* ForgotPasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB0E293DF3B9002A9B76 /* ForgotPasswordUseCase.swift */; };
 		58C6EB12293DF7C6002A9B76 /* ForgotPasswordUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB10293DF6BA002A9B76 /* ForgotPasswordUseCaseSpec.swift */; };
-		58C6EB16293DF8AD002A9B76 /* APIEmpty+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB13293DF88F002A9B76 /* APIEmpty+Dummy.swift */; };
+		58C6EB16293DF8AD002A9B76 /* APIMessage+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB13293DF88F002A9B76 /* APIMessage+Dummy.swift */; };
 		58C6EB18293ED9EE002A9B76 /* UserParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB17293ED9EE002A9B76 /* UserParameter.swift */; };
 		58F6E6122934AF2C00D0547A /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6112934AF2C00D0547A /* String+Validation.swift */; };
 		58F6E6142934AF5B00D0547A /* Constants+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6132934AF5B00D0547A /* Constants+Regex.swift */; };
@@ -249,7 +249,7 @@
 		58C6EB05293DF050002A9B76 /* APIMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMessage.swift; sourceTree = "<group>"; };
 		58C6EB0E293DF3B9002A9B76 /* ForgotPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUseCase.swift; sourceTree = "<group>"; };
 		58C6EB10293DF6BA002A9B76 /* ForgotPasswordUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUseCaseSpec.swift; sourceTree = "<group>"; };
-		58C6EB13293DF88F002A9B76 /* APIEmpty+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIEmpty+Dummy.swift"; sourceTree = "<group>"; };
+		58C6EB13293DF88F002A9B76 /* APIMessage+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIMessage+Dummy.swift"; sourceTree = "<group>"; };
 		58C6EB17293ED9EE002A9B76 /* UserParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParameter.swift; sourceTree = "<group>"; };
 		58F6E6112934AF2C00D0547A /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
 		58F6E6132934AF5B00D0547A /* Constants+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Regex.swift"; sourceTree = "<group>"; };
@@ -634,7 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				5828F86B292637D60074FE82 /* APIToken+Dummy.swift */,
-				58C6EB13293DF88F002A9B76 /* APIEmpty+Dummy.swift */,
+				58C6EB13293DF88F002A9B76 /* APIMessage+Dummy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1558,7 +1558,7 @@
 				58683B1D29387D54005FD141 /* LoginViewModelSpec.swift in Sources */,
 				5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */,
 				5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */,
-				58C6EB16293DF8AD002A9B76 /* APIEmpty+Dummy.swift in Sources */,
+				58C6EB16293DF8AD002A9B76 /* APIMessage+Dummy.swift in Sources */,
 				58683B2029387EDC005FD141 /* Resolver+Domain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

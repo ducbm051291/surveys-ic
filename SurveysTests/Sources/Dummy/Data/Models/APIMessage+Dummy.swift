@@ -1,5 +1,5 @@
 //
-//  APIMessage.swift
+//  APIMessage+Dummy.swift
 //  Surveys
 //
 //  Created by David Bui on 05/12/2022.
