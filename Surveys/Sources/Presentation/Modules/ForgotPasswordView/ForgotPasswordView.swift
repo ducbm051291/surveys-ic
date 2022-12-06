@@ -13,9 +13,8 @@ import UIKit
 struct ForgotPasswordView: View {
 
     @EnvironmentObject private var navigator: Navigator
-    @StateObject private var viewModel = ForgotPasswordViewModel()
+    @ObservedObject var viewModel: ForgotPasswordViewModel
 
-    // TODO: Remove dummy data
     @State var isBannerVisible: Bool = true
     @State var bannerData = BannerData(
         title: Localize.forgotPasswordResetBannerTitleText(),
@@ -96,7 +95,7 @@ struct ForgotPasswordView: View {
             PrimaryButton(
                 isEnabled: $viewModel.isResetEnabled,
                 isLoading: isLoading,
-                action: { viewModel.state = .didReset },
+                action: { viewModel.resetPassword() },
                 title: Localize.forgotPasswordResetButtonTitle()
             )
         }
@@ -105,7 +104,7 @@ struct ForgotPasswordView: View {
 
     private func setUpEmail() -> some View {
         VStack(alignment: .leading, spacing: 0.0) {
-            TextField(String.empty, text: $viewModel.email)
+            TextField(viewModel.email, text: $viewModel.email)
                 .modifier(PlaceholderModifier(
                     isVisible: viewModel.email.isEmpty,
                     text: Localize.forgotPasswordEmailTextFieldPlaceholder()
@@ -117,6 +116,6 @@ struct ForgotPasswordView: View {
 struct ForgotPasswordViewPreView: PreviewProvider {
 
     static var previews: some View {
-        ForgotPasswordView()
+        ForgotPasswordView(viewModel: ForgotPasswordViewModel(email: .empty))
     }
 }

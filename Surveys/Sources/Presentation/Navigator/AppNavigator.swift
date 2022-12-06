@@ -16,7 +16,7 @@ struct AppNavigator: View {
     var body: some View {
         Router($navigator.routes) { screen, _ in
             switch screen {
-            case .forgotPassword: ForgotPasswordView()
+            case let .forgotPassword(viewModel): ForgotPasswordView(viewModel: viewModel)
             case .login: LoginView()
             case .home: HomeView()
             }

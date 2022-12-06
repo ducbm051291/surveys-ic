@@ -16,8 +16,8 @@ final class LoginViewModel: ObservableObject {
     @Injected private var storeTokenUseCase: StoreTokenUseCaseProtocol
 
     @Published var state: State = .idle
-    @Published var email: String = ""
-    @Published var password: String = ""
+    @Published var email: String = .empty
+    @Published var password: String = .empty
     @Published var isLoginEnabled = false
     @Published var isEmailValid = true
     @Published var isPasswordValid = true
