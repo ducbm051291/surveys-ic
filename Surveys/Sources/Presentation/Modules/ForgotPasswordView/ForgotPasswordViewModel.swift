@@ -50,7 +50,7 @@ final class ForgotPasswordViewModel: ObservableObject {
             .trackError(errorTracker)
             .trackActivity(activityTracker)
             .asDriver()
-            .map { _ in .didReset }
+            .map { .didReset($0.message) }
             .assign(to: \.state, on: self)
             .store(in: &cancelBag)
     }
@@ -60,7 +60,8 @@ extension ForgotPasswordViewModel {
 
     enum State: Equatable {
 
-        case idle, loading, didReset
+        case idle, loading
+        case didReset(String)
         case error(String)
     }
 }
