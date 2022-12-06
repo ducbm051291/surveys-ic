@@ -16,7 +16,7 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
 
     func forgotPassword(email: String) -> Observable<APIEmpty> {
         let parameter = ForgotPasswordParameter(
-            user: ForgotPasswordUserParameter(email: email),
+            user: UserParameter(email: email),
             clientId: Constants.API.clientId,
             clientSecret: Constants.API.clientSecret
         )
