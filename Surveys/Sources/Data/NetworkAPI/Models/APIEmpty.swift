@@ -10,9 +10,9 @@ import Foundation
 
 struct APIEmpty: MetaDecodable, Decodable, Equatable {
 
+    var meta: MessageMeta
+
     static func == (lhs: APIEmpty, rhs: APIEmpty) -> Bool {
         lhs.meta.message == rhs.meta.message
     }
-
-    var meta: MessageMeta
 }
