@@ -31,17 +31,18 @@ final class ForgotPasswordUseCaseSpec: QuickSpec {
             describe("its execute() call") {
 
                 let email = "email@email.com"
-                let resultToTest = APIEmpty.dummy
+                let messageToTest = APIMessage.dummy
                 let errorToTest = TestError.mock
 
                 context("when authenticationRepository emits success") {
 
-                    var executingLogin: Observable<APIEmpty>!
+                    var executingLogin: Observable<APIMessage>!
 
                     beforeEach {
-                        self.repository.forgotPasswordEmailReturnValue = Just(resultToTest).asObservable()
+                        self.repository.forgotPasswordEmailReturnValue = Just(messageToTest).asObservable()
                         executingLogin = useCase.execute(email: email)
-                            .eraseToAnyPublisher()
+                            .compactMap { $0 as? APIMessage }
+                            .asObservable()
                     }
 
                     it("triggers authenticationRepository to login") {
@@ -56,13 +57,13 @@ final class ForgotPasswordUseCaseSpec: QuickSpec {
 
                     it("emits correct content value") {
                         let result = try self.awaitPublisher(executingLogin)
-                        expect(result) == resultToTest
+                        expect(result) == messageToTest
                     }
                 }
 
                 context("when authenticationRepository emits failure") {
 
-                    var executingLogin: Observable<APIEmpty>!
+                    var executingLogin: Observable<APIMessage>!
 
                     beforeEach {
                         self.repository.loginEmailPasswordReturnValue = Fail(
@@ -71,7 +72,8 @@ final class ForgotPasswordUseCaseSpec: QuickSpec {
                         )
                         .asObservable()
                         executingLogin = useCase.execute(email: email)
-                            .replaceError(with: resultToTest)
+                            .compactMap { $0 as? APIMessage }
+                            .replaceError(with: messageToTest)
                             .asObservable()
                     }
 
@@ -87,7 +89,7 @@ final class ForgotPasswordUseCaseSpec: QuickSpec {
 
                     it("emits dummy due to error") {
                         let result = try self.awaitPublisher(executingLogin)
-                        expect(result) == resultToTest
+                        expect(result) == messageToTest
                     }
                 }
             }

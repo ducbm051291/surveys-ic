@@ -43,7 +43,7 @@ final class LoginUseCaseSpec: QuickSpec {
                         self.repository.loginEmailPasswordReturnValue = Just(tokenToTest).asObservable()
                         executingLogin = useCase.execute(email: email, password: password)
                             .compactMap { $0 as? APIToken }
-                            .eraseToAnyPublisher()
+                            .asObservable()
                     }
 
                     it("triggers authenticationRepository to login") {
@@ -79,7 +79,6 @@ final class LoginUseCaseSpec: QuickSpec {
                         )
                         .asObservable()
                         executingLogin = useCase.execute(email: email, password: password)
-                            .asObservable()
                             .compactMap { $0 as? APIToken }
                             .replaceError(with: .dummy)
                             .asObservable()

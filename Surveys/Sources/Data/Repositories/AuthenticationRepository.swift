@@ -14,13 +14,14 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
 
     @Injected private var networkAPI: NetworkAPIProtocol
 
-    func forgotPassword(email: String) -> Observable<APIEmpty> {
+    func forgotPassword(email: String) -> Observable<Message> {
         let parameter = ForgotPasswordParameter(
             user: UserParameter(email: email),
             clientId: Constants.API.clientId,
             clientSecret: Constants.API.clientSecret
         )
-        return networkAPI.performRequest(.forgotPassword(parameter), for: APIEmpty.self)
+        return networkAPI.performRequest(.forgotPassword(parameter), for: APIMessage.self)
+            .map { $0 as Message }
             .eraseToAnyPublisher()
     }
 

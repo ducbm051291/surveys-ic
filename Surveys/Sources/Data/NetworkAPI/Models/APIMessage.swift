@@ -1,5 +1,5 @@
 //
-//  MetaDecodable.swift
+//  APIMessage.swift
 //  Surveys
 //
 //  Created by David Bui on 05/12/2022.
@@ -8,9 +8,7 @@
 
 import Foundation
 
-protocol MetaDecodable {
+struct APIMessage: Message, Decodable, Equatable {
 
-    associatedtype Meta: Decodable
-
-    var meta: Meta { get }
+    var message: String
 }

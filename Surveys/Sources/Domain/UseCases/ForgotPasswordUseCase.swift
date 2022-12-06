@@ -12,14 +12,14 @@ import Resolver
 // sourcery: AutoMockable
 protocol ForgotPasswordUseCaseProtocol {
 
-    func execute(email: String) -> Observable<APIEmpty>
+    func execute(email: String) -> Observable<Message>
 }
 
 final class ForgotPasswordUseCase: ForgotPasswordUseCaseProtocol {
 
     @Injected private var authenticationRepository: AuthenticationRepositoryProtocol
 
-    func execute(email: String) -> Observable<APIEmpty> {
+    func execute(email: String) -> Observable<Message> {
         authenticationRepository.forgotPassword(email: email)
     }
 }

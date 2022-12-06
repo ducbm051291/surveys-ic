@@ -11,6 +11,6 @@ import Combine
 // sourcery: AutoMockable
 protocol AuthenticationRepositoryProtocol: AnyObject {
 
-    func forgotPassword(email: String) -> Observable<APIEmpty>
+    func forgotPassword(email: String) -> Observable<Message>
     func login(email: String, password: String) -> Observable<Token>
 }
