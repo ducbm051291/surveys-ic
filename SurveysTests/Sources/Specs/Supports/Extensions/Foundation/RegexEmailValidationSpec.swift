@@ -23,7 +23,7 @@ final class RegexEmailValidationSpec: QuickSpec {
                 let email: String = "duc@nimblehq"
 
                 it("validation return false value") {
-                    expect(email.validate(.email)) == true
+                    expect(email.validate(.email)) == false
                 }
             }
         }

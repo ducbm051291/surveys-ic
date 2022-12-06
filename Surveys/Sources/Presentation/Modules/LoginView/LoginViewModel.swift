@@ -22,7 +22,6 @@ final class LoginViewModel: ObservableObject {
     @Published var isEmailValid = true
     @Published var isPasswordValid = true
 
-    private var cancelBag = CancelBag()
     private let errorTracker = ErrorTracker()
     private let activityTracker = ActivityTracker(false)
 
@@ -32,21 +31,18 @@ final class LoginViewModel: ObservableObject {
             .dropFirst()
 
         emailValidation
-            .assign(to: \.isEmailValid, on: self)
-            .store(in: &cancelBag)
+            .assign(to: &$isEmailValid)
 
         let passwordValidation = $password
             .map { $0.validate(.password) && $0.isNotEmpty }
             .dropFirst()
 
         passwordValidation
-            .assign(to: \.isPasswordValid, on: self)
-            .store(in: &cancelBag)
+            .assign(to: &$isPasswordValid)
 
         Publishers.CombineLatest(emailValidation, passwordValidation)
             .map { $0.0 && $0.1 }
-            .assign(to: \.isLoginEnabled, on: self)
-            .store(in: &cancelBag)
+            .assign(to: &$isLoginEnabled)
 
         let errorState = errorTracker
             .catchError()
@@ -58,8 +54,7 @@ final class LoginViewModel: ObservableObject {
 
         Publishers.Merge(errorState, loadingState)
             .receive(on: DispatchQueue.main)
-            .assign(to: \.state, on: self)
-            .store(in: &cancelBag)
+            .assign(to: &$state)
     }
 
     func logIn() {
@@ -73,8 +68,7 @@ final class LoginViewModel: ObservableObject {
             .trackActivity(activityTracker)
             .asDriver()
             .map { _ in State.loggedIn }
-            .assign(to: \.state, on: self)
-            .store(in: &cancelBag)
+            .assign(to: &$state)
     }
 }
 
