@@ -87,7 +87,7 @@ struct LoginView: View {
                 title: Localize.loginLoginButtonTitle()
             )
         }
-        .padding([.leading, .trailing], 24.0)
+        .padding([.leading, .trailing], Constants.View.defaultPadding)
     }
 
     private func setUpEmail() -> some View {

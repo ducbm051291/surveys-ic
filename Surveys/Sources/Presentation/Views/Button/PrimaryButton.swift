@@ -29,7 +29,7 @@ struct PrimaryButton: View {
                     .font(.bold())
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: 56.0)
+        .frame(maxWidth: .infinity, maxHeight: Constants.View.defaultHeight)
         .background(isEnabled ? .white : Colors.stoneGray.color)
         .foregroundColor(isEnabled ? Colors.smokeGray.color : .white)
         .disabled(isLoading || !isEnabled)

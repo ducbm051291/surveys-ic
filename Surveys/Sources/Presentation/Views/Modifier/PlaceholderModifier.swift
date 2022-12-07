@@ -28,7 +28,7 @@ struct PlaceholderModifier: ViewModifier {
                 .font(.regular())
                 .foregroundColor(.white)
                 .padding()
-                .frame(maxWidth: .infinity, maxHeight: 56.0)
+                .frame(maxWidth: .infinity, maxHeight: Constants.View.defaultHeight)
                 .background(
                     RoundedRectangle(
                         cornerRadius: 12.0,

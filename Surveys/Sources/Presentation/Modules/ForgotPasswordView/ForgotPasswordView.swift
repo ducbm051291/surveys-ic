@@ -86,7 +86,7 @@ struct ForgotPasswordView: View {
                 .foregroundColor(.white.opacity(0.7))
                 .multilineTextAlignment(.center)
                 .frame(height: 44.0)
-                .padding(.horizontal, 24.0)
+                .padding(.horizontal, Constants.View.defaultPadding)
         }
     }
 
@@ -100,7 +100,7 @@ struct ForgotPasswordView: View {
                 title: Localize.forgotPasswordResetButtonTitle()
             )
         }
-        .padding([.leading, .trailing], 24.0)
+        .padding([.leading, .trailing], Constants.View.defaultPadding)
     }
 
     private func setUpEmail() -> some View {

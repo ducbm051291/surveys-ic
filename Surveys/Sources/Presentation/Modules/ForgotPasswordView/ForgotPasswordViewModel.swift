@@ -13,6 +13,7 @@ import Resolver
 final class ForgotPasswordViewModel: ObservableObject {
 
     @Published var state: State = .idle
+    // TODO: Remove hard-code
     @Published var email: String = "dev@nimblehq.co"
     @Published var isEmailValid = true
     @Published var isResetEnabled = true
@@ -22,8 +23,7 @@ extension ForgotPasswordViewModel {
 
     enum State: Equatable {
 
-        case idle, loading
-        case didReset
+        case idle, loading, didReset
         case error(String)
     }
 }
