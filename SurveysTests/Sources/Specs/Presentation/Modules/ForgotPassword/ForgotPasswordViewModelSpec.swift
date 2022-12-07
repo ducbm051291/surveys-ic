@@ -39,7 +39,6 @@ final class ForgotPasswordViewModelSpec: QuickSpec {
                     context("and forgotPasswordUseCase returns success") {
 
                         let messageToTest = APIMessage.dummy
-                        let errorToTest = TestError.mock
 
                         beforeEach {
                             self.forgotPasswordUseCase.executeEmailReturnValue = Just(messageToTest).asObservable()
