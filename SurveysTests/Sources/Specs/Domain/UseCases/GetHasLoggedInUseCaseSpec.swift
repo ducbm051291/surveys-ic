@@ -30,8 +30,6 @@ final class GetHasLoggedInUseCaseSpec: QuickSpec {
 
             describe("its execute() call") {
 
-                let tokenToTest = APIToken.dummy
-
                 context("when sessionRepository.hasToken return true") {
                     var executingHasLoggedIn: Observable<Bool>!
 
