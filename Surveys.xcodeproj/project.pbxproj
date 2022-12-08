@@ -50,6 +50,7 @@
 		5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */; };
 		5835AA002927270C00686B8C /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A9FF2927270C00686B8C /* TestError.swift */; };
 		585E8694293F297C008C7563 /* RegexEmailValidationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E8693293F297C008C7563 /* RegexEmailValidationSpec.swift */; };
+		585E8692293F17CA008C7563 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E8691293F17CA008C7563 /* Message.swift */; };
 		5861161B292732B300EF52A4 /* LoginUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586116192927329400EF52A4 /* LoginUseCaseSpec.swift */; };
 		5861161E292736D800EF52A4 /* SessionRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861161C292736C800EF52A4 /* SessionRepositorySpec.swift */; };
 		5861162029273AB200EF52A4 /* StoreTokenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861161F29273AB200EF52A4 /* StoreTokenUseCaseSpec.swift */; };
@@ -71,6 +72,7 @@
 		58BE093F2925E1C600662F6C /* ErrorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE093E2925E1C600662F6C /* ErrorModifier.swift */; };
 		58BE09432925EA6700662F6C /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE09422925EA6700662F6C /* String+URL.swift */; };
 		58BF66EE293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF66ED293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift */; };
+		58BF66F0293DD141003B1A82 /* ForgotPasswordParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF66EF293DD141003B1A82 /* ForgotPasswordParameter.swift */; };
 		58C6C5922921F79E0083AF17 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5912921F79E0083AF17 /* NetworkAPI.swift */; };
 		58C6C5952921F7FA0083AF17 /* NetworkAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5942921F7FA0083AF17 /* NetworkAPIError.swift */; };
 		58C6C5972921F88E0083AF17 /* NetworkAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5962921F88E0083AF17 /* NetworkAPIProtocol.swift */; };
@@ -82,6 +84,14 @@
 		58C6C5AE29222E050083AF17 /* JSONAPIDecoder+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5AD29222E050083AF17 /* JSONAPIDecoder+Default.swift */; };
 		58C6C5B029223E210083AF17 /* DateFormatter+Formats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5AF29223E210083AF17 /* DateFormatter+Formats.swift */; };
 		58F411002940690500135DC7 /* Constants+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F410FF2940690500135DC7 /* Constants+View.swift */; };
+		58C6EB06293DF050002A9B76 /* APIEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB05293DF050002A9B76 /* APIEmpty.swift */; };
+		58C6EB0B293DF266002A9B76 /* MetaDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB0A293DF266002A9B76 /* MetaDecodable.swift */; };
+		58C6EB0D293DF2E2002A9B76 /* MessageMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB0C293DF2E2002A9B76 /* MessageMeta.swift */; };
+		58C6EB06293DF050002A9B76 /* APIMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB05293DF050002A9B76 /* APIMessage.swift */; };
+		58C6EB0F293DF3B9002A9B76 /* ForgotPasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB0E293DF3B9002A9B76 /* ForgotPasswordUseCase.swift */; };
+		58C6EB12293DF7C6002A9B76 /* ForgotPasswordUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB10293DF6BA002A9B76 /* ForgotPasswordUseCaseSpec.swift */; };
+		58C6EB16293DF8AD002A9B76 /* APIMessage+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB13293DF88F002A9B76 /* APIMessage+Dummy.swift */; };
+		58C6EB18293ED9EE002A9B76 /* UserParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB17293ED9EE002A9B76 /* UserParameter.swift */; };
 		58F6E6122934AF2C00D0547A /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6112934AF2C00D0547A /* String+Validation.swift */; };
 		58F6E6142934AF5B00D0547A /* Constants+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6132934AF5B00D0547A /* Constants+Regex.swift */; };
 		58F6E6162935E33C00D0547A /* Publisher+ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6152935E33C00D0547A /* Publisher+ErrorTracker.swift */; };
@@ -197,6 +207,7 @@
 		5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositorySpec.swift; sourceTree = "<group>"; };
 		5835A9FF2927270C00686B8C /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		585E8693293F297C008C7563 /* RegexEmailValidationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexEmailValidationSpec.swift; sourceTree = "<group>"; };
+		585E8691293F17CA008C7563 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		586116192927329400EF52A4 /* LoginUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseSpec.swift; sourceTree = "<group>"; };
 		5861161C292736C800EF52A4 /* SessionRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepositorySpec.swift; sourceTree = "<group>"; };
 		5861161F29273AB200EF52A4 /* StoreTokenUseCaseSpec.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = StoreTokenUseCaseSpec.swift; sourceTree = "<group>"; };
@@ -220,6 +231,7 @@
 		58BE093E2925E1C600662F6C /* ErrorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModifier.swift; sourceTree = "<group>"; };
 		58BE09422925EA6700662F6C /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		58BF66ED293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassthroughSubject+ErrorCatcher.swift"; sourceTree = "<group>"; };
+		58BF66EF293DD141003B1A82 /* ForgotPasswordParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordParameter.swift; sourceTree = "<group>"; };
 		58C6C5912921F79E0083AF17 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		58C6C5942921F7FA0083AF17 /* NetworkAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIError.swift; sourceTree = "<group>"; };
 		58C6C5962921F88E0083AF17 /* NetworkAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocol.swift; sourceTree = "<group>"; };
@@ -231,6 +243,14 @@
 		58C6C5AD29222E050083AF17 /* JSONAPIDecoder+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONAPIDecoder+Default.swift"; sourceTree = "<group>"; };
 		58C6C5AF29223E210083AF17 /* DateFormatter+Formats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Formats.swift"; sourceTree = "<group>"; };
 		58F410FF2940690500135DC7 /* Constants+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+View.swift"; sourceTree = "<group>"; };
+		58C6EB05293DF050002A9B76 /* APIEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEmpty.swift; sourceTree = "<group>"; };
+		58C6EB0A293DF266002A9B76 /* MetaDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaDecodable.swift; sourceTree = "<group>"; };
+		58C6EB0C293DF2E2002A9B76 /* MessageMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageMeta.swift; sourceTree = "<group>"; };
+		58C6EB05293DF050002A9B76 /* APIMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMessage.swift; sourceTree = "<group>"; };
+		58C6EB0E293DF3B9002A9B76 /* ForgotPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUseCase.swift; sourceTree = "<group>"; };
+		58C6EB10293DF6BA002A9B76 /* ForgotPasswordUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUseCaseSpec.swift; sourceTree = "<group>"; };
+		58C6EB13293DF88F002A9B76 /* APIMessage+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIMessage+Dummy.swift"; sourceTree = "<group>"; };
+		58C6EB17293ED9EE002A9B76 /* UserParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParameter.swift; sourceTree = "<group>"; };
 		58F6E6112934AF2C00D0547A /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
 		58F6E6132934AF5B00D0547A /* Constants+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Regex.swift"; sourceTree = "<group>"; };
 		58F6E6152935E33C00D0547A /* Publisher+ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ErrorTracker.swift"; sourceTree = "<group>"; };
@@ -483,6 +503,7 @@
 		5828F82729260E5B0074FE82 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				58C6EB05293DF050002A9B76 /* APIMessage.swift */,
 				5828F82829260E770074FE82 /* APIToken.swift */,
 				5828F845292619930074FE82 /* KeychainToken.swift */,
 			);
@@ -494,6 +515,7 @@
 			children = (
 				5828F82D29260F0B0074FE82 /* LoginUseCase.swift */,
 				5828F84E292620520074FE82 /* StoreTokenUseCase.swift */,
+				58C6EB0E293DF3B9002A9B76 /* ForgotPasswordUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -586,6 +608,7 @@
 			children = (
 				586116192927329400EF52A4 /* LoginUseCaseSpec.swift */,
 				5861161F29273AB200EF52A4 /* StoreTokenUseCaseSpec.swift */,
+				58C6EB10293DF6BA002A9B76 /* ForgotPasswordUseCaseSpec.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -611,6 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				5828F86B292637D60074FE82 /* APIToken+Dummy.swift */,
+				58C6EB13293DF88F002A9B76 /* APIMessage+Dummy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -656,6 +680,15 @@
 			sourceTree = "<group>";
 		};
 		58683B2929389DA6005FD141 /* ForgotPasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				58683B2A29389DBB005FD141 /* ForgotPasswordView.swift */,
+				58285B1B2939A9D200AC6E73 /* ForgotPasswordViewModel.swift */,
+			);
+			path = ForgotPasswordView;
+			sourceTree = "<group>";
+		};
+		586ED15D2914EC6700181E14 /* SplashView */ = {
 			isa = PBXGroup;
 			children = (
 				58683B2A29389DBB005FD141 /* ForgotPasswordView.swift */,
@@ -772,6 +805,8 @@
 			isa = PBXGroup;
 			children = (
 				58C6C5AA29222B520083AF17 /* LoginParameter.swift */,
+				58BF66EF293DD141003B1A82 /* ForgotPasswordParameter.swift */,
+				58C6EB17293ED9EE002A9B76 /* UserParameter.swift */,
 			);
 			path = Parameters;
 			sourceTree = "<group>";
@@ -887,6 +922,7 @@
 			isa = PBXGroup;
 			children = (
 				5828F82A29260E800074FE82 /* Token.swift */,
+				585E8691293F17CA008C7563 /* Message.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1510,6 +1546,7 @@
 				58812DFF292B80E90078E5C5 /* XCTestCase+Publisher.swift in Sources */,
 				5861161B292732B300EF52A4 /* LoginUseCaseSpec.swift in Sources */,
 				5828F86C292637D60074FE82 /* APIToken+Dummy.swift in Sources */,
+				58C6EB12293DF7C6002A9B76 /* ForgotPasswordUseCaseSpec.swift in Sources */,
 				0C205FD636A87848DD90D15E /* AutoMockable.generated.swift in Sources */,
 				5828F85729262F600074FE82 /* Resolver+Data.swift in Sources */,
 				588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */,
@@ -1521,6 +1558,7 @@
 				58683B1D29387D54005FD141 /* LoginViewModelSpec.swift in Sources */,
 				5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */,
 				5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */,
+				58C6EB16293DF8AD002A9B76 /* APIMessage+Dummy.swift in Sources */,
 				58683B2029387EDC005FD141 /* Resolver+Domain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1543,6 +1581,7 @@
 				5828F82929260E770074FE82 /* APIToken.swift in Sources */,
 				5828F844292618BF0074FE82 /* SessionRepositoryProtocol.swift in Sources */,
 				5827FA102924C7E200CF2327 /* PlaceholderModifier.swift in Sources */,
+				58C6EB0F293DF3B9002A9B76 /* ForgotPasswordUseCase.swift in Sources */,
 				58F6E6182935E3F200D0547A /* Publisher+ActivityTracker.swift in Sources */,
 				5828F84D29261E910074FE82 /* Publisher+Driver.swift in Sources */,
 				58F6E6122934AF2C00D0547A /* String+Validation.swift in Sources */,
@@ -1562,15 +1601,18 @@
 				5827FA1D2924CF4600CF2327 /* PrimaryButton.swift in Sources */,
 				58B570C1292B1E78007831B8 /* Constants+Gradient.swift in Sources */,
 				58BF66EE293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift in Sources */,
+				58C6EB06293DF050002A9B76 /* APIMessage.swift in Sources */,
 				5828F82E29260F0B0074FE82 /* LoginUseCase.swift in Sources */,
 				58C6C5972921F88E0083AF17 /* NetworkAPIProtocol.swift in Sources */,
 				588FC05D293602FB00D1A38D /* R.generated.swift in Sources */,
 				5828F8532926213A0074FE82 /* Resolver+Domain.swift in Sources */,
 				58683B2629388165005FD141 /* Combine+Collect.swift in Sources */,
+				58C6EB18293ED9EE002A9B76 /* UserParameter.swift in Sources */,
 				58233885291C95C300412E50 /* AppNavigator.swift in Sources */,
 				58285B272939F18400AC6E73 /* NavigationBackButtonModifier.swift in Sources */,
 				5828F82629260E120074FE82 /* AuthenticationRepositoryProtocol.swift in Sources */,
 				D159394D010391AC5356ACC1 /* UIView+Subviews.swift in Sources */,
+				585E8692293F17CA008C7563 /* Message.swift in Sources */,
 				58285B1A29399F6E00AC6E73 /* Navigator+Screen.swift in Sources */,
 				5828F846292619930074FE82 /* KeychainToken.swift in Sources */,
 				5828F83E292610970074FE82 /* AuthenticationRepository.swift in Sources */,
@@ -1585,6 +1627,7 @@
 				58BE093F2925E1C600662F6C /* ErrorModifier.swift in Sources */,
 				5828F82B29260E800074FE82 /* Token.swift in Sources */,
 				5828F84F292620520074FE82 /* StoreTokenUseCase.swift in Sources */,
+				58BF66F0293DD141003B1A82 /* ForgotPasswordParameter.swift in Sources */,
 				5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */,
 				58285B1C2939A9D200AC6E73 /* ForgotPasswordViewModel.swift in Sources */,
 				58285B232939CCFF00AC6E73 /* View+Banner.swift in Sources */,

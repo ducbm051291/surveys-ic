@@ -14,6 +14,17 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
 
     @Injected private var networkAPI: NetworkAPIProtocol
 
+    func forgotPassword(email: String) -> Observable<Message> {
+        let parameter = ForgotPasswordParameter(
+            user: UserParameter(email: email),
+            clientId: Constants.API.clientId,
+            clientSecret: Constants.API.clientSecret
+        )
+        return networkAPI.performRequest(.forgotPassword(parameter), for: APIMessage.self)
+            .map { $0 as Message }
+            .eraseToAnyPublisher()
+    }
+
     func login(email: String, password: String) -> Observable<Token> {
         let parameter = LoginParameter(
             grantType: Constants.GrantType.password.rawValue,
