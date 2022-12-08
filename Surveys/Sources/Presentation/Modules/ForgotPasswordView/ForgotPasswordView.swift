@@ -1,8 +1,8 @@
 //
-//  LoginView.swift
+//  ForgotPasswordView.swift
 //  Surveys
 //
-//  Created by David Bui on 16/11/2022.
+//  Created by David Bui on 01/12/2022.
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
@@ -10,10 +10,17 @@ import Combine
 import SwiftUI
 import UIKit
 
-struct LoginView: View {
+struct ForgotPasswordView: View {
 
     @EnvironmentObject private var navigator: Navigator
-    @StateObject private var viewModel = LoginViewModel()
+    @StateObject private var viewModel = ForgotPasswordViewModel()
+
+    // TODO: Remove dummy data
+    @State var isBannerVisible: Bool = true
+    @State var bannerData = BannerData(
+        title: Localize.forgotPasswordResetBannerTitleText(),
+        detail: Localize.forgotPasswordResetBannerDescriptionText()
+    )
 
     var body: some View {
         switch viewModel.state {
@@ -21,11 +28,9 @@ struct LoginView: View {
             setUpView()
         case .loading:
             setUpView(isLoading: true)
-        case .loggedIn:
+        case .didReset:
             setUpView()
-                .onAppear {
-                    navigator.show(screen: .home, by: .root)
-                }
+                .banner(data: $bannerData, isVisible: $isBannerVisible)
         case let .error(message):
             setUpView()
                 .alert(isPresented: .constant(true)) {
@@ -50,6 +55,9 @@ struct LoginView: View {
                     .frame(maxHeight: .infinity)
             }
         }
+        .modifier(NavigationBackButtonModifier(action: {
+            navigator.goBack()
+        }))
     }
 
     private func setUpBackground() -> some View {
@@ -69,22 +77,27 @@ struct LoginView: View {
     }
 
     private func setUpLogo() -> some View {
-        VStack {
+        VStack(spacing: 32.0) {
             Assets.logoWhiteIcon.image
                 .resizable()
                 .frame(width: 168.0, height: 40.0)
+            Text(Localize.forgotPasswordDescriptionText())
+                .font(.regular())
+                .foregroundColor(.white.opacity(0.7))
+                .multilineTextAlignment(.center)
+                .frame(height: 44.0)
+                .padding(.horizontal, Constants.View.defaultPadding)
         }
     }
 
     private func setUpComponents(isLoading: Bool = false) -> some View {
-        VStack(alignment: .leading, spacing: 4.0) {
+        VStack(alignment: .leading, spacing: 20.0) {
             setUpEmail()
-            setUpPassword()
             PrimaryButton(
-                isEnabled: $viewModel.isLoginEnabled,
+                isEnabled: $viewModel.isResetEnabled,
                 isLoading: isLoading,
-                action: { viewModel.logIn() },
-                title: Localize.loginLoginButtonTitle()
+                action: { viewModel.state = .didReset },
+                title: Localize.forgotPasswordResetButtonTitle()
             )
         }
         .padding([.leading, .trailing], Constants.View.defaultPadding)
@@ -95,39 +108,15 @@ struct LoginView: View {
             TextField(String.empty, text: $viewModel.email)
                 .modifier(PlaceholderModifier(
                     isVisible: viewModel.email.isEmpty,
-                    text: Localize.loginEmailTextFieldPlaceholder()
+                    text: Localize.forgotPasswordEmailTextFieldPlaceholder()
                 ))
-            Text(Localize.loginInvalidEmailText())
-                .modifier(ErrorModifier())
-                .padding(.top, 4.0)
-                .hidden(viewModel.isEmailValid)
-        }
-    }
-
-    private func setUpPassword() -> some View {
-        VStack(alignment: .leading, spacing: 0.0) {
-            SecureField(String.empty, text: $viewModel.password)
-                .modifier(PlaceholderModifier(
-                    isVisible: viewModel.password.isEmpty,
-                    text: Localize.loginPasswordTextFieldPlaceholder()
-                ))
-                .modifier(RightButtonModifier(
-                    action: {
-                        navigator.show(screen: .forgotPassword, by: .push)
-                    },
-                    title: Localize.loginForgotButtonTitle()
-                ))
-            Text(Localize.loginInvalidPasswordText())
-                .modifier(ErrorModifier())
-                .padding(.top, 4.0)
-                .hidden(viewModel.isPasswordValid)
         }
     }
 }
 
-struct LoginViewPreView: PreviewProvider {
+struct ForgotPasswordViewPreView: PreviewProvider {
 
     static var previews: some View {
-        LoginView()
+        ForgotPasswordView()
     }
 }

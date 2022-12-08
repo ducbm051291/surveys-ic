@@ -23,6 +23,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.8)
     - GoogleUtilities/UserDefaults (~> 7.8)
     - PromisesObjC (~> 2.1)
+  - FlowStacks (0.2.5)
   - GoogleDataTransport (9.2.0):
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
@@ -55,7 +56,6 @@ PODS:
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
   - Resolver (1.5.0)
-  - SnapKit (5.6.0)
   - Sourcery (1.9.0):
     - Sourcery/CLI-Only (= 1.9.0)
   - Sourcery/CLI-Only (1.9.0)
@@ -68,6 +68,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Crashlytics
+  - FlowStacks
   - IQKeyboardManagerSwift
   - JSONAPIMapper
   - KeychainAccess
@@ -78,7 +79,6 @@ DEPENDENCIES:
   - Quick (= 5.0.1)
   - R.swift (= 6.1.0)
   - Resolver
-  - SnapKit
   - Sourcery
   - SurveysKeys (from `./dependencies/SurveysKeys`)
   - SurveysKeysInterfaces (from `./dependencies/SurveysKeysInterfaces`)
@@ -94,6 +94,7 @@ SPEC REPOS:
     - FirebaseCoreInternal
     - FirebaseCrashlytics
     - FirebaseInstallations
+    - FlowStacks
     - GoogleDataTransport
     - GoogleUtilities
     - IQKeyboardManagerSwift
@@ -108,7 +109,6 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - Resolver
-    - SnapKit
     - Sourcery
     - SwiftFormat
     - SwiftLint
@@ -135,6 +135,7 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: 091bde13e47bb1c5e9fe397634f3593dc390430f
   FirebaseCrashlytics: df7406152189d48346deafb716806d7bd9ebb573
   FirebaseInstallations: 004915af170935e3a583faefd5f8bc851afc220f
+  FlowStacks: a8f2c03581f41c4206c8444843a659c8a1897604
   GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
   GoogleUtilities: bad72cb363809015b1f7f19beb1f1cd23c589f95
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
@@ -150,7 +151,6 @@ SPEC CHECKSUMS:
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
-  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Sourcery: d7c59d100e55bf59123c8ae7d65a24cf30748979
   SurveysKeys: 42275e603f52231a7938548e75bdaaeb307bb33e
   SurveysKeysInterfaces: 4b39b6b887aa18d933047564bbc783ed137737e3
@@ -158,6 +158,6 @@ SPEC CHECKSUMS:
   SwiftLint: 6b0cf1f4d619808dbc16e4fab064ce6fc79f090b
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: 43e4c9d23e3301a34ef0ace9e68d282a4b13205d
+PODFILE CHECKSUM: b410447bd1365d3940ad104e39fadfef1d8defb8
 
 COCOAPODS: 1.11.3

@@ -35,6 +35,9 @@ extension Font {
         /// 10px
         case xxSmall = 10.0
 
+        /// 13px
+        case xSmall = 13.0
+
         /// 15px
         case small = 15.0
 

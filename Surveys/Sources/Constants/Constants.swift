@@ -12,4 +12,5 @@ enum Constants {
     }
 
     enum Regex {}
+    enum View {}
 }

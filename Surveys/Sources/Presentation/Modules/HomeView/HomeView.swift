@@ -12,7 +12,7 @@ import UIKit
 
 struct HomeView: View {
 
-    @EnvironmentObject private var appRouter: AppRouter
+    @EnvironmentObject private var navigator: Navigator
 
     var body: some View {
         ZStack {
