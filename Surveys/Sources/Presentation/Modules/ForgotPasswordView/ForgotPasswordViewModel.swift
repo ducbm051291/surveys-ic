@@ -18,7 +18,6 @@ final class ForgotPasswordViewModel: ObservableObject {
     @Published var email: String = .empty
     @Published var isResetEnabled = false
 
-    private var cancelBag = CancelBag()
     private let errorTracker = ErrorTracker()
     private let activityTracker = ActivityTracker(false)
 
@@ -26,8 +25,7 @@ final class ForgotPasswordViewModel: ObservableObject {
         self.email = email
 
         $email.map { $0.isNotEmpty }
-            .assign(to: \.isResetEnabled, on: self)
-            .store(in: &cancelBag)
+            .assign(to: &$isResetEnabled)
 
         let errorState = errorTracker
             .catchError()
@@ -39,8 +37,7 @@ final class ForgotPasswordViewModel: ObservableObject {
 
         Publishers.Merge(errorState, loadingState)
             .receive(on: DispatchQueue.main)
-            .assign(to: \.state, on: self)
-            .store(in: &cancelBag)
+            .assign(to: &$state)
     }
 
     func resetPassword() {
@@ -51,8 +48,7 @@ final class ForgotPasswordViewModel: ObservableObject {
             .trackActivity(activityTracker)
             .asDriver()
             .map { .didReset($0.message) }
-            .assign(to: \.state, on: self)
-            .store(in: &cancelBag)
+            .assign(to: &$state)
     }
 }
 
