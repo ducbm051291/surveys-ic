@@ -12,7 +12,7 @@ end
 target 'Surveys' do
   # UI
   pod 'Kingfisher'
-  pod 'SnapKit'
+  pod 'FlowStacks'
 
   # Storage
   pod 'KeychainAccess'
@@ -22,13 +22,15 @@ target 'Surveys' do
   pod 'IQKeyboardManagerSwift'
   pod 'JSONAPIMapper'
   pod 'NimbleExtension', :git => 'https://github.com/nimblehq/NimbleExtension', :branch => 'master'
-  pod 'R.swift'
+  pod 'R.swift', '6.1.0'
   pod 'Resolver'
   pod 'Moya/Combine', '~> 15.0'
 
   # Development
   pod 'SwiftLint'
   pod 'Wormholy', :configurations => ['Debug Staging', 'Debug Production']
+  pod "SurveysKeys", path: "./dependencies/SurveysKeys"
+  pod "SurveysKeysInterfaces", path: "./dependencies/SurveysKeysInterfaces"
 
   target 'SurveysTests' do
     inherit! :search_paths
@@ -39,14 +41,6 @@ target 'Surveys' do
     testing_pods
   end
 end
-
-plugin 'cocoapods-keys', {
-  :project => "Surveys",
-  :keys => [
-    "ClientId",
-    "ClientSecret"
-  ]
-}
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|

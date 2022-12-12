@@ -6,7 +6,10 @@
   Copyright © 2022 Nimble. All rights reserved.
 */
 
+"common.applicationName.text" = "Surveys";
 "common.cancel.text" = "Cancel";
+"common.error.text" = "An error has occurred. Please try again later!";
+"common.ok.text" = "OK";
 
 "login.emailTextField.placeholder" = "Email";
 "login.forgotButton.title" = "Forgot?";
@@ -14,3 +17,9 @@
 "login.invalidPassword.text" = "The password must contain at least eight characters";
 "login.loginButton.title" = "Log in";
 "login.passwordTextField.placeholder" = "Password";
+
+"forgotPassword.description.text" = "Enter your email to receive instructions for resetting your password.";
+"forgotPassword.emailTextField.placeholder" = "Email";
+"forgotPassword.resetBannerDescription.text" = "We’ve email you instructions to reset your password.";
+"forgotPassword.resetBannerTitle.text" = "Check your email.";
+"forgotPassword.resetButton.title" = "Reset";

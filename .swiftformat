@@ -1,5 +1,5 @@
 # file options
---exclude Pods, Generated, **/*.generated.swift
+--exclude dependencies, Pods, Generated, **/*.generated.swift
 
 # rules
 --disable fileHeader

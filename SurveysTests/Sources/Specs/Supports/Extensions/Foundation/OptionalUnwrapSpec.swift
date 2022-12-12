@@ -26,7 +26,7 @@ final class OptionalUnwrapSpec: QuickSpec {
                 }
 
                 it("returns empty string") {
-                    expect(value.string) == ""
+                    expect(value.string) == .empty
                 }
             }
         }

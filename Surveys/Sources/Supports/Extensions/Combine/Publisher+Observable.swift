@@ -10,16 +10,6 @@ import Combine
 
 extension Publisher {
 
-    func just(_ output: Output) -> Observable<Output> {
-        Just(output)
-            .setFailureType(to: Error.self)
-            .eraseToAnyPublisher()
-    }
-
-    func empty() -> Observable<Output> {
-        Empty().eraseToAnyPublisher()
-    }
-
     func asObservable() -> Observable<Output> {
         mapError { $0 }
             .eraseToAnyPublisher()
