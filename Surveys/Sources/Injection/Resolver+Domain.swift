@@ -16,6 +16,8 @@ extension Resolver {
 
     private static func registerUseCases() {
         register(ForgotPasswordUseCaseProtocol.self) { ForgotPasswordUseCase() }
+        register(GetHasLoggedInUseCaseProtocol.self) { GetHasLoggedInUseCase() }
+        register(GetTokenUseCaseProtocol.self) { GetTokenUseCase() }
         register(LoginUseCaseProtocol.self) { LoginUseCase() }
         register(StoreTokenUseCaseProtocol.self) { StoreTokenUseCase() }
     }
