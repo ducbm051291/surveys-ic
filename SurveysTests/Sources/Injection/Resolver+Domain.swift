@@ -17,6 +17,8 @@ extension Resolver {
     }
 
     private static func registerUseCases() {
+        mock.register { ForgotPasswordUseCaseProtocolMock() }
+            .implements(ForgotPasswordUseCaseProtocol.self)
         mock.register { LoginUseCaseProtocolMock() }
             .implements(LoginUseCaseProtocol.self)
         mock.register { StoreTokenUseCaseProtocolMock() }

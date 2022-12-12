@@ -113,7 +113,10 @@ struct LoginView: View {
                 ))
                 .modifier(RightButtonModifier(
                     action: {
-                        navigator.show(screen: .forgotPassword, by: .push)
+                        navigator.show(
+                            screen: .forgotPassword(ForgotPasswordViewModel(email: viewModel.email)),
+                            by: .push
+                        )
                     },
                     title: Localize.loginForgotButtonTitle()
                 ))

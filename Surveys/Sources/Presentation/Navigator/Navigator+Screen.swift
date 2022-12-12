@@ -12,6 +12,6 @@ extension Navigator {
 
         case login
         case home
-        case forgotPassword
+        case forgotPassword(_ viewModel: ForgotPasswordViewModel)
     }
 }
