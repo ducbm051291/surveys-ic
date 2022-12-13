@@ -10,5 +10,5 @@ import Foundation
 
 struct APISurvey: Survey, Decodable, Equatable {
 
-    let id: String
+    let id: Int
 }

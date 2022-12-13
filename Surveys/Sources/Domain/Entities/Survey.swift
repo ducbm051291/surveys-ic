@@ -10,5 +10,5 @@ import Foundation
 
 protocol Survey: Decodable {
 
-    var id: String { get }
+    var id: Int { get }
 }
