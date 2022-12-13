@@ -43,6 +43,12 @@ extension Font {
 
         /// 17px
         case regular = 17.0
+
+        /// 28px
+        case large = 28.0
+
+        /// 34px
+        case xLarge = 34.0
     }
 
     static func regular(ofSize size: Font.Size = .regular) -> Font {
