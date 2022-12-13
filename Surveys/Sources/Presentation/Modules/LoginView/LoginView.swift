@@ -81,9 +81,9 @@ struct LoginView: View {
             setUpEmail()
             setUpPassword()
             PrimaryButton(
-                isEnabled: $viewModel.isLoginEnabled,
+                isEnabled: .constant(true), //$viewModel.isLoginEnabled,
                 isLoading: isLoading,
-                action: { viewModel.logIn() },
+                action: { navigator.show(screen: .home, by: .root) },//viewModel.logIn() },
                 title: Localize.loginLoginButtonTitle()
             )
         }

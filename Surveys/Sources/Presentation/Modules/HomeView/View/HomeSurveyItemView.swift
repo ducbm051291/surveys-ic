@@ -6,9 +6,12 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
+import Kingfisher
 import SwiftUI
 
 struct HomeSurveyItemView: View {
+
+    var survey: APISurvey
 
     var body: some View {
         ZStack {
@@ -37,45 +40,32 @@ struct HomeSurveyItemView: View {
                         .modifier(TextDescriptionModifier())
                         .lineLimit(2)
                 }
-                .padding(.vertical, 20.0)
+                .padding(.horizontal, 20.0)
                 Button(String.empty) {}
                     .modifier(RoundNextButtonModifier(action: {}))
                     .padding(.trailing, 20.0)
             }
             .frame(height: 126.0)
-            .padding(.bottom, 54.0)
         }
+        .padding(.bottom, 54.0)
     }
 
     private func setUpBackgroundImage() -> some View {
-        Assets.backgroundImage.image
-            .resizable()
-            .scaledToFill()
+        KFImage(URL(string: survey.id))
+            .placeholder { _ in
+                Assets.backgroundImage.image
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+            }
+            .fade(duration: 0.3)
+            .frame(
+                width: UIScreen.main.bounds.width,
+                height: UIScreen.main.bounds.height
+            )
+            .overlay {
+                Constants.Gradient.surveyBackground.opacity(0.6)
+            }
             .edgesIgnoringSafeArea(.all)
-//        AsyncImage(url: URL(string: "")) { phase in
-//            switch phase {
-//            case .empty:
-//                ProgressView()
-//                    .hidden()
-//            case let .success(image):
-//                image
-//                    .resizable()
-//                    .scaledToFill()
-//                    .edgesIgnoringSafeArea(.all)
-//                    .transition(.opacity)
-//            case .failure:
-//                Assets.backgroundImage.image
-//                    .resizable()
-//                    .scaledToFill()
-//                    .edgesIgnoringSafeArea(.all)
-//            @unknown default:
-//                EmptyView()
-//            }
-//        }
-//        .opacity(0.6)
-//        .frame(
-//            width: UIScreen.main.bounds.width,
-//            height: UIScreen.main.bounds.height
-//        )
     }
 }

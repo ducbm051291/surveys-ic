@@ -6,6 +6,7 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
+import Kingfisher
 import SwiftUI
 
 struct HomeHeaderView: View {
@@ -14,11 +15,11 @@ struct HomeHeaderView: View {
     @Binding var isMenuVisible: Bool
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 4.0) {
+            // TODO: Remove dummy data
             Text("Monday, JUNE 15")
-                .font(.regular(ofSize: .xSmall))
+                .font(.bold(ofSize: .xSmall))
                 .foregroundColor(.white)
-                .padding(.bottom, 1.0)
             HStack {
                 Text("Today")
                     .font(.bold(ofSize: .xLarge))
@@ -26,6 +27,7 @@ struct HomeHeaderView: View {
                 Spacer()
                 setUpAvatar()
             }
+            .frame(height: 36.0)
         }
     }
 
@@ -35,27 +37,15 @@ struct HomeHeaderView: View {
                 isMenuVisible.toggle()
             }
         }, label: {
-            AsyncImage(
-                url: URL(string: imageURL)
-            ) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView().hidden()
-                case let .success(image):
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
-                case .failure:
+            KFImage(URL(string: imageURL))
+                .placeholder { _ in
                     Assets.userPlaceholderIcon.image
                         .resizable()
                         .scaledToFill()
                         .clipShape(Circle())
-                @unknown default:
-                    EmptyView()
                 }
-            }
-            .frame(width: 36.0, height: 36.0)
+                .fade(duration: 0.3)
+                .frame(width: 36.0, height: 36.0)
         })
         .hidden(withAnimation(.easeIn) { isMenuVisible })
         .padding()

@@ -15,8 +15,14 @@ struct HomeView: View {
     @EnvironmentObject private var navigator: Navigator
     @StateObject private var viewModel = HomeViewModel()
     @State var isMenuVisible = false
+    @State private var selectedTab = 0
     // TODO: Remove dummy surveys
-    @State var surveys: [String] = []
+    let surveys = [
+        APISurvey(id: "1"),
+        APISurvey(id: "2"),
+        APISurvey(id: "3"),
+        APISurvey(id: "4")
+    ]
 
     var body: some View {
         switch viewModel.state {
@@ -47,21 +53,30 @@ struct HomeView: View {
                 // Skeleton here
             } else {
                 setUpTabView()
+                    .overlay(alignment: .top) {
+                        HomeHeaderView(imageURL: .empty, isMenuVisible: $isMenuVisible)
+                            .padding(.top, 60.0)
+                            .padding(.leading, 20.0)
+                            .overlay {
+                                // Set up right menu here
+                            }
+                    }
             }
-            HomeHeaderView(imageURL: .empty, isMenuVisible: $isMenuVisible)
-                .overlay {
-                    // Set up right menu here
-                }
         }
+        .ignoresSafeArea()
     }
 
     private func setUpTabView() -> some View {
         TabView {
+            ForEach(surveys, id: \.id) { survey in
+                HomeSurveyItemView(survey: survey)
+            }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
         .overlay(alignment: .leading) {
             setUpPageControl()
         }
+        .edgesIgnoringSafeArea(.all)
     }
 
     private func setUpPageControl() -> some View {
