@@ -12,7 +12,7 @@ import Resolver
 
 final class HomeViewModel: ObservableObject {
 
-    @Published var state: State = .idle
+    @Published var state: State = .loading
 }
 
 extension HomeViewModel {

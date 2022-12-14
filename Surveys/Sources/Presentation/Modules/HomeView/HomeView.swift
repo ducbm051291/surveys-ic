@@ -15,7 +15,6 @@ struct HomeView: View {
     @EnvironmentObject private var navigator: Navigator
     @StateObject private var viewModel = HomeViewModel()
     @State var isMenuVisible = false
-    @State var currentSurveyIndex = 0
     @State var selectedSurveyIndex = 0
     // TODO: Remove dummy surveys
     let surveys = [
@@ -29,11 +28,14 @@ struct HomeView: View {
         switch viewModel.state {
         case .idle:
             setUpView()
-                .onAppear {
-                    // Load stuffs here
-                }
         case .loading:
             setUpView(isLoading: true)
+                .onAppear {
+                    // TODO: Remove loading demo code
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        viewModel.state = .loaded
+                    }
+                }
         case .loaded:
             setUpView()
         case let .error(message):
@@ -51,14 +53,11 @@ struct HomeView: View {
     private func setUpView(isLoading: Bool = false) -> some View {
         ZStack {
             if isLoading {
-                // Skeleton here
+                HomeSkeletonLoadingView()
             } else {
                 setUpTabView()
                     .overlay(alignment: .top) {
                         setUpHeaderHomeView()
-                    }
-                    .onChange(of: selectedSurveyIndex) { index in
-                        currentSurveyIndex = index
                     }
             }
         }
@@ -74,6 +73,8 @@ struct HomeView: View {
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
+        .animation(.easeInOut, value: selectedSurveyIndex)
+        .transition(.slide)
         .overlay(alignment: .leading) {
             setUpPageControl()
         }
@@ -93,7 +94,7 @@ struct HomeView: View {
         VStack(alignment: .leading) {
             Spacer()
             PageControlView(
-                currentPage: $currentSurveyIndex,
+                currentPage: $selectedSurveyIndex,
                 numberOfPages: 4
             )
             .frame(

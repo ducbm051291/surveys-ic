@@ -56,6 +56,7 @@ PODS:
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
   - Resolver (1.5.0)
+  - ShimmerView (0.5.0)
   - Sourcery (1.9.0):
     - Sourcery/CLI-Only (= 1.9.0)
   - Sourcery/CLI-Only (1.9.0)
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - Quick (= 5.0.1)
   - R.swift (= 6.1.0)
   - Resolver
+  - ShimmerView
   - Sourcery
   - SurveysKeys (from `./dependencies/SurveysKeys`)
   - SurveysKeysInterfaces (from `./dependencies/SurveysKeysInterfaces`)
@@ -109,6 +111,7 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - Resolver
+    - ShimmerView
     - Sourcery
     - SwiftFormat
     - SwiftLint
@@ -151,6 +154,7 @@ SPEC CHECKSUMS:
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
+  ShimmerView: ffde81304d8fb29127cbce492d14430dca288ebb
   Sourcery: d7c59d100e55bf59123c8ae7d65a24cf30748979
   SurveysKeys: 42275e603f52231a7938548e75bdaaeb307bb33e
   SurveysKeysInterfaces: 4b39b6b887aa18d933047564bbc783ed137737e3
@@ -158,6 +162,6 @@ SPEC CHECKSUMS:
   SwiftLint: 6b0cf1f4d619808dbc16e4fab064ce6fc79f090b
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: b410447bd1365d3940ad104e39fadfef1d8defb8
+PODFILE CHECKSUM: df2d1819918a8a336a61754609741535ca1e9fc1
 
 COCOAPODS: 1.11.3
