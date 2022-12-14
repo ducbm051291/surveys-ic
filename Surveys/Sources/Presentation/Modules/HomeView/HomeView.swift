@@ -59,6 +59,11 @@ struct HomeView: View {
                     .overlay(alignment: .top) {
                         setUpHeaderHomeView()
                     }
+                    .overlay(alignment: .top) {
+                        if isMenuVisible {
+                            HomeLeftMenuView(isVisible: $isMenuVisible)
+                        }
+                    }
             }
         }
         .ignoresSafeArea()

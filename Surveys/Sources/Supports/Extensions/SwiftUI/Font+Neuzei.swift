@@ -33,7 +33,10 @@ extension Font {
     enum Size: CGFloat {
 
         /// 10px
-        case xxSmall = 10.0
+        case xxxSmall = 10.0
+
+        /// 11px
+        case xxSmall = 11.0
 
         /// 13px
         case xSmall = 13.0
@@ -43,6 +46,9 @@ extension Font {
 
         /// 17px
         case regular = 17.0
+
+        /// 20px
+        case medium = 20.0
 
         /// 28px
         case large = 28.0
