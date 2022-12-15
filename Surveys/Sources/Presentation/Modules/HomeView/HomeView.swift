@@ -16,7 +16,7 @@ struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     @State var isMenuVisible = false
     @State var selectedSurveyIndex = 0
-    
+
     // TODO: Remove dummy surveys
     let surveys = [
         APISurvey(id: 0),
