@@ -13,6 +13,7 @@ import Resolver
 final class HomeViewModel: ObservableObject {
 
     @Published var state: State = .loading
+    @Published var version: String = Bundle.main.version
 }
 
 extension HomeViewModel {
