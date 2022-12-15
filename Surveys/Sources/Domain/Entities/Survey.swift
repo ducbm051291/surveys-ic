@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Survey: Decodable {
+protocol Survey {
 
     var id: Int { get }
 }

@@ -38,11 +38,9 @@ struct HomeHeaderView: View {
             }
         }, label: {
             KFImage(URL(string: imageURL))
+                .onFailureImage(Assets.userPlaceholderIcon())
                 .placeholder { _ in
-                    Assets.userPlaceholderIcon.image
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
+                    Circle().foregroundColor(.black)
                 }
                 .fade(duration: 0.3)
                 .frame(width: 36.0, height: 36.0)
