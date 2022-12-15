@@ -11,8 +11,9 @@ end
 
 target 'Surveys' do
   # UI
-  pod 'Kingfisher'
   pod 'FlowStacks'
+  pod 'Kingfisher'
+  pod 'ShimmerView'
 
   # Storage
   pod 'KeychainAccess'

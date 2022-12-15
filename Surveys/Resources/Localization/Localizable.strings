@@ -23,3 +23,6 @@
 "forgotPassword.resetBannerDescription.text" = "We’ve email you instructions to reset your password.";
 "forgotPassword.resetBannerTitle.text" = "Check your email.";
 "forgotPassword.resetButton.title" = "Reset";
+
+"home.logOut.text" = "Logout";
+"home.logOutConfirm.text" = "Are you sure you want to logout?";

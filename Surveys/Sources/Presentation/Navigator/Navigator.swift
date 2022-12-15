@@ -13,16 +13,16 @@ final class Navigator: ObservableObject {
 
     @Published var routes: Routes<Screen> = [.root(.login, embedInNavigationView: true)]
 
-    func show(screen: Screen, by transition: Transition) {
+    func show(screen: Screen, by transition: Transition, embedInNavigationView: Bool = false) {
         switch transition {
         case .root:
-            routes = [.root(screen)]
+            routes = [.root(screen, embedInNavigationView: embedInNavigationView)]
         case .push:
             routes.push(screen)
         case .presentSheet:
-            routes.presentSheet(screen)
+            routes.presentSheet(screen, embedInNavigationView: embedInNavigationView)
         case .presentCover:
-            routes.presentCover(screen)
+            routes.presentCover(screen, embedInNavigationView: embedInNavigationView)
         }
     }
 
