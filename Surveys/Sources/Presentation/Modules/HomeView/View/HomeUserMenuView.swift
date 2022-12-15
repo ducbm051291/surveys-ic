@@ -16,7 +16,7 @@ struct HomeUserMenuView: View {
 
     var body: some View {
         HStack {
-            setUpSpaceView()
+            setUpBackgroundView()
             setUpMenu()
                 .overlay {
                     setUpVersion()
@@ -86,14 +86,11 @@ struct HomeUserMenuView: View {
         }
     }
 
-    private func setUpSpaceView() -> some View {
+    private func setUpBackgroundView() -> some View {
         ZStack {
             Color.black.opacity(0.0)
             Rectangle()
-                .frame(
-                    width: UIScreen.main.bounds.width - 240.0,
-                    height: UIScreen.main.bounds.height
-                )
+                .background(Color.black.opacity(0.0))
                 .blendMode(.destinationOut)
                 .onTapGesture {
                     withAnimation(.easeOut) {
