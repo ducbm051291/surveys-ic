@@ -16,6 +16,7 @@ struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     @State var isMenuVisible = false
     @State var selectedSurveyIndex = 0
+    
     // TODO: Remove dummy surveys
     let surveys = [
         APISurvey(id: 0),
@@ -53,16 +54,11 @@ struct HomeView: View {
     private func setUpView(isLoading: Bool = false) -> some View {
         ZStack {
             if isLoading {
-                HomeSkeletonLoadingView()
+                // TODO: Implement Skeleton Loading View here
             } else {
                 setUpTabView()
                     .overlay(alignment: .top) {
                         setUpHeaderHomeView()
-                    }
-                    .overlay(alignment: .top) {
-                        if isMenuVisible {
-                            HomeUserMenuView(isVisible: $isMenuVisible)
-                        }
                     }
             }
         }
