@@ -73,6 +73,7 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
             }
         }
+        .background(.black)
         .tabViewStyle(.page(indexDisplayMode: .never))
         .animation(.easeInOut, value: selectedSurveyIndex)
         .transition(.slide)

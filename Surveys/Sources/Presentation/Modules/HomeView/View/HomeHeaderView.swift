@@ -34,7 +34,7 @@ struct HomeHeaderView: View {
     private func setUpAvatar() -> some View {
         Button(action: {
             withAnimation(.easeIn) {
-                isMenuVisible.toggle()
+                // TODO: Present menu view
             }
         }, label: {
             KFImage(URL(string: imageURL))
@@ -47,7 +47,6 @@ struct HomeHeaderView: View {
                 .fade(duration: 0.3)
                 .frame(width: 36.0, height: 36.0)
         })
-        .hidden(withAnimation(.easeIn) { isMenuVisible })
         .padding()
     }
 }

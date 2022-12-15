@@ -81,3 +81,6 @@ Build
 
 # Arkana
 dependencies/
+
+# Environment
+.env
