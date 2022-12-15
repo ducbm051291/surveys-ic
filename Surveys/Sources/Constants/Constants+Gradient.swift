@@ -21,7 +21,7 @@ extension Constants.Gradient {
 
     static let surveyBackground = LinearGradient(
         gradient: Gradient(stops: [
-            .init(color: .white, location: 0.0),
+            .init(color: .white.opacity(0.01), location: 0.0),
             .init(color: .black, location: 1.0)
         ]),
         startPoint: .top,

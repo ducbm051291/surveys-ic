@@ -47,7 +47,7 @@ struct HomeSurveyItemView: View {
     private func setUpBackgroundImage() -> some View {
         KFImage(URL(string: String.empty))
             .placeholder { _ in
-                Assets.backgroundImage.image
+                Assets.surveyBackgroundImage.image
                     .resizable()
                     .scaledToFill()
             }
