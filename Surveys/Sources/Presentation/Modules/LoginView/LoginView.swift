@@ -19,6 +19,9 @@ struct LoginView: View {
         switch viewModel.state {
         case .idle:
             setUpView()
+                .onAppear {
+                    navigator.show(screen: .home, by: .root)
+                }
         case .loading:
             setUpView(isLoading: true)
         case .loggedIn:

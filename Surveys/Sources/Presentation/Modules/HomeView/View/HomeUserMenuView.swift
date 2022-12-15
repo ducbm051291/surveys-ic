@@ -1,5 +1,5 @@
 //
-//  HomeLeftMenuView.swift
+//  HomeUserMenuView.swift
 //  Surveys
 //
 //  Created by David Bui on 14/12/2022.
@@ -9,37 +9,38 @@
 import Kingfisher
 import SwiftUI
 
-struct HomeLeftMenuView: View {
+struct HomeUserMenuView: View {
 
     @State var isConfirmAlertVisible: Bool = false
     @Binding var isVisible: Bool
 
     var body: some View {
         HStack {
-            setUpLeftView()
-            setUpRightView()
+            setUpSpaceView()
+            setUpMenu()
                 .overlay {
                     setUpVersion()
                 }
-                .alert(isPresented: $isConfirmAlertVisible) {
-                    Alert(
-                        title: Text(Localize.commonApplicationNameText()),
-                        message: Text(Localize.homeLogOutConfirmText()),
-                        primaryButton: .destructive(
-                            Text(Localize.commonOkText()),
-                            action: { isConfirmAlertVisible = false }
-                        ),
-                        secondaryButton: .default(
-                            Text(Localize.commonCancelText()),
-                            action: { isConfirmAlertVisible = false }
-                        )
-                    )
-                }
                 .padding()
-                .frame(width: 240.0, height: UIScreen.main.bounds.height)
+                .frame(width: 240.0)
                 .background(Colors.eerieBlack.color)
         }
         .edgesIgnoringSafeArea(.all)
+        .alert(isPresented: $isConfirmAlertVisible) {
+            Alert(
+                title: Text(Localize.commonApplicationNameText()),
+                message: Text(Localize.homeLogOutConfirmText()),
+                primaryButton: .destructive(
+                    Text(Localize.commonOkText()),
+                    // TODO: Update log out action
+                    action: { isConfirmAlertVisible = false }
+                ),
+                secondaryButton: .default(
+                    Text(Localize.commonCancelText()),
+                    action: { isConfirmAlertVisible = false }
+                )
+            )
+        }
     }
 
     private func setUpAvatarButton() -> some View {
@@ -57,7 +58,7 @@ struct HomeLeftMenuView: View {
         .padding()
     }
 
-    private func setUpRightView() -> some View {
+    private func setUpMenu() -> some View {
         VStack {
             HStack(alignment: .center) {
                 // TODO: Remove dummy data
@@ -85,7 +86,7 @@ struct HomeLeftMenuView: View {
         }
     }
 
-    private func setUpLeftView() -> some View {
+    private func setUpSpaceView() -> some View {
         ZStack {
             Color.black.opacity(0.0)
             Rectangle()
@@ -118,9 +119,9 @@ struct HomeLeftMenuView: View {
     }
 }
 
-struct HomeLeftMenuViewPreview: PreviewProvider {
+struct HomeUserMenuViewPreview: PreviewProvider {
 
     static var previews: some View {
-        HomeLeftMenuView(isVisible: .constant(true))
+        HomeUserMenuView(isVisible: .constant(true))
     }
 }

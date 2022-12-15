@@ -61,7 +61,7 @@ struct HomeView: View {
                     }
                     .overlay(alignment: .top) {
                         if isMenuVisible {
-                            HomeLeftMenuView(isVisible: $isMenuVisible)
+                            HomeUserMenuView(isVisible: $isMenuVisible)
                         }
                     }
             }
@@ -83,10 +83,7 @@ struct HomeView: View {
         .overlay(alignment: .leading) {
             setUpPageControl()
         }
-        .frame(
-            width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height
-        )
+        .ignoresSafeArea(.all)
     }
 
     private func setUpHeaderHomeView() -> some View {
@@ -100,6 +97,7 @@ struct HomeView: View {
             Spacer()
             PageControlView(
                 currentPage: $selectedSurveyIndex,
+                // TODO: Update number of pages with real data
                 numberOfPages: 4
             )
             .frame(
