@@ -44,17 +44,14 @@ struct HomeUserMenuView: View {
         .edgesIgnoringSafeArea(.all)
     }
 
-    private func setUpAvatarButton() -> some View {
-        Button(action: {}, label: {
-            KFImage(URL(string: String.empty))
-                .onFailureImage(Assets.userPlaceholderIcon())
-                .placeholder { _ in
-                    Circle().foregroundColor(.black)
-                }
-                .fade(duration: 0.3)
-                .frame(width: 36.0, height: 36.0)
-        })
-        .padding()
+    private func setUpAvatar() -> some View {
+        KFImage(URL(string: String.empty))
+            .onFailureImage(Assets.userPlaceholderIcon())
+            .placeholder { _ in
+                Circle().foregroundColor(.black)
+            }
+            .fade(duration: 0.3)
+            .frame(width: 36.0, height: 36.0)
     }
 
     private func setUpMenu() -> some View {
@@ -65,7 +62,7 @@ struct HomeUserMenuView: View {
                     .font(.bold(ofSize: .xLarge))
                     .foregroundColor(.white)
                 Spacer()
-                setUpAvatarButton()
+                setUpAvatar()
             }
             .padding(.top, 40.0)
             Divider()

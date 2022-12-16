@@ -13,7 +13,7 @@ import UIKit
 struct HomeView: View {
 
     @EnvironmentObject private var navigator: Navigator
-    @StateObject private var viewModel = HomeViewModel()
+    @StateObject private var viewModel = HomeViewModel(bundle: Bundle.main)
     @State var isMenuVisible = false
     @State var selectedSurveyIndex = 0
 
