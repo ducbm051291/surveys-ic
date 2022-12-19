@@ -20,7 +20,7 @@ struct HomeHeaderView: View {
             Text("Monday, JUNE 15")
                 .font(.bold(ofSize: .xSmall))
                 .foregroundColor(.white)
-            HStack {
+            HStack(alignment: .center) {
                 Text("Today")
                     .font(.bold(ofSize: .xLarge))
                     .foregroundColor(.white)
@@ -34,7 +34,7 @@ struct HomeHeaderView: View {
     private func setUpAvatar() -> some View {
         Button(action: {
             withAnimation(.easeIn) {
-                // TODO: Present menu view
+                isMenuVisible.toggle()
             }
         }, label: {
             KFImage(URL(string: imageURL))

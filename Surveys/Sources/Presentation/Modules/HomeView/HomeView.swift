@@ -13,7 +13,7 @@ import UIKit
 struct HomeView: View {
 
     @EnvironmentObject private var navigator: Navigator
-    @StateObject private var viewModel = HomeViewModel()
+    @StateObject private var viewModel = HomeViewModel(bundle: Bundle.main)
     @State var isMenuVisible = false
     @State var selectedSurveyIndex = 0
 
@@ -60,6 +60,11 @@ struct HomeView: View {
                     .overlay(alignment: .top) {
                         setUpHeaderHomeView()
                     }
+                    .overlay {
+                        if isMenuVisible {
+                            setUpUserMenuView()
+                        }
+                    }
             }
         }
         .ignoresSafeArea()
@@ -87,6 +92,11 @@ struct HomeView: View {
         HomeHeaderView(imageURL: .empty, isMenuVisible: $isMenuVisible)
             .padding(.top, 60.0)
             .padding(.leading, 20.0)
+    }
+
+    private func setUpUserMenuView() -> some View {
+        HomeUserMenuView(isVisible: $isMenuVisible, version: $viewModel.version)
+            .transition(.move(edge: .trailing))
     }
 
     private func setUpPageControl() -> some View {
