@@ -16,7 +16,7 @@ final class HomeViewModel: ObservableObject {
     @Published var version: String = .empty
 
     init(bundle: Bundle) {
-        version = Bundle.main.version
+        version = bundle.version
     }
 }
 
