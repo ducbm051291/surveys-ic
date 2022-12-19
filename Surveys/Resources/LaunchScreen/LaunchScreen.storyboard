@@ -16,11 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-image" translatesAutoresizingMaskIntoConstraints="NO" id="Mri-Bl-dVL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-image" translatesAutoresizingMaskIntoConstraints="NO" id="Mri-Bl-dVL">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-white-icon" translatesAutoresizingMaskIntoConstraints="NO" id="fYL-Y2-SSs">
-                                <rect key="frame" x="95.666666666666686" y="402" width="202" height="48"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -28,10 +25,8 @@
                         <constraints>
                             <constraint firstItem="Mri-Bl-dVL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="889-mP-QDr"/>
                             <constraint firstAttribute="bottom" secondItem="Mri-Bl-dVL" secondAttribute="bottom" id="Nee-8z-yyI"/>
-                            <constraint firstItem="fYL-Y2-SSs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="cc2-YQ-1Mp"/>
                             <constraint firstAttribute="trailing" secondItem="Mri-Bl-dVL" secondAttribute="trailing" id="iZK-pF-3yL"/>
                             <constraint firstItem="Mri-Bl-dVL" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="kDF-ob-G9n"/>
-                            <constraint firstItem="fYL-Y2-SSs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pCG-dW-pxs"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -42,7 +37,6 @@
     </scenes>
     <resources>
         <image name="background-image" width="375" height="812"/>
-        <image name="logo-white-icon" width="202" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -13,23 +13,7 @@ import SwiftUI
 
 final class Navigator: ObservableObject {
 
-    @Injected private var getTokenUseCase: GetTokenUseCaseProtocol
-    private var cancelBag = CancelBag()
-
-    @Published var routes: Routes<Screen> = []
-
-    init() {
-        getTokenUseCase.execute()
-            .sink { _ in
-            } receiveValue: { token in
-                guard token != nil else {
-                    self.routes = [.root(.login, embedInNavigationView: true)]
-                    return
-                }
-                self.routes = [.root(.home)]
-            }
-            .store(in: &cancelBag)
-    }
+    @Published var routes: Routes<Screen> = [.root(.splash)]
 
     func show(screen: Screen, by transition: Transition, embedInNavigationView: Bool = false) {
         switch transition {
