@@ -6,12 +6,30 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
+import Combine
 import FlowStacks
+import Resolver
 import SwiftUI
 
 final class Navigator: ObservableObject {
 
-    @Published var routes: Routes<Screen> = [.root(.login, embedInNavigationView: true)]
+    @Injected private var getTokenUseCase: GetTokenUseCaseProtocol
+    private var cancelBag = CancelBag()
+
+    @Published var routes: Routes<Screen> = []
+
+    init() {
+        getTokenUseCase.execute()
+            .sink { _ in
+            } receiveValue: { token in
+                guard token != nil else {
+                    self.routes = [.root(.login, embedInNavigationView: true)]
+                    return
+                }
+                self.routes = [.root(.home)]
+            }
+            .store(in: &cancelBag)
+    }
 
     func show(screen: Screen, by transition: Transition, embedInNavigationView: Bool = false) {
         switch transition {
