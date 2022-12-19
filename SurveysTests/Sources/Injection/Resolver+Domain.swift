@@ -21,6 +21,8 @@ extension Resolver {
             .implements(ForgotPasswordUseCaseProtocol.self)
         mock.register { LoginUseCaseProtocolMock() }
             .implements(LoginUseCaseProtocol.self)
+        mock.register { GetTokenUseCaseProtocolMock() }
+            .implements(GetTokenUseCaseProtocol.self)
         mock.register { StoreTokenUseCaseProtocolMock() }
             .implements(StoreTokenUseCaseProtocol.self)
     }
