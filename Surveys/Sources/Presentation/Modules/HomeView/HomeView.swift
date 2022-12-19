@@ -54,7 +54,7 @@ struct HomeView: View {
     private func setUpView(isLoading: Bool = false) -> some View {
         ZStack {
             if isLoading {
-                // TODO: Implement Skeleton Loading View here
+                HomeSkeletonLoadingView()
             } else {
                 setUpTabView()
                     .overlay(alignment: .top) {
