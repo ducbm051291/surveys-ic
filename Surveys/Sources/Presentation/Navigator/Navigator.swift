@@ -6,12 +6,14 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
+import Combine
 import FlowStacks
+import Resolver
 import SwiftUI
 
 final class Navigator: ObservableObject {
 
-    @Published var routes: Routes<Screen> = [.root(.login, embedInNavigationView: true)]
+    @Published var routes: Routes<Screen> = [.root(.splash)]
 
     func show(screen: Screen, by transition: Transition, embedInNavigationView: Bool = false) {
         switch transition {

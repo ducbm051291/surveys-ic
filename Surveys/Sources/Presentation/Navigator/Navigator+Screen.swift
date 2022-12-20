@@ -10,8 +10,9 @@ extension Navigator {
 
     enum Screen {
 
-        case login
-        case home
         case forgotPassword(_ viewModel: ForgotPasswordViewModel)
+        case home
+        case login
+        case splash
     }
 }
