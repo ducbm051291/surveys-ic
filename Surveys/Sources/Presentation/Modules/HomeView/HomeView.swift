@@ -17,14 +17,6 @@ struct HomeView: View {
     @State var isMenuVisible = false
     @State var selectedSurveyIndex = 0
 
-    // TODO: Remove dummy surveys
-    let surveys = [
-        APISurvey(id: 0),
-        APISurvey(id: 1),
-        APISurvey(id: 2),
-        APISurvey(id: 3)
-    ]
-
     var body: some View {
         switch viewModel.state {
         case .idle:
@@ -72,11 +64,11 @@ struct HomeView: View {
 
     private func setUpTabView() -> some View {
         TabView(selection: $selectedSurveyIndex) {
-            ForEach(surveys, id: \.id) { survey in
-                HomeSurveyItemView(survey: survey)
-                    .tag(survey.id)
-                    .edgesIgnoringSafeArea(.all)
-            }
+//            ForEach(surveys, id: \.id) { survey in
+//                HomeSurveyItemView(survey: survey)
+//                    .tag(survey.id)
+//                    .edgesIgnoringSafeArea(.all)
+//            }
         }
         .background(.black)
         .tabViewStyle(.page(indexDisplayMode: .never))

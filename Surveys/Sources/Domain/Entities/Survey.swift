@@ -10,5 +10,9 @@ import Foundation
 
 protocol Survey {
 
-    var id: Int { get }
+    var id: String { get }
+    var type: String { get }
+    var title: String { get }
+    var description: String { get }
+    var coverImageUrl: String { get }
 }

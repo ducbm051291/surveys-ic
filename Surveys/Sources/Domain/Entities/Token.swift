@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Token: Decodable {
+protocol Token {
 
     var accessToken: String { get }
     var tokenType: String { get }
