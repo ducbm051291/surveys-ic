@@ -74,6 +74,9 @@
 		58683B2B29389DBB005FD141 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58683B2A29389DBB005FD141 /* ForgotPasswordView.swift */; };
 		586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586ED15B2914EC3600181E14 /* SurveysApp.swift */; };
 		586F204129270ED300E72C77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586F204029270ED300E72C77 /* LaunchScreen.storyboard */; };
+		586F776129514DC5000E5DDD /* GetSurveyListUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586F776029514DC5000E5DDD /* GetSurveyListUseCaseSpec.swift */; };
+		586F776329514DD5000E5DDD /* SurveyRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586F776229514DD5000E5DDD /* SurveyRepositorySpec.swift */; };
+		586F7765295158BD000E5DDD /* APISurvey+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586F7764295158BD000E5DDD /* APISurvey+Dummy.swift */; };
 		5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880AE07291E3B8B00A212E7 /* ImageResource+Image.swift */; };
 		58812DFF292B80E90078E5C5 /* XCTestCase+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58812DFD292B80CD0078E5C5 /* XCTestCase+Publisher.swift */; };
 		588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */; };
@@ -81,12 +84,12 @@
 		58B52781293741B600D2E0BB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B52780293741B600D2E0BB /* HomeView.swift */; };
 		58B570C1292B1E78007831B8 /* Constants+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B570C0292B1E78007831B8 /* Constants+Gradient.swift */; };
 		58B570C3292B2052007831B8 /* ColorResource+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B570C2292B2052007831B8 /* ColorResource+Color.swift */; };
-		58B758672950591100CE2543 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B758662950591100CE2543 /* SplashView.swift */; };
-		58B758692950596700CE2543 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B758682950596700CE2543 /* SplashViewModel.swift */; };
-		58B7586D29505D8300CE2543 /* SplashViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7586B29505D7300CE2543 /* SplashViewModelSpec.swift */; };
 		58B75860295054F700CE2543 /* SurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7585F295054F700CE2543 /* SurveyRepository.swift */; };
 		58B758622950551600CE2543 /* SurveyRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B758612950551600CE2543 /* SurveyRepositoryProtocol.swift */; };
 		58B758642950558F00CE2543 /* GetSurveyListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B758632950558F00CE2543 /* GetSurveyListUseCase.swift */; };
+		58B758672950591100CE2543 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B758662950591100CE2543 /* SplashView.swift */; };
+		58B758692950596700CE2543 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B758682950596700CE2543 /* SplashViewModel.swift */; };
+		58B7586D29505D8300CE2543 /* SplashViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7586B29505D7300CE2543 /* SplashViewModelSpec.swift */; };
 		58BE093F2925E1C600662F6C /* ErrorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE093E2925E1C600662F6C /* ErrorModifier.swift */; };
 		58BE09432925EA6700662F6C /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE09422925EA6700662F6C /* String+URL.swift */; };
 		58BF66EE293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF66ED293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift */; };
@@ -254,6 +257,9 @@
 		586ED1622914ED5200181E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		586ED1642914ED5200181E14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		586F204029270ED300E72C77 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		586F776029514DC5000E5DDD /* GetSurveyListUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSurveyListUseCaseSpec.swift; sourceTree = "<group>"; };
+		586F776229514DD5000E5DDD /* SurveyRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRepositorySpec.swift; sourceTree = "<group>"; };
+		586F7764295158BD000E5DDD /* APISurvey+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APISurvey+Dummy.swift"; sourceTree = "<group>"; };
 		5880AE07291E3B8B00A212E7 /* ImageResource+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageResource+Image.swift"; sourceTree = "<group>"; };
 		58812DFD292B80CD0078E5C5 /* XCTestCase+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Publisher.swift"; sourceTree = "<group>"; };
 		588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocolMock.swift; sourceTree = "<group>"; };
@@ -261,12 +267,12 @@
 		58B52780293741B600D2E0BB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		58B570C0292B1E78007831B8 /* Constants+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Gradient.swift"; sourceTree = "<group>"; };
 		58B570C2292B2052007831B8 /* ColorResource+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorResource+Color.swift"; sourceTree = "<group>"; };
-		58B758662950591100CE2543 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		58B758682950596700CE2543 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
-		58B7586B29505D7300CE2543 /* SplashViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModelSpec.swift; sourceTree = "<group>"; };
 		58B7585F295054F700CE2543 /* SurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRepository.swift; sourceTree = "<group>"; };
 		58B758612950551600CE2543 /* SurveyRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRepositoryProtocol.swift; sourceTree = "<group>"; };
 		58B758632950558F00CE2543 /* GetSurveyListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSurveyListUseCase.swift; sourceTree = "<group>"; };
+		58B758662950591100CE2543 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		58B758682950596700CE2543 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		58B7586B29505D7300CE2543 /* SplashViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModelSpec.swift; sourceTree = "<group>"; };
 		58BE093E2925E1C600662F6C /* ErrorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModifier.swift; sourceTree = "<group>"; };
 		58BE09422925EA6700662F6C /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		58BF66ED293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassthroughSubject+ErrorCatcher.swift"; sourceTree = "<group>"; };
@@ -675,6 +681,7 @@
 			children = (
 				58C6EB10293DF6BA002A9B76 /* ForgotPasswordUseCaseSpec.swift */,
 				58D1932C2941B78D00D28082 /* GetHasLoggedInUseCaseSpec.swift */,
+				586F776029514DC5000E5DDD /* GetSurveyListUseCaseSpec.swift */,
 				58D1932A2941B77A00D28082 /* GetTokenUseCaseSpec.swift */,
 				586116192927329400EF52A4 /* LoginUseCaseSpec.swift */,
 				5861161F29273AB200EF52A4 /* StoreTokenUseCaseSpec.swift */,
@@ -687,6 +694,7 @@
 			children = (
 				5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */,
 				5861161C292736C800EF52A4 /* SessionRepositorySpec.swift */,
+				586F776229514DD5000E5DDD /* SurveyRepositorySpec.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -702,8 +710,9 @@
 		5828F86A292637CD0074FE82 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5828F86B292637D60074FE82 /* APIToken+Dummy.swift */,
 				58C6EB13293DF88F002A9B76 /* APIMessage+Dummy.swift */,
+				586F7764295158BD000E5DDD /* APISurvey+Dummy.swift */,
+				5828F86B292637D60074FE82 /* APIToken+Dummy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1652,6 +1661,9 @@
 				58B7586D29505D8300CE2543 /* SplashViewModelSpec.swift in Sources */,
 				58812DFF292B80E90078E5C5 /* XCTestCase+Publisher.swift in Sources */,
 				5861161B292732B300EF52A4 /* LoginUseCaseSpec.swift in Sources */,
+				586F776129514DC5000E5DDD /* GetSurveyListUseCaseSpec.swift in Sources */,
+				586F7765295158BD000E5DDD /* APISurvey+Dummy.swift in Sources */,
+				586F776329514DD5000E5DDD /* SurveyRepositorySpec.swift in Sources */,
 				5828F86C292637D60074FE82 /* APIToken+Dummy.swift in Sources */,
 				58C6EB12293DF7C6002A9B76 /* ForgotPasswordUseCaseSpec.swift in Sources */,
 				0C205FD636A87848DD90D15E /* AutoMockable.generated.swift in Sources */,
