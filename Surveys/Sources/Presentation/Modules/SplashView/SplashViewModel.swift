@@ -18,7 +18,6 @@ final class SplashViewModel: ObservableObject {
 
     init() {
         getTokenUseCase.execute()
-            .delay(for: .seconds(2), scheduler: DispatchQueue.main, options: .none)
             .map { $0 == nil ? .unauthenticated : .authenticated }
             .asDriver()
             .assign(to: &$state)
