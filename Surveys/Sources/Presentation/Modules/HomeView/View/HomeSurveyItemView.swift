@@ -11,7 +11,7 @@ import SwiftUI
 
 struct HomeSurveyItemView: View {
 
-    var survey: APISurvey
+    var survey: Survey
 
     var body: some View {
         ZStack {

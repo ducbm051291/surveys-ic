@@ -63,12 +63,14 @@ struct HomeView: View {
     }
 
     private func setUpTabView() -> some View {
-        TabView(selection: $selectedSurveyIndex) {
-//            ForEach(surveys, id: \.id) { survey in
-//                HomeSurveyItemView(survey: survey)
-//                    .tag(survey.id)
-//                    .edgesIgnoringSafeArea(.all)
-//            }
+        let surveys = Array(viewModel.surveys.enumerated())
+
+        return TabView(selection: $selectedSurveyIndex) {
+            ForEach(surveys, id: \.element.id) { index, survey in
+                HomeSurveyItemView(survey: survey)
+                    .tag(index)
+                    .edgesIgnoringSafeArea(.all)
+            }
         }
         .background(.black)
         .tabViewStyle(.page(indexDisplayMode: .never))
