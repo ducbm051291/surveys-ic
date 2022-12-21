@@ -16,12 +16,11 @@ struct HomeHeaderView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4.0) {
-            // TODO: Remove dummy data
-            Text("Monday, JUNE 15")
+            Text(Date().formatted(.dateTime.weekday(.wide).month(.wide).day(.twoDigits)))
                 .font(.bold(ofSize: .xSmall))
                 .foregroundColor(.white)
             HStack(alignment: .center) {
-                Text("Today")
+                Text(Localize.homeTodayText())
                     .font(.bold(ofSize: .xLarge))
                     .foregroundColor(.white)
                 Spacer()
