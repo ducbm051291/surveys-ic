@@ -20,7 +20,7 @@ final class SurveyRepositorySpec: QuickSpec {
         var networkAPI: NetworkAPIProtocolMock!
         var repository: SurveyRepositoryProtocol!
 
-        describe("An SurveyRepository") {
+        describe("A SurveyRepository") {
 
             beforeEach {
                 Resolver.registerAllMockServices()
