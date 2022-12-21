@@ -16,7 +16,14 @@ enum RequestConfiguration: Equatable {
     case surveyList(Int, Int)
 }
 
-extension RequestConfiguration: TargetType {
+extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
+
+    var authorizationType: Moya.AuthorizationType? {
+        switch self {
+        case .login, .forgotPassword: return .none
+        case .surveyList: return .bearer
+        }
+    }
 
     var baseURL: URL { Constants.API.baseURL.toURL() }
 
@@ -53,13 +60,6 @@ extension RequestConfiguration: TargetType {
     }
 
     var headers: HTTPHeaders? {
-        var defaultHeaders = ["Accept": "application/json"]
-
-        if let token: KeychainToken = try? Keychain.default.get(.userToken),
-           token.accessToken.isNotEmpty {
-            defaultHeaders["Authorization"] = "\(token.tokenType) \(token.accessToken)"
-        }
-
-        return defaultHeaders
+        ["Accept": "application/json"]
     }
 }
