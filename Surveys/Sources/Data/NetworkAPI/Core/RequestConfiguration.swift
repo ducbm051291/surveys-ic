@@ -30,10 +30,8 @@ extension RequestConfiguration: TargetType {
 
     var method: Moya.Method {
         switch self {
-        case .surveyList:
-            return .get
-        default:
-            return .post
+        case .surveyList: return .get
+        case .forgotPassword, .login: return .post
         }
     }
 
