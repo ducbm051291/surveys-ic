@@ -11,7 +11,7 @@ import Foundation
 // sourcery: AutoMockable
 protocol CacheRepositoryProtocol: AnyObject {
 
-    func getSurveyList() -> Observable<[Survey]>
+    func getSurveyList() -> [Survey]
     func setSurveyList(_ surveys: [Survey])
     func clearSurveyList()
 }

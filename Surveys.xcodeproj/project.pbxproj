@@ -83,11 +83,11 @@
 		588282A22954441A00E408F3 /* CacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A12954441A00E408F3 /* CacheRepository.swift */; };
 		588282A42954442200E408F3 /* CacheRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A32954442200E408F3 /* CacheRepositoryProtocol.swift */; };
 		588282A92954443600E408F3 /* SurveyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A62954443600E408F3 /* SurveyCache.swift */; };
-		588282AA2954443600E408F3 /* CacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A72954443600E408F3 /* CacheProtocol.swift */; };
-		588282AB2954443600E408F3 /* CacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A82954443600E408F3 /* CacheKey.swift */; };
 		588282AF2954450000E408F3 /* ClearSurveyCacheUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282AC2954450000E408F3 /* ClearSurveyCacheUseCase.swift */; };
 		588282B02954450000E408F3 /* GetCachedSurveyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282AD2954450000E408F3 /* GetCachedSurveyUseCase.swift */; };
 		588282B12954450000E408F3 /* CacheSurveyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282AE2954450000E408F3 /* CacheSurveyUseCase.swift */; };
+		588282B42954504700E408F3 /* CacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282B22954504700E408F3 /* CacheProtocol.swift */; };
+		588282B52954504700E408F3 /* CacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282B32954504700E408F3 /* CacheKey.swift */; };
 		588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */; };
 		588FC05D293602FB00D1A38D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FC05C293602FB00D1A38D /* R.generated.swift */; };
 		589E92262952ECBE00082D5D /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589E92252952ECBE00082D5D /* AuthPlugin.swift */; };
@@ -277,11 +277,11 @@
 		588282A12954441A00E408F3 /* CacheRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheRepository.swift; sourceTree = "<group>"; };
 		588282A32954442200E408F3 /* CacheRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheRepositoryProtocol.swift; sourceTree = "<group>"; };
 		588282A62954443600E408F3 /* SurveyCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyCache.swift; sourceTree = "<group>"; };
-		588282A72954443600E408F3 /* CacheProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheProtocol.swift; sourceTree = "<group>"; };
-		588282A82954443600E408F3 /* CacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheKey.swift; sourceTree = "<group>"; };
 		588282AC2954450000E408F3 /* ClearSurveyCacheUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearSurveyCacheUseCase.swift; sourceTree = "<group>"; };
 		588282AD2954450000E408F3 /* GetCachedSurveyUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCachedSurveyUseCase.swift; sourceTree = "<group>"; };
 		588282AE2954450000E408F3 /* CacheSurveyUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheSurveyUseCase.swift; sourceTree = "<group>"; };
+		588282B22954504700E408F3 /* CacheProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheProtocol.swift; sourceTree = "<group>"; };
+		588282B32954504700E408F3 /* CacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheKey.swift; sourceTree = "<group>"; };
 		588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocolMock.swift; sourceTree = "<group>"; };
 		588FC05C293602FB00D1A38D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		589E92252952ECBE00082D5D /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
@@ -878,9 +878,9 @@
 		588282A52954443600E408F3 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
+				588282B32954504700E408F3 /* CacheKey.swift */,
+				588282B22954504700E408F3 /* CacheProtocol.swift */,
 				588282A62954443600E408F3 /* SurveyCache.swift */,
-				588282A72954443600E408F3 /* CacheProtocol.swift */,
-				588282A82954443600E408F3 /* CacheKey.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -1801,6 +1801,7 @@
 				581BDAE7294850DF0081BAE5 /* APISurvey.swift in Sources */,
 				58C6C5B029223E210083AF17 /* DateFormatter+Formats.swift in Sources */,
 				58C6C5AE29222E050083AF17 /* JSONAPIDecoder+Default.swift in Sources */,
+				588282B52954504700E408F3 /* CacheKey.swift in Sources */,
 				588282B02954450000E408F3 /* GetCachedSurveyUseCase.swift in Sources */,
 				5827FA1F2924D0F200CF2327 /* String+Empty.swift in Sources */,
 				5827FA0D29248DC900CF2327 /* LoginView.swift in Sources */,
@@ -1817,7 +1818,6 @@
 				58B52781293741B600D2E0BB /* HomeView.swift in Sources */,
 				5827FA1D2924CF4600CF2327 /* PrimaryButton.swift in Sources */,
 				58B570C1292B1E78007831B8 /* Constants+Gradient.swift in Sources */,
-				588282AB2954443600E408F3 /* CacheKey.swift in Sources */,
 				58BF66EE293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift in Sources */,
 				58C6EB06293DF050002A9B76 /* APIMessage.swift in Sources */,
 				5828F82E29260F0B0074FE82 /* LoginUseCase.swift in Sources */,
@@ -1833,7 +1833,6 @@
 				581E88AF294ACF4D00C22B71 /* HomeUserMenuView.swift in Sources */,
 				589E92262952ECBE00082D5D /* AuthPlugin.swift in Sources */,
 				585E8692293F17CA008C7563 /* Message.swift in Sources */,
-				588282AA2954443600E408F3 /* CacheProtocol.swift in Sources */,
 				58233885291C95C300412E50 /* AppNavigator.swift in Sources */,
 				5828F82629260E120074FE82 /* AuthenticationRepositoryProtocol.swift in Sources */,
 				D159394D010391AC5356ACC1 /* UIView+Subviews.swift in Sources */,
@@ -1857,6 +1856,7 @@
 				5828F84F292620520074FE82 /* StoreTokenUseCase.swift in Sources */,
 				58BF66F0293DD141003B1A82 /* ForgotPasswordParameter.swift in Sources */,
 				5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */,
+				588282B42954504700E408F3 /* CacheProtocol.swift in Sources */,
 				58285B1C2939A9D200AC6E73 /* ForgotPasswordViewModel.swift in Sources */,
 				58285B232939CCFF00AC6E73 /* View+Banner.swift in Sources */,
 				58285B1829399F6700AC6E73 /* Navigator.swift in Sources */,

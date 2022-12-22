@@ -12,14 +12,14 @@ import Resolver
 // sourcery: AutoMockable
 protocol GetCachedSurveyUseCaseProtocol {
 
-    func execute() -> Observable<[Survey]>
+    func execute() -> [Survey]
 }
 
 final class GetCachedSurveyUseCase: GetCachedSurveyUseCaseProtocol {
 
     @Injected private var cachedRepository: CacheRepositoryProtocol
 
-    func execute() -> Observable<[Survey]> {
+    func execute() -> [Survey] {
         cachedRepository.getSurveyList()
     }
 }

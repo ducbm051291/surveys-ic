@@ -14,10 +14,10 @@ final class CacheRepository: CacheRepositoryProtocol {
 
     @Injected private var cache: SurveyCache
 
-    func getSurveyList() -> Observable<[Survey]> {
+    func getSurveyList() -> [Survey] {
         guard let surveys: [APISurvey] = try? cache.get(),
-              !surveys.isEmpty else { return Just([]).asObservable() }
-        return Just(surveys).asObservable()
+              !surveys.isEmpty else { return [] }
+        return surveys
     }
 
     func setSurveyList(_ surveys: [Survey]) {

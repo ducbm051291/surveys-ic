@@ -13,6 +13,8 @@ import Resolver
 final class HomeViewModel: ObservableObject {
 
     @Injected private var getSurveyListUseCase: GetSurveyListUseCaseProtocol
+    @Injected private var getCachedSurveyUseCase: GetCachedSurveyUseCaseProtocol
+    @Injected private var cacheSurveyUseCase: CacheSurveyUseCaseProtocol
 
     @Published var state: State = .idle
     @Published var version: String = .empty
@@ -38,11 +40,20 @@ final class HomeViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: &$state)
 
+        loadSurveys()
+    }
+
+    func loadSurveys() {
         let getSurveyList = getSurveyListUseCase
             .execute(pageNumber: pageNumber, pageSize: pageSize)
             .receive(on: DispatchQueue.main)
             .trackError(errorTracker)
             .trackActivity(activityTracker)
+            .replaceError(with: getCachedSurveyUseCase.execute())
+            .map { surveys in
+                self.cacheSurveyUseCase.execute(surveys)
+                return surveys
+            }
             .asDriver()
             .share()
 
