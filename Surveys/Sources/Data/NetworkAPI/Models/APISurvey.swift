@@ -10,5 +10,9 @@ import Foundation
 
 struct APISurvey: Survey, Decodable, Equatable {
 
-    let id: Int
+    let id: String
+    let type: String
+    let title: String
+    let description: String
+    let coverImageUrl: String
 }

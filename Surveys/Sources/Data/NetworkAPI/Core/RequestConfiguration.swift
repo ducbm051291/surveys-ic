@@ -13,9 +13,17 @@ enum RequestConfiguration: Equatable {
 
     case login(LoginParameter)
     case forgotPassword(ForgotPasswordParameter)
+    case surveyList(Int, Int)
 }
 
-extension RequestConfiguration: TargetType {
+extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
+
+    var authorizationType: Moya.AuthorizationType? {
+        switch self {
+        case .login, .forgotPassword: return .none
+        case .surveyList: return .bearer
+        }
+    }
 
     var baseURL: URL { Constants.API.baseURL.toURL() }
 
@@ -23,11 +31,15 @@ extension RequestConfiguration: TargetType {
         switch self {
         case .login: return "/oauth/token"
         case .forgotPassword: return "/passwords"
+        case .surveyList: return "/surveys"
         }
     }
 
     var method: Moya.Method {
-        .post
+        switch self {
+        case .surveyList: return .get
+        case .forgotPassword, .login: return .post
+        }
     }
 
     var task: Moya.Task {
@@ -36,6 +48,14 @@ extension RequestConfiguration: TargetType {
             return .requestParameters(parameters: parameter.dictionary, encoding: JSONEncoding.default)
         case let .forgotPassword(parameter):
             return .requestParameters(parameters: parameter.dictionary, encoding: JSONEncoding.default)
+        case let .surveyList(pageNumber, pageSize):
+            return .requestParameters(
+                parameters: [
+                    "page[number]": pageNumber,
+                    "page[size]": pageSize
+                ],
+                encoding: URLEncoding.default
+            )
         }
     }
 

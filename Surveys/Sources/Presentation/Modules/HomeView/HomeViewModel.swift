@@ -14,6 +14,7 @@ final class HomeViewModel: ObservableObject {
 
     @Published var state: State = .loading
     @Published var version: String = .empty
+    @Published var surveys: [Survey] = []
 
     init(bundle: Bundle) {
         version = bundle.version
