@@ -29,9 +29,9 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
 
     var path: String {
         switch self {
-        case .login: return "/oauth/token"
-        case .forgotPassword: return "/passwords"
-        case .surveyList: return "/surveys"
+        case .login: return "oauth/token"
+        case .forgotPassword: return "passwords"
+        case .surveyList: return "surveys"
         }
     }
 
