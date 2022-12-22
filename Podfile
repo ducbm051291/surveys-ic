@@ -17,6 +17,7 @@ target 'Surveys' do
 
   # Storage
   pod 'KeychainAccess'
+  pod 'Cache'
 
   # Tools
   pod 'Firebase/Crashlytics'

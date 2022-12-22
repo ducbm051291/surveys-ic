@@ -61,6 +61,14 @@
 		5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */; };
 		5835AA002927270C00686B8C /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A9FF2927270C00686B8C /* TestError.swift */; };
 		584D03FA29542F84007175D1 /* HomeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D03F829542F69007175D1 /* HomeViewModelSpec.swift */; };
+		584D03E3295408D9007175D1 /* CachedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D03E2295408D9007175D1 /* CachedRepository.swift */; };
+		584D03E5295408E7007175D1 /* CachedRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D03E4295408E7007175D1 /* CachedRepositoryProtocol.swift */; };
+		584D03E829540BC9007175D1 /* CacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D03E729540BC9007175D1 /* CacheKey.swift */; };
+		584D03EC29540CEA007175D1 /* CacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D03EB29540CEA007175D1 /* CacheProtocol.swift */; };
+		584D03EE2954103A007175D1 /* SurveyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D03ED2954103A007175D1 /* SurveyCache.swift */; };
+		584D03F229541977007175D1 /* GetCachedSurveyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D03F129541977007175D1 /* GetCachedSurveyUseCase.swift */; };
+		584D03F429541980007175D1 /* StoreCacheSurveyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D03F329541980007175D1 /* StoreCacheSurveyUseCase.swift */; };
+		584D03F629541988007175D1 /* ClearSurveyCacheUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D03F529541988007175D1 /* ClearSurveyCacheUseCase.swift */; };
 		584E168C293F44C400DB41BE /* ForgotPasswordViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584E168A293F44B400DB41BE /* ForgotPasswordViewModelSpec.swift */; };
 		585E8692293F17CA008C7563 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E8691293F17CA008C7563 /* Message.swift */; };
 		585E8694293F297C008C7563 /* RegexEmailValidationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585E8693293F297C008C7563 /* RegexEmailValidationSpec.swift */; };
@@ -245,6 +253,14 @@
 		5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositorySpec.swift; sourceTree = "<group>"; };
 		5835A9FF2927270C00686B8C /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		584D03F829542F69007175D1 /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
+		584D03E2295408D9007175D1 /* CachedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedRepository.swift; sourceTree = "<group>"; };
+		584D03E4295408E7007175D1 /* CachedRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedRepositoryProtocol.swift; sourceTree = "<group>"; };
+		584D03E729540BC9007175D1 /* CacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheKey.swift; sourceTree = "<group>"; };
+		584D03EB29540CEA007175D1 /* CacheProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheProtocol.swift; sourceTree = "<group>"; };
+		584D03ED2954103A007175D1 /* SurveyCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCache.swift; sourceTree = "<group>"; };
+		584D03F129541977007175D1 /* GetCachedSurveyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCachedSurveyUseCase.swift; sourceTree = "<group>"; };
+		584D03F329541980007175D1 /* StoreCacheSurveyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCacheSurveyUseCase.swift; sourceTree = "<group>"; };
+		584D03F529541988007175D1 /* ClearSurveyCacheUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearSurveyCacheUseCase.swift; sourceTree = "<group>"; };
 		584E168A293F44B400DB41BE /* ForgotPasswordViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModelSpec.swift; sourceTree = "<group>"; };
 		585E8691293F17CA008C7563 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		585E8693293F297C008C7563 /* RegexEmailValidationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexEmailValidationSpec.swift; sourceTree = "<group>"; };
@@ -466,6 +482,7 @@
 				5828F82529260E120074FE82 /* AuthenticationRepositoryProtocol.swift */,
 				5828F843292618BF0074FE82 /* SessionRepositoryProtocol.swift */,
 				58B758612950551600CE2543 /* SurveyRepositoryProtocol.swift */,
+				584D03E4295408E7007175D1 /* CachedRepositoryProtocol.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -595,6 +612,9 @@
 				5828F84E292620520074FE82 /* StoreTokenUseCase.swift */,
 				58D193282941B72A00D28082 /* GetTokenUseCase.swift */,
 				58B758632950558F00CE2543 /* GetSurveyListUseCase.swift */,
+				584D03F129541977007175D1 /* GetCachedSurveyUseCase.swift */,
+				584D03F329541980007175D1 /* StoreCacheSurveyUseCase.swift */,
+				584D03F529541988007175D1 /* ClearSurveyCacheUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -612,6 +632,7 @@
 		5828F83229260FD10074FE82 /* Storages */ = {
 			isa = PBXGroup;
 			children = (
+				584D03E629540BBD007175D1 /* Cache */,
 				5828F838292610540074FE82 /* Keychain */,
 				5828F835292610070074FE82 /* UserDefaults */,
 			);
@@ -730,6 +751,14 @@
 				584D03F829542F69007175D1 /* HomeViewModelSpec.swift */,
 			);
 			path = Home;
+		584D03E629540BBD007175D1 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				584D03EB29540CEA007175D1 /* CacheProtocol.swift */,
+				584D03E729540BC9007175D1 /* CacheKey.swift */,
+				584D03ED2954103A007175D1 /* SurveyCache.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		584E1689293F44A800DB41BE /* ForgotPassword */ = {
@@ -1164,6 +1193,7 @@
 				5828F83D292610970074FE82 /* AuthenticationRepository.swift */,
 				5828F841292618AE0074FE82 /* SessionRepository.swift */,
 				58B7585F295054F700CE2543 /* SurveyRepository.swift */,
+				584D03E2295408D9007175D1 /* CachedRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1733,6 +1763,7 @@
 			files = (
 				581BDAE32948273D0081BAE5 /* TextDescriptionModifier.swift in Sources */,
 				58B758672950591100CE2543 /* SplashView.swift in Sources */,
+				584D03EE2954103A007175D1 /* SurveyCache.swift in Sources */,
 				586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */,
 				581BDADD294824D70081BAE5 /* HomeSurveyItemView.swift in Sources */,
 				58B758622950551600CE2543 /* SurveyRepositoryProtocol.swift in Sources */,
@@ -1750,6 +1781,7 @@
 				581BDAEF29497BEF0081BAE5 /* ShimmerViewStyle+Application.swift in Sources */,
 				58B758692950596700CE2543 /* SplashViewModel.swift in Sources */,
 				5828F842292618AE0074FE82 /* SessionRepository.swift in Sources */,
+				584D03E3295408D9007175D1 /* CachedRepository.swift in Sources */,
 				5828F851292621150074FE82 /* Resolver+ResolverRegistering.swift in Sources */,
 				58683B2B29389DBB005FD141 /* ForgotPasswordView.swift in Sources */,
 				5828F82929260E770074FE82 /* APIToken.swift in Sources */,
@@ -1758,6 +1790,7 @@
 				58C6EB0F293DF3B9002A9B76 /* ForgotPasswordUseCase.swift in Sources */,
 				581E88AD294AC04E00C22B71 /* HomeSkeletonLoadingView.swift in Sources */,
 				58F6E6182935E3F200D0547A /* Publisher+ActivityTracker.swift in Sources */,
+				584D03EC29540CEA007175D1 /* CacheProtocol.swift in Sources */,
 				5828F84D29261E910074FE82 /* Publisher+Driver.swift in Sources */,
 				58F6E6122934AF2C00D0547A /* String+Validation.swift in Sources */,
 				58C6C5922921F79E0083AF17 /* NetworkAPI.swift in Sources */,
@@ -1771,6 +1804,7 @@
 				58285B1F2939AECB00AC6E73 /* BannerData.swift in Sources */,
 				5866FE042934545100908E86 /* LoginViewModel.swift in Sources */,
 				58D193342941E27E00D28082 /* HomeViewModel.swift in Sources */,
+				584D03E5295408E7007175D1 /* CachedRepositoryProtocol.swift in Sources */,
 				581BDAE1294827330081BAE5 /* TextTitleModifier.swift in Sources */,
 				E523B137B86D7E0119304CC1 /* Optional+Unwrap.swift in Sources */,
 				58B570C3292B2052007831B8 /* ColorResource+Color.swift in Sources */,
@@ -1785,6 +1819,7 @@
 				5828F82E29260F0B0074FE82 /* LoginUseCase.swift in Sources */,
 				58C6C5972921F88E0083AF17 /* NetworkAPIProtocol.swift in Sources */,
 				588FC05D293602FB00D1A38D /* R.generated.swift in Sources */,
+				584D03F629541988007175D1 /* ClearSurveyCacheUseCase.swift in Sources */,
 				5828F8532926213A0074FE82 /* Resolver+Domain.swift in Sources */,
 				58683B2629388165005FD141 /* Combine+Collect.swift in Sources */,
 				58C6EB18293ED9EE002A9B76 /* UserParameter.swift in Sources */,
@@ -1802,17 +1837,20 @@
 				581BDAF3294996970081BAE5 /* Bundle+Version.swift in Sources */,
 				5828F846292619930074FE82 /* KeychainToken.swift in Sources */,
 				5828F83E292610970074FE82 /* AuthenticationRepository.swift in Sources */,
+				584D03F429541980007175D1 /* StoreCacheSurveyUseCase.swift in Sources */,
 				5828F8372926101C0074FE82 /* UserDefaultsKey.swift in Sources */,
 				58285B212939AEEA00AC6E73 /* BannerModifier.swift in Sources */,
 				58C6C5952921F7FA0083AF17 /* NetworkAPIError.swift in Sources */,
 				581BDAE5294850B50081BAE5 /* Survey.swift in Sources */,
 				58C6C5A829222B210083AF17 /* Parameterable.swift in Sources */,
 				5828F83A2926105F0074FE82 /* Keychain.swift in Sources */,
+				584D03F229541977007175D1 /* GetCachedSurveyUseCase.swift in Sources */,
 				58C6C5A529221D630083AF17 /* Environment.swift in Sources */,
 				58F411002940690500135DC7 /* Constants+View.swift in Sources */,
 				58BE09432925EA6700662F6C /* String+URL.swift in Sources */,
 				581BDAEA294872C30081BAE5 /* PageControlView.swift in Sources */,
 				58BE093F2925E1C600662F6C /* ErrorModifier.swift in Sources */,
+				584D03E829540BC9007175D1 /* CacheKey.swift in Sources */,
 				5828F82B29260E800074FE82 /* Token.swift in Sources */,
 				5828F84F292620520074FE82 /* StoreTokenUseCase.swift in Sources */,
 				58BF66F0293DD141003B1A82 /* ForgotPasswordParameter.swift in Sources */,
