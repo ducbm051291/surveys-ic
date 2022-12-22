@@ -82,6 +82,7 @@
 		588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */; };
 		588FC05D293602FB00D1A38D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FC05C293602FB00D1A38D /* R.generated.swift */; };
 		589E92262952ECBE00082D5D /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589E92252952ECBE00082D5D /* AuthPlugin.swift */; };
+		589FBBC129543D9E00C08AD3 /* AuthPluginSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589FBBBF29543D8700C08AD3 /* AuthPluginSpec.swift */; };
 		58B52781293741B600D2E0BB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B52780293741B600D2E0BB /* HomeView.swift */; };
 		58B570C1292B1E78007831B8 /* Constants+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B570C0292B1E78007831B8 /* Constants+Gradient.swift */; };
 		58B570C3292B2052007831B8 /* ColorResource+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B570C2292B2052007831B8 /* ColorResource+Color.swift */; };
@@ -266,6 +267,7 @@
 		588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocolMock.swift; sourceTree = "<group>"; };
 		588FC05C293602FB00D1A38D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		589E92252952ECBE00082D5D /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
+		589FBBBF29543D8700C08AD3 /* AuthPluginSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPluginSpec.swift; sourceTree = "<group>"; };
 		58B52780293741B600D2E0BB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		58B570C0292B1E78007831B8 /* Constants+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Gradient.swift"; sourceTree = "<group>"; };
 		58B570C2292B2052007831B8 /* ColorResource+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorResource+Color.swift"; sourceTree = "<group>"; };
@@ -673,6 +675,7 @@
 		5828F860292636E80074FE82 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				589FBBBD29543D7600C08AD3 /* NetworkAPI */,
 				5828F864292637080074FE82 /* Repositories */,
 			);
 			path = Data;
@@ -852,6 +855,22 @@
 			isa = PBXGroup;
 			children = (
 				589E92252952ECBE00082D5D /* AuthPlugin.swift */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		589FBBBD29543D7600C08AD3 /* NetworkAPI */ = {
+			isa = PBXGroup;
+			children = (
+				589FBBBE29543D7B00C08AD3 /* Plugins */,
+			);
+			path = NetworkAPI;
+			sourceTree = "<group>";
+		};
+		589FBBBE29543D7B00C08AD3 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				589FBBBF29543D8700C08AD3 /* AuthPluginSpec.swift */,
 			);
 			path = Plugins;
 			sourceTree = "<group>";
@@ -1668,6 +1687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				585E8694293F297C008C7563 /* RegexEmailValidationSpec.swift in Sources */,
+				589FBBC129543D9E00C08AD3 /* AuthPluginSpec.swift in Sources */,
 				584E168C293F44C400DB41BE /* ForgotPasswordViewModelSpec.swift in Sources */,
 				58B7586D29505D8300CE2543 /* SplashViewModelSpec.swift in Sources */,
 				58812DFF292B80E90078E5C5 /* XCTestCase+Publisher.swift in Sources */,
