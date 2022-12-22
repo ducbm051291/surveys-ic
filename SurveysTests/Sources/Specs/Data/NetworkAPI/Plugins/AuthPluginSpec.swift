@@ -53,7 +53,7 @@ final class AuthPluginSpec: QuickSpec {
                         try? self.keychain.remove(.userToken)
                     }
 
-                    it("request header contains authorization data") {
+                    it("request header doesn't contain authorization data") {
                         let request = authPlugin.prepare(requestToTest, target: RequestConfiguration.surveyList(1, 10))
                         expect(request.headers.value(for: "Authorization")) == nil
                     }
