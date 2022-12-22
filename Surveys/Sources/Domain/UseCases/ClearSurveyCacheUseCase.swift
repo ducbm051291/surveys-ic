@@ -6,4 +6,20 @@
 //  Copyright © 2022 Nimble. All rights reserved.
 //
 
-import Foundation
+import Combine
+import Resolver
+
+// sourcery: AutoMockable
+protocol ClearSurveyCacheUseCaseProtocol {
+
+    func execute()
+}
+
+final class ClearSurveyCacheUseCase: ClearSurveyCacheUseCaseProtocol {
+
+    @Injected private var cachedRepository: CacheRepositoryProtocol
+
+    func execute() {
+        cachedRepository.clearSurveyList()
+    }
+}

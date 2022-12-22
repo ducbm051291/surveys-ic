@@ -1,5 +1,5 @@
 //
-//  CachedRepositoryProtocol.swift
+//  CacheRepositoryProtocol.swift
 //  Surveys
 //
 //  Created by David Bui on 22/12/2022.
@@ -9,7 +9,7 @@
 import Foundation
 
 // sourcery: AutoMockable
-protocol CachedRepositoryProtocol: AnyObject {
+protocol CacheRepositoryProtocol: AnyObject {
 
     func getSurveyList() -> Observable<[Survey]>
     func setSurveyList(_ surveys: [Survey])

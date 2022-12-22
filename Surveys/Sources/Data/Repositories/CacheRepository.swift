@@ -1,5 +1,5 @@
 //
-//  CachedRepository.swift
+//  CacheRepository.swift
 //  Surveys
 //
 //  Created by David Bui on 22/12/2022.
@@ -10,7 +10,7 @@ import Combine
 import Foundation
 import Resolver
 
-final class CachedRepository: CachedRepositoryProtocol {
+final class CacheRepository: CacheRepositoryProtocol {
 
     @Injected private var cache: SurveyCache
 

@@ -17,7 +17,7 @@ protocol GetCachedSurveyUseCaseProtocol {
 
 final class GetCachedSurveyUseCase: GetCachedSurveyUseCaseProtocol {
 
-    @Injected private var cachedRepository: CachedRepositoryProtocol
+    @Injected private var cachedRepository: CacheRepositoryProtocol
 
     func execute() -> Observable<[Survey]> {
         cachedRepository.getSurveyList()
