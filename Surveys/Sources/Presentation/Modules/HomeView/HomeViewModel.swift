@@ -44,6 +44,7 @@ final class HomeViewModel: ObservableObject {
             .trackError(errorTracker)
             .trackActivity(activityTracker)
             .asDriver()
+            .share()
 
         getSurveyList
             .map { _ in self.pageNumber + 1 }
