@@ -1,5 +1,5 @@
 //
-//  CacheSurveyUseCaseSpec.swift
+//  GetCachedSurveyUseCaseSpec.swift
 //  SurveysTests
 //
 //  Created by David Bui on 22/12/2022.
@@ -13,31 +13,37 @@ import Resolver
 
 @testable import Surveys
 
-final class CacheSurveyUseCaseSpec: QuickSpec {
+final class GetCachedSurveyUseCaseSpec: QuickSpec {
 
     @LazyInjected private var cacheRepository: CacheRepositoryProtocolMock
 
     override func spec() {
 
-        var useCase: CacheSurveyUseCase!
+        var useCase: GetCachedSurveyUseCase!
 
-        describe("A CacheSurveyUseCase") {
+        describe("A GetCachedSurveyUseCase") {
 
             beforeEach {
                 Resolver.registerAllMockServices()
-                useCase = CacheSurveyUseCase()
+                useCase = GetCachedSurveyUseCase()
             }
 
             describe("its execute() call") {
 
                 let surveysToTest = Array(repeating: APISurvey.dummy, count: 10)
+                var result: [APISurvey] = []
 
                 beforeEach {
-                    useCase.execute(surveysToTest)
+                    self.cacheRepository.getSurveyListReturnValue = surveysToTest
+                    result = useCase.execute() as? [APISurvey] ?? []
                 }
 
                 it("triggers cacheRepository to cache surveys") {
-                    expect(self.cacheRepository.setSurveyListCalled) == true
+                    expect(self.cacheRepository.clearSurveyListCalled) == true
+                }
+
+                it("returns correct cache surveys") {
+                    expect(result) == surveysToTest
                 }
             }
         }

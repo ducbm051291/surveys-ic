@@ -88,7 +88,7 @@
 		588282B12954450000E408F3 /* CacheSurveyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282AE2954450000E408F3 /* CacheSurveyUseCase.swift */; };
 		588282B42954504700E408F3 /* CacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282B22954504700E408F3 /* CacheProtocol.swift */; };
 		588282B52954504700E408F3 /* CacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282B32954504700E408F3 /* CacheKey.swift */; };
-		588282B72954531F00E408F3 /* GetCacheSurveyUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282B62954531F00E408F3 /* GetCacheSurveyUseCaseSpec.swift */; };
+		588282B72954531F00E408F3 /* GetCachedSurveyUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282B62954531F00E408F3 /* GetCachedSurveyUseCaseSpec.swift */; };
 		588282BB2954536B00E408F3 /* CacheSurveyUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282BA2954536B00E408F3 /* CacheSurveyUseCaseSpec.swift */; };
 		588282BD2954537600E408F3 /* ClearCachedSurveyUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282BC2954537600E408F3 /* ClearCachedSurveyUseCaseSpec.swift */; };
 		588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */; };
@@ -285,7 +285,7 @@
 		588282AE2954450000E408F3 /* CacheSurveyUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheSurveyUseCase.swift; sourceTree = "<group>"; };
 		588282B22954504700E408F3 /* CacheProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheProtocol.swift; sourceTree = "<group>"; };
 		588282B32954504700E408F3 /* CacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheKey.swift; sourceTree = "<group>"; };
-		588282B62954531F00E408F3 /* GetCacheSurveyUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCacheSurveyUseCaseSpec.swift; sourceTree = "<group>"; };
+		588282B62954531F00E408F3 /* GetCachedSurveyUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCachedSurveyUseCaseSpec.swift; sourceTree = "<group>"; };
 		588282BA2954536B00E408F3 /* CacheSurveyUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheSurveyUseCaseSpec.swift; sourceTree = "<group>"; };
 		588282BC2954537600E408F3 /* ClearCachedSurveyUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCachedSurveyUseCaseSpec.swift; sourceTree = "<group>"; };
 		588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocolMock.swift; sourceTree = "<group>"; };
@@ -716,7 +716,7 @@
 				588282BA2954536B00E408F3 /* CacheSurveyUseCaseSpec.swift */,
 				588282BC2954537600E408F3 /* ClearCachedSurveyUseCaseSpec.swift */,
 				58C6EB10293DF6BA002A9B76 /* ForgotPasswordUseCaseSpec.swift */,
-				588282B62954531F00E408F3 /* GetCacheSurveyUseCaseSpec.swift */,
+				588282B62954531F00E408F3 /* GetCachedSurveyUseCaseSpec.swift */,
 				58D1932C2941B78D00D28082 /* GetHasLoggedInUseCaseSpec.swift */,
 				586F776029514DC5000E5DDD /* GetSurveyListUseCaseSpec.swift */,
 				58D1932A2941B77A00D28082 /* GetTokenUseCaseSpec.swift */,
@@ -1755,7 +1755,7 @@
 				588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */,
 				5828F859292630B40074FE82 /* Resolver+MockRegistering.swift in Sources */,
 				5861162029273AB200EF52A4 /* StoreTokenUseCaseSpec.swift in Sources */,
-				588282B72954531F00E408F3 /* GetCacheSurveyUseCaseSpec.swift in Sources */,
+				588282B72954531F00E408F3 /* GetCachedSurveyUseCaseSpec.swift in Sources */,
 				CC151CF2A41DE206FA2EDCF0 /* OptionalUnwrapSpec.swift in Sources */,
 				584D03FA29542F84007175D1 /* HomeViewModelSpec.swift in Sources */,
 				5835AA002927270C00686B8C /* TestError.swift in Sources */,
