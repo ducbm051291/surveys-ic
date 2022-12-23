@@ -37,8 +37,6 @@ final class HomeViewModel: ObservableObject {
         Publishers.Merge(errorState, loadingState)
             .receive(on: DispatchQueue.main)
             .assign(to: &$state)
-
-        loadSurveys()
     }
 
     func loadSurveys() {

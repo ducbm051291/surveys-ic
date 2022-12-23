@@ -25,9 +25,10 @@ final class HomeViewModelSpec: QuickSpec {
 
             beforeEach {
                 Resolver.registerAllMockServices()
+                viewModel = HomeViewModel(bundle: Bundle.main)
             }
 
-            describe("its initialize") {
+            describe("its loadSurveys() called") {
 
                 let pageSize = 10
                 let surveysToTest = Array(repeating: APISurvey.dummy, count: pageSize)
@@ -37,12 +38,17 @@ final class HomeViewModelSpec: QuickSpec {
                     beforeEach {
                         self.getSurveyListUseCase.executePageNumberPageSizeReturnValue = Just(surveysToTest)
                             .asDriver()
-                        viewModel = HomeViewModel(bundle: Bundle.main)
+                        viewModel.loadSurveys()
                     }
 
                     it("state changes to loaded") {
                         let state = try self.awaitPublisher(viewModel.$state.collectNext(1)).last
                         expect(state) == .loaded
+                    }
+
+                    it("surveys updated with surveysToTest") {
+                        let surveys = try self.awaitPublisher(viewModel.$surveys.collectNext(1)).last as? [APISurvey]
+                        expect(surveys) == surveysToTest
                     }
                 }
             }
