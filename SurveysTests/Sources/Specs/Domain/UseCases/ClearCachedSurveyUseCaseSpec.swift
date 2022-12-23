@@ -34,7 +34,7 @@ final class ClearCachedSurveyUseCaseSpec: QuickSpec {
                     useCase.execute()
                 }
 
-                it("triggers cacheRepository to cache surveys") {
+                it("triggers cacheRepository to clear cache surveys") {
                     expect(self.cacheRepository.clearSurveyListCalled) == true
                 }
             }

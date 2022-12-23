@@ -38,8 +38,8 @@ final class GetCachedSurveyUseCaseSpec: QuickSpec {
                     result = useCase.execute() as? [APISurvey] ?? []
                 }
 
-                it("triggers cacheRepository to cache surveys") {
-                    expect(self.cacheRepository.clearSurveyListCalled) == true
+                it("triggers cacheRepository to get cache surveys") {
+                    expect(self.cacheRepository.getSurveyListCalled) == true
                 }
 
                 it("returns correct cache surveys") {
