@@ -21,6 +21,9 @@ struct HomeView: View {
         switch viewModel.state {
         case .idle:
             setUpView()
+                .onAppear {
+                    viewModel.loadSurveys()
+                }
         case .loading:
             setUpView(isLoading: true)
         case .loaded:

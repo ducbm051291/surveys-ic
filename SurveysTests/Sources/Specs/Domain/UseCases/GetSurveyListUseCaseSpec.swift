@@ -33,14 +33,13 @@ final class GetSurveyListUseCaseSpec: QuickSpec {
                 let pageNumber = 1
                 let pageSize = 10
                 let surveysToTest = Array(repeating: APISurvey.dummy, count: pageSize)
-                let errorToTest = TestError.mock
 
                 context("when surveyRepository emits success") {
 
                     var executingGetSurveyList: Observable<[APISurvey]>!
 
                     beforeEach {
-                        self.repository.getSurveyListPageNumberPageSizeReturnValue = Just(surveysToTest).asObservable()
+                        self.repository.getSurveyListPageNumberPageSizeReturnValue = Just(surveysToTest).asDriver()
                         executingGetSurveyList = useCase.execute(pageNumber: pageNumber, pageSize: pageSize)
                             .compactMap { $0 as? [APISurvey] }
                             .asObservable()
@@ -66,45 +65,6 @@ final class GetSurveyListUseCaseSpec: QuickSpec {
                     it("emits correct content value") {
                         let surveys = try self.awaitPublisher(executingGetSurveyList)
                         expect(surveys) == surveysToTest
-                    }
-                }
-
-                context("when surveyRepository emits failure") {
-
-                    var executingGetSurveyList: Observable<[APISurvey]>!
-
-                    beforeEach {
-                        self.repository.getSurveyListPageNumberPageSizeReturnValue = Fail(
-                            outputType: [Survey].self,
-                            failure: errorToTest
-                        )
-                        .asObservable()
-                        executingGetSurveyList = useCase.execute(pageNumber: pageNumber, pageSize: pageSize)
-                            .compactMap { $0 as? [APISurvey] }
-                            .replaceError(with: surveysToTest)
-                            .asObservable()
-                    }
-
-                    it("triggers surveyRepository to get survey list") {
-                        _ = try self.awaitPublisher(executingGetSurveyList)
-                        expect(self.repository.getSurveyListPageNumberPageSizeCalled) == true
-                    }
-
-                    it("triggers surveyRepository to get survey list with correct page number") {
-                        _ = try self.awaitPublisher(executingGetSurveyList)
-                        expect(
-                            self.repository.getSurveyListPageNumberPageSizeReceivedArguments?.pageNumber
-                        ) == pageNumber
-                    }
-
-                    it("triggers surveyRepository to get survey list with correct page size") {
-                        _ = try self.awaitPublisher(executingGetSurveyList)
-                        expect(self.repository.getSurveyListPageNumberPageSizeReceivedArguments?.pageSize) == pageSize
-                    }
-
-                    it("emits dummy due to error") {
-                        let token = try self.awaitPublisher(executingGetSurveyList)
-                        expect(token) == surveysToTest
                     }
                 }
             }

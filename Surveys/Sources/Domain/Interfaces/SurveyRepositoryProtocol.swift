@@ -11,5 +11,5 @@ import Combine
 // sourcery: AutoMockable
 protocol SurveyRepositoryProtocol: AnyObject {
 
-    func getSurveyList(pageNumber: Int, pageSize: Int) -> Observable<[Survey]>
+    func getSurveyList(pageNumber: Int, pageSize: Int) -> Driver<[Survey]>
 }

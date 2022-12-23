@@ -13,10 +13,15 @@ import Resolver
 final class SurveyRepository: SurveyRepositoryProtocol {
 
     @Injected private var networkAPI: NetworkAPIProtocol
+    @Injected private var surveyCache: SurveyCache
 
-    func getSurveyList(pageNumber: Int, pageSize: Int) -> Observable<[Survey]> {
+    func getSurveyList(pageNumber: Int, pageSize: Int) -> Driver<[Survey]> {
         networkAPI.performRequest(.surveyList(pageNumber, pageSize), for: [APISurvey].self)
+            .handleEvents(receiveOutput: { [weak self] surveys in
+                self?.surveyCache.set(surveys)
+            })
             .map { $0 as [Survey] }
-            .eraseToAnyPublisher()
+            .replaceError(with: surveyCache.get() ?? [])
+            .asDriver()
     }
 }

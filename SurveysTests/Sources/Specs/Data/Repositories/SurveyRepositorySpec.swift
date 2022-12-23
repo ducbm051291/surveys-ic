@@ -78,7 +78,6 @@ final class SurveyRepositorySpec: QuickSpec {
                         )
                         getSurveyList = repository.getSurveyList(pageNumber: pageNumber, pageSize: pageSize)
                             .compactMap { $0 as? [APISurvey] }
-                            .replaceError(with: surveysToTest)
                             .asObservable()
                     }
 

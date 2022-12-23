@@ -8,9 +8,14 @@
 
 import Cache
 
-final class SurveyCache: CacheProtocol {
+protocol SurveyCacheProtocol: AnyObject {
 
-    typealias Value = [APISurvey]
+    func get() -> [APISurvey]?
+    func set(_ value: [APISurvey])
+    func remove()
+}
+
+final class SurveyCache: SurveyCacheProtocol {
 
     private let diskConfig = DiskConfig(name: Bundle.main.bundleIdentifier ?? .empty)
     private let memoryConfig = MemoryConfig(expiry: .never, countLimit: 50, totalCostLimit: 10)
@@ -24,15 +29,15 @@ final class SurveyCache: CacheProtocol {
         )
     }
 
-    func get() throws -> [APISurvey]? {
+    func get() -> [APISurvey]? {
         try? storage?.object(forKey: CacheKey.surveyList.rawValue)
     }
 
-    func set(_ value: [APISurvey]) throws {
+    func set(_ value: [APISurvey]) {
         try? storage?.setObject(value, forKey: CacheKey.surveyList.rawValue)
     }
 
-    func remove() throws {
+    func remove() {
         try? storage?.removeObject(forKey: CacheKey.surveyList.rawValue)
     }
 }
