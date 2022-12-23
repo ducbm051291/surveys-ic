@@ -26,3 +26,4 @@
 
 "home.logOut.text" = "Logout";
 "home.logOutConfirm.text" = "Are you sure you want to logout?";
+"home.today.text" = "Today";

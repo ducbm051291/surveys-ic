@@ -16,24 +16,22 @@ struct HomeSurveyItemView: View {
     var body: some View {
         ZStack {
             setUpBackgroundImage()
-                .overlay {
-                    setUpSurvey()
-                }
+            setUpSurvey()
         }
     }
 
     private func setUpSurvey() -> some View {
-        VStack(alignment: .leading) {
+        VStack {
             Spacer()
             VStack(alignment: .leading, spacing: 16.0) {
-                // TODO: Remove dummy data
-                Text("Working from home Check-In")
+                Text(survey.title)
                     .modifier(TextTitleModifier())
                     .lineLimit(2)
                 HStack(alignment: .center, spacing: 20.0) {
-                    Text("We would like to know how you feel about our work from home...")
+                    Text(survey.description)
                         .modifier(TextDescriptionModifier())
                         .lineLimit(2)
+                    Spacer()
                     Button(String.empty) {}
                         .modifier(RoundNextButtonModifier(action: {}))
                 }
@@ -45,15 +43,18 @@ struct HomeSurveyItemView: View {
     }
 
     private func setUpBackgroundImage() -> some View {
-        KFImage(URL(string: String.empty))
+        KFImage(URL(string: survey.coverImageUrl))
             .placeholder { _ in
                 Assets.surveyBackgroundImage.image
                     .resizable()
                     .scaledToFill()
             }
             .fade(duration: 0.3)
+            .resizable()
+            .scaledToFill()
             .overlay {
                 Constants.Gradient.surveyBackground.opacity(0.6)
             }
+            .frame(minWidth: 0.0, maxWidth: .infinity)
     }
 }

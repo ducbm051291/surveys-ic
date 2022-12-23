@@ -23,12 +23,6 @@ struct HomeView: View {
             setUpView()
         case .loading:
             setUpView(isLoading: true)
-                .onAppear {
-                    // TODO: Remove loading demo code
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        viewModel.state = .loaded
-                    }
-                }
         case .loaded:
             setUpView()
         case let .error(message):
@@ -51,6 +45,9 @@ struct HomeView: View {
                 setUpTabView()
                     .overlay(alignment: .top) {
                         setUpHeaderHomeView()
+                    }
+                    .overlay {
+                        setUpPageControl()
                     }
                     .overlay {
                         if isMenuVisible {
@@ -76,10 +73,7 @@ struct HomeView: View {
         .tabViewStyle(.page(indexDisplayMode: .never))
         .animation(.easeInOut, value: selectedSurveyIndex)
         .transition(.slide)
-        .overlay(alignment: .leading) {
-            setUpPageControl()
-        }
-        .ignoresSafeArea(.all)
+        .edgesIgnoringSafeArea(.all)
     }
 
     private func setUpHeaderHomeView() -> some View {
@@ -96,18 +90,15 @@ struct HomeView: View {
     private func setUpPageControl() -> some View {
         VStack(alignment: .leading) {
             Spacer()
-            PageControlView(
-                currentPage: $selectedSurveyIndex,
-                // TODO: Update number of pages with real data
-                numberOfPages: 4
-            )
-            .frame(
-                width: .zero,
-                height: 8.0,
-                alignment: .leading
-            )
-            .padding(.leading, 10.0)
-            .padding(.bottom, 226.0)
+            HStack {
+                PageControlView(
+                    currentPage: $selectedSurveyIndex,
+                    numberOfPages: viewModel.surveys.count
+                )
+                .frame(width: .zero, height: 8.0, alignment: .leading)
+                Spacer()
+            }
+            .padding(.bottom, 200.0)
         }
     }
 }
