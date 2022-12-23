@@ -83,11 +83,14 @@
 		588282A22954441A00E408F3 /* CacheRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A12954441A00E408F3 /* CacheRepository.swift */; };
 		588282A42954442200E408F3 /* CacheRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A32954442200E408F3 /* CacheRepositoryProtocol.swift */; };
 		588282A92954443600E408F3 /* SurveyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A62954443600E408F3 /* SurveyCache.swift */; };
-		588282AF2954450000E408F3 /* ClearSurveyCacheUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282AC2954450000E408F3 /* ClearSurveyCacheUseCase.swift */; };
+		588282AF2954450000E408F3 /* ClearCachedSurveyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282AC2954450000E408F3 /* ClearCachedSurveyUseCase.swift */; };
 		588282B02954450000E408F3 /* GetCachedSurveyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282AD2954450000E408F3 /* GetCachedSurveyUseCase.swift */; };
 		588282B12954450000E408F3 /* CacheSurveyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282AE2954450000E408F3 /* CacheSurveyUseCase.swift */; };
 		588282B42954504700E408F3 /* CacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282B22954504700E408F3 /* CacheProtocol.swift */; };
 		588282B52954504700E408F3 /* CacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282B32954504700E408F3 /* CacheKey.swift */; };
+		588282B72954531F00E408F3 /* GetCacheSurveyUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282B62954531F00E408F3 /* GetCacheSurveyUseCaseSpec.swift */; };
+		588282BB2954536B00E408F3 /* CacheSurveyUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282BA2954536B00E408F3 /* CacheSurveyUseCaseSpec.swift */; };
+		588282BD2954537600E408F3 /* ClearCachedSurveyUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282BC2954537600E408F3 /* ClearCachedSurveyUseCaseSpec.swift */; };
 		588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */; };
 		588FC05D293602FB00D1A38D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FC05C293602FB00D1A38D /* R.generated.swift */; };
 		589E92262952ECBE00082D5D /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589E92252952ECBE00082D5D /* AuthPlugin.swift */; };
@@ -277,11 +280,14 @@
 		588282A12954441A00E408F3 /* CacheRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheRepository.swift; sourceTree = "<group>"; };
 		588282A32954442200E408F3 /* CacheRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheRepositoryProtocol.swift; sourceTree = "<group>"; };
 		588282A62954443600E408F3 /* SurveyCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyCache.swift; sourceTree = "<group>"; };
-		588282AC2954450000E408F3 /* ClearSurveyCacheUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearSurveyCacheUseCase.swift; sourceTree = "<group>"; };
+		588282AC2954450000E408F3 /* ClearCachedSurveyUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearCachedSurveyUseCase.swift; sourceTree = "<group>"; };
 		588282AD2954450000E408F3 /* GetCachedSurveyUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCachedSurveyUseCase.swift; sourceTree = "<group>"; };
 		588282AE2954450000E408F3 /* CacheSurveyUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheSurveyUseCase.swift; sourceTree = "<group>"; };
 		588282B22954504700E408F3 /* CacheProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheProtocol.swift; sourceTree = "<group>"; };
 		588282B32954504700E408F3 /* CacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheKey.swift; sourceTree = "<group>"; };
+		588282B62954531F00E408F3 /* GetCacheSurveyUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCacheSurveyUseCaseSpec.swift; sourceTree = "<group>"; };
+		588282BA2954536B00E408F3 /* CacheSurveyUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheSurveyUseCaseSpec.swift; sourceTree = "<group>"; };
+		588282BC2954537600E408F3 /* ClearCachedSurveyUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCachedSurveyUseCaseSpec.swift; sourceTree = "<group>"; };
 		588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocolMock.swift; sourceTree = "<group>"; };
 		588FC05C293602FB00D1A38D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		589E92252952ECBE00082D5D /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
@@ -607,7 +613,7 @@
 			isa = PBXGroup;
 			children = (
 				588282AE2954450000E408F3 /* CacheSurveyUseCase.swift */,
-				588282AC2954450000E408F3 /* ClearSurveyCacheUseCase.swift */,
+				588282AC2954450000E408F3 /* ClearCachedSurveyUseCase.swift */,
 				58C6EB0E293DF3B9002A9B76 /* ForgotPasswordUseCase.swift */,
 				588282AD2954450000E408F3 /* GetCachedSurveyUseCase.swift */,
 				58F410FD29403C4600135DC7 /* GetHasLoggedInUseCase.swift */,
@@ -707,7 +713,10 @@
 		5828F863292636FD0074FE82 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				588282BA2954536B00E408F3 /* CacheSurveyUseCaseSpec.swift */,
+				588282BC2954537600E408F3 /* ClearCachedSurveyUseCaseSpec.swift */,
 				58C6EB10293DF6BA002A9B76 /* ForgotPasswordUseCaseSpec.swift */,
+				588282B62954531F00E408F3 /* GetCacheSurveyUseCaseSpec.swift */,
 				58D1932C2941B78D00D28082 /* GetHasLoggedInUseCaseSpec.swift */,
 				586F776029514DC5000E5DDD /* GetSurveyListUseCaseSpec.swift */,
 				58D1932A2941B77A00D28082 /* GetTokenUseCaseSpec.swift */,
@@ -1737,6 +1746,7 @@
 				5861161B292732B300EF52A4 /* LoginUseCaseSpec.swift in Sources */,
 				586F776129514DC5000E5DDD /* GetSurveyListUseCaseSpec.swift in Sources */,
 				586F7765295158BD000E5DDD /* APISurvey+Dummy.swift in Sources */,
+				588282BD2954537600E408F3 /* ClearCachedSurveyUseCaseSpec.swift in Sources */,
 				586F776329514DD5000E5DDD /* SurveyRepositorySpec.swift in Sources */,
 				5828F86C292637D60074FE82 /* APIToken+Dummy.swift in Sources */,
 				58C6EB12293DF7C6002A9B76 /* ForgotPasswordUseCaseSpec.swift in Sources */,
@@ -1745,6 +1755,7 @@
 				588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */,
 				5828F859292630B40074FE82 /* Resolver+MockRegistering.swift in Sources */,
 				5861162029273AB200EF52A4 /* StoreTokenUseCaseSpec.swift in Sources */,
+				588282B72954531F00E408F3 /* GetCacheSurveyUseCaseSpec.swift in Sources */,
 				CC151CF2A41DE206FA2EDCF0 /* OptionalUnwrapSpec.swift in Sources */,
 				584D03FA29542F84007175D1 /* HomeViewModelSpec.swift in Sources */,
 				5835AA002927270C00686B8C /* TestError.swift in Sources */,
@@ -1752,6 +1763,7 @@
 				58D1932F2941B79300D28082 /* GetTokenUseCaseSpec.swift in Sources */,
 				58683B1D29387D54005FD141 /* LoginViewModelSpec.swift in Sources */,
 				58D1932E2941B79100D28082 /* GetHasLoggedInUseCaseSpec.swift in Sources */,
+				588282BB2954536B00E408F3 /* CacheSurveyUseCaseSpec.swift in Sources */,
 				5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */,
 				5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */,
 				58C6EB16293DF8AD002A9B76 /* APIMessage+Dummy.swift in Sources */,
@@ -1791,7 +1803,7 @@
 				5827FA102924C7E200CF2327 /* PlaceholderModifier.swift in Sources */,
 				58C6EB0F293DF3B9002A9B76 /* ForgotPasswordUseCase.swift in Sources */,
 				581E88AD294AC04E00C22B71 /* HomeSkeletonLoadingView.swift in Sources */,
-				588282AF2954450000E408F3 /* ClearSurveyCacheUseCase.swift in Sources */,
+				588282AF2954450000E408F3 /* ClearCachedSurveyUseCase.swift in Sources */,
 				58F6E6182935E3F200D0547A /* Publisher+ActivityTracker.swift in Sources */,
 				5828F84D29261E910074FE82 /* Publisher+Driver.swift in Sources */,
 				58F6E6122934AF2C00D0547A /* String+Validation.swift in Sources */,

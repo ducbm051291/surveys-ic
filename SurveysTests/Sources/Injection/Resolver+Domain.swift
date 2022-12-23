@@ -17,10 +17,16 @@ extension Resolver {
     }
 
     private static func registerUseCases() {
+        mock.register { CacheSurveyUseCaseProtocolMock() }
+            .implements(CacheSurveyUseCaseProtocol.self)
+        mock.register { ClearCachedSurveyUseCaseProtocolMock() }
+            .implements(ClearCachedSurveyUseCaseProtocol.self)
         mock.register { ForgotPasswordUseCaseProtocolMock() }
             .implements(ForgotPasswordUseCaseProtocol.self)
         mock.register { LoginUseCaseProtocolMock() }
             .implements(LoginUseCaseProtocol.self)
+        mock.register { GetCachedSurveyUseCaseProtocolMock() }
+            .implements(GetCachedSurveyUseCaseProtocol.self)
         mock.register { GetSurveyListUseCaseProtocolMock() }
             .implements(GetSurveyListUseCaseProtocol.self)
         mock.register { GetTokenUseCaseProtocolMock() }

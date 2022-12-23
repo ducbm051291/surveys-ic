@@ -1,5 +1,5 @@
 //
-//  ClearSurveyCacheUseCase.swift
+//  ClearCachedSurveyUseCase.swift
 //  Surveys
 //
 //  Created by David Bui on 22/12/2022.
@@ -10,12 +10,12 @@ import Combine
 import Resolver
 
 // sourcery: AutoMockable
-protocol ClearSurveyCacheUseCaseProtocol {
+protocol ClearCachedSurveyUseCaseProtocol {
 
     func execute()
 }
 
-final class ClearSurveyCacheUseCase: ClearSurveyCacheUseCaseProtocol {
+final class ClearCachedSurveyUseCase: ClearCachedSurveyUseCaseProtocol {
 
     @Injected private var cachedRepository: CacheRepositoryProtocol
 
