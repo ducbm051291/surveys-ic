@@ -15,13 +15,14 @@ final class SurveyRepository: SurveyRepositoryProtocol {
     @Injected private var networkAPI: NetworkAPIProtocol
     @Injected private var surveyCache: SurveyCache
 
-    func getSurveyList(pageNumber: Int, pageSize: Int) -> Driver<[Survey]> {
+    func getSurveyList(pageNumber: Int, pageSize: Int) -> Observable<[Survey]> {
         networkAPI.performRequest(.surveyList(pageNumber, pageSize), for: [APISurvey].self)
-            .handleEvents(receiveOutput: { [weak self] surveys in
-                self?.surveyCache.set(surveys)
-            })
+            .map {
+                self.surveyCache.set($0)
+                return $0
+            }
             .map { $0 as [Survey] }
             .replaceError(with: surveyCache.get() ?? [])
-            .asDriver()
+            .asObservable()
     }
 }

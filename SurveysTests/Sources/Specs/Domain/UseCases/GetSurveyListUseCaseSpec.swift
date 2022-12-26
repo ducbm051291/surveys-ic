@@ -39,7 +39,7 @@ final class GetSurveyListUseCaseSpec: QuickSpec {
                     var executingGetSurveyList: Observable<[APISurvey]>!
 
                     beforeEach {
-                        self.repository.getSurveyListPageNumberPageSizeReturnValue = Just(surveysToTest).asDriver()
+                        self.repository.getSurveyListPageNumberPageSizeReturnValue = Just(surveysToTest).asObservable()
                         executingGetSurveyList = useCase.execute(pageNumber: pageNumber, pageSize: pageSize)
                             .compactMap { $0 as? [APISurvey] }
                             .asObservable()

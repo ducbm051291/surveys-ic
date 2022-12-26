@@ -12,14 +12,14 @@ import Resolver
 // sourcery: AutoMockable
 protocol GetSurveyListUseCaseProtocol {
 
-    func execute(pageNumber: Int, pageSize: Int) -> Driver<[Survey]>
+    func execute(pageNumber: Int, pageSize: Int) -> Observable<[Survey]>
 }
 
 final class GetSurveyListUseCase: GetSurveyListUseCaseProtocol {
 
     @Injected private var surveyRepository: SurveyRepositoryProtocol
 
-    func execute(pageNumber: Int, pageSize: Int) -> Driver<[Survey]> {
+    func execute(pageNumber: Int, pageSize: Int) -> Observable<[Survey]> {
         surveyRepository.getSurveyList(pageNumber: pageNumber, pageSize: pageSize)
     }
 }

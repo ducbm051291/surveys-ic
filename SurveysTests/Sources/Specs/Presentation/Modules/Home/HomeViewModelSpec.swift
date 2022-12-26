@@ -37,7 +37,7 @@ final class HomeViewModelSpec: QuickSpec {
 
                     beforeEach {
                         self.getSurveyListUseCase.executePageNumberPageSizeReturnValue = Just(surveysToTest)
-                            .asDriver()
+                            .asObservable()
                         viewModel.loadSurveys()
                     }
 
