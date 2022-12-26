@@ -23,7 +23,7 @@ struct HomeView: View {
         case .idle:
             setUpView()
                 .onAppear {
-                    viewModel.loadSurveys()
+                    viewModel.reloadSurveys()
                 }
         case .loading:
             setUpView(isLoading: true)
@@ -43,7 +43,7 @@ struct HomeView: View {
 
     private func setUpView(isLoading: Bool = false) -> some View {
         RefreshableScrollView { _ in
-            viewModel.loadSurveys()
+            viewModel.reloadSurveys()
         } progress: { state in
             RefreshActivityIndicator(isAnimating: state == .loading) {
                 $0.hidesWhenStopped = false
@@ -53,10 +53,7 @@ struct HomeView: View {
             ZStack {
                 if isLoading {
                     HomeSkeletonLoadingView()
-                        .frame(
-                            width: UIScreen.main.bounds.width,
-                            height: UIScreen.main.bounds.height
-                        )
+                        .fullScreenFrame()
                 } else {
                     setUpTabView()
                         .overlay(alignment: .top) {
@@ -90,10 +87,7 @@ struct HomeView: View {
         .tabViewStyle(.page(indexDisplayMode: .never))
         .animation(.easeInOut, value: selectedSurveyIndex)
         .transition(.slide)
-        .frame(
-            width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height
-        )
+        .fullScreenFrame()
         .edgesIgnoringSafeArea(.all)
     }
 
