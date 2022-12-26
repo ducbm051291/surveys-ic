@@ -8,6 +8,7 @@
 
 import Combine
 import SwiftUI
+import SwiftUI_Pull_To_Refresh
 import UIKit
 
 struct HomeView: View {
@@ -41,22 +42,35 @@ struct HomeView: View {
     }
 
     private func setUpView(isLoading: Bool = false) -> some View {
-        ZStack {
-            if isLoading {
-                HomeSkeletonLoadingView()
-            } else {
-                setUpTabView()
-                    .overlay(alignment: .top) {
-                        setUpHeaderHomeView()
-                    }
-                    .overlay {
-                        setUpPageControl()
-                    }
-                    .overlay {
-                        if isMenuVisible {
-                            setUpUserMenuView()
+        RefreshableScrollView { _ in
+            viewModel.loadSurveys()
+        } progress: { state in
+            RefreshActivityIndicator(isAnimating: state == .loading) {
+                $0.hidesWhenStopped = false
+            }
+            .padding(.top, 30.0)
+        } content: {
+            ZStack {
+                if isLoading {
+                    HomeSkeletonLoadingView()
+                        .frame(
+                            width: UIScreen.main.bounds.width,
+                            height: UIScreen.main.bounds.height
+                        )
+                } else {
+                    setUpTabView()
+                        .overlay(alignment: .top) {
+                            setUpHeaderHomeView()
                         }
-                    }
+                        .overlay {
+                            setUpPageControl()
+                        }
+                        .overlay {
+                            if isMenuVisible {
+                                setUpUserMenuView()
+                            }
+                        }
+                }
             }
         }
         .ignoresSafeArea()
@@ -76,6 +90,10 @@ struct HomeView: View {
         .tabViewStyle(.page(indexDisplayMode: .never))
         .animation(.easeInOut, value: selectedSurveyIndex)
         .transition(.slide)
+        .frame(
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height
+        )
         .edgesIgnoringSafeArea(.all)
     }
 
