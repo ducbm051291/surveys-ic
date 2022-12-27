@@ -13,7 +13,7 @@ import Moya
 
 final class NetworkAPI: NetworkAPIProtocol {
 
-    private let provider = MoyaProvider<RequestConfiguration>()
+    private let provider = MoyaProvider<RequestConfiguration>(plugins: [AuthPlugin()])
     private let decoder: JSONAPIDecoder
 
     init(decoder: JSONAPIDecoder = JSONAPIDecoder.default) {

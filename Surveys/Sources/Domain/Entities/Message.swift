@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Message: Decodable {
+protocol Message {
 
     var message: String { get }
 }
