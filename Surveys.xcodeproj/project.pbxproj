@@ -80,6 +80,9 @@
 		586F7765295158BD000E5DDD /* APISurvey+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586F7764295158BD000E5DDD /* APISurvey+Dummy.swift */; };
 		5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880AE07291E3B8B00A212E7 /* ImageResource+Image.swift */; };
 		58812DFF292B80E90078E5C5 /* XCTestCase+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58812DFD292B80CD0078E5C5 /* XCTestCase+Publisher.swift */; };
+		588282A42954442200E408F3 /* CacheRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A32954442200E408F3 /* CacheRepositoryProtocol.swift */; };
+		588282A92954443600E408F3 /* SurveyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A62954443600E408F3 /* SurveyCache.swift */; };
+		588282B52954504700E408F3 /* CacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282B32954504700E408F3 /* CacheKey.swift */; };
 		588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */; };
 		588FC05D293602FB00D1A38D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588FC05C293602FB00D1A38D /* R.generated.swift */; };
 		589E92262952ECBE00082D5D /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589E92252952ECBE00082D5D /* AuthPlugin.swift */; };
@@ -266,6 +269,9 @@
 		586F7764295158BD000E5DDD /* APISurvey+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APISurvey+Dummy.swift"; sourceTree = "<group>"; };
 		5880AE07291E3B8B00A212E7 /* ImageResource+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageResource+Image.swift"; sourceTree = "<group>"; };
 		58812DFD292B80CD0078E5C5 /* XCTestCase+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Publisher.swift"; sourceTree = "<group>"; };
+		588282A32954442200E408F3 /* CacheRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheRepositoryProtocol.swift; sourceTree = "<group>"; };
+		588282A62954443600E408F3 /* SurveyCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyCache.swift; sourceTree = "<group>"; };
+		588282B32954504700E408F3 /* CacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheKey.swift; sourceTree = "<group>"; };
 		588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocolMock.swift; sourceTree = "<group>"; };
 		588FC05C293602FB00D1A38D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		589E92252952ECBE00082D5D /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
@@ -464,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				5828F82529260E120074FE82 /* AuthenticationRepositoryProtocol.swift */,
+				588282A32954442200E408F3 /* CacheRepositoryProtocol.swift */,
 				5828F843292618BF0074FE82 /* SessionRepositoryProtocol.swift */,
 				58B758612950551600CE2543 /* SurveyRepositoryProtocol.swift */,
 			);
@@ -591,10 +598,10 @@
 			children = (
 				58C6EB0E293DF3B9002A9B76 /* ForgotPasswordUseCase.swift */,
 				58F410FD29403C4600135DC7 /* GetHasLoggedInUseCase.swift */,
+				58B758632950558F00CE2543 /* GetSurveyListUseCase.swift */,
+				58D193282941B72A00D28082 /* GetTokenUseCase.swift */,
 				5828F82D29260F0B0074FE82 /* LoginUseCase.swift */,
 				5828F84E292620520074FE82 /* StoreTokenUseCase.swift */,
-				58D193282941B72A00D28082 /* GetTokenUseCase.swift */,
-				58B758632950558F00CE2543 /* GetSurveyListUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -612,6 +619,7 @@
 		5828F83229260FD10074FE82 /* Storages */ = {
 			isa = PBXGroup;
 			children = (
+				588282A52954443600E408F3 /* Cache */,
 				5828F838292610540074FE82 /* Keychain */,
 				5828F835292610070074FE82 /* UserDefaults */,
 			);
@@ -852,6 +860,15 @@
 				58683B2329388148005FD141 /* XCTest */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		588282A52954443600E408F3 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				588282B32954504700E408F3 /* CacheKey.swift */,
+				588282A62954443600E408F3 /* SurveyCache.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		588FC05B293602FB00D1A38D /* Rswift */ = {
@@ -1745,6 +1762,7 @@
 				9034CDC8640BB10EC23F3D2C /* Constants.swift in Sources */,
 				5828F84B29261E8A0074FE82 /* Publisher+Observable.swift in Sources */,
 				58D193372941E49B00D28082 /* HomeHeaderView.swift in Sources */,
+				588282A92954443600E408F3 /* SurveyCache.swift in Sources */,
 				58F410FE29403C4600135DC7 /* GetHasLoggedInUseCase.swift in Sources */,
 				58B758642950558F00CE2543 /* GetSurveyListUseCase.swift in Sources */,
 				581BDAEF29497BEF0081BAE5 /* ShimmerViewStyle+Application.swift in Sources */,
@@ -1766,11 +1784,13 @@
 				581BDAE7294850DF0081BAE5 /* APISurvey.swift in Sources */,
 				58C6C5B029223E210083AF17 /* DateFormatter+Formats.swift in Sources */,
 				58C6C5AE29222E050083AF17 /* JSONAPIDecoder+Default.swift in Sources */,
+				588282B52954504700E408F3 /* CacheKey.swift in Sources */,
 				5827FA1F2924D0F200CF2327 /* String+Empty.swift in Sources */,
 				5827FA0D29248DC900CF2327 /* LoginView.swift in Sources */,
 				58285B1F2939AECB00AC6E73 /* BannerData.swift in Sources */,
 				5866FE042934545100908E86 /* LoginViewModel.swift in Sources */,
 				58D193342941E27E00D28082 /* HomeViewModel.swift in Sources */,
+				588282A42954442200E408F3 /* CacheRepositoryProtocol.swift in Sources */,
 				581BDAE1294827330081BAE5 /* TextTitleModifier.swift in Sources */,
 				E523B137B86D7E0119304CC1 /* Optional+Unwrap.swift in Sources */,
 				58B570C3292B2052007831B8 /* ColorResource+Color.swift in Sources */,

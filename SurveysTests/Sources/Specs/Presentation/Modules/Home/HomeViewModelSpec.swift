@@ -25,52 +25,30 @@ final class HomeViewModelSpec: QuickSpec {
 
             beforeEach {
                 Resolver.registerAllMockServices()
+                viewModel = HomeViewModel(bundle: Bundle.main)
             }
 
-            describe("its initialize") {
+            describe("its loadSurveys() called") {
 
                 let pageSize = 10
                 let surveysToTest = Array(repeating: APISurvey.dummy, count: pageSize)
-                let errorToTest = TestError.mock
 
                 context("when getSurveyListUseCase returns success") {
 
                     beforeEach {
                         self.getSurveyListUseCase.executePageNumberPageSizeReturnValue = Just(surveysToTest)
                             .asObservable()
-                        viewModel = HomeViewModel(bundle: Bundle.main)
-                    }
-
-                    it("state changes to loading") {
-                        let state = try self.awaitPublisher(viewModel.$state.collectNext(1)).last
-                        expect(state) == .loading
+                        viewModel.loadSurveys()
                     }
 
                     it("state changes to loaded") {
-                        let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
+                        let state = try self.awaitPublisher(viewModel.$state.collectNext(1)).last
                         expect(state) == .loaded
                     }
-                }
 
-                context("when getSurveyListUseCase returns failure") {
-
-                    beforeEach {
-                        self.getSurveyListUseCase.executePageNumberPageSizeReturnValue = Fail(
-                            outputType: [Survey].self,
-                            failure: errorToTest
-                        )
-                        .asObservable()
-                        viewModel = HomeViewModel(bundle: Bundle.main)
-                    }
-
-                    it("state changes to loading") {
-                        let state = try self.awaitPublisher(viewModel.$state.collectNext(1)).last
-                        expect(state) == .loading
-                    }
-
-                    it("state changes to error with common error text") {
-                        let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
-                        expect(state) == .error(Localize.commonErrorText())
+                    it("surveys updated with surveysToTest") {
+                        let surveys = try self.awaitPublisher(viewModel.$surveys.collectNext(1)).last as? [APISurvey]
+                        expect(surveys) == surveysToTest
                     }
                 }
             }

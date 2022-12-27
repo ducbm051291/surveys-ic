@@ -29,6 +29,8 @@ extension Resolver {
     private static func registerRepositories() {
         mock.register { AuthenticationRepositoryProtocolMock() }
             .implements(AuthenticationRepositoryProtocol.self)
+        mock.register { CacheRepositoryProtocolMock() }
+            .implements(CacheRepositoryProtocol.self)
         mock.register { SessionRepositoryProtocolMock() }
             .implements(SessionRepositoryProtocol.self)
         mock.register { SurveyRepositoryProtocolMock() }

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.6.4)
+  - Cache (6.0.0)
   - Firebase/CoreOnly (10.2.0):
     - FirebaseCore (= 10.2.0)
   - Firebase/Crashlytics (10.2.0):
@@ -68,6 +69,7 @@ PODS:
   - Wormholy (1.6.5)
 
 DEPENDENCIES:
+  - Cache
   - Firebase/Crashlytics
   - FlowStacks
   - IQKeyboardManagerSwift
@@ -91,6 +93,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cache
     - Firebase
     - FirebaseCore
     - FirebaseCoreInternal
@@ -133,6 +136,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
   Firebase: a3ea7eba4382afd83808376edb99acdaff078dcf
   FirebaseCore: 813838072b797b64f529f3c2ee35e696e5641dd1
   FirebaseCoreInternal: 091bde13e47bb1c5e9fe397634f3593dc390430f
@@ -162,6 +166,6 @@ SPEC CHECKSUMS:
   SwiftLint: 6b0cf1f4d619808dbc16e4fab064ce6fc79f090b
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: df2d1819918a8a336a61754609741535ca1e9fc1
+PODFILE CHECKSUM: b7cda0ce77ed822bed96f9b56e3df2ed1bc13580
 
 COCOAPODS: 1.11.3

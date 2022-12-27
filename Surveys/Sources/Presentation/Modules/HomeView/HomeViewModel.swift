@@ -37,12 +37,13 @@ final class HomeViewModel: ObservableObject {
         Publishers.Merge(errorState, loadingState)
             .receive(on: DispatchQueue.main)
             .assign(to: &$state)
+    }
+
+    func loadSurveys() {
+        state = .loading
 
         let getSurveyList = getSurveyListUseCase
             .execute(pageNumber: pageNumber, pageSize: pageSize)
-            .receive(on: DispatchQueue.main)
-            .trackError(errorTracker)
-            .trackActivity(activityTracker)
             .asDriver()
             .share()
 
