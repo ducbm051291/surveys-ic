@@ -81,9 +81,17 @@ struct HomeView: View {
 
         return TabView(selection: $selectedSurveyIndex) {
             ForEach(surveys, id: \.element.id) { index, survey in
-                HomeSurveyItemView(survey: survey)
-                    .tag(index)
-                    .edgesIgnoringSafeArea(.all)
+                HomeSurveyItemView(
+                    survey: survey,
+                    action: {
+                        navigator.show(
+                            screen: .survey(SurveyViewModel(survey: survey)),
+                            by: .push
+                        )
+                    }
+                )
+                .tag(index)
+                .edgesIgnoringSafeArea(.all)
             }
         }
         .background(.black)
