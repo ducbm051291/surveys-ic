@@ -17,6 +17,15 @@ struct APIQuestion: Question, Codable, Equatable {
     let text: String
     let pick: PickType
     let coverImageUrl: String
-    var answerList: [Answer]? { answers }
-    var answers: [APIAnswer]?
+    var answerList: [APIAnswer]?
+    var answers: [Answer]? { answerList }
+}
+
+extension APIQuestion {
+
+    enum CodingKeys: String, CodingKey {
+
+        case id, text, pick, type, displayOrder, displayType, coverImageUrl
+        case answerList = "answers"
+    }
 }

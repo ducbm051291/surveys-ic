@@ -15,6 +15,15 @@ struct APISurvey: Survey, Codable, Equatable {
     let title: String
     let description: String
     let coverImageUrl: String
-    var questionList: [Question]? { questions }
-    var questions: [APIQuestion] = []
+    var questionList: [APIQuestion]?
+    var questions: [Question]? { questionList }
+}
+
+extension APISurvey {
+
+    enum CodingKeys: String, CodingKey {
+
+        case id, type, title, description, coverImageUrl
+        case questionList = "questions"
+    }
 }

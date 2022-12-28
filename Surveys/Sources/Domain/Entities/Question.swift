@@ -17,5 +17,5 @@ protocol Question {
     var text: String { get }
     var pick: PickType { get }
     var coverImageUrl: String { get }
-    var answerList: [Answer]? { get }
+    var answers: [Answer]? { get }
 }
