@@ -88,7 +88,6 @@ struct HomeView: View {
         .animation(.easeInOut, value: selectedSurveyIndex)
         .transition(.slide)
         .fullScreenFrame()
-        .edgesIgnoringSafeArea(.all)
     }
 
     private func setUpHeaderHomeView() -> some View {

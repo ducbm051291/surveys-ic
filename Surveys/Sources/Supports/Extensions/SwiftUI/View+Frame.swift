@@ -11,9 +11,10 @@ import SwiftUI
 extension View {
 
     func fullScreenFrame() -> some View {
-        return frame(
+        frame(
             width: UIScreen.main.bounds.width,
             height: UIScreen.main.bounds.height
         )
+        .edgesIgnoringSafeArea(.all)
     }
 }
