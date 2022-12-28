@@ -98,7 +98,7 @@ struct SurveyViewPreview: PreviewProvider {
             title: .empty,
             description: .empty,
             coverImageUrl: .empty,
-            questions: []
+            questionList: []
         )))
     }
 }
