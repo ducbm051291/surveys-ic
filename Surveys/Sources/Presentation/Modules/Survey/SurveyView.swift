@@ -16,10 +16,15 @@ struct SurveyView: View {
 
     var body: some View {
         switch viewModel.state {
-        case .idle, .loaded:
+        case .idle:
             setUpView()
+                .onAppear {
+                    viewModel.loadSurveyDetail()
+                }
         case .loading:
             setUpView(isLoading: true)
+        case .loaded:
+            setUpView()
         case let .error(message):
             setUpView()
                 .alert(isPresented: .constant(true)) {

@@ -50,6 +50,7 @@ final class HomeViewModel: ObservableObject {
 
         let getSurveyList = getSurveyListUseCase
             .execute(pageNumber: pageNumber, pageSize: pageSize)
+            .trackError(errorTracker)
             .asDriver()
             .share()
 
