@@ -28,4 +28,3 @@ extension SurveyViewModel {
         case error(String)
     }
 }
-
