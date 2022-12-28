@@ -15,4 +15,6 @@ struct APISurvey: Survey, Codable, Equatable {
     let title: String
     let description: String
     let coverImageUrl: String
+    var questionList: [Question]? { questions }
+    var questions: [APIQuestion] = []
 }

@@ -15,4 +15,5 @@ protocol Survey {
     var title: String { get }
     var description: String { get }
     var coverImageUrl: String { get }
+    var questionList: [Question]? { get }
 }
