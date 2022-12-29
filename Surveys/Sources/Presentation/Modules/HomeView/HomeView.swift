@@ -42,35 +42,38 @@ struct HomeView: View {
     }
 
     private func setUpView(isLoading: Bool = false) -> some View {
-        RefreshableScrollView { _ in
-            viewModel.reloadSurveys()
-        } progress: { state in
-            RefreshActivityIndicator(isAnimating: state == .loading) {
-                $0.hidesWhenStopped = false
-            }
-            .padding(.top, 30.0)
-        } content: {
-            ZStack {
-                if isLoading {
-                    HomeSkeletonLoadingView()
-                        .fullScreenFrame()
-                } else {
-                    setUpTabView()
-                        .overlay(alignment: .top) {
-                            setUpHeaderHomeView()
-                        }
-                        .overlay {
-                            setUpPageControl()
-                        }
-                        .overlay {
-                            if isMenuVisible {
-                                setUpUserMenuView()
+        GeometryReader { geometry in
+            RefreshableScrollView { _ in
+                viewModel.reloadSurveys()
+            } progress: { state in
+                RefreshActivityIndicator(isAnimating: state == .loading) {
+                    $0.hidesWhenStopped = false
+                }
+                .padding(.top, 30.0)
+            } content: {
+                ZStack {
+                    if isLoading {
+                        HomeSkeletonLoadingView()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                    } else {
+                        setUpTabView()
+                            .overlay(alignment: .top) {
+                                setUpHeaderHomeView()
                             }
-                        }
+                            .overlay {
+                                setUpPageControl()
+                            }
+                            .overlay {
+                                if isMenuVisible {
+                                    setUpUserMenuView()
+                                }
+                            }
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                    }
                 }
             }
         }
-        .ignoresSafeArea()
+        .edgesIgnoringSafeArea(.all)
     }
 
     private func setUpTabView() -> some View {
@@ -87,7 +90,6 @@ struct HomeView: View {
         .tabViewStyle(.page(indexDisplayMode: .never))
         .animation(.easeInOut, value: selectedSurveyIndex)
         .transition(.slide)
-        .fullScreenFrame()
     }
 
     private func setUpHeaderHomeView() -> some View {
