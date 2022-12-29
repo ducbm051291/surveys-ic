@@ -12,6 +12,7 @@ import SwiftUI
 struct HomeSurveyItemView: View {
 
     var survey: Survey
+    var action: () -> Void
 
     var body: some View {
         ZStack {
@@ -33,7 +34,7 @@ struct HomeSurveyItemView: View {
                         .lineLimit(2)
                     Spacer()
                     Button(String.empty) {}
-                        .modifier(RoundNextButtonModifier(action: {}))
+                        .modifier(RoundNextButtonModifier(action: action))
                 }
             }
             .padding(.bottom, 54.0)
