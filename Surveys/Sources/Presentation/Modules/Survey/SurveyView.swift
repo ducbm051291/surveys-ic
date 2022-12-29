@@ -91,6 +91,7 @@ struct SurveyView: View {
         .padding(.top, 20.0)
         .padding(.horizontal, 20.0)
         .padding(.bottom, 54.0)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

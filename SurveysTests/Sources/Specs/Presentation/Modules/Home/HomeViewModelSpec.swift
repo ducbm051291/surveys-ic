@@ -41,8 +41,13 @@ final class HomeViewModelSpec: QuickSpec {
                         viewModel.reloadSurveys()
                     }
 
-                    it("state changes to loaded") {
+                    it("state changes to loading") {
                         let state = try self.awaitPublisher(viewModel.$state.collectNext(1)).last
+                        expect(state) == .loading
+                    }
+
+                    it("state changes to loaded") {
+                        let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
                         expect(state) == .loaded
                     }
 
@@ -66,8 +71,13 @@ final class HomeViewModelSpec: QuickSpec {
                         viewModel.loadSurveys()
                     }
 
-                    it("state changes to loaded") {
+                    it("state changes to loading") {
                         let state = try self.awaitPublisher(viewModel.$state.collectNext(1)).last
+                        expect(state) == .loading
+                    }
+
+                    it("state changes to loaded") {
+                        let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
                         expect(state) == .loaded
                     }
 
