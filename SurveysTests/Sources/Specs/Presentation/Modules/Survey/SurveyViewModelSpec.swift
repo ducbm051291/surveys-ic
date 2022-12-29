@@ -31,7 +31,7 @@ final class SurveyViewModelSpec: QuickSpec {
 
             describe("its loadSurveyDetail() called") {
 
-                context("when getSurveyListUseCase returns success") {
+                context("when getSurveyDetailUseCase returns success") {
 
                     beforeEach {
                         self.getSurveyDetailUseCase.executeIdReturnValue = Just(surveyToTest)
@@ -49,13 +49,13 @@ final class SurveyViewModelSpec: QuickSpec {
                         expect(state) == .loaded
                     }
 
-                    it("surveys updated with surveysToTest") {
+                    it("survey updated with surveyToTest") {
                         let survey = try self.awaitPublisher(viewModel.$survey.collectNext(1)).last as? APISurvey
                         expect(survey) == surveyToTest
                     }
                 }
 
-                context("when getSurveyListUseCase returns success") {
+                context("when getSurveyDetailUseCase returns success") {
 
                     let errorToTest = TestError.mock
 
