@@ -39,6 +39,12 @@ final class HomeViewModel: ObservableObject {
             .assign(to: &$state)
     }
 
+    func reloadSurveys() {
+        pageNumber = 1
+        surveys = []
+        loadSurveys()
+    }
+
     func loadSurveys() {
         state = .loading
 
