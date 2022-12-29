@@ -9,6 +9,7 @@ enum Constants {
     enum GrantType: String {
 
         case password
+        case refreshToken = "refresh_token"
     }
 
     enum Regex {}
