@@ -52,20 +52,22 @@ struct SurveyView: View {
     }
 
     private func setUpBackground() -> some View {
-        KFImage(URL(string: viewModel.survey.coverImageUrl))
-            .placeholder { _ in
-                Assets.surveyBackgroundImage.image
-                    .resizable()
-                    .scaledToFill()
-            }
-            .fade(duration: 0.3)
-            .resizable()
-            .scaledToFill()
-            .overlay {
-                Constants.Gradient.surveyBackground.opacity(0.6)
-            }
-            .frame(minWidth: 0.0, maxWidth: .infinity)
-            .edgesIgnoringSafeArea(.all)
+        GeometryReader { geometry in
+            KFImage(URL(string: viewModel.survey.coverImageUrl))
+                .placeholder { _ in
+                    Assets.surveyBackgroundImage.image
+                        .resizable()
+                        .scaledToFill()
+                }
+                .fade(duration: 0.3)
+                .resizable()
+                .scaledToFill()
+                .overlay {
+                    Constants.Gradient.surveyBackground.opacity(0.6)
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height)
+        }
+        .edgesIgnoringSafeArea(.all)
     }
 
     private func setUpSurvey() -> some View {
