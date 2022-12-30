@@ -15,6 +15,7 @@ import Resolver
 final class NetworkAPI: NetworkAPIProtocol {
 
     @Injected private var keychain: KeychainProtocol
+    @LazyInjected private var notificationCenter: NotificationCenter
 
     private let provider = MoyaProvider<RequestConfiguration>(plugins: [AuthPlugin()])
     private let decoder: JSONAPIDecoder
@@ -47,6 +48,7 @@ final class NetworkAPI: NetworkAPIProtocol {
         if response.statusCode == 401 {
             guard let token: KeychainToken = try? keychain.get(.userToken),
                   token.refreshToken.isNotEmpty else {
+                expireToken()
                 return Just(response).asObservable()
             }
             return refreshToken(token.refreshToken)
@@ -61,6 +63,11 @@ final class NetworkAPI: NetworkAPIProtocol {
         }
     }
 
+    private func expireToken() {
+        try? keychain.remove(.userToken)
+        notificationCenter.post(.unauthenticated)
+    }
+
     private func refreshToken(_ token: String) -> Observable<Token> {
         let refreshTokenParameter = RefreshTokenParameter(
             grantType: Constants.GrantType.refreshToken.rawValue,
@@ -72,9 +79,9 @@ final class NetworkAPI: NetworkAPIProtocol {
         return provider.requestPublisher(refreshTokenConfiguration)
             .map { $0.data }
             .decode(type: APIToken.self, decoder: decoder)
-            .mapError { error -> Error in
-                guard let errors = error as? [JSONAPIError] else { return NetworkAPIError.generic }
-                return NetworkAPIError.responseErrors(errors: errors)
+            .mapError { _ -> Error in
+                self.expireToken()
+                return NetworkAPIError.unauthenticated
             }
             .compactMap { $0 as? Token }
             .asObservable()

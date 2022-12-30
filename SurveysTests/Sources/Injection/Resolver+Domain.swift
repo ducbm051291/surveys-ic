@@ -27,6 +27,8 @@ extension Resolver {
             .implements(GetSurveyListUseCaseProtocol.self)
         mock.register { GetTokenUseCaseProtocolMock() }
             .implements(GetTokenUseCaseProtocol.self)
+        mock.register { ObserveExpiredTokenUseCaseProtocolMock() }
+            .implements(ObserveExpiredTokenUseCaseProtocol.self)
         mock.register { StoreTokenUseCaseProtocolMock() }
             .implements(StoreTokenUseCaseProtocol.self)
     }
