@@ -16,10 +16,15 @@ struct SurveyView: View {
 
     var body: some View {
         switch viewModel.state {
-        case .idle, .loaded:
+        case .idle:
             setUpView()
+                .onAppear {
+                    viewModel.loadSurveyDetail()
+                }
         case .loading:
             setUpView(isLoading: true)
+        case .loaded:
+            setUpView()
         case let .error(message):
             setUpView()
                 .alert(isPresented: .constant(true)) {
@@ -47,20 +52,22 @@ struct SurveyView: View {
     }
 
     private func setUpBackground() -> some View {
-        KFImage(URL(string: viewModel.survey.coverImageUrl))
-            .placeholder { _ in
-                Assets.surveyBackgroundImage.image
-                    .resizable()
-                    .scaledToFill()
-            }
-            .fade(duration: 0.3)
-            .resizable()
-            .scaledToFill()
-            .overlay {
-                Constants.Gradient.surveyBackground.opacity(0.6)
-            }
-            .frame(minWidth: 0.0, maxWidth: .infinity)
-            .edgesIgnoringSafeArea(.all)
+        GeometryReader { geometry in
+            KFImage(URL(string: viewModel.survey.coverImageUrl))
+                .placeholder { _ in
+                    Assets.surveyBackgroundImage.image
+                        .resizable()
+                        .scaledToFill()
+                }
+                .fade(duration: 0.3)
+                .resizable()
+                .scaledToFill()
+                .overlay {
+                    Constants.Gradient.surveyBackground.opacity(0.6)
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height)
+        }
+        .edgesIgnoringSafeArea(.all)
     }
 
     private func setUpSurvey() -> some View {
@@ -86,6 +93,7 @@ struct SurveyView: View {
         .padding(.top, 20.0)
         .padding(.horizontal, 20.0)
         .padding(.bottom, 54.0)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

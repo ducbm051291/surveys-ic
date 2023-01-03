@@ -46,10 +46,10 @@ final class HomeViewModel: ObservableObject {
     }
 
     func loadSurveys() {
-        state = .loading
-
         let getSurveyList = getSurveyListUseCase
             .execute(pageNumber: pageNumber, pageSize: pageSize)
+            .trackError(errorTracker)
+            .trackActivity(activityTracker)
             .asDriver()
             .share()
 
