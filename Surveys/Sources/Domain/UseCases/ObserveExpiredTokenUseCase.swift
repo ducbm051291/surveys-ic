@@ -11,16 +11,16 @@ import Resolver
 
 // sourcery: AutoMockable
 protocol ObserveExpiredTokenUseCaseProtocol {
-
+    
     func execute() -> Observable<Void>
 }
 
 final class ObserveExpiredTokenUseCase: ObserveExpiredTokenUseCaseProtocol {
-
+    
     @Injected private var notificationCenter: NotificationCenter
-
+    
     func execute() -> Observable<Void> {
-        NotificationCenter.default.publisher(for: Notification.Name.unauthenticated)
+        notificationCenter.publisher(for: Notification.Name.unauthenticated)
             .map { _ in () }
             .asObservable()
     }
