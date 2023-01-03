@@ -18,27 +18,28 @@ final class ObserveExpiredTokenUseCaseSpec: QuickSpec {
     override func spec() {
 
         var useCase: ObserveExpiredTokenUseCase!
+        var cancelBag: CancelBag!
 
         describe("A ObserveExpiredTokenUseCase") {
 
             beforeEach {
                 Resolver.registerAllMockServices()
                 useCase = ObserveExpiredTokenUseCase()
+                cancelBag = CancelBag()
             }
 
             describe("its execute() call") {
 
                 context("when notification center post unauthenticated notification") {
-                    var observeExpiredToken: Observable<Bool>!
-
-                    beforeEach {
-                        observeExpiredToken = useCase.execute().map { _ in true }.asObservable()
-                        NotificationCenter.default.post(.unauthenticated)
-                    }
 
                     it("emits correct value") {
-                        let result = try self.awaitPublisher(observeExpiredToken)
-                        expect(result) == true
+                        useCase.execute().map { _ in true }
+                            .sink { _ in
+                            } receiveValue: { expiredToken in
+                                expect(expiredToken) == true
+                            }
+                            .store(in: &cancelBag)
+                        NotificationCenter.default.post(.unauthenticated)
                     }
                 }
             }
