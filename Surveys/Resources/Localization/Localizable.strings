@@ -29,3 +29,5 @@
 "home.today.text" = "Today";
 
 "survey.startSurvey.title" = "Start Survey";
+
+"aswerSubmittedView.thanks.text" = "Thanks for taking the survey.";

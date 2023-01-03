@@ -58,6 +58,9 @@
 		5828F859292630B40074FE82 /* Resolver+MockRegistering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F858292630B40074FE82 /* Resolver+MockRegistering.swift */; };
 		5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */; };
 		5828F86C292637D60074FE82 /* APIToken+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5828F86B292637D60074FE82 /* APIToken+Dummy.swift */; };
+		582B89352963E7D300FDB7B5 /* AnswerSubmittedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582B89342963E7D300FDB7B5 /* AnswerSubmittedView.swift */; };
+		582B89382963EB5600FDB7B5 /* successful.json in Resources */ = {isa = PBXBuildFile; fileRef = 582B89372963EB5500FDB7B5 /* successful.json */; };
+		582B893B2963EBEF00FDB7B5 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582B893A2963EBEF00FDB7B5 /* LottieView.swift */; };
 		5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */; };
 		5835AA002927270C00686B8C /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5835A9FF2927270C00686B8C /* TestError.swift */; };
 		583E2727295BDE9B0087E285 /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583E2726295BDE9B0087E285 /* SurveyView.swift */; };
@@ -257,6 +260,9 @@
 		5828F858292630B40074FE82 /* Resolver+MockRegistering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+MockRegistering.swift"; sourceTree = "<group>"; };
 		5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainProtocolMock.swift; sourceTree = "<group>"; };
 		5828F86B292637D60074FE82 /* APIToken+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIToken+Dummy.swift"; sourceTree = "<group>"; };
+		582B89342963E7D300FDB7B5 /* AnswerSubmittedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerSubmittedView.swift; sourceTree = "<group>"; };
+		582B89372963EB5500FDB7B5 /* successful.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = successful.json; sourceTree = "<group>"; };
+		582B893A2963EBEF00FDB7B5 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		5835A9FC29271CBA00686B8C /* AuthenticationRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositorySpec.swift; sourceTree = "<group>"; };
 		5835A9FF2927270C00686B8C /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		583E2726295BDE9B0087E285 /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
@@ -548,10 +554,11 @@
 		5827FA0E2924C7D500CF2327 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				581BDAE8294872B90081BAE5 /* PageControl */,
 				58285B1D2939AEB900AC6E73 /* Banner */,
 				5827FA1B2924CF2700CF2327 /* Button */,
+				582B89392963EBE400FDB7B5 /* Lottie */,
 				5827FA1A2924CF2200CF2327 /* Modifier */,
+				581BDAE8294872B90081BAE5 /* PageControl */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -758,6 +765,30 @@
 				5828F86B292637D60074FE82 /* APIToken+Dummy.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		582B89332963E7AE00FDB7B5 /* AnswerSubmittedView */ = {
+			isa = PBXGroup;
+			children = (
+				582B89342963E7D300FDB7B5 /* AnswerSubmittedView.swift */,
+			);
+			path = AnswerSubmittedView;
+			sourceTree = "<group>";
+		};
+		582B89362963EB5500FDB7B5 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				582B89372963EB5500FDB7B5 /* successful.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		582B89392963EBE400FDB7B5 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				582B893A2963EBEF00FDB7B5 /* LottieView.swift */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		583E2725295BDE8C0087E285 /* Survey */ = {
@@ -1219,9 +1250,10 @@
 			isa = PBXGroup;
 			children = (
 				F6D1DE903215C27CB05BD896 /* Assets */,
-				586F203F29270ED300E72C77 /* LaunchScreen */,
 				5827FA132924C85C00CF2327 /* Fonts */,
+				586F203F29270ED300E72C77 /* LaunchScreen */,
 				58C6C5982921F8F40083AF17 /* Localization */,
+				582B89362963EB5500FDB7B5 /* Lottie */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1325,6 +1357,7 @@
 		F44188B859BAD82896E07B4A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				582B89332963E7AE00FDB7B5 /* AnswerSubmittedView */,
 				58683B2929389DA6005FD141 /* ForgotPasswordView */,
 				58B5277F293741AF00D2E0BB /* HomeView */,
 				5827FA0B29248DBB00CF2327 /* LoginView */,
@@ -1509,6 +1542,7 @@
 				586F204129270ED300E72C77 /* LaunchScreen.storyboard in Resources */,
 				5827FA172924C87400CF2327 /* NeuzeitHeavy.otf in Resources */,
 				5827FA162924C87400CF2327 /* NeuzeitBook.otf in Resources */,
+				582B89382963EB5600FDB7B5 /* successful.json in Resources */,
 				0342B6AF8EE6556DBF2D48A9 /* Assets.xcassets in Resources */,
 				58C6C5A12921F9900083AF17 /* Localizable.strings in Resources */,
 			);
@@ -1859,6 +1893,7 @@
 				58B52781293741B600D2E0BB /* HomeView.swift in Sources */,
 				5827FA1D2924CF4600CF2327 /* PrimaryButton.swift in Sources */,
 				58B570C1292B1E78007831B8 /* Constants+Gradient.swift in Sources */,
+				582B89352963E7D300FDB7B5 /* AnswerSubmittedView.swift in Sources */,
 				58BF66EE293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift in Sources */,
 				58C6EB06293DF050002A9B76 /* APIMessage.swift in Sources */,
 				5828F82E29260F0B0074FE82 /* LoginUseCase.swift in Sources */,
@@ -1896,6 +1931,7 @@
 				58BE093F2925E1C600662F6C /* ErrorModifier.swift in Sources */,
 				5828F82B29260E800074FE82 /* Token.swift in Sources */,
 				5828F84F292620520074FE82 /* StoreTokenUseCase.swift in Sources */,
+				582B893B2963EBEF00FDB7B5 /* LottieView.swift in Sources */,
 				58BF66F0293DD141003B1A82 /* ForgotPasswordParameter.swift in Sources */,
 				5868064F295D8C72009AC714 /* RefreshTokenParameter.swift in Sources */,
 				583E2729295BDEBA0087E285 /* SurveyViewModel.swift in Sources */,
