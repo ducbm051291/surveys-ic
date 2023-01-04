@@ -14,6 +14,11 @@ import Resolver
 
 final class NetworkAPI: NetworkAPIProtocol {
 
+    enum StatusCode: Int {
+
+        case unauthenticated = 401
+    }
+
     @Injected private var keychain: KeychainProtocol
     @LazyInjected private var notificationCenter: NotificationCenter
 
@@ -45,11 +50,11 @@ final class NetworkAPI: NetworkAPIProtocol {
         _ response: Response,
         _ configuration: RequestConfiguration
     ) -> Observable<Response> {
-        if response.statusCode == 401 {
+        if response.statusCode == StatusCode.unauthenticated.rawValue {
             guard let token: KeychainToken = try? keychain.get(.userToken),
                   token.refreshToken.isNotEmpty else {
-                self.removeExpiredToken()
-                self.notifyExpiredToken()
+                removeExpiredToken()
+                notifyExpiredToken()
                 return Just(response).asObservable()
             }
             return refreshToken(token.refreshToken)
