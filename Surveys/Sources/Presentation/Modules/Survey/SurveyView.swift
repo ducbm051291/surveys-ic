@@ -84,9 +84,7 @@ struct SurveyView: View {
                 PrimaryButton(
                     isEnabled: .constant(true),
                     isLoading: false,
-                    action: {
-                        NotificationCenter.default.post(.unauthenticated)
-                    },
+                    action: {},
                     title: Localize.surveyStartSurveyTitle()
                 )
                 .frame(width: 140.0)
