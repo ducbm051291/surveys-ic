@@ -6,7 +6,6 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
-import Kingfisher
 import SwiftUI
 
 struct AnswerSubmittedView: View {
