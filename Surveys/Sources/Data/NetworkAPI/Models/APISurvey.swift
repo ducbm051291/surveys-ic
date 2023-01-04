@@ -1,4 +1,4 @@
-//
+//  swiftlint:disable nesting
 //  APISurvey.swift
 //  Surveys
 //
@@ -39,6 +39,12 @@ extension APISurvey {
             let displayOrder: Int
             let text: String?
             let inputMaskPlaceholder: String?
+            var answer: String?
+
+            enum CodingKeys: String, CodingKey {
+
+                case id, type, displayOrder, text, inputMaskPlaceholder
+            }
         }
 
         let id: String
