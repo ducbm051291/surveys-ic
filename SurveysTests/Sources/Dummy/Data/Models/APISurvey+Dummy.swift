@@ -15,6 +15,6 @@ extension APISurvey {
         type: "survey_simple",
         title: "Scarlett Bangkok",
         description: "We'd love ot hear from you!",
-        coverImageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/1ea51560991bcb7d00d0_",
+        coverImageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/1ea51560991bcb7d00d0_"
     )
 }
