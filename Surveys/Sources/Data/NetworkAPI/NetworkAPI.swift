@@ -48,7 +48,8 @@ final class NetworkAPI: NetworkAPIProtocol {
         if response.statusCode == 401 {
             guard let token: KeychainToken = try? keychain.get(.userToken),
                   token.refreshToken.isNotEmpty else {
-                expireToken()
+                self.removeExpiredToken()
+                self.notifyExpiredToken()
                 return Just(response).asObservable()
             }
             return refreshToken(token.refreshToken)
@@ -63,8 +64,12 @@ final class NetworkAPI: NetworkAPIProtocol {
         }
     }
 
-    private func expireToken() {
+
+    private func removeExpiredToken() {
         try? keychain.remove(.userToken)
+    }
+
+    private func notifyExpiredToken() {
         notificationCenter.post(.unauthenticated)
     }
 
@@ -80,7 +85,8 @@ final class NetworkAPI: NetworkAPIProtocol {
             .map { $0.data }
             .decode(type: APIToken.self, decoder: decoder)
             .mapError { _ -> Error in
-                self.expireToken()
+                self.removeExpiredToken()
+                self.notifyExpiredToken()
                 return NetworkAPIError.unauthenticated
             }
             .compactMap { $0 as? Token }
