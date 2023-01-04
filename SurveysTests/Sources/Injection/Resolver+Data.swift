@@ -35,5 +35,7 @@ extension Resolver {
             .implements(SessionRepositoryProtocol.self)
         mock.register { SurveyRepositoryProtocolMock() }
             .implements(SurveyRepositoryProtocol.self)
+        mock.register { SurveyResponseRepositoryProtocolMock() }
+            .implements(SurveyResponseRepositoryProtocol.self)
     }
 }

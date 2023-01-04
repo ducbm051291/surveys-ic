@@ -23,5 +23,6 @@ extension Resolver {
         register(LoginUseCaseProtocol.self) { LoginUseCase() }
         register(ObserveExpiredTokenUseCaseProtocol.self) { ObserveExpiredTokenUseCase() }
         register(StoreTokenUseCaseProtocol.self) { StoreTokenUseCase() }
+        register(SubmitSurveyResponseUseCaseProtocol.self) { SubmitSurveyResponseUseCase() }
     }
 }

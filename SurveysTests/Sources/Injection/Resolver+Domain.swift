@@ -31,5 +31,7 @@ extension Resolver {
             .implements(ObserveExpiredTokenUseCaseProtocol.self)
         mock.register { StoreTokenUseCaseProtocolMock() }
             .implements(StoreTokenUseCaseProtocol.self)
+        mock.register { SubmitSurveyResponseUseCaseProtocolMock() }
+            .implements(SubmitSurveyResponseUseCaseProtocol.self)
     }
 }
