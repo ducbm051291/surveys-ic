@@ -64,7 +64,6 @@ final class NetworkAPI: NetworkAPIProtocol {
         }
     }
 
-
     private func removeExpiredToken() {
         try? keychain.remove(.userToken)
     }
