@@ -50,7 +50,7 @@ extension APISurvey {
         let id: String
         let type: String
         let displayOrder: Int
-        let displayType: String
+        let displayType: DisplayType
         let text: String
         let pick: PickType
         let coverImageUrl: String

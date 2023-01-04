@@ -122,6 +122,9 @@
 		58BF66EE293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF66ED293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift */; };
 		58BF66F0293DD141003B1A82 /* ForgotPasswordParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF66EF293DD141003B1A82 /* ForgotPasswordParameter.swift */; };
 		58C46D93296564A9004E43EF /* SubmitSurveyResponseUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C46D92296564A9004E43EF /* SubmitSurveyResponseUseCaseSpec.swift */; };
+		58C46D9529657319004E43EF /* APIQuestion+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C46D9429657319004E43EF /* APIQuestion+Dummy.swift */; };
+		58C46D97296574CA004E43EF /* DisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C46D96296574CA004E43EF /* DisplayType.swift */; };
+		58C46D9A29657833004E43EF /* APIAnswer+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C46D9829657829004E43EF /* APIAnswer+Dummy.swift */; };
 		58C6C5922921F79E0083AF17 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5912921F79E0083AF17 /* NetworkAPI.swift */; };
 		58C6C5952921F7FA0083AF17 /* NetworkAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5942921F7FA0083AF17 /* NetworkAPIError.swift */; };
 		58C6C5972921F88E0083AF17 /* NetworkAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6C5962921F88E0083AF17 /* NetworkAPIProtocol.swift */; };
@@ -336,6 +339,9 @@
 		58BF66ED293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassthroughSubject+ErrorCatcher.swift"; sourceTree = "<group>"; };
 		58BF66EF293DD141003B1A82 /* ForgotPasswordParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordParameter.swift; sourceTree = "<group>"; };
 		58C46D92296564A9004E43EF /* SubmitSurveyResponseUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitSurveyResponseUseCaseSpec.swift; sourceTree = "<group>"; };
+		58C46D9429657319004E43EF /* APIQuestion+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIQuestion+Dummy.swift"; sourceTree = "<group>"; };
+		58C46D96296574CA004E43EF /* DisplayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayType.swift; sourceTree = "<group>"; };
+		58C46D9829657829004E43EF /* APIAnswer+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIAnswer+Dummy.swift"; sourceTree = "<group>"; };
 		58C6C5912921F79E0083AF17 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		58C6C5942921F7FA0083AF17 /* NetworkAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIError.swift; sourceTree = "<group>"; };
 		58C6C5962921F88E0083AF17 /* NetworkAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocol.swift; sourceTree = "<group>"; };
@@ -785,7 +791,9 @@
 		5828F86A292637CD0074FE82 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				58C46D9829657829004E43EF /* APIAnswer+Dummy.swift */,
 				58C6EB13293DF88F002A9B76 /* APIMessage+Dummy.swift */,
+				58C46D9429657319004E43EF /* APIQuestion+Dummy.swift */,
 				586F7764295158BD000E5DDD /* APISurvey+Dummy.swift */,
 				5828F86B292637D60074FE82 /* APIToken+Dummy.swift */,
 			);
@@ -1197,12 +1205,13 @@
 			isa = PBXGroup;
 			children = (
 				583E2730295C228F0087E285 /* Answer.swift */,
+				58C46D96296574CA004E43EF /* DisplayType.swift */,
 				585E8691293F17CA008C7563 /* Message.swift */,
+				582B894629651D3F00FDB7B5 /* NoReply.swift */,
 				583E272E295C226A0087E285 /* PickType.swift */,
 				583E272C295C21D50087E285 /* Question.swift */,
 				581BDAE4294850B50081BAE5 /* Survey.swift */,
 				5828F82A29260E800074FE82 /* Token.swift */,
-				582B894629651D3F00FDB7B5 /* NoReply.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1831,6 +1840,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				585E8694293F297C008C7563 /* RegexEmailValidationSpec.swift in Sources */,
+				58C46D9529657319004E43EF /* APIQuestion+Dummy.swift in Sources */,
 				589FBBC129543D9E00C08AD3 /* AuthPluginSpec.swift in Sources */,
 				584E168C293F44C400DB41BE /* ForgotPasswordViewModelSpec.swift in Sources */,
 				58B7586D29505D8300CE2543 /* SplashViewModelSpec.swift in Sources */,
@@ -1848,6 +1858,7 @@
 				588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */,
 				5828F859292630B40074FE82 /* Resolver+MockRegistering.swift in Sources */,
 				5891CDE1295D32A2006E3A69 /* SurveyViewModelSpec.swift in Sources */,
+				58C46D9A29657833004E43EF /* APIAnswer+Dummy.swift in Sources */,
 				5861162029273AB200EF52A4 /* StoreTokenUseCaseSpec.swift in Sources */,
 				CC151CF2A41DE206FA2EDCF0 /* OptionalUnwrapSpec.swift in Sources */,
 				584D03FA29542F84007175D1 /* HomeViewModelSpec.swift in Sources */,
@@ -1965,6 +1976,7 @@
 				582B893F29640D8200FDB7B5 /* QuestionResponseParameter.swift in Sources */,
 				58BE09432925EA6700662F6C /* String+URL.swift in Sources */,
 				581BDAEA294872C30081BAE5 /* PageControlView.swift in Sources */,
+				58C46D97296574CA004E43EF /* DisplayType.swift in Sources */,
 				58BE093F2925E1C600662F6C /* ErrorModifier.swift in Sources */,
 				5828F82B29260E800074FE82 /* Token.swift in Sources */,
 				5828F84F292620520074FE82 /* StoreTokenUseCase.swift in Sources */,
