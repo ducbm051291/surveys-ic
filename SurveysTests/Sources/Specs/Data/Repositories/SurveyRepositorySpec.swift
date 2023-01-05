@@ -25,7 +25,10 @@ final class SurveyRepositorySpec: QuickSpec {
             beforeEach {
                 Resolver.registerAllMockServices()
                 repository = SurveyRepository()
-                networkAPI = Resolver.resolve(NetworkAPIProtocol.self) as? NetworkAPIProtocolMock
+                networkAPI = Resolver.resolve(
+                    NetworkAPIProtocol.self,
+                    name: .jsonAPINetworkAPI
+                ) as? NetworkAPIProtocolMock
             }
 
             describe("its getSurveyList() call") {

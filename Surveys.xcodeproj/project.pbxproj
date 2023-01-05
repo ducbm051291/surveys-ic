@@ -140,6 +140,7 @@
 		58C6EB12293DF7C6002A9B76 /* ForgotPasswordUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB10293DF6BA002A9B76 /* ForgotPasswordUseCaseSpec.swift */; };
 		58C6EB16293DF8AD002A9B76 /* APIMessage+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB13293DF88F002A9B76 /* APIMessage+Dummy.swift */; };
 		58C6EB18293ED9EE002A9B76 /* UserParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6EB17293ED9EE002A9B76 /* UserParameter.swift */; };
+		58CBCAA42966636F008E76D7 /* JSONDecoder+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CBCAA32966636F008E76D7 /* JSONDecoder+Common.swift */; };
 		58D193292941B72A00D28082 /* GetTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D193282941B72A00D28082 /* GetTokenUseCase.swift */; };
 		58D1932E2941B79100D28082 /* GetHasLoggedInUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1932C2941B78D00D28082 /* GetHasLoggedInUseCaseSpec.swift */; };
 		58D1932F2941B79300D28082 /* GetTokenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1932A2941B77A00D28082 /* GetTokenUseCaseSpec.swift */; };
@@ -357,6 +358,7 @@
 		58C6EB10293DF6BA002A9B76 /* ForgotPasswordUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUseCaseSpec.swift; sourceTree = "<group>"; };
 		58C6EB13293DF88F002A9B76 /* APIMessage+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIMessage+Dummy.swift"; sourceTree = "<group>"; };
 		58C6EB17293ED9EE002A9B76 /* UserParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParameter.swift; sourceTree = "<group>"; };
+		58CBCAA32966636F008E76D7 /* JSONDecoder+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Common.swift"; sourceTree = "<group>"; };
 		58D193282941B72A00D28082 /* GetTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTokenUseCase.swift; sourceTree = "<group>"; };
 		58D1932A2941B77A00D28082 /* GetTokenUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTokenUseCaseSpec.swift; sourceTree = "<group>"; };
 		58D1932C2941B78D00D28082 /* GetHasLoggedInUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHasLoggedInUseCaseSpec.swift; sourceTree = "<group>"; };
@@ -1084,6 +1086,7 @@
 			isa = PBXGroup;
 			children = (
 				58C6C5AD29222E050083AF17 /* JSONAPIDecoder+Default.swift */,
+				58CBCAA32966636F008E76D7 /* JSONDecoder+Common.swift */,
 			);
 			path = JSONMapper;
 			sourceTree = "<group>";
@@ -1982,6 +1985,7 @@
 				5828F84F292620520074FE82 /* StoreTokenUseCase.swift in Sources */,
 				582B893B2963EBEF00FDB7B5 /* LottieView.swift in Sources */,
 				58BF66F0293DD141003B1A82 /* ForgotPasswordParameter.swift in Sources */,
+				58CBCAA42966636F008E76D7 /* JSONDecoder+Common.swift in Sources */,
 				5868064F295D8C72009AC714 /* RefreshTokenParameter.swift in Sources */,
 				582B893D29640D2C00FDB7B5 /* SurveyResponseParameter.swift in Sources */,
 				583E2729295BDEBA0087E285 /* SurveyViewModel.swift in Sources */,

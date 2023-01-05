@@ -14,6 +14,11 @@ import Resolver
 
 final class NetworkAPI: NetworkAPIProtocol {
 
+    enum DecoderType {
+
+        case json, jsonAPI
+    }
+
     enum StatusCode: Int {
 
         case unauthenticated = 401
@@ -23,10 +28,13 @@ final class NetworkAPI: NetworkAPIProtocol {
     @LazyInjected private var notificationCenter: NotificationCenter
 
     private let provider = MoyaProvider<RequestConfiguration>(plugins: [AuthPlugin()])
-    private let decoder: JSONAPIDecoder
+    private let decoder: JSONDecoder
 
-    init(decoder: JSONAPIDecoder = JSONAPIDecoder.default) {
-        self.decoder = decoder
+    init(decoderType: DecoderType) {
+        switch decoderType {
+        case .json: decoder = JSONDecoder.common
+        case .jsonAPI: decoder = JSONAPIDecoder.default
+        }
     }
 
     func performRequest<T>(
@@ -96,4 +104,10 @@ final class NetworkAPI: NetworkAPIProtocol {
             .compactMap { $0 as? Token }
             .asObservable()
     }
+}
+
+extension NetworkAPI {
+
+    static let jsonDecoder: NetworkAPIProtocol = NetworkAPI(decoderType: .json)
+    static let jsonAPIDecoder: NetworkAPIProtocol = NetworkAPI(decoderType: .jsonAPI)
 }

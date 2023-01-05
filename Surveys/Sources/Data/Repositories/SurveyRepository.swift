@@ -12,7 +12,7 @@ import Resolver
 
 final class SurveyRepository: SurveyRepositoryProtocol {
 
-    @Injected private var networkAPI: NetworkAPIProtocol
+    @Injected(name: .jsonAPINetworkAPI) private var networkAPI: NetworkAPIProtocol
     @Injected private var surveyCache: SurveyCache
 
     func getSurveyDetail(id: String) -> Observable<Survey> {
