@@ -30,6 +30,6 @@
 "home.logOutConfirm.text" = "Are you sure you want to logout?";
 "home.today.text" = "Today";
 
-"surveyQuestion.submit.title" = "Submit";
-
 "survey.startSurvey.title" = "Start Survey";
+
+"surveyQuestion.submit.title" = "Submit";

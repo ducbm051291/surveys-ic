@@ -17,7 +17,6 @@ struct SurveyQuestionsView: View {
 
     @State var selectedQuestionIndex = 0
     @State var isSubmittedViewPresented = false
-    @State var scale = 0.5
 
     var isPresented: Binding<Bool>
 
