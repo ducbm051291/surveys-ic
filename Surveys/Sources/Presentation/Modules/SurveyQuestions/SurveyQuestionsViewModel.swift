@@ -16,12 +16,20 @@ final class SurveyQuestionsViewModel: ObservableObject {
 
     @Published var state: State = .idle
     @Published var survey: Survey
+    @Published var questions: [SurveyQuestionViewModel]
 
     private let errorTracker = ErrorTracker()
     private let activityTracker = ActivityTracker(false)
 
     init(survey: Survey) {
         self.survey = survey
+        let surveyQuestions = survey.questions ?? []
+        questions = surveyQuestions.map {
+            SurveyQuestionViewModel(
+                question: $0,
+                numberOfQuestion: surveyQuestions.count
+            )
+        }
 
         let errorState = errorTracker
             .catchError()
