@@ -14,7 +14,7 @@ final class SurveyResponseRepository: SurveyResponseRepositoryProtocol {
 
     @Injected(name: .jsonNetworkAPI) private var networkAPI: NetworkAPIProtocol
 
-    func submitResponse(_ survey: Survey) -> Observable<NoReply> {
+    func submitResponse(_ survey: Survey) -> Observable<Void> {
         let questions = survey.questions.map { questions in
             questions.map { question in
                 QuestionResponseParameter(
@@ -35,7 +35,7 @@ final class SurveyResponseRepository: SurveyResponseRepositoryProtocol {
             questions: questions ?? []
         )
         return networkAPI.performRequest(.surveyResponse(parameter), for: APINoReply.self)
-            .map { $0 as NoReply }
+            .map { _ in () }
             .asObservable()
     }
 }

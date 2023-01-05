@@ -40,13 +40,11 @@ final class SurveyResponseRepositorySpec: QuickSpec {
 
                 context("when networkAPI emits success from performRequest") {
 
-                    var submitResponse: Observable<APINoReply>!
+                    var submitResponse: Observable<Void>!
 
                     beforeEach {
                         networkAPI.setPerformRequestForReturnValue(Just(noReplyToTest).asObservable())
                         submitResponse = repository.submitResponse(surveyToTest)
-                            .compactMap { $0 as? APINoReply }
-                            .replaceError(with: noReplyToTest)
                             .asObservable()
                     }
 
@@ -64,14 +62,14 @@ final class SurveyResponseRepositorySpec: QuickSpec {
                     }
 
                     it("emits corresponding value") {
-                        let result = try self.awaitPublisher(submitResponse)
+                        let result: Void = try self.awaitPublisher(submitResponse)
                         expect(result) != nil
                     }
                 }
 
                 context("when networkAPI emits failure from performRequest") {
 
-                    var submitResponse: Observable<APINoReply>!
+                    var submitResponse: Observable<Void>!
 
                     beforeEach {
                         networkAPI.setPerformRequestForReturnValue(
@@ -81,8 +79,7 @@ final class SurveyResponseRepositorySpec: QuickSpec {
                             ).asObservable()
                         )
                         submitResponse = repository.submitResponse(surveyToTest)
-                            .compactMap { $0 as? APINoReply }
-                            .replaceError(with: noReplyToTest)
+                            .replaceError(with: ())
                             .asObservable()
                     }
 
@@ -99,7 +96,7 @@ final class SurveyResponseRepositorySpec: QuickSpec {
                     }
 
                     it("emits corresponding value") {
-                        let result = try self.awaitPublisher(submitResponse)
+                        let result: Void = try self.awaitPublisher(submitResponse)
                         expect(result) != nil
                     }
                 }

@@ -31,16 +31,14 @@ final class SubmitSurveyResponseUseCaseSpec: QuickSpec {
             describe("its execute() call") {
 
                 let surveysToTest = APISurvey.dummy
-                let noReplyToTest = APINoReply()
 
                 context("when surveyResponseRepository emits success") {
 
-                    var executingSubmitSurveyResponse: Observable<APINoReply>!
+                    var executingSubmitSurveyResponse: Observable<Void>!
 
                     beforeEach {
-                        self.repository.submitResponseReturnValue = Just(noReplyToTest).asObservable()
+                        self.repository.submitResponseReturnValue = Just(()).asObservable()
                         executingSubmitSurveyResponse = useCase.execute(survey: surveysToTest)
-                            .compactMap { $0 as? APINoReply }
                             .asObservable()
                     }
 
@@ -55,7 +53,7 @@ final class SubmitSurveyResponseUseCaseSpec: QuickSpec {
                     }
 
                     it("emits correct content value") {
-                        let result = try self.awaitPublisher(executingSubmitSurveyResponse)
+                        let result: Void = try self.awaitPublisher(executingSubmitSurveyResponse)
                         expect(result) != nil
                     }
                 }

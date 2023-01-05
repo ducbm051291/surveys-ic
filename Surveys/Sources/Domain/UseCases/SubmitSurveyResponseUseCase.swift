@@ -12,14 +12,14 @@ import Resolver
 // sourcery: AutoMockable
 protocol SubmitSurveyResponseUseCaseProtocol {
 
-    func execute(survey: Survey) -> Observable<NoReply>
+    func execute(survey: Survey) -> Observable<Void>
 }
 
 final class SubmitSurveyResponseUseCase: SubmitSurveyResponseUseCaseProtocol {
 
     @Injected private var surveyResponseRepository: SurveyResponseRepositoryProtocol
 
-    func execute(survey: Survey) -> Observable<NoReply> {
+    func execute(survey: Survey) -> Observable<Void> {
         surveyResponseRepository.submitResponse(survey)
     }
 }
