@@ -20,12 +20,19 @@ struct SurveyAnswerSingleChoiceView: View {
     var body: some View {
         ZStack {
             Picker(String.empty, selection: $selectedChoice) {
-                ForEach(choices, id: \.self) {
-                    Text($0)
-                        .font(.bold(ofSize: .medium))
-                        .foregroundColor(.white)
+                ForEach(choices, id: \.self) { choice in
+                    VStack(alignment: .center) {
+                        Text(choice)
+                            .font(.bold(ofSize: .medium))
+                            .foregroundColor(.white)
+                        Divider()
+                            .background(.white)
+                            .frame(height: 0.5)
+                    }
+                    .padding(.horizontal, 80.0)
                 }
             }
+            .pickerStyle(.wheel)
         }
     }
 

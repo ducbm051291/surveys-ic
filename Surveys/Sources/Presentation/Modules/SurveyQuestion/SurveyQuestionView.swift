@@ -14,7 +14,7 @@ struct SurveyQuestionView: View {
 
     var body: some View {
         ZStack {
-            VStack(alignment: .leading, spacing: 10.0) {
+            VStack(alignment: .leading, spacing: 8.0) {
                 Text(viewModel.questionIndex)
                     .font(.regular(ofSize: .small))
                     .foregroundColor(.white.opacity(0.5))
@@ -40,7 +40,7 @@ extension SurveyQuestionView {
         VStack {
             let displayType = viewModel.question.displayType
             let pickType = viewModel.question.pick
-
+            Spacer()
             switch displayType {
             case .star, .heart, .smiley:
                 EmptyView()
@@ -48,14 +48,17 @@ extension SurveyQuestionView {
                 EmptyView()
             case .textarea, .textfield:
                 EmptyView()
-            case .choice, .dropdown, .intro, .outro:
+            case .choice, .dropdown:
                 switch pickType {
                 case .any:
                     EmptyView()
                 case .one, .none:
                     SurveyAnswerSingleChoiceView(viewModel: viewModel.answerViewModel)
                 }
+            case .intro, .outro:
+                EmptyView()
             }
+            Spacer()
         }
     }
 }
