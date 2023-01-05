@@ -61,7 +61,7 @@ struct SurveyView: View {
 
     private func setUpBackground() -> some View {
         GeometryReader { geometry in
-            KFImage(URL(string: viewModel.survey.coverImageUrl))
+            KFImage(viewModel.survey.largeImageURL)
                 .placeholder { _ in
                     Assets.surveyBackgroundImage.image
                         .resizable()

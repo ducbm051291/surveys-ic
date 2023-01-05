@@ -90,14 +90,30 @@ struct SurveyQuestionsView: View {
     }
 
     private func setUpNextQuestionButton() -> some View {
-        VStack(alignment: .trailing) {
+        let lastItem = selectedQuestionIndex == viewModel.questions.count - 1
+
+        return VStack(alignment: .trailing) {
             Spacer()
             HStack {
                 Spacer()
-                Button(String.empty) {}
-                    .modifier(RoundNextButtonModifier(action: {}))
+                if lastItem {
+                    PrimaryButton(
+                        isEnabled: .constant(true),
+                        isLoading: false,
+                        action: {},
+                        title: Localize.surveyQuestionSubmitTitle()
+                    )
+                    .frame(width: 120.0)
                     .padding(.bottom, 54.0)
                     .padding(.trailing, 20.0)
+                } else {
+                    Button(String.empty) {}
+                        .modifier(RoundNextButtonModifier(action: {
+                            selectedQuestionIndex += 1
+                        }))
+                        .padding(.bottom, 54.0)
+                        .padding(.trailing, 20.0)
+                }
             }
         }
         .edgesIgnoringSafeArea(.bottom)

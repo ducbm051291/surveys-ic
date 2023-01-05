@@ -6,6 +6,8 @@
   Copyright © 2022 Nimble. All rights reserved.
 */
 
+"aswerSubmittedView.thanks.text" = "Thanks for taking the survey.";
+
 "common.applicationName.text" = "Surveys";
 "common.cancel.text" = "Cancel";
 "common.error.text" = "An error has occurred. Please try again later!";
@@ -28,6 +30,6 @@
 "home.logOutConfirm.text" = "Are you sure you want to logout?";
 "home.today.text" = "Today";
 
-"survey.startSurvey.title" = "Start Survey";
+"surveyQuestion.submit.title" = "Submit";
 
-"aswerSubmittedView.thanks.text" = "Thanks for taking the survey.";
+"survey.startSurvey.title" = "Start Survey";
