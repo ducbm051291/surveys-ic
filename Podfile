@@ -15,6 +15,7 @@ target 'Surveys' do
   pod 'Kingfisher'
   pod 'ShimmerView'
   pod 'SwiftUI-Pull-To-Refresh'
+  pod 'lottie-ios'
 
   # Storage
   pod 'KeychainAccess'

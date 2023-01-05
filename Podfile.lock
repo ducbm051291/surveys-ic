@@ -40,6 +40,7 @@ PODS:
   - JSONAPIMapper (1.1.1)
   - KeychainAccess (4.2.2)
   - Kingfisher (7.4.1)
+  - lottie-ios (4.0.1)
   - Moya/Combine (15.0.0):
     - Moya/Core
   - Moya/Core (15.0.0):
@@ -77,6 +78,7 @@ DEPENDENCIES:
   - JSONAPIMapper
   - KeychainAccess
   - Kingfisher
+  - lottie-ios
   - Moya/Combine (~> 15.0)
   - Nimble
   - NimbleExtension (from `https://github.com/nimblehq/NimbleExtension`, branch `master`)
@@ -108,6 +110,7 @@ SPEC REPOS:
     - JSONAPIMapper
     - KeychainAccess
     - Kingfisher
+    - lottie-ios
     - Moya
     - nanopb
     - Nimble
@@ -152,6 +155,7 @@ SPEC CHECKSUMS:
   JSONAPIMapper: 0d832d3b7d74281b150622a004f84171ded28a04
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
+  lottie-ios: 54d22edf55b839f0929cabbfe609c9aa548b1145
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   Nimble: 516ac503a0fafaa8e41dbb4a70a61be421fa893a
@@ -170,6 +174,6 @@ SPEC CHECKSUMS:
   SwiftUI-Pull-To-Refresh: 334b72e9c23d5bb9d309e63ec7348dcd06e6e069
   Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
 
-PODFILE CHECKSUM: 72bbe87ccdb3bdc05eb0d6a72cb46bc0db1daadc
+PODFILE CHECKSUM: ff1ee7c2ecb20c6aea9bf306ac64e330a869e513
 
 COCOAPODS: 1.11.3
