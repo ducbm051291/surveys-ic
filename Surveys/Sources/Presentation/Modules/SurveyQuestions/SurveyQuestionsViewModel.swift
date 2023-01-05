@@ -43,21 +43,6 @@ final class SurveyQuestionsViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: &$state)
     }
-
-    func loadSurveyDetail() {
-        let submitSurveyResponse = submitSurveyResponseUseCase
-            .execute(survey: survey)
-            .trackError(errorTracker)
-            .trackActivity(activityTracker)
-            .asDriver()
-            .share()
-
-        submitSurveyResponse
-            .map { _ in
-                State.submitted
-            }
-            .assign(to: &$state)
-    }
 }
 
 extension SurveyQuestionsViewModel {
