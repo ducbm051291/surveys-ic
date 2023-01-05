@@ -14,6 +14,8 @@ struct SurveyView: View {
     @EnvironmentObject private var navigator: Navigator
     @ObservedObject private var viewModel: SurveyViewModel
 
+    @State var isQuestionViewPresented = false
+
     var body: some View {
         switch viewModel.state {
         case .idle:
@@ -45,6 +47,12 @@ struct SurveyView: View {
         ZStack {
             setUpBackground()
             setUpSurvey()
+        }
+        .fullScreenCover(isPresented: $isQuestionViewPresented) {
+            SurveyQuestionsView(
+                viewModel: SurveyQuestionsViewModel(survey: viewModel.survey),
+                isPresented: $isQuestionViewPresented
+            )
         }
         .modifier(NavigationBackButtonModifier(action: {
             navigator.goBack()
@@ -84,7 +92,11 @@ struct SurveyView: View {
                 PrimaryButton(
                     isEnabled: .constant(true),
                     isLoading: false,
-                    action: {},
+                    action: {
+                        withoutAnimation {
+                            isQuestionViewPresented = true
+                        }
+                    },
                     title: Localize.surveyStartSurveyTitle()
                 )
                 .frame(width: 140.0)
