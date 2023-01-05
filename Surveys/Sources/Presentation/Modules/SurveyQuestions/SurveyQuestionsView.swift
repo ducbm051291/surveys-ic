@@ -25,9 +25,6 @@ struct SurveyQuestionsView: View {
         switch viewModel.state {
         case .idle:
             setUpView()
-                .onAppear {
-                    viewModel.loadSurveyDetail()
-                }
         case .submitting:
             setUpView(isLoading: true)
         case .submitted:
@@ -58,7 +55,7 @@ struct SurveyQuestionsView: View {
 
     private func setUpBackground() -> some View {
         GeometryReader { geometry in
-            KFImage(URL(string: .empty))
+            KFImage(URL(string: viewModel.survey.questions?[selectedQuestionIndex].coverImageUrl ?? .empty))
                 .placeholder { _ in
                     Assets.surveyBackgroundImage.image
                         .resizable()
@@ -107,7 +104,22 @@ struct SurveyQuestionsView: View {
     }
 
     private func setUpQuestions() -> some View {
-        VStack {}
+        let questions = Array(viewModel.questions.enumerated())
+
+        return VStack {
+            TabView(selection: $selectedQuestionIndex) {
+                ForEach(questions, id: \.element.question.id) { question in
+                    SurveyQuestionView(viewModel: question.element)
+                        .tag(question.offset)
+                        .contentShape(Rectangle())
+                        .highPriorityGesture(DragGesture())
+                        .clipped()
+                }
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .padding(.top, 60.0)
+            .padding(.bottom, 60.0)
+        }
     }
 }
 
