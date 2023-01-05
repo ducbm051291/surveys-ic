@@ -21,6 +21,7 @@ extension Resolver {
         register(GetSurveyListUseCaseProtocol.self) { GetSurveyListUseCase() }
         register(GetTokenUseCaseProtocol.self) { GetTokenUseCase() }
         register(LoginUseCaseProtocol.self) { LoginUseCase() }
+        register(ObserveExpiredTokenUseCaseProtocol.self) { ObserveExpiredTokenUseCase() }
         register(StoreTokenUseCaseProtocol.self) { StoreTokenUseCase() }
     }
 }

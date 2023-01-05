@@ -75,6 +75,7 @@
 		5861161E292736D800EF52A4 /* SessionRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861161C292736C800EF52A4 /* SessionRepositorySpec.swift */; };
 		5861162029273AB200EF52A4 /* StoreTokenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861161F29273AB200EF52A4 /* StoreTokenUseCaseSpec.swift */; };
 		5866FE042934545100908E86 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866FE032934545100908E86 /* LoginViewModel.swift */; };
+		5868064F295D8C72009AC714 /* RefreshTokenParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5868064E295D8C72009AC714 /* RefreshTokenParameter.swift */; };
 		58683B1D29387D54005FD141 /* LoginViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58683B1A29387CCC005FD141 /* LoginViewModelSpec.swift */; };
 		58683B2029387EDC005FD141 /* Resolver+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58683B1E29387ED7005FD141 /* Resolver+Domain.swift */; };
 		58683B2629388165005FD141 /* Combine+Collect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58683B2529388165005FD141 /* Combine+Collect.swift */; };
@@ -128,6 +129,9 @@
 		58D1932F2941B79300D28082 /* GetTokenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1932A2941B77A00D28082 /* GetTokenUseCaseSpec.swift */; };
 		58D193342941E27E00D28082 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D193332941E27E00D28082 /* HomeViewModel.swift */; };
 		58D193372941E49B00D28082 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D193362941E49B00D28082 /* HomeHeaderView.swift */; };
+		58E28144295EC712001BAABA /* Notification+Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E28143295EC712001BAABA /* Notification+Instance.swift */; };
+		58E28146295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E28145295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift */; };
+		58E28148295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E28147295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift */; };
 		58F410FE29403C4600135DC7 /* GetHasLoggedInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F410FD29403C4600135DC7 /* GetHasLoggedInUseCase.swift */; };
 		58F411002940690500135DC7 /* Constants+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F410FF2940690500135DC7 /* Constants+View.swift */; };
 		58F6E6122934AF2C00D0547A /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6112934AF2C00D0547A /* String+Validation.swift */; };
@@ -270,6 +274,7 @@
 		5861161C292736C800EF52A4 /* SessionRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepositorySpec.swift; sourceTree = "<group>"; };
 		5861161F29273AB200EF52A4 /* StoreTokenUseCaseSpec.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = StoreTokenUseCaseSpec.swift; sourceTree = "<group>"; };
 		5866FE032934545100908E86 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5868064E295D8C72009AC714 /* RefreshTokenParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenParameter.swift; sourceTree = "<group>"; };
 		58683B1A29387CCC005FD141 /* LoginViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelSpec.swift; sourceTree = "<group>"; };
 		58683B1E29387ED7005FD141 /* Resolver+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Domain.swift"; sourceTree = "<group>"; };
 		58683B2529388165005FD141 /* Combine+Collect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Collect.swift"; sourceTree = "<group>"; };
@@ -325,6 +330,9 @@
 		58D1932C2941B78D00D28082 /* GetHasLoggedInUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHasLoggedInUseCaseSpec.swift; sourceTree = "<group>"; };
 		58D193332941E27E00D28082 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		58D193362941E49B00D28082 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		58E28143295EC712001BAABA /* Notification+Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Instance.swift"; sourceTree = "<group>"; };
+		58E28145295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveExpiredTokenUseCase.swift; sourceTree = "<group>"; };
+		58E28147295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveExpiredTokenUseCaseSpec.swift; sourceTree = "<group>"; };
 		58F410FD29403C4600135DC7 /* GetHasLoggedInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHasLoggedInUseCase.swift; sourceTree = "<group>"; };
 		58F410FF2940690500135DC7 /* Constants+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+View.swift"; sourceTree = "<group>"; };
 		58F6E6112934AF2C00D0547A /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
@@ -619,6 +627,7 @@
 				58D193282941B72A00D28082 /* GetTokenUseCase.swift */,
 				5828F82D29260F0B0074FE82 /* LoginUseCase.swift */,
 				5828F84E292620520074FE82 /* StoreTokenUseCase.swift */,
+				58E28145295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -718,6 +727,7 @@
 				58D1932A2941B77A00D28082 /* GetTokenUseCaseSpec.swift */,
 				586116192927329400EF52A4 /* LoginUseCaseSpec.swift */,
 				5861161F29273AB200EF52A4 /* StoreTokenUseCaseSpec.swift */,
+				58E28147295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -995,8 +1005,9 @@
 		58C6C5A929222B410083AF17 /* Parameters */ = {
 			isa = PBXGroup;
 			children = (
-				58C6C5AA29222B520083AF17 /* LoginParameter.swift */,
 				58BF66EF293DD141003B1A82 /* ForgotPasswordParameter.swift */,
+				58C6C5AA29222B520083AF17 /* LoginParameter.swift */,
+				5868064E295D8C72009AC714 /* RefreshTokenParameter.swift */,
 				58C6EB17293ED9EE002A9B76 /* UserParameter.swift */,
 			);
 			path = Parameters;
@@ -1118,6 +1129,7 @@
 				58BE09422925EA6700662F6C /* String+URL.swift */,
 				58F6E6112934AF2C00D0547A /* String+Validation.swift */,
 				581BDAF2294996970081BAE5 /* Bundle+Version.swift */,
+				58E28143295EC712001BAABA /* Notification+Instance.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1767,6 +1779,7 @@
 				58C6EB12293DF7C6002A9B76 /* ForgotPasswordUseCaseSpec.swift in Sources */,
 				0C205FD636A87848DD90D15E /* AutoMockable.generated.swift in Sources */,
 				5828F85729262F600074FE82 /* Resolver+Data.swift in Sources */,
+				58E28148295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift in Sources */,
 				588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */,
 				5828F859292630B40074FE82 /* Resolver+MockRegistering.swift in Sources */,
 				5891CDE1295D32A2006E3A69 /* SurveyViewModelSpec.swift in Sources */,
@@ -1795,6 +1808,7 @@
 				586ED15C2914EC3600181E14 /* SurveysApp.swift in Sources */,
 				581BDADD294824D70081BAE5 /* HomeSurveyItemView.swift in Sources */,
 				58B758622950551600CE2543 /* SurveyRepositoryProtocol.swift in Sources */,
+				58E28144295EC712001BAABA /* Notification+Instance.swift in Sources */,
 				58C6C5AB29222B530083AF17 /* LoginParameter.swift in Sources */,
 				5828F83429260FDF0074FE82 /* UserDefaultsManager.swift in Sources */,
 				8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */,
@@ -1883,11 +1897,13 @@
 				5828F82B29260E800074FE82 /* Token.swift in Sources */,
 				5828F84F292620520074FE82 /* StoreTokenUseCase.swift in Sources */,
 				58BF66F0293DD141003B1A82 /* ForgotPasswordParameter.swift in Sources */,
+				5868064F295D8C72009AC714 /* RefreshTokenParameter.swift in Sources */,
 				583E2729295BDEBA0087E285 /* SurveyViewModel.swift in Sources */,
 				5880AE08291E3B8B00A212E7 /* ImageResource+Image.swift in Sources */,
 				58285B1C2939A9D200AC6E73 /* ForgotPasswordViewModel.swift in Sources */,
 				58285B232939CCFF00AC6E73 /* View+Banner.swift in Sources */,
 				58285B1829399F6700AC6E73 /* Navigator.swift in Sources */,
+				58E28146295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift in Sources */,
 				5828F83129260F680074FE82 /* Resolver+Data.swift in Sources */,
 				58C6C5A329221CC90083AF17 /* RequestConfiguration.swift in Sources */,
 				FC1CE3FCD6AE97534C3BC5ED /* Typealiases.swift in Sources */,

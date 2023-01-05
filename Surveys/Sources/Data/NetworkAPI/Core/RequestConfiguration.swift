@@ -13,6 +13,7 @@ enum RequestConfiguration: Equatable {
 
     case login(LoginParameter)
     case forgotPassword(ForgotPasswordParameter)
+    case refreshToken(RefreshTokenParameter)
     case surveyDetail(String)
     case surveyList(Int, Int)
 }
@@ -21,7 +22,7 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
 
     var authorizationType: Moya.AuthorizationType? {
         switch self {
-        case .login, .forgotPassword: return .none
+        case .login, .forgotPassword, .refreshToken: return .none
         case .surveyDetail, .surveyList: return .bearer
         }
     }
@@ -30,7 +31,7 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
 
     var path: String {
         switch self {
-        case .login: return "oauth/token"
+        case .login, .refreshToken: return "oauth/token"
         case .forgotPassword: return "passwords"
         case .surveyList: return "surveys"
         case let .surveyDetail(surveyId):
@@ -41,15 +42,17 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
     var method: Moya.Method {
         switch self {
         case .surveyDetail, .surveyList: return .get
-        case .forgotPassword, .login: return .post
+        case .forgotPassword, .login, .refreshToken: return .post
         }
     }
 
     var task: Moya.Task {
         switch self {
+        case let .forgotPassword(parameter):
+            return .requestParameters(parameters: parameter.dictionary, encoding: JSONEncoding.default)
         case let .login(parameter):
             return .requestParameters(parameters: parameter.dictionary, encoding: JSONEncoding.default)
-        case let .forgotPassword(parameter):
+        case let .refreshToken(parameter):
             return .requestParameters(parameters: parameter.dictionary, encoding: JSONEncoding.default)
         case .surveyDetail:
             return .requestPlain
