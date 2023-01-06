@@ -37,19 +37,19 @@ final class SubmitSurveyResponseUseCaseSpec: QuickSpec {
                     var executingSubmitSurveyResponse: Observable<Void>!
 
                     beforeEach {
-                        self.repository.submitResponseReturnValue = Just(()).asObservable()
-                        executingSubmitSurveyResponse = useCase.execute(survey: surveysToTest)
+                        self.repository.submitResponseQuestionsReturnValue = Just(()).asObservable()
+                        executingSubmitSurveyResponse = useCase.execute(surveyId: surveysToTest.id, questions: [])
                             .asObservable()
                     }
 
                     it("triggers surveyRepository to get survey list") {
                         _ = try self.awaitPublisher(executingSubmitSurveyResponse)
-                        expect(self.repository.submitResponseCalled) == true
+                        expect(self.repository.submitResponseQuestionsCalled) == true
                     }
 
                     it("triggers surveyRepository to get survey list with correct page number") {
                         _ = try self.awaitPublisher(executingSubmitSurveyResponse)
-                        expect(self.repository.submitResponseReceivedSurvey?.id) == surveysToTest.id
+                        expect(self.repository.submitResponseQuestionsReceivedArguments?.surveyId) == surveysToTest.id
                     }
 
                     it("emits correct content value") {

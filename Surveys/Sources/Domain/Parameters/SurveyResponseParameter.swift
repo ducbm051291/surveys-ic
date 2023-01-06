@@ -11,7 +11,7 @@ import Foundation
 struct SurveyResponseParameter: Parameterable, Codable, Equatable {
 
     let surveyId: String
-    let questions: [QuestionResponseParameter]
+    let questions: [APIQuestionResponse]
 
     static func == (lhs: SurveyResponseParameter, rhs: SurveyResponseParameter) -> Bool {
         lhs.surveyId == rhs.surveyId

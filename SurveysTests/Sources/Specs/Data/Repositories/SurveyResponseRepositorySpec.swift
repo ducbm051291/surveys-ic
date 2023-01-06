@@ -43,7 +43,7 @@ final class SurveyResponseRepositorySpec: QuickSpec {
 
                     beforeEach {
                         networkAPI.setPerformRequestForReturnValue(Just(APINoReply()).asObservable())
-                        submitResponse = repository.submitResponse(surveyToTest)
+                        submitResponse = repository.submitResponse(surveyToTest.id, questions: [])
                             .asObservable()
                     }
 
@@ -77,7 +77,7 @@ final class SurveyResponseRepositorySpec: QuickSpec {
                                 failure: errorToTest
                             ).asObservable()
                         )
-                        submitResponse = repository.submitResponse(surveyToTest)
+                        submitResponse = repository.submitResponse(surveyToTest.id, questions: [])
                             .replaceError(with: ())
                             .asObservable()
                     }
