@@ -17,6 +17,7 @@ struct SurveyQuestionsView: View {
 
     @State var selectedQuestionIndex = 0
     @State var isSubmittedViewPresented = false
+    @State var isQuitConfirmAlertPresented = false
 
     var isPresented: Binding<Bool>
 
@@ -50,6 +51,23 @@ struct SurveyQuestionsView: View {
             setUpNextQuestionButton()
             setUpQuestions()
         }
+        .alert(isPresented: $isQuitConfirmAlertPresented) {
+            Alert(
+                title: Text(Localize.surveyQuestionWarningText()),
+                message: Text(Localize.surveyQuestionQuitConfirmText()),
+                primaryButton: .default(
+                    Text(Localize.commonYesText())
+                        .font(.regular()),
+                    action: {
+                        isPresented.wrappedValue.toggle()
+                    }
+                ),
+                secondaryButton: .default(
+                    Text(Localize.commonCancelText())
+                        .font(.bold())
+                )
+            )
+        }
     }
 
     private func setUpBackground() -> some View {
@@ -78,7 +96,7 @@ struct SurveyQuestionsView: View {
                 Button(String.empty) {}
                     .modifier(RoundCloseButtonModifier(action: {
                         withAnimation {
-                            isPresented.wrappedValue.toggle()
+                            isQuitConfirmAlertPresented = true
                         }
                     }))
                     .padding(.top, 20.0)
