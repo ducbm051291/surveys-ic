@@ -12,6 +12,7 @@
 "common.cancel.text" = "Cancel";
 "common.error.text" = "An error has occurred. Please try again later!";
 "common.ok.text" = "OK";
+"common.yes.text" = "Yes";
 
 "login.emailTextField.placeholder" = "Email";
 "login.forgotButton.title" = "Forgot?";
@@ -32,4 +33,6 @@
 
 "survey.startSurvey.title" = "Start Survey";
 
+"surveyQuestion.quitConfirm.text" = "Are you sure you want to quit the survey?";
 "surveyQuestion.submit.title" = "Submit";
+"surveyQuestion.warning.text" = "Warning!";
