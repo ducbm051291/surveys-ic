@@ -12,9 +12,7 @@ import SwiftUI
 
 struct SurveyAnswerSingleChoiceView: View {
 
-    @ObservedObject var viewModel: SurveyAnswerViewModel
-
-    @State private var selectedChoice: String
+    @Binding var selectedChoice: String
     @State private var choices: [String]
 
     var body: some View {
@@ -36,9 +34,8 @@ struct SurveyAnswerSingleChoiceView: View {
         }
     }
 
-    init(viewModel: SurveyAnswerViewModel) {
-        self.viewModel = viewModel
-        selectedChoice = viewModel.answers.first?.text ?? .empty
-        choices = viewModel.answers.map { "\($0.text ?? .empty)" }
+    init(choices: [String], selectedChoice: Binding<String>) {
+        self.choices = choices
+        _selectedChoice = selectedChoice
     }
 }

@@ -13,13 +13,11 @@ import Resolver
 final class SurveyQuestionViewModel: ObservableObject {
 
     @Published var question: Question
-    @Published var answerViewModel: SurveyAnswerViewModel
     @Published var questionIndex: String = .empty
     @Published var questionText: String = .empty
 
     init(question: Question, numberOfQuestion: Int) {
         self.question = question
-        answerViewModel = SurveyAnswerViewModel(answers: question.answers ?? [])
         questionIndex = "\(question.displayOrder + 1)/\(numberOfQuestion)"
         questionText = question.text
     }
