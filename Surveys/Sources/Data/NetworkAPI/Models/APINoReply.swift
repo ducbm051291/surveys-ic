@@ -8,4 +8,4 @@
 
 import Foundation
 
-struct APINoReply: NoReply, Decodable {}
+struct APINoReply: Decodable {}

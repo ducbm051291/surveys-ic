@@ -36,14 +36,13 @@ final class SurveyResponseRepositorySpec: QuickSpec {
                     questions: []
                 )
                 let errorToTest = TestError.mock
-                let noReplyToTest = APINoReply()
 
                 context("when networkAPI emits success from performRequest") {
 
                     var submitResponse: Observable<Void>!
 
                     beforeEach {
-                        networkAPI.setPerformRequestForReturnValue(Just(noReplyToTest).asObservable())
+                        networkAPI.setPerformRequestForReturnValue(Just(APINoReply()).asObservable())
                         submitResponse = repository.submitResponse(surveyToTest)
                             .asObservable()
                     }

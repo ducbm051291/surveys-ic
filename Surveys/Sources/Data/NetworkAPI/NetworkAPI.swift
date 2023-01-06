@@ -16,7 +16,7 @@ final class NetworkAPI: NetworkAPIProtocol {
 
     enum DecoderType {
 
-        case json, jsonAPI
+        case emptyJson, jsonAPI
     }
 
     enum StatusCode: Int {
@@ -32,7 +32,7 @@ final class NetworkAPI: NetworkAPIProtocol {
 
     init(decoderType: DecoderType) {
         switch decoderType {
-        case .json: decoder = JSONDecoder.common
+        case .emptyJson: decoder = JSONDecoder.common
         case .jsonAPI: decoder = JSONAPIDecoder.default
         }
     }
@@ -108,6 +108,6 @@ final class NetworkAPI: NetworkAPIProtocol {
 
 extension NetworkAPI {
 
-    static let jsonDecoder: NetworkAPIProtocol = NetworkAPI(decoderType: .json)
+    static let jsonDecoder: NetworkAPIProtocol = NetworkAPI(decoderType: .emptyJson)
     static let jsonAPIDecoder: NetworkAPIProtocol = NetworkAPI(decoderType: .jsonAPI)
 }
