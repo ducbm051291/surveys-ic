@@ -6,10 +6,13 @@
   Copyright © 2022 Nimble. All rights reserved.
 */
 
+"aswerSubmittedView.thanks.text" = "Thanks for taking the survey.";
+
 "common.applicationName.text" = "Surveys";
 "common.cancel.text" = "Cancel";
 "common.error.text" = "An error has occurred. Please try again later!";
 "common.ok.text" = "OK";
+"common.yes.text" = "Yes";
 
 "login.emailTextField.placeholder" = "Email";
 "login.forgotButton.title" = "Forgot?";
@@ -30,4 +33,6 @@
 
 "survey.startSurvey.title" = "Start Survey";
 
-"aswerSubmittedView.thanks.text" = "Thanks for taking the survey.";
+"surveyQuestion.quitConfirm.text" = "Are you sure you want to quit the survey?";
+"surveyQuestion.submit.title" = "Submit";
+"surveyQuestion.warning.text" = "Warning!";
