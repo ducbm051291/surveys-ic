@@ -11,8 +11,6 @@ import SwiftUI
 struct SurveyQuestionView: View {
 
     @ObservedObject var viewModel: SurveyQuestionViewModel
-    @State var rating: Int = 0
-    @State var selectedChoice: String = .empty
 
     var body: some View {
         ZStack {
@@ -39,13 +37,14 @@ struct SurveyQuestionView: View {
 extension SurveyQuestionView {
 
     private func setUpAnswer() -> some View {
-        VStack {
-            let displayType = viewModel.question.displayType
-            let pickType = viewModel.question.pick
+        let displayType = viewModel.question.displayType
+        let pickType = viewModel.question.pick
+        let answers = viewModel.question.answers ?? []
+        return VStack {
             Spacer()
             switch displayType {
             case .star, .heart, .smiley:
-                SurveyAnswerRatingView(displayType: viewModel.question.displayType, rating: $rating)
+                SurveyAnswerRatingView(displayType: displayType)
             case .nps:
                 EmptyView()
             case .textarea, .textfield:
@@ -53,12 +52,9 @@ extension SurveyQuestionView {
             case .choice, .dropdown:
                 switch pickType {
                 case .any:
-                    EmptyView()
+                    SurveyAnswerMultipleChoiceView(answers: answers.map { $0.text ?? .empty })
                 case .one, .none:
-                    SurveyAnswerSingleChoiceView(
-                        choices: viewModel.question.answers?.map { $0.text ?? .empty } ?? [],
-                        selectedChoice: $selectedChoice
-                    )
+                    SurveyAnswerSingleChoiceView(answers: answers.map { $0.text ?? .empty })
                 }
             case .intro, .outro:
                 EmptyView()

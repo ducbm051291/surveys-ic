@@ -154,6 +154,8 @@
 		58D1932F2941B79300D28082 /* GetTokenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D1932A2941B77A00D28082 /* GetTokenUseCaseSpec.swift */; };
 		58D193342941E27E00D28082 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D193332941E27E00D28082 /* HomeViewModel.swift */; };
 		58D193372941E49B00D28082 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D193362941E49B00D28082 /* HomeHeaderView.swift */; };
+		58D5F830296BB64C00AFAC45 /* SurveyAnswerMultipleChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D5F82F296BB64C00AFAC45 /* SurveyAnswerMultipleChoiceView.swift */; };
+		58D5F832296BD01E00AFAC45 /* CheckboxButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D5F831296BD01E00AFAC45 /* CheckboxButtonModifier.swift */; };
 		58E28144295EC712001BAABA /* Notification+Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E28143295EC712001BAABA /* Notification+Instance.swift */; };
 		58E28146295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E28145295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift */; };
 		58E28148295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E28147295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift */; };
@@ -382,6 +384,8 @@
 		58D1932C2941B78D00D28082 /* GetHasLoggedInUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHasLoggedInUseCaseSpec.swift; sourceTree = "<group>"; };
 		58D193332941E27E00D28082 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		58D193362941E49B00D28082 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		58D5F82F296BB64C00AFAC45 /* SurveyAnswerMultipleChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAnswerMultipleChoiceView.swift; sourceTree = "<group>"; };
+		58D5F831296BD01E00AFAC45 /* CheckboxButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButtonModifier.swift; sourceTree = "<group>"; };
 		58E28143295EC712001BAABA /* Notification+Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Instance.swift"; sourceTree = "<group>"; };
 		58E28145295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveExpiredTokenUseCase.swift; sourceTree = "<group>"; };
 		58E28147295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveExpiredTokenUseCaseSpec.swift; sourceTree = "<group>"; };
@@ -624,10 +628,11 @@
 		5827FA1A2924CF2200CF2327 /* Modifier */ = {
 			isa = PBXGroup;
 			children = (
+				58D5F831296BD01E00AFAC45 /* CheckboxButtonModifier.swift */,
 				58BE093E2925E1C600662F6C /* ErrorModifier.swift */,
+				58285B262939F18400AC6E73 /* NavigationBackButtonModifier.swift */,
 				5827FA0F2924C7E200CF2327 /* PlaceholderModifier.swift */,
 				58683B2729389C81005FD141 /* RightButtonModifier.swift */,
-				58285B262939F18400AC6E73 /* NavigationBackButtonModifier.swift */,
 				58BE3A1B29667805003FCAE9 /* RoundCloseButtonModifier.swift */,
 				581BDADE294825570081BAE5 /* RoundNextButtonModifier.swift */,
 				581BDAE0294827330081BAE5 /* TextTitleModifier.swift */,
@@ -996,6 +1001,7 @@
 			children = (
 				585C12412967FBD5000073AF /* SurveyAnswerRatingView.swift */,
 				5881427D2966C3E00035907E /* SurveyAnswerSingleChoiceView.swift */,
+				58D5F82F296BB64C00AFAC45 /* SurveyAnswerMultipleChoiceView.swift */,
 			);
 			path = SurveyAnswer;
 			sourceTree = "<group>";
@@ -2012,6 +2018,7 @@
 				588FC05D293602FB00D1A38D /* R.generated.swift in Sources */,
 				582B894929651D5500FDB7B5 /* APINoReply.swift in Sources */,
 				5828F8532926213A0074FE82 /* Resolver+Domain.swift in Sources */,
+				58D5F832296BD01E00AFAC45 /* CheckboxButtonModifier.swift in Sources */,
 				58683B2629388165005FD141 /* Combine+Collect.swift in Sources */,
 				5881427E2966C3E00035907E /* SurveyAnswerSingleChoiceView.swift in Sources */,
 				58C6EB18293ED9EE002A9B76 /* UserParameter.swift in Sources */,
@@ -2064,6 +2071,7 @@
 				5828F83129260F680074FE82 /* Resolver+Data.swift in Sources */,
 				58C6C5A329221CC90083AF17 /* RequestConfiguration.swift in Sources */,
 				FC1CE3FCD6AE97534C3BC5ED /* Typealiases.swift in Sources */,
+				58D5F830296BB64C00AFAC45 /* SurveyAnswerMultipleChoiceView.swift in Sources */,
 				58F6E6142934AF5B00D0547A /* Constants+Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
