@@ -1,5 +1,5 @@
 //
-//  APIQuestionResponse.swift
+//  AnswerResponse.swift
 //  Surveys
 //
 //  Created by David Bui on 03/01/2023.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct APIQuestionResponse: Codable {
+struct AnswerResponse: Codable {
 
     let id: String
-    let answers: [APIAnswerResponse]
+    let answer: String
 }

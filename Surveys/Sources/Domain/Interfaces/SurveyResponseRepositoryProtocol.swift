@@ -11,5 +11,5 @@ import Combine
 // sourcery: AutoMockable
 protocol SurveyResponseRepositoryProtocol: AnyObject {
 
-    func submitResponse(_ surveyId: String, questions: [APIQuestionResponse]) -> Observable<Void>
+    func submitResponse(_ surveyId: String, questions: [QuestionResponse]) -> Observable<Void>
 }

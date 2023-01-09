@@ -14,7 +14,7 @@ final class SurveyResponseRepository: SurveyResponseRepositoryProtocol {
 
     @Injected(name: .jsonNetworkAPI) private var networkAPI: NetworkAPIProtocol
 
-    func submitResponse(_ surveyId: String, questions: [APIQuestionResponse]) -> Observable<Void> {
+    func submitResponse(_ surveyId: String, questions: [QuestionResponse]) -> Observable<Void> {
         let parameter = SurveyResponseParameter(
             surveyId: surveyId,
             questions: questions
