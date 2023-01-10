@@ -48,7 +48,7 @@ extension SurveyQuestionView {
             case .nps:
                 SurveyAnswerNPSView()
             case .textarea:
-                EmptyView()
+                SurveyAnswerTextAreaView()
             case .textfield:
                 SurveyAnswerFormView(answers: answers.map { $0.text ?? .empty })
             case .choice, .dropdown:
