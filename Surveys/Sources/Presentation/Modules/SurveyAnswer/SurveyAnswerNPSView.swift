@@ -80,6 +80,7 @@ struct SurveyAnswerNPSView: View {
                 .foregroundColor(.white)
         }
         .frame(height: 22.0)
+        .padding(.top, 16.0)
     }
 
     private func calculatePointWidth(width: CGFloat) -> CGFloat {
