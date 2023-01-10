@@ -84,8 +84,7 @@ struct SurveyAnswerNPSView: View {
     }
 
     private func calculatePointWidth(width: CGFloat) -> CGFloat {
-        let pointWidth = width / CGFloat(maximumRating) - dividerWidth
-        return pointWidth
+        width / CGFloat(maximumRating) - dividerWidth
     }
 }
 
