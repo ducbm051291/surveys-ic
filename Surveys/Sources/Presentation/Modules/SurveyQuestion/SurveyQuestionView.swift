@@ -46,7 +46,7 @@ extension SurveyQuestionView {
             case .star, .heart, .smiley:
                 SurveyAnswerRatingView(displayType: displayType)
             case .nps:
-                EmptyView()
+                SurveyAnswerNPSView()
             case .textarea, .textfield:
                 EmptyView()
             case .choice, .dropdown:
