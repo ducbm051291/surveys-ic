@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SurveyAnswerRatingView: View {
 
-    @Binding var rating: Int
+    @State var rating: Int = 0
     private let maximumRating = 5
     private var displayType: DisplayType
     private var ratingItems: [String]
@@ -30,7 +30,7 @@ struct SurveyAnswerRatingView: View {
         }
     }
 
-    init(displayType: DisplayType, rating: Binding<Int>) {
+    init(displayType: DisplayType) {
         self.displayType = displayType
         switch displayType {
         case .smiley:
@@ -42,7 +42,6 @@ struct SurveyAnswerRatingView: View {
         default:
             ratingItems = Array(repeating: "👍🏻", count: maximumRating)
         }
-        _rating = rating
     }
 }
 

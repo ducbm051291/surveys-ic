@@ -6,13 +6,11 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
-import Foundation
-
 import SwiftUI
 
 struct SurveyAnswerSingleChoiceView: View {
 
-    @Binding var selectedChoice: String
+    @State var selectedChoice: String = .empty
     @State private var choices: [String]
 
     var body: some View {
@@ -34,8 +32,7 @@ struct SurveyAnswerSingleChoiceView: View {
         }
     }
 
-    init(choices: [String], selectedChoice: Binding<String>) {
-        self.choices = choices
-        _selectedChoice = selectedChoice
+    init(answers: [String]) {
+        choices = answers
     }
 }
