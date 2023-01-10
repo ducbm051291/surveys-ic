@@ -22,12 +22,12 @@ struct SurveyAnswerNPSView: View {
             setUpDescription()
             Spacer()
         }
-        .padding(.horizontal, 20.0)
+        .padding(.horizontal, horizontalPadding)
     }
 
     private func setUpNPS() -> some View {
         GeometryReader { geometry in
-            HStack(spacing: 0.0) {
+            HStack(spacing: .zero) {
                 ForEach(0 ..< maximumRating, id: \.self) { index in
                     setUpNPSPoint(index, width: geometry.size.width)
                         .tag(index)
@@ -45,7 +45,7 @@ struct SurveyAnswerNPSView: View {
     }
 
     private func setUpNPSPoint(_ index: Int, width: CGFloat) -> some View {
-        HStack(spacing: 0.0) {
+        HStack(spacing: .zero) {
             Text("\(index + 1)")
                 .font(getRatingFontOf(index))
                 .foregroundColor(.white)
