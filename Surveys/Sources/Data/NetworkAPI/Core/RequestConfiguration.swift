@@ -16,6 +16,7 @@ enum RequestConfiguration: Equatable {
     case refreshToken(RefreshTokenParameter)
     case surveyDetail(String)
     case surveyList(Int, Int)
+    case surveyResponse(SurveyResponseParameter)
 }
 
 extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
@@ -23,7 +24,7 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
     var authorizationType: Moya.AuthorizationType? {
         switch self {
         case .login, .forgotPassword, .refreshToken: return .none
-        case .surveyDetail, .surveyList: return .bearer
+        case .surveyDetail, .surveyList, .surveyResponse: return .bearer
         }
     }
 
@@ -36,13 +37,16 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
         case .surveyList: return "surveys"
         case let .surveyDetail(surveyId):
             return "surveys/\(surveyId)"
+        case .surveyResponse:
+            return "responses"
         }
     }
 
     var method: Moya.Method {
         switch self {
         case .surveyDetail, .surveyList: return .get
-        case .forgotPassword, .login, .refreshToken: return .post
+        case .forgotPassword, .login, .refreshToken, .surveyResponse:
+            return .post
         }
     }
 
@@ -64,6 +68,8 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
                 ],
                 encoding: URLEncoding.default
             )
+        case let .surveyResponse(parameter):
+            return .requestParameters(parameters: parameter.dictionary, encoding: JSONEncoding.default)
         }
     }
 

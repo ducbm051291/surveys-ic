@@ -16,7 +16,7 @@ struct HomeSurveyItemView: View {
 
     var body: some View {
         ZStack {
-            setUpBackgroundImage()
+            setUpBackground()
             setUpSurvey()
         }
     }
@@ -43,9 +43,9 @@ struct HomeSurveyItemView: View {
         .padding(.horizontal, 20.0)
     }
 
-    private func setUpBackgroundImage() -> some View {
+    private func setUpBackground() -> some View {
         GeometryReader { geometry in
-            KFImage(URL(string: survey.coverImageUrl))
+            KFImage(survey.largeImageURL)
                 .placeholder { _ in
                     Assets.surveyBackgroundImage.image
                         .resizable()

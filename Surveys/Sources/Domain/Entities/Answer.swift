@@ -15,4 +15,5 @@ protocol Answer {
     var displayOrder: Int { get }
     var text: String? { get }
     var inputMaskPlaceholder: String? { get }
+    var answer: String? { get set }
 }

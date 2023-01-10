@@ -13,7 +13,7 @@ protocol Question {
     var id: String { get }
     var type: String { get }
     var displayOrder: Int { get }
-    var displayType: String { get }
+    var displayType: DisplayType { get }
     var text: String { get }
     var pick: PickType { get }
     var coverImageUrl: String { get }
