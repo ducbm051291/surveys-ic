@@ -39,3 +39,5 @@
 
 "npsQuestion.notAtAllLikely.text" = "Not at all Likely";
 "npsQuestion.extremelyLikely.text" = "Extremely Likely";
+
+"textAreaQuestion.yourThoughts.text" = "Your thoughts";
