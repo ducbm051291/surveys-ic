@@ -36,3 +36,6 @@
 "surveyQuestion.quitConfirm.text" = "Are you sure you want to quit the survey?";
 "surveyQuestion.submit.title" = "Submit";
 "surveyQuestion.warning.text" = "Warning!";
+
+"npsQuestion.notAtAllLikely.text" = "Not at all Likely";
+"npsQuestion.extremelyLikely.text" = "Extremely Likely";
