@@ -17,10 +17,8 @@ struct SurveyAnswerNPSView: View {
 
     var body: some View {
         VStack {
-            Spacer()
             setUpNPS()
             setUpDescription()
-            Spacer()
         }
         .padding(.horizontal, horizontalPadding)
     }
