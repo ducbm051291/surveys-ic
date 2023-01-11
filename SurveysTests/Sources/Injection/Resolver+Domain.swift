@@ -21,11 +21,17 @@ extension Resolver {
             .implements(ForgotPasswordUseCaseProtocol.self)
         mock.register { LoginUseCaseProtocolMock() }
             .implements(LoginUseCaseProtocol.self)
+        mock.register { GetSurveyDetailUseCaseProtocolMock() }
+            .implements(GetSurveyDetailUseCaseProtocol.self)
         mock.register { GetSurveyListUseCaseProtocolMock() }
             .implements(GetSurveyListUseCaseProtocol.self)
         mock.register { GetTokenUseCaseProtocolMock() }
             .implements(GetTokenUseCaseProtocol.self)
+        mock.register { ObserveExpiredTokenUseCaseProtocolMock() }
+            .implements(ObserveExpiredTokenUseCaseProtocol.self)
         mock.register { StoreTokenUseCaseProtocolMock() }
             .implements(StoreTokenUseCaseProtocol.self)
+        mock.register { SubmitSurveyResponseUseCaseProtocolMock() }
+            .implements(SubmitSurveyResponseUseCaseProtocol.self)
     }
 }

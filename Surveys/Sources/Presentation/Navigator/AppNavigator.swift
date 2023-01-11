@@ -20,6 +20,7 @@ struct AppNavigator: View {
             case .login: LoginView()
             case .home: HomeView()
             case .splash: SplashView()
+            case let .survey(viewModel): SurveyView(viewModel: viewModel)
             }
         }
         .environmentObject(navigator)

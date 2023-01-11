@@ -14,4 +14,5 @@ enum NetworkAPIError: Error, Equatable {
     case generic
     case dataNotFound
     case responseErrors(errors: [JSONAPIError])
+    case unauthenticated
 }

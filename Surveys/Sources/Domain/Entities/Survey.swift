@@ -15,4 +15,12 @@ protocol Survey {
     var title: String { get }
     var description: String { get }
     var coverImageUrl: String { get }
+    var questions: [Question]? { get }
+}
+
+extension Survey {
+
+    var largeImageURL: URL? {
+        URL(string: coverImageUrl + "l")
+    }
 }

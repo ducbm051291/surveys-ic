@@ -12,4 +12,5 @@ import Combine
 protocol SurveyRepositoryProtocol: AnyObject {
 
     func getSurveyList(pageNumber: Int, pageSize: Int) -> Observable<[Survey]>
+    func getSurveyDetail(id: String) -> Observable<Survey>
 }

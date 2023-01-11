@@ -13,7 +13,17 @@ import SwiftUI
 
 final class Navigator: ObservableObject {
 
+    @Injected private var observeExpiredTokenUseCase: ObserveExpiredTokenUseCaseProtocol
+
     @Published var routes: Routes<Screen> = [.root(.splash)]
+
+    init() {
+        observeExpiredTokenUseCase.execute()
+            .receive(on: DispatchQueue.main)
+            .map { [.root(.login)] }
+            .asDriver()
+            .assign(to: &$routes)
+    }
 
     func show(screen: Screen, by transition: Transition, embedInNavigationView: Bool = false) {
         switch transition {

@@ -10,9 +10,11 @@ import SwiftUI
 
 struct TextTitleModifier: ViewModifier {
 
+    var titleSize: Font.Size = .large
+
     func body(content: Content) -> some View {
         content
-            .font(.bold(ofSize: .large))
+            .font(.bold(ofSize: titleSize))
             .foregroundColor(.white)
     }
 }

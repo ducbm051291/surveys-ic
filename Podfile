@@ -14,6 +14,8 @@ target 'Surveys' do
   pod 'FlowStacks'
   pod 'Kingfisher'
   pod 'ShimmerView'
+  pod 'SwiftUI-Pull-To-Refresh'
+  pod 'lottie-ios'
 
   # Storage
   pod 'KeychainAccess'

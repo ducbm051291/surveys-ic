@@ -31,7 +31,11 @@ struct SplashView: View {
         case .authenticated:
             setUpView()
                 .onAppear {
-                    navigator.show(screen: .home, by: .root)
+                    navigator.show(
+                        screen: .home,
+                        by: .root,
+                        embedInNavigationView: true
+                    )
                 }
         }
     }

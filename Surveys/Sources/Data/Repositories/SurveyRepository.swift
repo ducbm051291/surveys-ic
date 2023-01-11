@@ -12,8 +12,14 @@ import Resolver
 
 final class SurveyRepository: SurveyRepositoryProtocol {
 
-    @Injected private var networkAPI: NetworkAPIProtocol
+    @Injected(name: .jsonAPINetworkAPI) private var networkAPI: NetworkAPIProtocol
     @Injected private var surveyCache: SurveyCache
+
+    func getSurveyDetail(id: String) -> Observable<Survey> {
+        networkAPI.performRequest(.surveyDetail(id), for: APISurvey.self)
+            .map { $0 as Survey }
+            .asObservable()
+    }
 
     func getSurveyList(pageNumber: Int, pageSize: Int) -> Observable<[Survey]> {
         networkAPI.performRequest(.surveyList(pageNumber, pageSize), for: [APISurvey].self)
