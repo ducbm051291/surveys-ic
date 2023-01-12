@@ -24,7 +24,11 @@ struct LoginView: View {
         case .loggedIn:
             setUpView()
                 .onAppear {
-                    navigator.show(screen: .home, by: .root)
+                    navigator.show(
+                        screen: .home,
+                        by: .root,
+                        embedInNavigationView: true
+                    )
                 }
         case let .error(message):
             setUpView()

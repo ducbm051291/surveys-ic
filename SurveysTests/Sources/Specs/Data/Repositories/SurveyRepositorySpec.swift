@@ -25,7 +25,10 @@ final class SurveyRepositorySpec: QuickSpec {
             beforeEach {
                 Resolver.registerAllMockServices()
                 repository = SurveyRepository()
-                networkAPI = Resolver.resolve(NetworkAPIProtocol.self) as? NetworkAPIProtocolMock
+                networkAPI = Resolver.resolve(
+                    NetworkAPIProtocol.self,
+                    name: .jsonAPINetworkAPI
+                ) as? NetworkAPIProtocolMock
             }
 
             describe("its getSurveyList() call") {
@@ -96,6 +99,77 @@ final class SurveyRepositorySpec: QuickSpec {
                     it("emits corresponding value") {
                         let result = try self.awaitPublisher(getSurveyList)
                         expect(result) == surveysToTest
+                    }
+                }
+            }
+
+            describe("its getSurveyDetail() call") {
+
+                let surveyToTest = APISurvey.dummy
+                let errorToTest = TestError.mock
+
+                context("when networkAPI emits success from performRequest") {
+
+                    var getSurveyDetail: Observable<APISurvey>!
+
+                    beforeEach {
+                        networkAPI.setPerformRequestForReturnValue(Just(surveyToTest).asObservable())
+                        getSurveyDetail = repository.getSurveyDetail(id: surveyToTest.id)
+                            .compactMap { $0 as? APISurvey }
+                            .asObservable()
+                    }
+
+                    it("triggers networkAPI to performRequest") {
+                        _ = try self.awaitPublisher(getSurveyDetail)
+                        expect(networkAPI.performRequestCalled) == true
+                    }
+
+                    it("triggers networkAPI to performRequest with correct configuration") {
+                        _ = try self.awaitPublisher(getSurveyDetail)
+                        let configuration = networkAPI
+                            .performRequestForReceivedArguments?
+                            .configuration
+                        expect(configuration) == RequestConfiguration.surveyDetail(surveyToTest.id)
+                    }
+
+                    it("emits corresponding value") {
+                        let result = try self.awaitPublisher(getSurveyDetail)
+                        expect(result) == surveyToTest
+                    }
+                }
+
+                context("when networkAPI emits failure from performRequest") {
+
+                    var getSurveyDetail: Observable<APISurvey>!
+
+                    beforeEach {
+                        networkAPI.setPerformRequestForReturnValue(
+                            Fail(
+                                outputType: APISurvey.self,
+                                failure: errorToTest
+                            ).asObservable()
+                        )
+                        getSurveyDetail = repository.getSurveyDetail(id: surveyToTest.id)
+                            .compactMap { $0 as? APISurvey }
+                            .replaceError(with: surveyToTest)
+                            .asObservable()
+                    }
+
+                    it("triggers networkAPI to performRequest") {
+                        expect(networkAPI.performRequestCalled) == true
+                    }
+
+                    it("triggers networkAPI to performRequest with correct configuration") {
+                        _ = try self.awaitPublisher(getSurveyDetail)
+                        let configuration = networkAPI
+                            .performRequestForReceivedArguments?
+                            .configuration
+                        expect(configuration) == RequestConfiguration.surveyDetail(surveyToTest.id)
+                    }
+
+                    it("emits corresponding value") {
+                        let result = try self.awaitPublisher(getSurveyDetail)
+                        expect(result) == surveyToTest
                     }
                 }
             }

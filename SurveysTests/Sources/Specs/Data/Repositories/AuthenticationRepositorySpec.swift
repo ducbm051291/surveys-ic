@@ -25,7 +25,10 @@ final class AuthenticationRepositorySpec: QuickSpec {
             beforeEach {
                 Resolver.registerAllMockServices()
                 repository = AuthenticationRepository()
-                networkAPI = Resolver.resolve(NetworkAPIProtocol.self) as? NetworkAPIProtocolMock
+                networkAPI = Resolver.resolve(
+                    NetworkAPIProtocol.self,
+                    name: .jsonAPINetworkAPI
+                ) as? NetworkAPIProtocolMock
             }
 
             describe("its login() call") {

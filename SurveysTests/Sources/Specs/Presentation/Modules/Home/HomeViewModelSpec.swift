@@ -28,6 +28,36 @@ final class HomeViewModelSpec: QuickSpec {
                 viewModel = HomeViewModel(bundle: Bundle.main)
             }
 
+            describe("its reloadSurveys() called") {
+
+                let pageSize = 10
+                let surveysToTest = Array(repeating: APISurvey.dummy, count: pageSize)
+
+                context("when getSurveyListUseCase returns success") {
+
+                    beforeEach {
+                        self.getSurveyListUseCase.executePageNumberPageSizeReturnValue = Just(surveysToTest)
+                            .asObservable()
+                        viewModel.reloadSurveys()
+                    }
+
+                    it("state changes to loading") {
+                        let state = try self.awaitPublisher(viewModel.$state.collectNext(1)).last
+                        expect(state) == .loading
+                    }
+
+                    it("state changes to loaded") {
+                        let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
+                        expect(state) == .loaded
+                    }
+
+                    it("surveys updated with surveysToTest") {
+                        let surveys = try self.awaitPublisher(viewModel.$surveys.collectNext(1)).last as? [APISurvey]
+                        expect(surveys) == surveysToTest
+                    }
+                }
+            }
+
             describe("its loadSurveys() called") {
 
                 let pageSize = 10
@@ -41,8 +71,13 @@ final class HomeViewModelSpec: QuickSpec {
                         viewModel.loadSurveys()
                     }
 
-                    it("state changes to loaded") {
+                    it("state changes to loading") {
                         let state = try self.awaitPublisher(viewModel.$state.collectNext(1)).last
+                        expect(state) == .loading
+                    }
+
+                    it("state changes to loaded") {
+                        let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
                         expect(state) == .loaded
                     }
 

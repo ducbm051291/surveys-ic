@@ -13,15 +13,18 @@ enum RequestConfiguration: Equatable {
 
     case login(LoginParameter)
     case forgotPassword(ForgotPasswordParameter)
+    case refreshToken(RefreshTokenParameter)
+    case surveyDetail(String)
     case surveyList(Int, Int)
+    case surveyResponse(SurveyResponseParameter)
 }
 
 extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
 
     var authorizationType: Moya.AuthorizationType? {
         switch self {
-        case .login, .forgotPassword: return .none
-        case .surveyList: return .bearer
+        case .login, .forgotPassword, .refreshToken: return .none
+        case .surveyDetail, .surveyList, .surveyResponse: return .bearer
         }
     }
 
@@ -29,25 +32,34 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
 
     var path: String {
         switch self {
-        case .login: return "oauth/token"
+        case .login, .refreshToken: return "oauth/token"
         case .forgotPassword: return "passwords"
         case .surveyList: return "surveys"
+        case let .surveyDetail(surveyId):
+            return "surveys/\(surveyId)"
+        case .surveyResponse:
+            return "responses"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .surveyList: return .get
-        case .forgotPassword, .login: return .post
+        case .surveyDetail, .surveyList: return .get
+        case .forgotPassword, .login, .refreshToken, .surveyResponse:
+            return .post
         }
     }
 
     var task: Moya.Task {
         switch self {
-        case let .login(parameter):
-            return .requestParameters(parameters: parameter.dictionary, encoding: JSONEncoding.default)
         case let .forgotPassword(parameter):
             return .requestParameters(parameters: parameter.dictionary, encoding: JSONEncoding.default)
+        case let .login(parameter):
+            return .requestParameters(parameters: parameter.dictionary, encoding: JSONEncoding.default)
+        case let .refreshToken(parameter):
+            return .requestParameters(parameters: parameter.dictionary, encoding: JSONEncoding.default)
+        case .surveyDetail:
+            return .requestPlain
         case let .surveyList(pageNumber, pageSize):
             return .requestParameters(
                 parameters: [
@@ -56,6 +68,8 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
                 ],
                 encoding: URLEncoding.default
             )
+        case let .surveyResponse(parameter):
+            return .requestParameters(parameters: parameter.dictionary, encoding: JSONEncoding.default)
         }
     }
 

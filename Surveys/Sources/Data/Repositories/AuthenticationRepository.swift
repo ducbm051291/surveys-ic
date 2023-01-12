@@ -12,7 +12,7 @@ import Resolver
 
 final class AuthenticationRepository: AuthenticationRepositoryProtocol {
 
-    @Injected private var networkAPI: NetworkAPIProtocol
+    @Injected(name: .jsonAPINetworkAPI) private var networkAPI: NetworkAPIProtocol
 
     func forgotPassword(email: String) -> Observable<Message> {
         let parameter = ForgotPasswordParameter(

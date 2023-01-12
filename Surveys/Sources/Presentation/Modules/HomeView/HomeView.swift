@@ -8,6 +8,7 @@
 
 import Combine
 import SwiftUI
+import SwiftUI_Pull_To_Refresh
 import UIKit
 
 struct HomeView: View {
@@ -22,7 +23,7 @@ struct HomeView: View {
         case .idle:
             setUpView()
                 .onAppear {
-                    viewModel.loadSurveys()
+                    viewModel.reloadSurveys()
                 }
         case .loading:
             setUpView(isLoading: true)
@@ -41,25 +42,38 @@ struct HomeView: View {
     }
 
     private func setUpView(isLoading: Bool = false) -> some View {
-        ZStack {
-            if isLoading {
-                HomeSkeletonLoadingView()
-            } else {
-                setUpTabView()
-                    .overlay(alignment: .top) {
-                        setUpHeaderHomeView()
+        GeometryReader { geometry in
+            RefreshableScrollView { _ in
+                viewModel.reloadSurveys()
+            } progress: { state in
+                RefreshActivityIndicator(isAnimating: state == .loading) {
+                    $0.hidesWhenStopped = false
+                }
+                .padding(.top, 30.0)
+            } content: {
+                ZStack {
+                    if isLoading {
+                        HomeSkeletonLoadingView()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                    } else {
+                        setUpTabView()
+                            .overlay(alignment: .top) {
+                                setUpHeaderHomeView()
+                            }
+                            .overlay {
+                                setUpPageControl()
+                            }
+                            .overlay {
+                                if isMenuVisible {
+                                    setUpUserMenuView()
+                                }
+                            }
+                            .frame(width: geometry.size.width, height: geometry.size.height)
                     }
-                    .overlay {
-                        setUpPageControl()
-                    }
-                    .overlay {
-                        if isMenuVisible {
-                            setUpUserMenuView()
-                        }
-                    }
+                }
             }
         }
-        .ignoresSafeArea()
+        .edgesIgnoringSafeArea(.all)
     }
 
     private func setUpTabView() -> some View {
@@ -67,16 +81,23 @@ struct HomeView: View {
 
         return TabView(selection: $selectedSurveyIndex) {
             ForEach(surveys, id: \.element.id) { index, survey in
-                HomeSurveyItemView(survey: survey)
-                    .tag(index)
-                    .edgesIgnoringSafeArea(.all)
+                HomeSurveyItemView(
+                    survey: survey,
+                    action: {
+                        navigator.show(
+                            screen: .survey(SurveyViewModel(survey: survey)),
+                            by: .push
+                        )
+                    }
+                )
+                .tag(index)
+                .edgesIgnoringSafeArea(.all)
             }
         }
         .background(.black)
         .tabViewStyle(.page(indexDisplayMode: .never))
         .animation(.easeInOut, value: selectedSurveyIndex)
         .transition(.slide)
-        .edgesIgnoringSafeArea(.all)
     }
 
     private func setUpHeaderHomeView() -> some View {

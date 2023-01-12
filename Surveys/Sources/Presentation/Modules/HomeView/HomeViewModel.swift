@@ -39,11 +39,17 @@ final class HomeViewModel: ObservableObject {
             .assign(to: &$state)
     }
 
-    func loadSurveys() {
-        state = .loading
+    func reloadSurveys() {
+        pageNumber = 1
+        surveys = []
+        loadSurveys()
+    }
 
+    func loadSurveys() {
         let getSurveyList = getSurveyListUseCase
             .execute(pageNumber: pageNumber, pageSize: pageSize)
+            .trackError(errorTracker)
+            .trackActivity(activityTracker)
             .asDriver()
             .share()
 
