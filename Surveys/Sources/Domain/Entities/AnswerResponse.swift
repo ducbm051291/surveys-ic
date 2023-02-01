@@ -11,5 +11,5 @@ import Foundation
 struct AnswerResponse {
 
     let id: String
-    let answer: String
+    var answer: String
 }

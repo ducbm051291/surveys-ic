@@ -133,6 +133,7 @@
 		58BE3A1C29667805003FCAE9 /* RoundCloseButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE3A1B29667805003FCAE9 /* RoundCloseButtonModifier.swift */; };
 		58BF66EE293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF66ED293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift */; };
 		58BF66F0293DD141003B1A82 /* ForgotPasswordParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF66EF293DD141003B1A82 /* ForgotPasswordParameter.swift */; };
+		58C254F6298A530000C5E53C /* SurveyAnswerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C254F5298A530000C5E53C /* SurveyAnswerViewModel.swift */; };
 		58C46D93296564A9004E43EF /* SubmitSurveyResponseUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C46D92296564A9004E43EF /* SubmitSurveyResponseUseCaseSpec.swift */; };
 		58C46D9529657319004E43EF /* APIQuestion+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C46D9429657319004E43EF /* APIQuestion+Dummy.swift */; };
 		58C46D97296574CA004E43EF /* DisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C46D96296574CA004E43EF /* DisplayType.swift */; };
@@ -370,6 +371,7 @@
 		58BE3A1B29667805003FCAE9 /* RoundCloseButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCloseButtonModifier.swift; sourceTree = "<group>"; };
 		58BF66ED293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassthroughSubject+ErrorCatcher.swift"; sourceTree = "<group>"; };
 		58BF66EF293DD141003B1A82 /* ForgotPasswordParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordParameter.swift; sourceTree = "<group>"; };
+		58C254F5298A530000C5E53C /* SurveyAnswerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAnswerViewModel.swift; sourceTree = "<group>"; };
 		58C46D92296564A9004E43EF /* SubmitSurveyResponseUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitSurveyResponseUseCaseSpec.swift; sourceTree = "<group>"; };
 		58C46D9429657319004E43EF /* APIQuestion+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIQuestion+Dummy.swift"; sourceTree = "<group>"; };
 		58C46D96296574CA004E43EF /* DisplayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayType.swift; sourceTree = "<group>"; };
@@ -1022,6 +1024,7 @@
 				58388527296CFF5E00C21629 /* SurveyAnswerNPSView.swift */,
 				584ED40A296D422B00FDE2CA /* SurveyAnswerFormView.swift */,
 				584ED40E296D463900FDE2CA /* SurveyAnswerTextAreaView.swift */,
+				58C254F5298A530000C5E53C /* SurveyAnswerViewModel.swift */,
 			);
 			path = SurveyAnswer;
 			sourceTree = "<group>";
@@ -2016,6 +2019,7 @@
 				582B894129640DB100FDB7B5 /* AnswerResponse.swift in Sources */,
 				588142792966B8440035907E /* SurveyQuestionView.swift in Sources */,
 				58C6C5AE29222E050083AF17 /* JSONAPIDecoder+Default.swift in Sources */,
+				58C254F6298A530000C5E53C /* SurveyAnswerViewModel.swift in Sources */,
 				588282B52954504700E408F3 /* CacheKey.swift in Sources */,
 				5827FA1F2924D0F200CF2327 /* String+Empty.swift in Sources */,
 				5827FA0D29248DC900CF2327 /* LoginView.swift in Sources */,

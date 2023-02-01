@@ -10,9 +10,9 @@ import SwiftUI
 
 struct SurveyAnswerRatingView: View {
 
+    @ObservedObject var viewModel: SurveyAnswerViewModel
     @State var rating: Int = 0
     private let maximumRating = 5
-    private var displayType: DisplayType
     private var ratingItems: [String]
 
     var body: some View {
@@ -24,15 +24,18 @@ struct SurveyAnswerRatingView: View {
                     .onTapGesture {
                         rating = index + 1
                     }
+                    .onChange(of: rating) { index in
+                        viewModel.handleSingleAnswer(index)
+                    }
                     .frame(width: 28.0, height: 34.0)
                     .tag(index)
             }
         }
     }
 
-    init(displayType: DisplayType) {
-        self.displayType = displayType
-        switch displayType {
+    init(viewModel: SurveyAnswerViewModel) {
+        self.viewModel = viewModel
+        switch viewModel.displayType {
         case .smiley:
             ratingItems = ["😡", "😕", "😐", "🙂", "😄"]
         case .heart:
@@ -48,7 +51,7 @@ struct SurveyAnswerRatingView: View {
 extension SurveyAnswerRatingView {
 
     private func getRatingOpacityOf(_ index: Int) -> Double {
-        switch displayType {
+        switch viewModel.displayType {
         case .smiley:
             return index == rating - 1 ? 1.0 : 0.5
         default:
