@@ -16,7 +16,7 @@ struct SurveyQuestionsView: View {
     @ObservedObject var viewModel: SurveyQuestionsViewModel
 
     @State var selectedQuestionIndex = 0
-    @State var isSubmittedViewPresented = false
+    @State var isSubmittedViewPresented = true
     @State var isQuitConfirmAlertPresented = false
 
     var isPresented: Binding<Bool>
@@ -31,6 +31,14 @@ struct SurveyQuestionsView: View {
             setUpView()
                 .fullScreenCover(isPresented: $isSubmittedViewPresented) {
                     AnswerSubmittedView()
+                }
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                        withAnimation {
+                            isSubmittedViewPresented = false
+                        }
+                        navigator.goBackToRoot()
+                    }
                 }
         case let .error(message):
             setUpView()
@@ -118,7 +126,9 @@ struct SurveyQuestionsView: View {
                     PrimaryButton(
                         isEnabled: .constant(true),
                         isLoading: false,
-                        action: {},
+                        action: {
+                            viewModel.submitQuestionResponse()
+                        },
                         title: Localize.surveyQuestionSubmitTitle()
                     )
                     .frame(width: 120.0)
