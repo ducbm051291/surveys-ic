@@ -13,14 +13,14 @@ import Resolver
 // sourcery: AutoMockable
 protocol StoreQuestionResponseUseCaseProtocol {
 
-    func execute(questionResponse: APIQuestionResponse)
+    func execute(questionResponse: QuestionResponse)
 }
 
 struct StoreQuestionResponseUseCase: StoreQuestionResponseUseCaseProtocol {
 
     @Injected private var questionResponseCache: QuestionResponseCache
 
-    func execute(questionResponse: APIQuestionResponse) {
+    func execute(questionResponse: QuestionResponse) {
         questionResponseCache.set(questionResponse)
     }
 }

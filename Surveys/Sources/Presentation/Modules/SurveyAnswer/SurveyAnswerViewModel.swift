@@ -54,11 +54,9 @@ final class SurveyAnswerViewModel: ObservableObject {
 extension SurveyAnswerViewModel {
 
     private func storeAnswerResponses() {
-        storeQuestionResponseUseCase.execute(questionResponse: APIQuestionResponse(
-            questionResponse: QuestionResponse(
-                id: questionId,
-                answers: responses
-            )
+        storeQuestionResponseUseCase.execute(questionResponse: QuestionResponse(
+            id: questionId,
+            answers: responses
         ))
     }
 }

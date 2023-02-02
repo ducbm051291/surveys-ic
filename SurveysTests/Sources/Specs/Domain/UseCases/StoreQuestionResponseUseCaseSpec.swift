@@ -30,7 +30,7 @@ final class StoreQuestionResponseUseCaseSpec: QuickSpec {
 
             describe("its execute() call") {
 
-                let questionResponseToTest = APIQuestionResponse.dummy
+                let questionResponseToTest = QuestionResponse.dummy
 
                 beforeEach {
                     useCase.execute(questionResponse: questionResponseToTest)

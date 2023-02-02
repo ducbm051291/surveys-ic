@@ -10,8 +10,8 @@ import Cache
 
 protocol QuestionResponseCacheProtocol: AnyObject {
 
-    func get(id: String) -> APIQuestionResponse?
-    func set(_ value: APIQuestionResponse)
+    func get(id: String) -> QuestionResponse?
+    func set(_ value: QuestionResponse)
     func remove(id: String)
 }
 
@@ -19,21 +19,21 @@ final class QuestionResponseCache: QuestionResponseCacheProtocol {
 
     private let diskConfig = DiskConfig(name: Bundle.main.bundleIdentifier ?? .empty)
     private let memoryConfig = MemoryConfig(expiry: .never, countLimit: 50, totalCostLimit: 10)
-    private let storage: Storage<String, APIQuestionResponse>?
+    private let storage: Storage<String, QuestionResponse>?
 
     init() {
-        storage = try? Storage<String, APIQuestionResponse>(
+        storage = try? Storage<String, QuestionResponse>(
             diskConfig: diskConfig,
             memoryConfig: memoryConfig,
-            transformer: TransformerFactory.forCodable(ofType: APIQuestionResponse.self)
+            transformer: TransformerFactory.forCodable(ofType: QuestionResponse.self)
         )
     }
 
-    func get(id: String) -> APIQuestionResponse? {
+    func get(id: String) -> QuestionResponse? {
         try? storage?.object(forKey: id)
     }
 
-    func set(_ value: APIQuestionResponse) {
+    func set(_ value: QuestionResponse) {
         try? storage?.setObject(value, forKey: value.id)
     }
 

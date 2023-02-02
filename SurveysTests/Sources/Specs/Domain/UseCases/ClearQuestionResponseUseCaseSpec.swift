@@ -30,7 +30,7 @@ final class ClearQuestionResponseUseCaseSpec: QuickSpec {
 
             describe("its execute() call") {
 
-                let questionResponseToTest = APIQuestionResponse.dummy
+                let questionResponseToTest = QuestionResponse.dummy
 
                 beforeEach {
                     useCase.execute(id: questionResponseToTest.id)

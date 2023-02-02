@@ -30,8 +30,8 @@ final class GetQuestionResponseUseCaseSpec: QuickSpec {
 
             describe("its execute() call") {
 
-                let questionResponseToTest = APIQuestionResponse.dummy
-                var questionResponseInCache: APIQuestionResponse?
+                let questionResponseToTest = QuestionResponse.dummy
+                var questionResponseInCache: QuestionResponse?
 
                 beforeEach {
                     self.questionResponseCache.set(questionResponseToTest)
