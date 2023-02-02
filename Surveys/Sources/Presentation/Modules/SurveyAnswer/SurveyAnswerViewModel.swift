@@ -28,30 +28,30 @@ final class SurveyAnswerViewModel: ObservableObject {
         answers = question.answers ?? []
     }
 
-    func handleSingleAnswer(_ index: Int) {
+    func answer(_ index: Int, text: String = .empty) {
         guard answers.count > index else {
             return
         }
-        responses = [AnswerResponse(id: answers[index].id, answer: .empty)]
-        storeAnswerResponses()
-    }
-
-    func handleMultipleAnswer(_ index: Int, text: String = .empty) {
-        guard answers.count > index else {
-            return
-        }
-        let answer = answers[index]
-        if let selectedAnswerIndex = responses.firstIndex(where: { $0.id == answer.id }) {
-            if displayType == .choice {
-                responses.remove(at: selectedAnswerIndex)
+        let isMultipleChoice = displayType == .choice && pickType == .any || displayType == .textfield
+        if isMultipleChoice {
+            let answer = answers[index]
+            if let selectedAnswerIndex = responses.firstIndex(where: { $0.id == answer.id }) {
+                if displayType == .choice {
+                    responses.remove(at: selectedAnswerIndex)
+                } else {
+                    responses[selectedAnswerIndex].answer = text
+                }
             } else {
-                responses[selectedAnswerIndex].answer = text
+                responses.append(AnswerResponse(id: answers[index].id, answer: .empty))
             }
         } else {
-            responses.append(AnswerResponse(id: answers[index].id, answer: .empty))
+            responses = [AnswerResponse(id: answers[index].id, answer: .empty)]
         }
         storeAnswerResponses()
     }
+}
+
+extension SurveyAnswerViewModel {
 
     private func storeAnswerResponses() {
         storeQuestionResponseUseCase.execute(questionResponse: APIQuestionResponse(

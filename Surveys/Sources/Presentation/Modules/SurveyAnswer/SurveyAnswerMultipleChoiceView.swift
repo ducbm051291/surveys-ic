@@ -10,7 +10,8 @@ import SwiftUI
 
 struct SurveyAnswerMultipleChoiceView: View {
 
-    @State var checkedAnswers: [Bool]
+    @ObservedObject var viewModel: SurveyAnswerViewModel
+    @State var statusChoices: [Bool]
     @State var choices: [String]
 
     var body: some View {
@@ -26,8 +27,10 @@ struct SurveyAnswerMultipleChoiceView: View {
                         Spacer()
                         Button(String.empty) {}
                             .modifier(CheckboxButtonModifier(
-                                isChecked: $checkedAnswers[index],
-                                action: {}
+                                isChecked: $statusChoices[index],
+                                action: {
+                                    viewModel.answer(index)
+                                }
                             ))
                     }
                     Divider()
@@ -40,8 +43,9 @@ struct SurveyAnswerMultipleChoiceView: View {
         .edgesIgnoringSafeArea(.all)
     }
 
-    init(answers: [String]) {
-        choices = answers
-        checkedAnswers = answers.map { _ in false }
+    init(viewModel: SurveyAnswerViewModel) {
+        self.viewModel = viewModel
+        choices = viewModel.answers.map { $0.text ?? .empty }
+        statusChoices = viewModel.answers.map { _ in false }
     }
 }

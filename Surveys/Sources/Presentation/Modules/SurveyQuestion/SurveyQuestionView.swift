@@ -39,24 +39,24 @@ extension SurveyQuestionView {
     private func setUpAnswer() -> some View {
         let displayType = viewModel.question.displayType
         let pickType = viewModel.question.pick
-        let answers = viewModel.question.answers ?? []
+        let answerViewModel = SurveyAnswerViewModel(question: viewModel.question)
         return VStack {
             Spacer()
             switch displayType {
             case .star, .heart, .smiley:
-                SurveyAnswerRatingView(displayType: displayType)
+                SurveyAnswerRatingView(viewModel: answerViewModel)
             case .nps:
-                SurveyAnswerNPSView()
+                SurveyAnswerNPSView(viewModel: answerViewModel)
             case .textarea:
                 SurveyAnswerTextAreaView()
             case .textfield:
-                SurveyAnswerFormView(answers: answers.map { $0.text ?? .empty })
+                SurveyAnswerFormView(viewModel: answerViewModel)
             case .choice, .dropdown:
                 switch pickType {
                 case .any:
-                    SurveyAnswerMultipleChoiceView(answers: answers.map { $0.text ?? .empty })
+                    SurveyAnswerMultipleChoiceView(viewModel: answerViewModel)
                 case .one, .none:
-                    SurveyAnswerSingleChoiceView(answers: answers.map { $0.text ?? .empty })
+                    SurveyAnswerSingleChoiceView(viewModel: answerViewModel)
                 }
             case .intro, .outro:
                 EmptyView()

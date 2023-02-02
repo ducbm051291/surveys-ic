@@ -25,7 +25,7 @@ struct SurveyAnswerRatingView: View {
                         rating = index + 1
                     }
                     .onChange(of: rating) { index in
-                        viewModel.handleSingleAnswer(index)
+                        viewModel.answer(index)
                     }
                     .frame(width: 28.0, height: 34.0)
                     .tag(index)

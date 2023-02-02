@@ -10,37 +10,29 @@ import SwiftUI
 
 struct SurveyAnswerFormView: View {
 
-    @State var questions: [String]
-    @State var responses: [String]
+    @ObservedObject var viewModel: SurveyAnswerViewModel
+    @State var formTexts: [String]
 
     var body: some View {
         VStack(spacing: 16.0) {
-            ForEach(questions.indices, id: \.self) { index in
-                TextField(String.empty, text: $responses[index])
+            ForEach(viewModel.answers.indices, id: \.self) { index in
+                TextField(String.empty, text: $formTexts[index])
                     .modifier(
                         TextFieldFormModifier(
-                            isPlaceholderVisible: responses[index].isEmpty,
-                            placeholder: questions[index]
+                            isPlaceholderVisible: formTexts[index].isEmpty,
+                            placeholder: viewModel.answers[index].text ?? .empty
                         )
                     )
+                    .onChange(of: formTexts[index]) { newText in
+                        viewModel.answer(index, text: newText)
+                    }
                     .tag(index)
             }
         }
     }
 
-    init(answers: [String]) {
-        questions = answers
-        responses = answers.map { _ in String.empty }
-    }
-}
-
-extension SurveyAnswerNPSView {
-
-    private func getRatingFontOf(_ index: Int) -> Font {
-        index >= rating ? .regular(ofSize: .medium) : .bold(ofSize: .medium)
-    }
-
-    private func getRatingOpacityOf(_ index: Int) -> Double {
-        index >= rating ? 0.5 : 1.0
+    init(viewModel: SurveyAnswerViewModel) {
+        self.viewModel = viewModel
+        formTexts = [String](repeating: .empty, count: viewModel.answers.count)
     }
 }

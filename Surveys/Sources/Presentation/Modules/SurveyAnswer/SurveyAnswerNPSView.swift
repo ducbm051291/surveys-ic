@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SurveyAnswerNPSView: View {
 
+    @ObservedObject var viewModel: SurveyAnswerViewModel
     @State var rating: Int = 0
     private let maximumRating = 10
     private let horizontalPadding: CGFloat = 20.0
@@ -21,6 +22,10 @@ struct SurveyAnswerNPSView: View {
             setUpDescription()
         }
         .padding(.horizontal, horizontalPadding)
+    }
+
+    init(viewModel: SurveyAnswerViewModel) {
+        self.viewModel = viewModel
     }
 
     private func setUpNPS() -> some View {
@@ -51,6 +56,9 @@ struct SurveyAnswerNPSView: View {
                 .opacity(getRatingOpacityOf(index))
                 .onTapGesture {
                     rating = index + 1
+                }
+                .onChange(of: rating) { index in
+                    viewModel.answer(index)
                 }
                 .frame(
                     width: calculatePointWidth(width: width),
