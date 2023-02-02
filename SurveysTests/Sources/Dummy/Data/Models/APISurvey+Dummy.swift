@@ -71,7 +71,7 @@ extension APISurvey {
                 text: "What can we do to improve?",
                 pick: .one,
                 coverImageUrl: "",
-                answerList: nil
+                answerList: []
             )
         ]
     )
