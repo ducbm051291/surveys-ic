@@ -33,7 +33,6 @@ final class ClearQuestionResponseUseCaseSpec: QuickSpec {
                 let questionResponseToTest = APIQuestionResponse.dummy
 
                 beforeEach {
-                    self.questionResponseCache.set(questionResponseToTest)
                     useCase.execute(id: questionResponseToTest.id)
                 }
 
