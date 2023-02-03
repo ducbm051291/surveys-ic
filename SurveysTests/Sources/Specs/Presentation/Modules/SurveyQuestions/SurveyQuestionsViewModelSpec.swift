@@ -56,6 +56,11 @@ final class SurveyQuestionsViewModelSpec: QuickSpec {
                         expect(self.submitSurveyResponseUseCase.executeSurveyIdQuestionsCalled) == true
                     }
 
+                    it("state changes to loading") {
+                        let state = try self.awaitPublisher(viewModel.$state.collectNext(1)).last
+                        expect(state) == .submitting
+                    }
+
                     it("state changes to submitted") {
                         let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
                         expect(state) == .submitted
@@ -77,7 +82,12 @@ final class SurveyQuestionsViewModelSpec: QuickSpec {
                         expect(self.submitSurveyResponseUseCase.executeSurveyIdQuestionsCalled) == true
                     }
 
-                    it("state changes to submitted") {
+                    it("state changes to loading") {
+                        let state = try self.awaitPublisher(viewModel.$state.collectNext(1)).last
+                        expect(state) == .submitting
+                    }
+
+                    it("state changes to error with common error text") {
                         let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
                         expect(state) == .error(Localize.commonErrorText())
                     }
