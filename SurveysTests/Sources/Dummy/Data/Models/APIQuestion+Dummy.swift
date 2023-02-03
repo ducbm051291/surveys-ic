@@ -14,20 +14,22 @@ extension APISurvey.APIQuestion {
         APISurvey.APIQuestion(
             id: "940d229e4cd87cd1e202",
             type: "question",
-            displayOrder: 1,
+            displayOrder: 0,
             displayType: .star,
             text: "Food â€“ Variety, Taste and Presentation",
             pick: .one,
-            coverImageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/b41c84934fa8e4c34269_"
+            coverImageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/b41c84934fa8e4c34269_",
+            answerList: APIAnswer.dummyList
         ),
         APISurvey.APIQuestion(
             id: "c3a9b8ce5c2356010703",
             type: "question",
-            displayOrder: 9,
+            displayOrder: 1,
             displayType: .textarea,
             text: "Your additional comments are welcomed.",
             pick: .none,
-            coverImageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/b41c84934fa8e4c34269_"
+            coverImageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/b41c84934fa8e4c34269_",
+            answerList: APIAnswer.dummyList
         )
     ]
 }
