@@ -181,6 +181,8 @@
 		58F6E6182935E3F200D0547A /* Publisher+ActivityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6172935E3F200D0547A /* Publisher+ActivityTracker.swift */; };
 		58F6E61A2935E4E400D0547A /* View+Hidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6192935E4E400D0547A /* View+Hidden.swift */; };
 		58FCF16E298D048C001717EF /* Constants+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCF16D298D048C001717EF /* Constants+Cache.swift */; };
+		58FCF170298D0652001717EF /* SurveyCacheSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCF16F298D0652001717EF /* SurveyCacheSpec.swift */; };
+		58FCF172298D078B001717EF /* QuestionResponseCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCF171298D078B001717EF /* QuestionResponseCache.swift */; };
 		79AD9AC60C2326D2C37DA822 /* ApplicationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D07C7B75034BCA157403F8 /* ApplicationSpec.swift */; };
 		8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A71C5D204545F33C7FD6B4 /* Constants+API.swift */; };
 		9034CDC8640BB10EC23F3D2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2A4D7F6EBA03C8C781818 /* Constants.swift */; };
@@ -424,6 +426,8 @@
 		58F6E6172935E3F200D0547A /* Publisher+ActivityTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ActivityTracker.swift"; sourceTree = "<group>"; };
 		58F6E6192935E4E400D0547A /* View+Hidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Hidden.swift"; sourceTree = "<group>"; };
 		58FCF16D298D048C001717EF /* Constants+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Cache.swift"; sourceTree = "<group>"; };
+		58FCF16F298D0652001717EF /* SurveyCacheSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCacheSpec.swift; sourceTree = "<group>"; };
+		58FCF171298D078B001717EF /* QuestionResponseCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResponseCache.swift; sourceTree = "<group>"; };
 		6C28B64D0889C7EDF9D30A6C /* OptionalUnwrapSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalUnwrapSpec.swift; sourceTree = "<group>"; };
 		6DEDBCA537C105F916C257C5 /* Pods-Surveys.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug production.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.debug production.xcconfig"; sourceTree = "<group>"; };
 		74E30052ACBE13146066B25B /* Optional+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
@@ -790,6 +794,8 @@
 			isa = PBXGroup;
 			children = (
 				5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */,
+				58FCF171298D078B001717EF /* QuestionResponseCache.swift */,
+				58FCF16F298D0652001717EF /* SurveyCacheSpec.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1970,6 +1976,8 @@
 				58447552298B60A300A696E0 /* GetQuestionResponseUseCaseSpec.swift in Sources */,
 				584D03FA29542F84007175D1 /* HomeViewModelSpec.swift in Sources */,
 				5835AA002927270C00686B8C /* TestError.swift in Sources */,
+				58FCF170298D0652001717EF /* SurveyCacheSpec.swift in Sources */,
+				58FCF172298D078B001717EF /* QuestionResponseCache.swift in Sources */,
 				5861161E292736D800EF52A4 /* SessionRepositorySpec.swift in Sources */,
 				58D1932F2941B79300D28082 /* GetTokenUseCaseSpec.swift in Sources */,
 				58683B1D29387D54005FD141 /* LoginViewModelSpec.swift in Sources */,
