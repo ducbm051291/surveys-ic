@@ -55,9 +55,16 @@ final class SurveyQuestionsViewModel: ObservableObject {
     func submitQuestionResponse() {
         let questionResponses = questions.map { $0.question.id }
             .compactMap { getQuestionResponseUseCase.execute(id: $0) }
-        submitSurveyResponseUseCase.execute(surveyId: survey.id, questions: questionResponses)
-            .map { _ in State.submitted }
+
+        submitSurveyResponseUseCase
+            .execute(
+                surveyId: survey.id,
+                questions: questionResponses
+            )
+            .trackError(errorTracker)
+            .trackActivity(activityTracker)
             .asDriver()
+            .map { _ in State.submitted }
             .assign(to: &$state)
     }
 }

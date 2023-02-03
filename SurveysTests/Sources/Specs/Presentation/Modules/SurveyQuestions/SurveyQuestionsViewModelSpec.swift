@@ -25,6 +25,7 @@ final class SurveyQuestionsViewModelSpec: QuickSpec {
 
             var viewModel: SurveyQuestionsViewModel!
             let surveyToTest = APISurvey.dummy
+            let errorToTest = TestError.mock
 
             beforeEach {
                 Resolver.registerAllMockServices()
@@ -44,18 +45,42 @@ final class SurveyQuestionsViewModelSpec: QuickSpec {
 
             describe("its submitQuestionResponse() called") {
 
-                beforeEach {
-                    self.submitSurveyResponseUseCase.executeSurveyIdQuestionsReturnValue = Just(()).asObservable()
-                    viewModel.submitQuestionResponse()
+                context("and submitSurveyResponseUseCase returns success") {
+
+                    beforeEach {
+                        self.submitSurveyResponseUseCase.executeSurveyIdQuestionsReturnValue = Just(()).asObservable()
+                        viewModel.submitQuestionResponse()
+                    }
+
+                    it("triggers submitSurveyResponseUseCase to execute") {
+                        expect(self.submitSurveyResponseUseCase.executeSurveyIdQuestionsCalled) == true
+                    }
+
+                    it("state changes to submitted") {
+                        let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
+                        expect(state) == .submitted
+                    }
                 }
 
-                it("triggers submitSurveyResponseUseCase to execute") {
-                    expect(self.submitSurveyResponseUseCase.executeSurveyIdQuestionsCalled) == true
-                }
+                context("and submitSurveyResponseUseCase returns failure") {
 
-                it("state changes to submitted") {
-                    let state = try self.awaitPublisher(viewModel.$state.collectNext(1)).last
-                    expect(state) == .submitted
+                    beforeEach {
+                        self.submitSurveyResponseUseCase.executeSurveyIdQuestionsReturnValue = Fail(
+                            outputType: Void.self,
+                            failure: errorToTest
+                        )
+                        .asObservable()
+                        viewModel.submitQuestionResponse()
+                    }
+
+                    it("triggers submitSurveyResponseUseCase to execute") {
+                        expect(self.submitSurveyResponseUseCase.executeSurveyIdQuestionsCalled) == true
+                    }
+
+                    it("state changes to submitted") {
+                        let state = try self.awaitPublisher(viewModel.$state.collectNext(2)).last
+                        expect(state) == .error(Localize.commonErrorText())
+                    }
                 }
             }
         }
