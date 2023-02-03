@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SurveyAnswerSingleChoiceView: View {
 
-    @ObservedObject var viewModel: SurveyAnswerViewModel
+    @State var viewModel: SurveyAnswerViewModel
     @State private var choices: [String]
     @State var selectedChoiceIndex: Int = 0
 

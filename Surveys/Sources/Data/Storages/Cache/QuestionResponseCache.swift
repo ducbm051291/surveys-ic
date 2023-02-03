@@ -17,14 +17,12 @@ protocol QuestionResponseCacheProtocol: AnyObject {
 
 final class QuestionResponseCache: QuestionResponseCacheProtocol {
 
-    private let diskConfig = DiskConfig(name: Bundle.main.bundleIdentifier ?? .empty)
-    private let memoryConfig = MemoryConfig(expiry: .never, countLimit: 50, totalCostLimit: 10)
     private let storage: Storage<String, QuestionResponse>?
 
     init() {
         storage = try? Storage<String, QuestionResponse>(
-            diskConfig: diskConfig,
-            memoryConfig: memoryConfig,
+            diskConfig: Constants.Cache.diskConfig,
+            memoryConfig: Constants.Cache.memoryConfig,
             transformer: TransformerFactory.forCodable(ofType: QuestionResponse.self)
         )
     }

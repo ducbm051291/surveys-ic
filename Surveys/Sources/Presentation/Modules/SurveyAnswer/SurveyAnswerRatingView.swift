@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SurveyAnswerRatingView: View {
 
-    @ObservedObject var viewModel: SurveyAnswerViewModel
+    @State var viewModel: SurveyAnswerViewModel
     @State var rating: Int = 0
     private let maximumRating = 5
     private var ratingItems: [String]

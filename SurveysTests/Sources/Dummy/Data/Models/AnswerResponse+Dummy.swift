@@ -12,5 +12,5 @@ import Foundation
 
 extension AnswerResponse {
 
-    static let dummy = AnswerResponse(id: "037574cb93d16800eecd", answer: "My answer")
+    static let dummy = AnswerResponse(id: "answerId", answer: "My answer")
 }

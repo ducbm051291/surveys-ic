@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SurveyAnswerFormView: View {
 
-    @ObservedObject var viewModel: SurveyAnswerViewModel
+    @State var viewModel: SurveyAnswerViewModel
     @State var formTexts: [String]
 
     var body: some View {

@@ -17,14 +17,12 @@ protocol SurveyCacheProtocol: AnyObject {
 
 final class SurveyCache: SurveyCacheProtocol {
 
-    private let diskConfig = DiskConfig(name: Bundle.main.bundleIdentifier ?? .empty)
-    private let memoryConfig = MemoryConfig(expiry: .never, countLimit: 50, totalCostLimit: 10)
     private let storage: Storage<String, [APISurvey]>?
 
     init() {
         storage = try? Storage<String, [APISurvey]>(
-            diskConfig: diskConfig,
-            memoryConfig: memoryConfig,
+            diskConfig: Constants.Cache.diskConfig,
+            memoryConfig: Constants.Cache.memoryConfig,
             transformer: TransformerFactory.forCodable(ofType: [APISurvey].self)
         )
     }

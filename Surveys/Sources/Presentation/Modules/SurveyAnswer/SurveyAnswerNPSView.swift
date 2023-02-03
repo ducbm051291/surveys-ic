@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SurveyAnswerNPSView: View {
 
-    @ObservedObject var viewModel: SurveyAnswerViewModel
+    @State var viewModel: SurveyAnswerViewModel
     @State var rating: Int = 0
     private let maximumRating = 10
     private let horizontalPadding: CGFloat = 20.0
