@@ -19,12 +19,8 @@ final class QuestionResponseCache: QuestionResponseCacheProtocol {
 
     private let storage: Storage<String, QuestionResponse>?
 
-    init() {
-        storage = try? Storage<String, QuestionResponse>(
-            diskConfig: Constants.Cache.diskConfig,
-            memoryConfig: Constants.Cache.memoryConfig,
-            transformer: TransformerFactory.forCodable(ofType: QuestionResponse.self)
-        )
+    init(storage: Storage<String, QuestionResponse>?) {
+        self.storage = storage
     }
 
     func get(id: String) -> QuestionResponse? {

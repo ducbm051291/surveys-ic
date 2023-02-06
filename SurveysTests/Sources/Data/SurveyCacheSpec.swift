@@ -6,6 +6,7 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
+import Cache
 import Combine
 import Nimble
 import Quick
@@ -21,7 +22,12 @@ final class SurveyCacheSpec: QuickSpec {
             var cache: SurveyCache!
 
             beforeEach {
-                cache = SurveyCache()
+                let storage = try? Storage<String, [APISurvey]>(
+                    diskConfig: Constants.Cache.diskConfig,
+                    memoryConfig: Constants.Cache.memoryConfig,
+                    transformer: TransformerFactory.forCodable(ofType: [APISurvey].self)
+                )
+                cache = SurveyCache(storage: storage)
             }
 
             afterEach {

@@ -19,12 +19,8 @@ final class SurveyCache: SurveyCacheProtocol {
 
     private let storage: Storage<String, [APISurvey]>?
 
-    init() {
-        storage = try? Storage<String, [APISurvey]>(
-            diskConfig: Constants.Cache.diskConfig,
-            memoryConfig: Constants.Cache.memoryConfig,
-            transformer: TransformerFactory.forCodable(ofType: [APISurvey].self)
-        )
+    init(storage: Storage<String, [APISurvey]>?) {
+        self.storage = storage
     }
 
     func get() -> [APISurvey]? {

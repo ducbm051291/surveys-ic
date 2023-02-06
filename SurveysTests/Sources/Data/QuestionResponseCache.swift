@@ -6,6 +6,7 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
+import Cache
 import Combine
 import Nimble
 import Quick
@@ -22,7 +23,12 @@ final class QuestionResponseCacheSpec: QuickSpec {
             let questionResponseToTest = QuestionResponse.dummy
 
             beforeEach {
-                cache = QuestionResponseCache()
+                let storage = try? Storage<String, QuestionResponse>(
+                    diskConfig: Constants.Cache.diskConfig,
+                    memoryConfig: Constants.Cache.memoryConfig,
+                    transformer: TransformerFactory.forCodable(ofType: QuestionResponse.self)
+                )
+                cache = QuestionResponseCache(storage: storage)
             }
 
             afterEach {
