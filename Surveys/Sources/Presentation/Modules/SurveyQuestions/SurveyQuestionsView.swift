@@ -34,9 +34,6 @@ struct SurveyQuestionsView: View {
                 }
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                        withAnimation {
-                            isSubmittedViewPresented = false
-                        }
                         navigator.goBackToRoot()
                     }
                 }
