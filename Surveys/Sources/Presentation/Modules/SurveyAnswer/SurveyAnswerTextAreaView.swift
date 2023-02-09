@@ -35,14 +35,3 @@ struct SurveyAnswerTextAreaView: View {
         }
     }
 }
-
-extension SurveyAnswerNPSView {
-
-    private func getRatingFontOf(_ index: Int) -> Font {
-        index >= rating ? .regular(ofSize: .medium) : .bold(ofSize: .medium)
-    }
-
-    private func getRatingOpacityOf(_ index: Int) -> Double {
-        index >= rating ? 0.5 : 1.0
-    }
-}

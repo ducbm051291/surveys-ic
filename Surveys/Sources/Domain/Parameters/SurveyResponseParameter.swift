@@ -11,12 +11,7 @@ import Foundation
 struct SurveyResponseParameter: Parameterable, Codable, Equatable {
 
     let surveyId: String
-    let questions: [APIQuestionResponse]
-
-    init(surveyId: String, questions: [QuestionResponse]) {
-        self.surveyId = surveyId
-        self.questions = questions.map(APIQuestionResponse.init)
-    }
+    let questions: [QuestionResponse]
 
     static func == (lhs: SurveyResponseParameter, rhs: SurveyResponseParameter) -> Bool {
         lhs.surveyId == rhs.surveyId

@@ -60,6 +60,7 @@ struct SurveyQuestionsView: View {
                         .font(.regular()),
                     action: {
                         isPresented.wrappedValue.toggle()
+                        viewModel.clearQuestionResponse()
                     }
                 ),
                 secondaryButton: .default(

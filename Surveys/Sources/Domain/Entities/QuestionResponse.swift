@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct QuestionResponse {
+struct QuestionResponse: Codable {
 
     let id: String
     let answers: [AnswerResponse]

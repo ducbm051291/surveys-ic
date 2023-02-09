@@ -13,6 +13,7 @@ import Resolver
 final class SurveyQuestionsViewModel: ObservableObject {
 
     @Injected private var submitSurveyResponseUseCase: SubmitSurveyResponseUseCaseProtocol
+    @Injected private var clearQuestionResponseUseCase: ClearQuestionResponseUseCaseProtocol
 
     @Published var state: State = .idle
     @Published var survey: Survey
@@ -42,6 +43,12 @@ final class SurveyQuestionsViewModel: ObservableObject {
         Publishers.Merge(errorState, loadingState)
             .receive(on: DispatchQueue.main)
             .assign(to: &$state)
+
+        clearQuestionResponse()
+    }
+
+    func clearQuestionResponse() {
+        questions.forEach { clearQuestionResponseUseCase.execute(id: $0.question.id) }
     }
 }
 
