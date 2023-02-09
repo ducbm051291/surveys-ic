@@ -13,6 +13,7 @@ import Resolver
 final class SurveyQuestionsViewModel: ObservableObject {
 
     @Injected private var submitSurveyResponseUseCase: SubmitSurveyResponseUseCaseProtocol
+    @Injected private var getQuestionResponseUseCase: GetQuestionResponseUseCaseProtocol
     @Injected private var clearQuestionResponseUseCase: ClearQuestionResponseUseCaseProtocol
 
     @Published var state: State = .idle
@@ -49,6 +50,22 @@ final class SurveyQuestionsViewModel: ObservableObject {
 
     func clearQuestionResponse() {
         questions.forEach { clearQuestionResponseUseCase.execute(id: $0.question.id) }
+    }
+
+    func submitQuestionResponse() {
+        let questionResponses = questions.map { $0.question.id }
+            .compactMap { getQuestionResponseUseCase.execute(id: $0) }
+
+        submitSurveyResponseUseCase
+            .execute(
+                surveyId: survey.id,
+                questions: questionResponses
+            )
+            .trackError(errorTracker)
+            .trackActivity(activityTracker)
+            .asDriver()
+            .map { _ in State.submitted }
+            .assign(to: &$state)
     }
 }
 
