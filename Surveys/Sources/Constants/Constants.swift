@@ -5,6 +5,7 @@
 enum Constants {
 
     enum API {}
+    enum Cache {}
     enum Gradient {}
     enum GrantType: String {
 

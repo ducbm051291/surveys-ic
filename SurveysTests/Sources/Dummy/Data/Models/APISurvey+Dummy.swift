@@ -11,10 +11,11 @@
 extension APISurvey {
 
     static let dummy = APISurvey(
-        id: "d5de6a8f8f5f1cfe51bc",
-        type: "survey_simple",
-        title: "Scarlett Bangkok",
-        description: "We'd love ot hear from you!",
-        coverImageUrl: "https://dhdbhh0jsld0o.cloudfront.net/m/1ea51560991bcb7d00d0_"
+        id: "1",
+        type: "customer satisfaction",
+        title: "How was your experience with us?",
+        description: "We would love to hear your feedback.",
+        coverImageUrl: "https://example.com/cover-image.jpg",
+        questionList: APISurvey.APIQuestion.dummyList
     )
 }

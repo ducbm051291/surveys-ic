@@ -79,6 +79,12 @@
 		583E2731295C228F0087E285 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583E2730295C228F0087E285 /* Answer.swift */; };
 		583E2737295C38B60087E285 /* GetSurveyDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583E2736295C38B60087E285 /* GetSurveyDetailUseCase.swift */; };
 		583E2739295C39610087E285 /* GetSurveyDetailUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583E2738295C39610087E285 /* GetSurveyDetailUseCaseSpec.swift */; };
+		58447550298B4FE100A696E0 /* ClearQuestionResponseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844754F298B4FE100A696E0 /* ClearQuestionResponseUseCase.swift */; };
+		58447552298B60A300A696E0 /* GetQuestionResponseUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58447551298B60A300A696E0 /* GetQuestionResponseUseCaseSpec.swift */; };
+		58447554298B60B200A696E0 /* StoreQuestionResponseUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58447553298B60B200A696E0 /* StoreQuestionResponseUseCaseSpec.swift */; };
+		58447556298B60C000A696E0 /* ClearQuestionResponseUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58447555298B60C000A696E0 /* ClearQuestionResponseUseCaseSpec.swift */; };
+		5844755A298B672400A696E0 /* QuestionResponse+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58447559298B672400A696E0 /* QuestionResponse+Dummy.swift */; };
+		5844755C298B674F00A696E0 /* AnswerResponse+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844755B298B674F00A696E0 /* AnswerResponse+Dummy.swift */; };
 		584D03FA29542F84007175D1 /* HomeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584D03F829542F69007175D1 /* HomeViewModelSpec.swift */; };
 		584E168C293F44C400DB41BE /* ForgotPasswordViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584E168A293F44B400DB41BE /* ForgotPasswordViewModelSpec.swift */; };
 		584ED40B296D422B00FDE2CA /* SurveyAnswerFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584ED40A296D422B00FDE2CA /* SurveyAnswerFormView.swift */; };
@@ -110,7 +116,6 @@
 		588142792966B8440035907E /* SurveyQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588142782966B8440035907E /* SurveyQuestionView.swift */; };
 		5881427B2966B8520035907E /* SurveyQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5881427A2966B8520035907E /* SurveyQuestionViewModel.swift */; };
 		5881427E2966C3E00035907E /* SurveyAnswerSingleChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5881427D2966C3E00035907E /* SurveyAnswerSingleChoiceView.swift */; };
-		588282A42954442200E408F3 /* CacheRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A32954442200E408F3 /* CacheRepositoryProtocol.swift */; };
 		588282A92954443600E408F3 /* SurveyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282A62954443600E408F3 /* SurveyCache.swift */; };
 		588282B52954504700E408F3 /* CacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588282B32954504700E408F3 /* CacheKey.swift */; };
 		588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */; };
@@ -134,6 +139,7 @@
 		58BE3A1C29667805003FCAE9 /* RoundCloseButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE3A1B29667805003FCAE9 /* RoundCloseButtonModifier.swift */; };
 		58BF66EE293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF66ED293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift */; };
 		58BF66F0293DD141003B1A82 /* ForgotPasswordParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF66EF293DD141003B1A82 /* ForgotPasswordParameter.swift */; };
+		58C254F6298A530000C5E53C /* SurveyAnswerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C254F5298A530000C5E53C /* SurveyAnswerViewModel.swift */; };
 		58C46D93296564A9004E43EF /* SubmitSurveyResponseUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C46D92296564A9004E43EF /* SubmitSurveyResponseUseCaseSpec.swift */; };
 		58C46D9529657319004E43EF /* APIQuestion+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C46D9429657319004E43EF /* APIQuestion+Dummy.swift */; };
 		58C46D97296574CA004E43EF /* DisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C46D96296574CA004E43EF /* DisplayType.swift */; };
@@ -161,18 +167,25 @@
 		58D193372941E49B00D28082 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D193362941E49B00D28082 /* HomeHeaderView.swift */; };
 		58D5F830296BB64C00AFAC45 /* SurveyAnswerMultipleChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D5F82F296BB64C00AFAC45 /* SurveyAnswerMultipleChoiceView.swift */; };
 		58D5F832296BD01E00AFAC45 /* CheckboxButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D5F831296BD01E00AFAC45 /* CheckboxButtonModifier.swift */; };
+		58DC4C36298A01C2004C9532 /* QuestionResponseCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DC4C35298A01C2004C9532 /* QuestionResponseCache.swift */; };
+		58DC4C38298A0508004C9532 /* StoreQuestionResponseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DC4C37298A0508004C9532 /* StoreQuestionResponseUseCase.swift */; };
+		58DC4C3A298A05C2004C9532 /* GetQuestionResponseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DC4C39298A05C2004C9532 /* GetQuestionResponseUseCase.swift */; };
 		58E28144295EC712001BAABA /* Notification+Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E28143295EC712001BAABA /* Notification+Instance.swift */; };
 		58E28146295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E28145295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift */; };
 		58E28148295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E28147295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift */; };
+		58F2631E298B966800236685 /* SurveyQuestionsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2631D298B966800236685 /* SurveyQuestionsViewModelSpec.swift */; };
+		58F26322298CA5F000236685 /* SurveyAnswerViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F26320298CA5DB00236685 /* SurveyAnswerViewModelSpec.swift */; };
+		58F26325298CA97000236685 /* SurveyQuestionViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F26324298CA97000236685 /* SurveyQuestionViewModelSpec.swift */; };
 		58F410FE29403C4600135DC7 /* GetHasLoggedInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F410FD29403C4600135DC7 /* GetHasLoggedInUseCase.swift */; };
 		58F411002940690500135DC7 /* Constants+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F410FF2940690500135DC7 /* Constants+View.swift */; };
-		58F44F3E296C3150006C2C62 /* APIQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F44F3D296C3150006C2C62 /* APIQuestionResponse.swift */; };
-		58F44F40296C315B006C2C62 /* APIAnswerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F44F3F296C315B006C2C62 /* APIAnswerResponse.swift */; };
 		58F6E6122934AF2C00D0547A /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6112934AF2C00D0547A /* String+Validation.swift */; };
 		58F6E6142934AF5B00D0547A /* Constants+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6132934AF5B00D0547A /* Constants+Regex.swift */; };
 		58F6E6162935E33C00D0547A /* Publisher+ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6152935E33C00D0547A /* Publisher+ErrorTracker.swift */; };
 		58F6E6182935E3F200D0547A /* Publisher+ActivityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6172935E3F200D0547A /* Publisher+ActivityTracker.swift */; };
 		58F6E61A2935E4E400D0547A /* View+Hidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F6E6192935E4E400D0547A /* View+Hidden.swift */; };
+		58FCF16E298D048C001717EF /* Constants+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCF16D298D048C001717EF /* Constants+Cache.swift */; };
+		58FCF170298D0652001717EF /* SurveyCacheSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCF16F298D0652001717EF /* SurveyCacheSpec.swift */; };
+		58FCF172298D078B001717EF /* QuestionResponseCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FCF171298D078B001717EF /* QuestionResponseCache.swift */; };
 		79AD9AC60C2326D2C37DA822 /* ApplicationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D07C7B75034BCA157403F8 /* ApplicationSpec.swift */; };
 		8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A71C5D204545F33C7FD6B4 /* Constants+API.swift */; };
 		9034CDC8640BB10EC23F3D2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA2A4D7F6EBA03C8C781818 /* Constants.swift */; };
@@ -312,6 +325,12 @@
 		583E2730295C228F0087E285 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		583E2736295C38B60087E285 /* GetSurveyDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSurveyDetailUseCase.swift; sourceTree = "<group>"; };
 		583E2738295C39610087E285 /* GetSurveyDetailUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSurveyDetailUseCaseSpec.swift; sourceTree = "<group>"; };
+		5844754F298B4FE100A696E0 /* ClearQuestionResponseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearQuestionResponseUseCase.swift; sourceTree = "<group>"; };
+		58447551298B60A300A696E0 /* GetQuestionResponseUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQuestionResponseUseCaseSpec.swift; sourceTree = "<group>"; };
+		58447553298B60B200A696E0 /* StoreQuestionResponseUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreQuestionResponseUseCaseSpec.swift; sourceTree = "<group>"; };
+		58447555298B60C000A696E0 /* ClearQuestionResponseUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearQuestionResponseUseCaseSpec.swift; sourceTree = "<group>"; };
+		58447559298B672400A696E0 /* QuestionResponse+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionResponse+Dummy.swift"; sourceTree = "<group>"; };
+		5844755B298B674F00A696E0 /* AnswerResponse+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnswerResponse+Dummy.swift"; sourceTree = "<group>"; };
 		584D03F829542F69007175D1 /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
 		584E168A293F44B400DB41BE /* ForgotPasswordViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModelSpec.swift; sourceTree = "<group>"; };
 		584ED40A296D422B00FDE2CA /* SurveyAnswerFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAnswerFormView.swift; sourceTree = "<group>"; };
@@ -345,7 +364,6 @@
 		588142782966B8440035907E /* SurveyQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionView.swift; sourceTree = "<group>"; };
 		5881427A2966B8520035907E /* SurveyQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionViewModel.swift; sourceTree = "<group>"; };
 		5881427D2966C3E00035907E /* SurveyAnswerSingleChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAnswerSingleChoiceView.swift; sourceTree = "<group>"; };
-		588282A32954442200E408F3 /* CacheRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheRepositoryProtocol.swift; sourceTree = "<group>"; };
 		588282A62954443600E408F3 /* SurveyCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyCache.swift; sourceTree = "<group>"; };
 		588282B32954504700E408F3 /* CacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheKey.swift; sourceTree = "<group>"; };
 		588F1AA22923288C00AFBD5C /* NetworkAPIProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocolMock.swift; sourceTree = "<group>"; };
@@ -369,6 +387,7 @@
 		58BE3A1B29667805003FCAE9 /* RoundCloseButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCloseButtonModifier.swift; sourceTree = "<group>"; };
 		58BF66ED293D8E42003B1A82 /* PassthroughSubject+ErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PassthroughSubject+ErrorCatcher.swift"; sourceTree = "<group>"; };
 		58BF66EF293DD141003B1A82 /* ForgotPasswordParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordParameter.swift; sourceTree = "<group>"; };
+		58C254F5298A530000C5E53C /* SurveyAnswerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAnswerViewModel.swift; sourceTree = "<group>"; };
 		58C46D92296564A9004E43EF /* SubmitSurveyResponseUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitSurveyResponseUseCaseSpec.swift; sourceTree = "<group>"; };
 		58C46D9429657319004E43EF /* APIQuestion+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIQuestion+Dummy.swift"; sourceTree = "<group>"; };
 		58C46D96296574CA004E43EF /* DisplayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayType.swift; sourceTree = "<group>"; };
@@ -396,18 +415,25 @@
 		58D193362941E49B00D28082 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		58D5F82F296BB64C00AFAC45 /* SurveyAnswerMultipleChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAnswerMultipleChoiceView.swift; sourceTree = "<group>"; };
 		58D5F831296BD01E00AFAC45 /* CheckboxButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButtonModifier.swift; sourceTree = "<group>"; };
+		58DC4C35298A01C2004C9532 /* QuestionResponseCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResponseCache.swift; sourceTree = "<group>"; };
+		58DC4C37298A0508004C9532 /* StoreQuestionResponseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreQuestionResponseUseCase.swift; sourceTree = "<group>"; };
+		58DC4C39298A05C2004C9532 /* GetQuestionResponseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQuestionResponseUseCase.swift; sourceTree = "<group>"; };
 		58E28143295EC712001BAABA /* Notification+Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Instance.swift"; sourceTree = "<group>"; };
 		58E28145295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveExpiredTokenUseCase.swift; sourceTree = "<group>"; };
 		58E28147295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveExpiredTokenUseCaseSpec.swift; sourceTree = "<group>"; };
+		58F2631D298B966800236685 /* SurveyQuestionsViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionsViewModelSpec.swift; sourceTree = "<group>"; };
+		58F26320298CA5DB00236685 /* SurveyAnswerViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAnswerViewModelSpec.swift; sourceTree = "<group>"; };
+		58F26324298CA97000236685 /* SurveyQuestionViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionViewModelSpec.swift; sourceTree = "<group>"; };
 		58F410FD29403C4600135DC7 /* GetHasLoggedInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHasLoggedInUseCase.swift; sourceTree = "<group>"; };
 		58F410FF2940690500135DC7 /* Constants+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+View.swift"; sourceTree = "<group>"; };
-		58F44F3D296C3150006C2C62 /* APIQuestionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIQuestionResponse.swift; sourceTree = "<group>"; };
-		58F44F3F296C315B006C2C62 /* APIAnswerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAnswerResponse.swift; sourceTree = "<group>"; };
 		58F6E6112934AF2C00D0547A /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
 		58F6E6132934AF5B00D0547A /* Constants+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Regex.swift"; sourceTree = "<group>"; };
 		58F6E6152935E33C00D0547A /* Publisher+ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ErrorTracker.swift"; sourceTree = "<group>"; };
 		58F6E6172935E3F200D0547A /* Publisher+ActivityTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ActivityTracker.swift"; sourceTree = "<group>"; };
 		58F6E6192935E4E400D0547A /* View+Hidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Hidden.swift"; sourceTree = "<group>"; };
+		58FCF16D298D048C001717EF /* Constants+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Cache.swift"; sourceTree = "<group>"; };
+		58FCF16F298D0652001717EF /* SurveyCacheSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCacheSpec.swift; sourceTree = "<group>"; };
+		58FCF171298D078B001717EF /* QuestionResponseCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResponseCache.swift; sourceTree = "<group>"; };
 		6C28B64D0889C7EDF9D30A6C /* OptionalUnwrapSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalUnwrapSpec.swift; sourceTree = "<group>"; };
 		6DEDBCA537C105F916C257C5 /* Pods-Surveys.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug production.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.debug production.xcconfig"; sourceTree = "<group>"; };
 		74E30052ACBE13146066B25B /* Optional+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
@@ -562,7 +588,6 @@
 			isa = PBXGroup;
 			children = (
 				5828F82529260E120074FE82 /* AuthenticationRepositoryProtocol.swift */,
-				588282A32954442200E408F3 /* CacheRepositoryProtocol.swift */,
 				582B89442965123600FDB7B5 /* SurveyResponseRepositoryProtocol.swift */,
 				58B758612950551600CE2543 /* SurveyRepositoryProtocol.swift */,
 				5828F843292618BF0074FE82 /* SessionRepositoryProtocol.swift */,
@@ -683,10 +708,8 @@
 		5828F82729260E5B0074FE82 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				58F44F3F296C315B006C2C62 /* APIAnswerResponse.swift */,
 				58C6EB05293DF050002A9B76 /* APIMessage.swift */,
 				582B894829651D5500FDB7B5 /* APINoReply.swift */,
-				58F44F3D296C3150006C2C62 /* APIQuestionResponse.swift */,
 				581BDAE6294850DF0081BAE5 /* APISurvey.swift */,
 				5828F82829260E770074FE82 /* APIToken.swift */,
 				5828F845292619930074FE82 /* KeychainToken.swift */,
@@ -697,13 +720,16 @@
 		5828F82C29260EFF0074FE82 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				5844754F298B4FE100A696E0 /* ClearQuestionResponseUseCase.swift */,
 				58C6EB0E293DF3B9002A9B76 /* ForgotPasswordUseCase.swift */,
 				58F410FD29403C4600135DC7 /* GetHasLoggedInUseCase.swift */,
+				58DC4C39298A05C2004C9532 /* GetQuestionResponseUseCase.swift */,
 				583E2736295C38B60087E285 /* GetSurveyDetailUseCase.swift */,
 				58B758632950558F00CE2543 /* GetSurveyListUseCase.swift */,
 				58D193282941B72A00D28082 /* GetTokenUseCase.swift */,
 				5828F82D29260F0B0074FE82 /* LoginUseCase.swift */,
 				58E28145295EC9B8001BAABA /* ObserveExpiredTokenUseCase.swift */,
+				58DC4C37298A0508004C9532 /* StoreQuestionResponseUseCase.swift */,
 				5828F84E292620520074FE82 /* StoreTokenUseCase.swift */,
 				582B894A2965526200FDB7B5 /* SubmitSurveyResponseUseCase.swift */,
 			);
@@ -774,6 +800,8 @@
 			isa = PBXGroup;
 			children = (
 				5828F85D292634AE0074FE82 /* KeychainProtocolMock.swift */,
+				58FCF171298D078B001717EF /* QuestionResponseCache.swift */,
+				58FCF16F298D0652001717EF /* SurveyCacheSpec.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -798,13 +826,16 @@
 		5828F863292636FD0074FE82 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				58447555298B60C000A696E0 /* ClearQuestionResponseUseCaseSpec.swift */,
 				58C6EB10293DF6BA002A9B76 /* ForgotPasswordUseCaseSpec.swift */,
 				58D1932C2941B78D00D28082 /* GetHasLoggedInUseCaseSpec.swift */,
+				58447551298B60A300A696E0 /* GetQuestionResponseUseCaseSpec.swift */,
 				583E2738295C39610087E285 /* GetSurveyDetailUseCaseSpec.swift */,
 				586F776029514DC5000E5DDD /* GetSurveyListUseCaseSpec.swift */,
 				58D1932A2941B77A00D28082 /* GetTokenUseCaseSpec.swift */,
 				586116192927329400EF52A4 /* LoginUseCaseSpec.swift */,
 				58E28147295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift */,
+				58447553298B60B200A696E0 /* StoreQuestionResponseUseCaseSpec.swift */,
 				5861161F29273AB200EF52A4 /* StoreTokenUseCaseSpec.swift */,
 				58C46D92296564A9004E43EF /* SubmitSurveyResponseUseCaseSpec.swift */,
 			);
@@ -838,6 +869,8 @@
 				58C46D9429657319004E43EF /* APIQuestion+Dummy.swift */,
 				586F7764295158BD000E5DDD /* APISurvey+Dummy.swift */,
 				5828F86B292637D60074FE82 /* APIToken+Dummy.swift */,
+				5844755B298B674F00A696E0 /* AnswerResponse+Dummy.swift */,
+				58447559298B672400A696E0 /* QuestionResponse+Dummy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -907,6 +940,9 @@
 				58683B1C29387CD0005FD141 /* Login */,
 				58B7586A29505D6A00CE2543 /* Splash */,
 				5891CDDE295D3267006E3A69 /* Survey */,
+				58F26323298CA96100236685 /* SurveyQuestion */,
+				58F2631C298B964F00236685 /* SurveyQuestions */,
+				58F2631F298CA5BF00236685 /* SurveyAnswer */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1017,6 +1053,7 @@
 				58388527296CFF5E00C21629 /* SurveyAnswerNPSView.swift */,
 				584ED40A296D422B00FDE2CA /* SurveyAnswerFormView.swift */,
 				584ED40E296D463900FDE2CA /* SurveyAnswerTextAreaView.swift */,
+				58C254F5298A530000C5E53C /* SurveyAnswerViewModel.swift */,
 			);
 			path = SurveyAnswer;
 			sourceTree = "<group>";
@@ -1035,6 +1072,7 @@
 			children = (
 				588282B32954504700E408F3 /* CacheKey.swift */,
 				588282A62954443600E408F3 /* SurveyCache.swift */,
+				58DC4C35298A01C2004C9532 /* QuestionResponseCache.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -1173,6 +1211,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		58F2631C298B964F00236685 /* SurveyQuestions */ = {
+			isa = PBXGroup;
+			children = (
+				58F2631D298B966800236685 /* SurveyQuestionsViewModelSpec.swift */,
+			);
+			path = SurveyQuestions;
+			sourceTree = "<group>";
+		};
+		58F2631F298CA5BF00236685 /* SurveyAnswer */ = {
+			isa = PBXGroup;
+			children = (
+				58F26320298CA5DB00236685 /* SurveyAnswerViewModelSpec.swift */,
+			);
+			path = SurveyAnswer;
+			sourceTree = "<group>";
+		};
+		58F26323298CA96100236685 /* SurveyQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				58F26324298CA97000236685 /* SurveyQuestionViewModelSpec.swift */,
+			);
+			path = SurveyQuestion;
+			sourceTree = "<group>";
+		};
 		622B0DBBBA14110ABF39412C /* Sourcery */ = {
 			isa = PBXGroup;
 			children = (
@@ -1186,6 +1248,7 @@
 			children = (
 				8AA2A4D7F6EBA03C8C781818 /* Constants.swift */,
 				75A71C5D204545F33C7FD6B4 /* Constants+API.swift */,
+				58FCF16D298D048C001717EF /* Constants+Cache.swift */,
 				58B570C0292B1E78007831B8 /* Constants+Gradient.swift */,
 				58F6E6132934AF5B00D0547A /* Constants+Regex.swift */,
 				58F410FF2940690500135DC7 /* Constants+View.swift */,
@@ -1928,27 +1991,37 @@
 				586F776129514DC5000E5DDD /* GetSurveyListUseCaseSpec.swift in Sources */,
 				586F7765295158BD000E5DDD /* APISurvey+Dummy.swift in Sources */,
 				586F776329514DD5000E5DDD /* SurveyRepositorySpec.swift in Sources */,
+				5844755C298B674F00A696E0 /* AnswerResponse+Dummy.swift in Sources */,
 				5828F86C292637D60074FE82 /* APIToken+Dummy.swift in Sources */,
 				58C6EB12293DF7C6002A9B76 /* ForgotPasswordUseCaseSpec.swift in Sources */,
 				0C205FD636A87848DD90D15E /* AutoMockable.generated.swift in Sources */,
+				5844755A298B672400A696E0 /* QuestionResponse+Dummy.swift in Sources */,
 				5828F85729262F600074FE82 /* Resolver+Data.swift in Sources */,
 				58E28148295ECE41001BAABA /* ObserveExpiredTokenUseCaseSpec.swift in Sources */,
 				588F1AA32923288C00AFBD5C /* NetworkAPIProtocolMock.swift in Sources */,
+				58447554298B60B200A696E0 /* StoreQuestionResponseUseCaseSpec.swift in Sources */,
 				5828F859292630B40074FE82 /* Resolver+MockRegistering.swift in Sources */,
+				58447556298B60C000A696E0 /* ClearQuestionResponseUseCaseSpec.swift in Sources */,
 				5891CDE1295D32A2006E3A69 /* SurveyViewModelSpec.swift in Sources */,
 				58C46D9A29657833004E43EF /* APIAnswer+Dummy.swift in Sources */,
 				5861162029273AB200EF52A4 /* StoreTokenUseCaseSpec.swift in Sources */,
 				CC151CF2A41DE206FA2EDCF0 /* OptionalUnwrapSpec.swift in Sources */,
+				58447552298B60A300A696E0 /* GetQuestionResponseUseCaseSpec.swift in Sources */,
 				584D03FA29542F84007175D1 /* HomeViewModelSpec.swift in Sources */,
 				5835AA002927270C00686B8C /* TestError.swift in Sources */,
+				58FCF170298D0652001717EF /* SurveyCacheSpec.swift in Sources */,
+				58FCF172298D078B001717EF /* QuestionResponseCache.swift in Sources */,
+				58F26325298CA97000236685 /* SurveyQuestionViewModelSpec.swift in Sources */,
 				5861161E292736D800EF52A4 /* SessionRepositorySpec.swift in Sources */,
 				58D1932F2941B79300D28082 /* GetTokenUseCaseSpec.swift in Sources */,
 				58683B1D29387D54005FD141 /* LoginViewModelSpec.swift in Sources */,
 				58D1932E2941B79100D28082 /* GetHasLoggedInUseCaseSpec.swift in Sources */,
 				5828F85E292634AE0074FE82 /* KeychainProtocolMock.swift in Sources */,
+				58F2631E298B966800236685 /* SurveyQuestionsViewModelSpec.swift in Sources */,
 				583E2739295C39610087E285 /* GetSurveyDetailUseCaseSpec.swift in Sources */,
 				582B894E2965555F00FDB7B5 /* SurveyResponseRepositorySpec.swift in Sources */,
 				5835A9FE29271D0B00686B8C /* AuthenticationRepositorySpec.swift in Sources */,
+				58F26322298CA5F000236685 /* SurveyAnswerViewModelSpec.swift in Sources */,
 				58C6EB16293DF8AD002A9B76 /* APIMessage+Dummy.swift in Sources */,
 				58683B2029387EDC005FD141 /* Resolver+Domain.swift in Sources */,
 			);
@@ -1969,18 +2042,20 @@
 				8DD323BC8D45D5FC472505A8 /* Constants+API.swift in Sources */,
 				5828F83C292610650074FE82 /* KeychainKey.swift in Sources */,
 				581BDADF294825570081BAE5 /* RoundNextButtonModifier.swift in Sources */,
-				58F44F40296C315B006C2C62 /* APIAnswerResponse.swift in Sources */,
 				58683B2829389C81005FD141 /* RightButtonModifier.swift in Sources */,
 				9034CDC8640BB10EC23F3D2C /* Constants.swift in Sources */,
 				5828F84B29261E8A0074FE82 /* Publisher+Observable.swift in Sources */,
 				58D193372941E49B00D28082 /* HomeHeaderView.swift in Sources */,
 				588282A92954443600E408F3 /* SurveyCache.swift in Sources */,
 				5881426F2966A99C0035907E /* View+Transaction.swift in Sources */,
+				58DC4C38298A0508004C9532 /* StoreQuestionResponseUseCase.swift in Sources */,
+				58DC4C3A298A05C2004C9532 /* GetQuestionResponseUseCase.swift in Sources */,
 				58F410FE29403C4600135DC7 /* GetHasLoggedInUseCase.swift in Sources */,
 				58B758642950558F00CE2543 /* GetSurveyListUseCase.swift in Sources */,
 				581BDAEF29497BEF0081BAE5 /* ShimmerViewStyle+Application.swift in Sources */,
 				58B758692950596700CE2543 /* SplashViewModel.swift in Sources */,
 				5828F842292618AE0074FE82 /* SessionRepository.swift in Sources */,
+				58447550298B4FE100A696E0 /* ClearQuestionResponseUseCase.swift in Sources */,
 				5828F851292621150074FE82 /* Resolver+ResolverRegistering.swift in Sources */,
 				58683B2B29389DBB005FD141 /* ForgotPasswordView.swift in Sources */,
 				5828F82929260E770074FE82 /* APIToken.swift in Sources */,
@@ -2008,15 +2083,14 @@
 				582B894129640DB100FDB7B5 /* AnswerResponse.swift in Sources */,
 				588142792966B8440035907E /* SurveyQuestionView.swift in Sources */,
 				58C6C5AE29222E050083AF17 /* JSONAPIDecoder+Default.swift in Sources */,
+				58C254F6298A530000C5E53C /* SurveyAnswerViewModel.swift in Sources */,
 				588282B52954504700E408F3 /* CacheKey.swift in Sources */,
 				5827FA1F2924D0F200CF2327 /* String+Empty.swift in Sources */,
 				5827FA0D29248DC900CF2327 /* LoginView.swift in Sources */,
 				58285B1F2939AECB00AC6E73 /* BannerData.swift in Sources */,
 				5866FE042934545100908E86 /* LoginViewModel.swift in Sources */,
 				58D193342941E27E00D28082 /* HomeViewModel.swift in Sources */,
-				58F44F3E296C3150006C2C62 /* APIQuestionResponse.swift in Sources */,
 				583E2727295BDE9B0087E285 /* SurveyView.swift in Sources */,
-				588282A42954442200E408F3 /* CacheRepositoryProtocol.swift in Sources */,
 				581BDAE1294827330081BAE5 /* TextTitleModifier.swift in Sources */,
 				E523B137B86D7E0119304CC1 /* Optional+Unwrap.swift in Sources */,
 				58B570C3292B2052007831B8 /* ColorResource+Color.swift in Sources */,
@@ -2038,6 +2112,7 @@
 				588FC05D293602FB00D1A38D /* R.generated.swift in Sources */,
 				582B894929651D5500FDB7B5 /* APINoReply.swift in Sources */,
 				5828F8532926213A0074FE82 /* Resolver+Domain.swift in Sources */,
+				58DC4C36298A01C2004C9532 /* QuestionResponseCache.swift in Sources */,
 				58D5F832296BD01E00AFAC45 /* CheckboxButtonModifier.swift in Sources */,
 				58683B2629388165005FD141 /* Combine+Collect.swift in Sources */,
 				5881427E2966C3E00035907E /* SurveyAnswerSingleChoiceView.swift in Sources */,
@@ -2048,6 +2123,7 @@
 				D159394D010391AC5356ACC1 /* UIView+Subviews.swift in Sources */,
 				581E88AF294ACF4D00C22B71 /* HomeUserMenuView.swift in Sources */,
 				589E92262952ECBE00082D5D /* AuthPlugin.swift in Sources */,
+				58FCF16E298D048C001717EF /* Constants+Cache.swift in Sources */,
 				585E8692293F17CA008C7563 /* Message.swift in Sources */,
 				58233885291C95C300412E50 /* AppNavigator.swift in Sources */,
 				5828F82629260E120074FE82 /* AuthenticationRepositoryProtocol.swift in Sources */,
@@ -2163,7 +2239,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
@@ -2177,6 +2253,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 12;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4TWS7E2EPE;
 				ENABLE_PREVIEWS = YES;
@@ -2275,7 +2352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2416,7 +2493,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2524,7 +2601,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
