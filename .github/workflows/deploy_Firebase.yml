@@ -50,11 +50,11 @@ jobs:
         echo "$(yarn global bin)" >> $GITHUB_PATH
 
     - name: Setup ENV file
-        env:
-          SURVEYS_ENV: ${{ secrets.SURVEYS_ENV }}
-        run: |
-          touch .env
-          echo $SURVEYS_ENV | base64 --decode > .env
+      env:
+        SURVEYS_ENV: ${{ secrets.SURVEYS_ENV }}
+      run: |
+        touch .env
+        echo $SURVEYS_ENV | base64 --decode > .env
 
     - name: Bundle install
       run: bundle install
