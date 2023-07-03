@@ -7,7 +7,7 @@ on:
 jobs:
   review_pull_request:
     name: Pull request review by Danger
-    runs-on: macOS-12
+    runs-on: ['self-hosted', 'macOS', 'ARM64']
     steps:
     - name: Cancel Previous Runs
       uses: styfle/cancel-workflow-action@0.5.0
